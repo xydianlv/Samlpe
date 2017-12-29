@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/image"
+        android:padding="100.0dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/mmp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/gesture_test_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64.0dp"
+                android:layout_height="64.0dp"
+                android:layout_marginTop="84.0dp"
+                android:contentDescription="@string/image"
+                android:scaleType="fitXY"
+                android:src="@mipmap/test_logo_grey" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gesture_test_bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.0dp"
+                android:layout_weight="1">
+
+                <com.example.wyyu.gitsamlpe.test.lock.gesture.GestureLockView
+                    android:id="@+id/gesture_test_gesture_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/gesture_lock_forget_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40.0dp"
+                android:text="@string/forget_pass"
+                android:alpha="0.6"
+                android:textColor="@color/color_84919b"
+                android:textSize="14.0sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

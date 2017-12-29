@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/gesture_line_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20.0dp"
+        android:paddingRight="20.0dp"
+        android:paddingTop="20.0dp">
+
+        <ImageView
+            android:id="@+id/lock_icon_0"
+            style="@style/lock_image_style"
+            android:contentDescription="@string/image" />
+
+        <ImageView
+            android:id="@+id/lock_icon_1"
+            style="@style/lock_image_style"
+            android:layout_marginLeft="52.0dp"
+            android:layout_marginRight="52.0dp"
+            android:contentDescription="@string/image" />
+
+        <ImageView
+            android:id="@+id/lock_icon_2"
+            style="@style/lock_image_style"
+            android:contentDescription="@string/image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gesture_line_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20.0dp"
+        android:paddingRight="20.0dp">
+
+        <ImageView
+            android:id="@+id/lock_icon_3"
+            style="@style/lock_image_style"
+            android:contentDescription="@string/image" />
+
+        <ImageView
+            android:id="@+id/lock_icon_4"
+            style="@style/lock_image_style"
+            android:layout_margin="52.0dp"
+            android:contentDescription="@string/image" />
+
+        <ImageView
+            android:id="@+id/lock_icon_5"
+            style="@style/lock_image_style"
+            android:contentDescription="@string/image" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="20.0dp"
+        android:paddingLeft="20.0dp"
+        android:paddingRight="20.0dp">
+
+        <ImageView
+            android:id="@+id/lock_icon_6"
+            style="@style/lock_image_style"
+            android:contentDescription="@string/image" />
+
+        <ImageView
+            android:id="@+id/lock_icon_7"
+            style="@style/lock_image_style"
+            android:layout_marginLeft="52.0dp"
+            android:layout_marginRight="52.0dp"
+            android:contentDescription="@string/image" />
+
+        <ImageView
+            android:id="@+id/lock_icon_8"
+            style="@style/lock_image_style"
+            android:contentDescription="@string/image" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GitSamlpe</string>
+
+    <string name="image">图片</string>
+    <string name="forget_pass">忘记密码？</string>
+
+    <string name="top_text">TopTextView</string>
+    <string name="bottom_text">BottomTextView</string>
+
+    <string name="toolbar_menu_one">m_1</string>
+    <string name="toolbar_menu_two">m_2</string>
+    <string name="toolbar_menu_three">m_3</string>
+
+    <string name="gps">GPS</string>
+    <string name="network">NETWORK</string>
+    <string name="passive">PASSIVE</string>
+    <string name="g">G</string>
+    <string name="n">N</string>
+    <string name="p">P</string>
+</resources>

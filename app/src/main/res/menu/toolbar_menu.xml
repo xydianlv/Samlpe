@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".test.ActivityToolbarTest">
+
+    <item
+        android:id="@+id/menu_one"
+        android:title="@string/toolbar_menu_one"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_two"
+        android:title="@string/toolbar_menu_two"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_three"
+        android:title="@string/toolbar_menu_three"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <View style="@style/my_divide_view" />
+
+    <ImageView
+        android:id="@+id/finger_test_finger_view"
+        android:layout_width="60.0dp"
+        android:layout_height="60.0dp"
+        android:contentDescription="@string/image"
+        android:scaleType="fitXY"
+        android:src="@mipmap/finger_check_grey" />
+
+    <TextView
+        android:id="@+id/finger_test_check_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100.0dp"
+        android:textColor="@color/color_007ee5"
+        android:textSize="14.0sp" />
+
+    <View style="@style/my_divide_view" />
+
+</LinearLayout>

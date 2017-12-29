@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--红-->
+    <color name="color_red">#ff0000</color>
+    <!--黄-->
+    <color name="color_yellow">#ffff00</color>
+    <!--蓝-->
+    <color name="color_blue">#0000ff</color>
+    <!--绿-->
+    <color name="color_green">#00ff00</color>
+    <!--黑-->
+    <color name="color_black">#000000</color>
+    <!--白-->
+    <color name="color_white">#ffffff</color>
+    <!--灰-->
+    <color name="color_grey">#c0c0c0</color>
+    <!--橙-->
+    <color name="color_orange">#ffa500</color>
+    <!--青-->
+    <color name="color_cyan">#00ffff</color>
+
+    <!--砖红-->
+    <color name="color_b22222">#b22222</color>
+    <!--浅红-->
+    <color name="color_d92e2e">#d92e2e</color>
+    <!--墨黑-->
+    <color name="color_1a1a1a">#1a1a1a</color>
+    <!--砖黑-->
+    <color name="color_262626">#262626</color>
+    <!--砖灰-->
+    <color name="color_84919b">#84919b</color>
+    <!--砖青-->
+    <color name="color_9fbfbf">#9fbfbf</color>
+    <!--浅蓝-->
+    <color name="color_007ee5">#007ee5</color>
+    <!--雅蓝-->
+    <color name="color_09a4ff">#09a4ff</color>
+    <!--亮蓝-->
+    <color name="color_1ed1ff">#1ed1ff</color>
+    <!--深橙-->
+    <color name="color_ff8000">#ff8000</color>
+    <!--底白-->
+    <color name="color_f0eff5">#f0eff5</color>
+    <!--浅灰-->
+    <color name="color_e6e6e6">#e6e6e6</color>
+    <!--淡灰-->
+    <color name="color_c6c6c6">#c6c6c6</color>
+    <!--浅咖-->
+    <color name="color_a39480">#a39480</color>
+
+    <!--草莓奶霜-->
+    <color name="color_f16d7a">#f16d7a</color>
+    <!--玫瑰-->
+    <color name="color_e27386">#e27386</color>
+    <!--玫瑰粉红-->
+    <color name="color_f55066">#f55066</color>
+    <!--基尔-->
+    <color name="color_ef5464">#ef5464</color>
+    <!--巧克力杏仁饼-->
+    <color name="color_ae716e">#ae716e</color>
+    <!--巧克力-->
+    <color name="color_cb8e85">#cb8e85</color>
+    <!--果仁糖-->
+    <color name="color_cf8878">#cf8878</color>
+    <!--覆盆子-->
+    <color name="color_c86f67">#c86f67</color>
+    <!--盐焦糖-->
+    <color name="color_f1ccb8">#f1ccb8</color>
+    <!--香草奶油-->
+    <color name="color_f2debd">#f2debd</color>
+    <!--抹茶奶霜-->
+    <color name="color_b7d28d">#b7d28d</color>
+    <!--开心果-->
+    <color name="color_dcff83">#dcff83</color>
+    <!--牛奶咖啡-->
+    <color name="color_ff9b6a">#ff9b6a</color>
+    <!--马卡龙粉-->
+    <color name="color_f1b8e4">#f1b8e4</color>
+
+
+</resources>

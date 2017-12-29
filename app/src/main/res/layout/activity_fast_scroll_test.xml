@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/fun_text_view"
+        android:text="@string/top_text" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fast_scroll_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.example.wyyu.gitsamlpe.test.recyclerview.weight.FastScrollBar
+            android:id="@+id/fast_scroll_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:alpha="0.4"
+        style="@style/fun_text_view"
+        android:text="@string/bottom_text" />
+
+</LinearLayout>
