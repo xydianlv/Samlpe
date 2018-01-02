@@ -5,8 +5,11 @@
     android:background="@color/color_white"
     android:orientation="vertical">
 
-    <TextView
+    <EditText
+        android:id="@+id/top_text_view"
         style="@style/fun_text_view"
+        android:cursorVisible="false"
+        android:inputType=""
         android:text="@string/top_text" />
 
     <RelativeLayout
@@ -29,8 +32,8 @@
     </RelativeLayout>
 
     <TextView
-        android:alpha="0.4"
         style="@style/fun_text_view"
+        android:alpha="0.4"
         android:text="@string/bottom_text" />
 
 </LinearLayout>

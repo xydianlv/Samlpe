@@ -6,13 +6,17 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 import com.example.wyyu.gitsamlpe.test.recyclerview.weight.FastScrollBar;
+import com.example.wyyu.gitsamlpe.util.CommonUtil;
 
 /**
  * Created by wyyu on 2017/12/28.
@@ -21,6 +25,7 @@ import com.example.wyyu.gitsamlpe.test.recyclerview.weight.FastScrollBar;
 public class ActivityFastScrollTest extends FullScreenActivity {
 
     private RecyclerView recyclerView;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,8 @@ public class ActivityFastScrollTest extends FullScreenActivity {
         initRecyclerView();
 
         initFastScrollView();
+
+        editText = findViewById(R.id.top_text_view);
 
     }
 
@@ -87,6 +94,16 @@ public class ActivityFastScrollTest extends FullScreenActivity {
                 super(itemView);
             }
         }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+
+        ULog.show("ScrollActivity -> dispatchKeyEvent");
+
+        CommonUtil.hideSoftInput(ActivityFastScrollTest.this, editText);
+
+        return super.dispatchTouchEvent(ev);
     }
 
 }
