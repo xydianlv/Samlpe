@@ -42,7 +42,7 @@
 
         <TextView
             android:id="@+id/location_longitude"
-            android:layout_width="100.0dp"
+            android:layout_width="120.0dp"
             android:layout_height="wrap_content"
             android:alpha="0.6"
             android:textColor="@color/color_a39480"
@@ -50,7 +50,7 @@
 
         <TextView
             android:id="@+id/location_latitude"
-            android:layout_width="100.0dp"
+            android:layout_width="120.0dp"
             android:layout_height="wrap_content"
             android:alpha="0.6"
             android:textColor="@color/color_a39480"
@@ -66,7 +66,7 @@
 
         <TextView
             android:id="@+id/location_altitude"
-            android:layout_width="100.0dp"
+            android:layout_width="120.0dp"
             android:layout_height="wrap_content"
             android:alpha="0.6"
             android:textColor="@color/color_a39480"
@@ -74,7 +74,7 @@
 
         <TextView
             android:id="@+id/location_time"
-            android:layout_width="100.0dp"
+            android:layout_width="120.0dp"
             android:layout_height="wrap_content"
             android:alpha="0.6"
             android:textColor="@color/color_a39480"

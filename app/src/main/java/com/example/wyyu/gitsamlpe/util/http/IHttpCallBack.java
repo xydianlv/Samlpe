@@ -1,5 +1,7 @@
 package com.example.wyyu.gitsamlpe.util.http;
 
+import org.json.JSONException;
+
 import java.io.IOException;
 import okhttp3.Response;
 
@@ -11,5 +13,5 @@ public interface IHttpCallBack {
 
     void onFailure(IOException exception);
 
-    void onResponse(Response response);
+    void onResponse(Response response) throws IOException, JSONException;
 }

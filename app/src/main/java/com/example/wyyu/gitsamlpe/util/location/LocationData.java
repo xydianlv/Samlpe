@@ -6,16 +6,10 @@ package com.example.wyyu.gitsamlpe.util.location;
 
 public class LocationData {
 
-    private double altitude;  // 海拔
     private double longitude;  // 经度
+    private double altitude;  // 海拔
     private double latitude;  // 纬度
     private long time;  // 时间
-
-    private String city;  // 城市
-
-    LocationData() {
-        city = "北京";
-    }
 
     public double getAltitude() {
         return altitude;
@@ -49,11 +43,4 @@ public class LocationData {
         this.time = time;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 }

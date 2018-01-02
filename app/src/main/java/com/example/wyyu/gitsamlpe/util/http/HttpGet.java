@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 
 import com.example.wyyu.gitsamlpe.framework.ULog;
 
+import org.json.JSONException;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -19,12 +21,11 @@ import okhttp3.Response;
 public class HttpGet {
 
     /**
-     * @param url  待访问服务器的 URL 地址
-     * @param cookie  cookie 值，若此次连接无 cookie ，传入 "" 即可
-     *
+     * @param url    待访问服务器的 URL 地址
+     * @param cookie cookie 值，若此次连接无 cookie ，传入 "" 即可
      * @ return  同步 get 中，获取到的 数据值
      */
-    public static String syncGet(String url, String cookie) {
+    public static Response syncGet(String url, String cookie) {
 
         OkHttpClient client = HttpClientHolder.getClientHolder().getClient();
 
@@ -33,18 +34,18 @@ public class HttpGet {
                 .addHeader("cookie", cookie)
                 .build();
         try {
-            return client.newCall(request).execute().toString();
+            return client.newCall(request).execute();
         } catch (IOException exception) {
             ULog.show(exception.getMessage());
         }
 
-        return "";
+        return null;
     }
 
     /**
-     * @param url  待访问服务器的 URL 地址
-     * @param cookie  cookie 值，若此次连接无 cookie ，传入 "" 即可
-     * @param callBack  异步 get 中，将获取到的 数据值 回调给 调用者
+     * @param url      待访问服务器的 URL 地址
+     * @param cookie   cookie 值，若此次连接无 cookie ，传入 "" 即可
+     * @param callBack 异步 get 中，将获取到的 数据值 回调给 调用者
      */
     public static void asyncGet(String url, String cookie, final IHttpCallBack callBack) {
 
@@ -63,7 +64,11 @@ public class HttpGet {
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                callBack.onResponse(response);
+                try {
+                    callBack.onResponse(response);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

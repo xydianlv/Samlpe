@@ -2,20 +2,25 @@ package com.example.wyyu.gitsamlpe.test.location;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 import com.example.wyyu.gitsamlpe.util.location.LocationData;
+import com.example.wyyu.gitsamlpe.util.location.LocationProvider;
 import com.example.wyyu.gitsamlpe.util.location.LocationUtil;
+import com.example.wyyu.gitsamlpe.util.location.Observer;
 
 /**
  * Created by wyyu on 2017/12/28.
  **/
 
-public class ActivityLocation extends FullScreenActivity {
+public class ActivityLocation extends FullScreenActivity implements Observer {
 
     private TextView locationTitle;
     private TextView locationName;
@@ -46,6 +51,8 @@ public class ActivityLocation extends FullScreenActivity {
         initClickView();
 
         funClick = false;
+
+        LocationUtil.registerToObservable(this);
     }
 
     private void initTextView() {
@@ -70,36 +77,27 @@ public class ActivityLocation extends FullScreenActivity {
             public void onClick(View view) {
                 if (!funClick) {
                     showActionButton();
+                    LocationUtil.checkLocationPermission(ActivityLocation.this);
+                } else {
+                    LocationProvider.getLocationDataFromType(ActivityLocation.this, LocationProvider.LocationType.GPS);
+                    locationTitle.setText(getResources().getText(R.string.gps));
                 }
-                refreshLocationInfo(LocationUtil.getLocationData());
-                locationTitle.setText(getResources().getText(R.string.gps));
             }
         });
         buttonP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                refreshLocationInfo(LocationUtil.getLocationData());
+                LocationProvider.getLocationDataFromType(ActivityLocation.this, LocationProvider.LocationType.PASSIVE);
                 locationTitle.setText(getResources().getText(R.string.passive));
             }
         });
         buttonN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                refreshLocationInfo(LocationUtil.getLocationData());
+                LocationProvider.getLocationDataFromType(ActivityLocation.this, LocationProvider.LocationType.NETWORK);
                 locationTitle.setText(getResources().getText(R.string.network));
             }
         });
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void refreshLocationInfo(LocationData locationData) {
-
-        locationLongitude.setText("经度 ：" + locationData.getLongitude());
-        locationLatitude.setText("纬度 ：" + locationData.getLatitude());
-        locationAltitude.setText("海拔 ：" + locationData.getAltitude());
-        locationTime.setText("时间 ：" + locationData.getTime());
-
-        locationName.setText(locationData.getCity());
     }
 
     private void showActionButton() {
@@ -107,5 +105,31 @@ public class ActivityLocation extends FullScreenActivity {
         buttonP.setVisibility(View.VISIBLE);
         buttonG.setText("G");
         funClick = true;
+    }
+
+    @Override
+    public void locationUpdate(LocationData locationData) {
+
+        ULog.show("Location -> locationUpdate");
+
+        refreshLocationInfo(locationData);
+    }
+
+    @SuppressLint({"SetTextI18n", "HandlerLeak"})
+    private void refreshLocationInfo(LocationData locationData) {
+
+        locationLongitude.setText("经度 ：" + locationData.getLongitude());
+        locationLatitude.setText("纬度 ：" + locationData.getLatitude());
+        locationAltitude.setText("海拔 ：" + locationData.getAltitude());
+        locationTime.setText("时间 ：" + locationData.getTime());
+
+        locationName.setText("正在识别中...");
+
+        LocationUtil.getCityFromLocation(locationData.getLatitude(), locationData.getLongitude(), new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                locationName.setText((String) msg.obj);
+            }
+        });
     }
 }

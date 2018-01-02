@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 
 import com.example.wyyu.gitsamlpe.framework.ULog;
 
+import org.json.JSONException;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -70,7 +72,11 @@ public class HttpPost {
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                callBack.onResponse(response);
+                try {
+                    callBack.onResponse(response);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
