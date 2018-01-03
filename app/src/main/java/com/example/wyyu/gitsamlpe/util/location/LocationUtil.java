@@ -31,6 +31,11 @@ public class LocationUtil {
         Observable.getObservable().attach(observer);
     }
 
+    // 注销位置监听
+    public static void detachFromObservable(Observer observer) {
+        Observable.getObservable().detach(observer);
+    }
+
     // 只负责处理权限问题，调用该方法的 Activity 需重写 onRequestPermissionsResult 方法
     public static void checkLocationPermission(Activity activity) {
 

@@ -19,19 +19,19 @@ public class Observable {
         private static Observable observable = new Observable();
     }
 
-    public static Observable getObservable() {
+    static Observable getObservable() {
         return ObservableHolder.observable;
     }
 
-    public void attach(Observer observer) {
+    void attach(Observer observer) {
         observerList.add(observer);
     }
 
-    public void detach(Observer observer) {
+    void detach(Observer observer) {
         observerList.remove(observer);
     }
 
-    public void notifyLocationData(LocationData locationData) {
+    void notifyLocationData(LocationData locationData) {
         for (Observer observer : observerList) {
             observer.locationUpdate(locationData);
         }
@@ -41,4 +41,5 @@ public class Observable {
         observerList.clear();
         observerList = null;
     }
+
 }

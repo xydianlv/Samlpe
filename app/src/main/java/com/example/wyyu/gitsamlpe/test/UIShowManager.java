@@ -7,6 +7,7 @@ import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
+import com.example.wyyu.gitsamlpe.test.slide.ActivitySlide;
 
 /**
  * Created by wyyu on 2017/12/28.
@@ -28,6 +29,10 @@ class UIShowManager {
 
     static void startLocationActivity(Context context) {
         startTargetActivityFromMain(context, ActivityLocation.class);
+    }
+
+    static void startSlideActivity(Context context){
+        startTargetActivityFromMain(context, ActivitySlide.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

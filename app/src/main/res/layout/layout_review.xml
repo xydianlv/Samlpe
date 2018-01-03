@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        style="@style/my_divide_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48.0dp"
+        android:background="@color/color_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0.0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/ellipsis"
+            android:maxLines="4"
+            android:textColor="@color/color_262626"
+            android:textColorHint="@color/color_grey"
+            android:textSize="16.0sp" />
+
+        <ImageView
+            android:layout_width="36.0dp"
+            android:layout_height="36.0dp"
+            android:contentDescription="@string/image"
+            android:scaleType="fitXY"
+            android:src="@mipmap/send" />
+
+    </LinearLayout>
+
+</LinearLayout>

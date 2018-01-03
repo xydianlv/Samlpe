@@ -28,13 +28,13 @@ public class LocationProvider {
 
         switch (type) {
             case PASSIVE:
-                notifyLocationData(getLocationFromPassive(context));
+                notifyLocationData(getListenerLocation(LocationManager.PASSIVE_PROVIDER, context));
                 break;
             case NETWORK:
-                notifyLocationData(getLocationFromNet(context));
+                notifyLocationData(getListenerLocation(LocationManager.NETWORK_PROVIDER, context));
                 break;
             case GPS:
-                notifyLocationData(getLocationFromGPS(context));
+                notifyLocationData(getListenerLocation(LocationManager.GPS_PROVIDER, context));
                 break;
             default:
                 notifyLocationData(null);
@@ -44,13 +44,13 @@ public class LocationProvider {
     // 根据当前手机设置选取最优的位置获取方式
     static void getLocationData(Context context) {
 
-        if (gpsLocationIsOpen(context) && getLocationFromGPS(context) != null)
-            notifyLocationData(getLocationFromGPS(context));
-
-        if (netLocationIsOpen(context) && getLocationFromNet(context) != null)
-            notifyLocationData(getLocationFromNet(context));
-
-        notifyLocationData(getLocationFromPassive(context));
+        if (gpsLocationIsOpen(context) && getLocation(LocationManager.GPS_PROVIDER, context) != null) {
+            notifyLocationData(getListenerLocation(LocationManager.GPS_PROVIDER, context));
+        } else if (netLocationIsOpen(context) && getLocation(LocationManager.NETWORK_PROVIDER, context) != null) {
+            notifyLocationData(getListenerLocation(LocationManager.NETWORK_PROVIDER, context));
+        } else {
+            notifyLocationData(getListenerLocation(LocationManager.PASSIVE_PROVIDER, context));
+        }
     }
 
     private static boolean gpsLocationIsOpen(Context context) {
@@ -62,7 +62,6 @@ public class LocationProvider {
     }
 
     private static void notifyLocationData(Location location) {
-
         Observable.getObservable().notifyLocationData(getLocationDataFromLocation(location));
     }
 
@@ -88,7 +87,7 @@ public class LocationProvider {
             // 当位置信息发生变化时触发
             @Override
             public void onLocationChanged(Location location) {
-                Observable.getObservable().notifyLocationData(getLocationDataFromLocation(location));
+                notifyLocationData(location);
             }
 
             // 当 GPS 状态发生改变时触发
@@ -112,7 +111,9 @@ public class LocationProvider {
 
         LocationManager locationManager = getLocationManager(context);
 
-        locationManager.requestLocationUpdates(provider, 0, 0, locationListener);
+        // minTime 表示位置刷新的最短时间间隔，单位为 "毫秒"
+        // minDistance 表示位置刷新的最短距离间隔，单位为 "米"
+        locationManager.requestLocationUpdates(provider, 600000, 10000, locationListener);
 
         return locationManager;
     }
@@ -122,18 +123,12 @@ public class LocationProvider {
     }
 
     @SuppressLint("MissingPermission")
-    private static Location getLocationFromGPS(Context context) {
-        return getLocationManager(LocationManager.GPS_PROVIDER, context).getLastKnownLocation(LocationManager.GPS_PROVIDER);
+    private static Location getListenerLocation(String provider, Context context) {
+        return getLocationManager(provider, context).getLastKnownLocation(provider);
     }
 
     @SuppressLint("MissingPermission")
-    private static Location getLocationFromNet(Context context) {
-        return getLocationManager(LocationManager.NETWORK_PROVIDER, context).getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+    private static Location getLocation(String provider, Context context) {
+        return getLocationManager(context).getLastKnownLocation(provider);
     }
-
-    @SuppressLint("MissingPermission")
-    private static Location getLocationFromPassive(Context context) {
-        return getLocationManager(LocationManager.PASSIVE_PROVIDER, context).getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-    }
-
 }
