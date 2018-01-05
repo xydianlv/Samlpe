@@ -10,6 +10,7 @@ import com.example.wyyu.gitsamlpe.R;
 
 /**
  * Created by wyyu on 2018/1/3.
+ * 底部评论栏
  **/
 
 public class LayoutReview extends LinearLayout {

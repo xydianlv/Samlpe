@@ -5,12 +5,13 @@
     android:orientation="vertical">
 
     <View
-        style="@style/my_divide_line" />
+        style="@style/my_divide_line"
+        android:background="@color/color_e6e6e6" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48.0dp"
-        android:background="@color/color_white"
+        android:layout_height="42.0dp"
+        android:background="@color/color_f2f4f6"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -19,7 +20,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:hint="@string/ellipsis"
+            android:cursorVisible="false"
+            android:hint="@string/empty"
             android:maxLines="4"
             android:textColor="@color/color_262626"
             android:textColorHint="@color/color_grey"

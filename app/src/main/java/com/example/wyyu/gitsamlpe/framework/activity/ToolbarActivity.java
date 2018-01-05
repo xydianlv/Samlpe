@@ -49,7 +49,7 @@ public class ToolbarActivity extends BaseActivity {
 
     public void initToolbar(String title, int titleColor) {
 
-        if (toolbar == null) toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar == null) toolbar =  findViewById(R.id.toolbar);
 
         toolbar.setTitleTextColor(titleColor);
 

@@ -45,6 +45,8 @@
     <color name="color_ff8000">#ff8000</color>
     <!--底白-->
     <color name="color_f0eff5">#f0eff5</color>
+    <!--浅白-->
+    <color name="color_f2f4f6">#f2f4f6</color>
     <!--浅灰-->
     <color name="color_e6e6e6">#e6e6e6</color>
     <!--淡灰-->
