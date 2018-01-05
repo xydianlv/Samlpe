@@ -136,8 +136,9 @@ public class ActivityLocation extends FullScreenActivity implements Observer {
 
     /**
      * 权限申请结果回调
-     * @param requestCode 调用 requestPermissions 方法时，传入的最后一个参数值 "requestCode"
-     * @param permissions 参与申请的所有 permission 组成的数组
+     *
+     * @param requestCode  调用 requestPermissions 方法时，传入的最后一个参数值 "requestCode"
+     * @param permissions  参与申请的所有 permission 组成的数组
      * @param grantResults 申请权限的返回值 ：0、对应权限申请成功，-1、对应权限申请失败
      */
     @Override
@@ -152,5 +153,11 @@ public class ActivityLocation extends FullScreenActivity implements Observer {
         for (int result : grantResults) {
             ULog.show("ActivityLocation -> result : " + result);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LocationUtil.detachFromObservable(this);
     }
 }
