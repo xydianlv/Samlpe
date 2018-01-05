@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -131,5 +132,25 @@ public class ActivityLocation extends FullScreenActivity implements Observer {
                 locationName.setText((String) msg.obj);
             }
         });
+    }
+
+    /**
+     * 权限申请结果回调
+     * @param requestCode 调用 requestPermissions 方法时，传入的最后一个参数值 "requestCode"
+     * @param permissions 参与申请的所有 permission 组成的数组
+     * @param grantResults 申请权限的返回值 ：0、对应权限申请成功，-1、对应权限申请失败
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        ULog.show("ActivityLocation -> requestCode : " + requestCode);
+
+        for (String permission : permissions) {
+            ULog.show("ActivityLocation -> permission : " + permission);
+        }
+
+        for (int result : grantResults) {
+            ULog.show("ActivityLocation -> result : " + result);
+        }
     }
 }
