@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.test;
 import android.content.Context;
 import android.content.Intent;
 
+import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
@@ -31,12 +32,15 @@ class UIShowManager {
         startTargetActivityFromMain(context, ActivityLocation.class);
     }
 
-    static void startSlideActivity(Context context){
+    static void startSlideActivity(Context context) {
         startTargetActivityFromMain(context, ActivitySlide.class);
+    }
+
+    static void startAudioRecordActivity(Context context) {
+        startTargetActivityFromMain(context, ActivityAudioRecorder.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
         context.startActivity(new Intent(context, targetActivity));
     }
-
 }
