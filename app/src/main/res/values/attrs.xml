@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <declare-styleable name="CardView">
+    <attr name="cardShadowColor" format="color" />
+    <attr name="cardShadowRadius" format="dimension" />
+    <attr name="cardShadowX" format="dimension" />
+    <attr name="cardShadowY" format="dimension" />
+    <attr name="cardBackColor" format="color" />
+    <attr name="cardRadiusAll" format="dimension" />
+    <attr name="cardRadiusLeftTop" format="dimension" />
+    <attr name="cardRadiusRightTop" format="dimension" />
+    <attr name="cardRadiusRightBottom" format="dimension" />
+    <attr name="cardRadiusLeftBottom" format="dimension" />
+  </declare-styleable>
+
+</resources>

@@ -74,6 +74,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("CardView", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startCardActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

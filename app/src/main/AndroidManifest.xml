@@ -45,7 +45,11 @@
             android:name=".test.slide.ActivitySlide"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
-      <activity android:name=".test.audio.ActivityAudioRecorder"
+      <activity
+          android:name=".test.audio.ActivityAudioRecorder"
+          android:screenOrientation="portrait"/>
+      <activity
+          android:name=".test.card.ActivityCard"
           android:screenOrientation="portrait"/>
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
