@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
+import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
@@ -43,6 +44,10 @@ class UIShowManager {
 
     static void startCardActivity(Context context) {
         startTargetActivityFromMain(context, ActivityCard.class);
+    }
+
+    static void startFileListActivity(Context context) {
+        startTargetActivityFromMain(context, ActivityFileListTest.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

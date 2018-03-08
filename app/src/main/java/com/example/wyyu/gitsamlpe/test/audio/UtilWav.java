@@ -1,6 +1,9 @@
 package com.example.wyyu.gitsamlpe.test.audio;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -9,21 +12,42 @@ import java.util.List;
  * Wav 文件操作类
  **/
 
-public class UtilWav {
+class UtilWav {
 
-    // 将一组 PCM 文件转为 WAV 文件，传入 PCM 的本地地址，返回生成的 WAV 文件的本地地址
-    public static Boolean mergePcmListToWav(List<String> pathList, String pathWav) {
-
-        return true;
-    }
-
-    // 将指定 PCM 文件转为 WAV 文件，传入 PCM 的本地地址，返回生成的 WAV 文件的本地地址
-    public static Boolean turnPcmToWav(String path, String pathWav) {
+    // 将一组 PCM 文件转为 WAV 文件，传入 PCM 的本地地址和待转换的 WAV文件 地址
+    static Boolean mergePcmListToWav(List<String> pathList, String pathWav) {
 
         return true;
     }
 
-    private class WavHeader {
+    // 将指定 PCM 文件转为 WAV 文件，传入 PCM 的本地地址和待转换的 WAV文件 地址
+    static Boolean turnPcmToWav(String path, String pathWav) {
+
+        boolean turnStatus;
+
+        try {
+            FileOutputStream writer = new FileOutputStream(new File(pathWav), false);
+            FileInputStream reader = new FileInputStream(new File(path));
+
+            WavHeader wavHeader = new WavHeader(new RecorderParameter(), reader.available());
+            writer.write(wavHeader.getWavHeader());
+
+            byte[] funValue = new byte[reader.available()];
+            reader.read(funValue);
+
+            writer = new FileOutputStream(new File(pathWav), true);
+            writer.write(funValue);
+
+            turnStatus = true;
+        } catch (IOException e) {
+            turnStatus = false;
+            e.printStackTrace();
+        }
+
+        return turnStatus;
+    }
+
+    private static class WavHeader {
 
         private final char[] FINAL_CHARS_R = { 'R', 'I', 'F', 'F' };
         private final char[] FINAL_CHARS_W = { 'W', 'A', 'V', 'E' };

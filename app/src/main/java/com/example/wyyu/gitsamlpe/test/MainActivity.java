@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
 public class MainActivity extends ToolbarActivity {
 
@@ -22,6 +24,8 @@ public class MainActivity extends ToolbarActivity {
         initToolBar();
 
         initListView();
+
+        ULog.show(FileManager.getFileManager().getAudioDir());
     }
 
     private void initToolBar() {
@@ -50,6 +54,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("FileListTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startFileListActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.addNewItem("FastRecyclerViewTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startFastRecyclerActivity(MainActivity.this);
@@ -59,12 +69,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("LocationTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startLocationActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("SlideTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startSlideActivity(MainActivity.this);
             }
         });
 

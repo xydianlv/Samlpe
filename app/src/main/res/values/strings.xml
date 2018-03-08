@@ -19,4 +19,15 @@
     <string name="g">G</string>
     <string name="n">N</string>
     <string name="p">P</string>
+
+    <string name="file_sort">排序</string>
+    <string name="file_sort_time">按时间排序</string>
+    <string name="file_sort_name">按名称排序</string>
+    <string name="file_sort_size">按大小排序</string>
+    <string name="file_search">搜索</string>
+    <string name="file_show">显示</string>
+    <string name="file_hide">隐藏</string>
+
+    <string name="get_file_fail">获取文件失败</string>
+
 </resources>

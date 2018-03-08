@@ -7,7 +7,7 @@ import android.media.AudioRecord;
  * Created by wyyu on 2018/1/9.
  **/
 
-public class RecorderParameter {
+class RecorderParameter {
 
     // 每个采样所需的 bit 数
     private int bitPerSample;
@@ -31,22 +31,21 @@ public class RecorderParameter {
     }
 
     // 每秒所需字节数
-    public int getBytePerSecond() {
+    int getBytePerSecond() {
         return sampleRate * channel * bitPerSample / 8;
     }
 
     // 每个采样需要的字节数
-    public int getBlockAlign() {
+    int getBlockAlign() {
         return channel * bitPerSample / 8;
     }
 
     // 缓冲区大小
-    public int getBufferSize() {
-
+    int getBufferSize() {
         return AudioRecord.getMinBufferSize(sampleRate, getChannelConfig(), getAudioFormat());
     }
 
-    public int getChannelConfig() {
+    int getChannelConfig() {
 
         int channelConfig = AudioFormat.CHANNEL_IN_DEFAULT;
         if (channel == 1) {
@@ -58,7 +57,7 @@ public class RecorderParameter {
         return channelConfig;
     }
 
-    public int getAudioFormat() {
+    int getAudioFormat() {
 
         int audioFormat = AudioFormat.ENCODING_DEFAULT;
         if (bitPerSample == 8) {
@@ -70,15 +69,15 @@ public class RecorderParameter {
         return audioFormat;
     }
 
-    public int getBitPerSample() {
+    int getBitPerSample() {
         return bitPerSample;
     }
 
-    public int getSampleRate() {
+    int getSampleRate() {
         return sampleRate;
     }
 
-    public int getChannel() {
+    int getChannel() {
         return channel;
     }
 }

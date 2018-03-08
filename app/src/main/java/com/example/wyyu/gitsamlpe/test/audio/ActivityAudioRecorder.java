@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
+import rx.functions.Action1;
 
 /**
  * Created by wyyu on 2018/1/9.
@@ -51,25 +52,10 @@ public class ActivityAudioRecorder extends FullScreenActivity {
 
     private void initBasicValue() {
 
-        ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.RECORD_AUDIO}, 1);
+        ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.RECORD_AUDIO },
+            1);
 
-        audioRecorder = AudioRecorder.getInstance();
-
-        audioRecorder.setTimeLimitation(LIMITATION_SECONDS);
-
-        audioRecorder.setOnRecorderListener(new IAudioRecorder.OnRecorderListener() {
-            @Override public void onRecording(final int seconds) {
-                runOnUiThread(new Runnable() {
-                    @Override public void run() {
-                        timeInfo.setText(getTimeInfo(seconds));
-                    }
-                });
-            }
-
-            @Override public void onPause(String filePath) {
-
-            }
-        });
+        audioRecorder = new AudioRecorder();
 
         isRecording = false;
     }
@@ -114,6 +100,11 @@ public class ActivityAudioRecorder extends FullScreenActivity {
             resetButton.setVisibility(View.VISIBLE);
             playButton.setVisibility(View.VISIBLE);
             audioRecorder.pause();
+            audioRecorder.getAudioFilePath().subscribe(new Action1<String>() {
+                @Override public void call(String s) {
+
+                }
+            });
         } else {
             mainButton.setImageResource(R.mipmap.audio_pause);
             resetButton.setVisibility(View.INVISIBLE);
