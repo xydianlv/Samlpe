@@ -252,9 +252,7 @@ public class AudioRecorder implements IAudioRecorder {
                 } else if (filePathList.isEmpty()) {
                     subscriber.onError(new Throwable("录制失败"));
                 } else {
-                    UtilWav.turnPcmToWav(filePathList.get(0), outputFilePath);
-                    subscriber.onNext(outputFilePath);
-                    hasMerged = true;
+                    new PcmToWavUtil(recorderParameter).pcmToWav(filePathList.get(0), outputFilePath);
                 }
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
