@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -54,6 +55,31 @@ public class ActivityFastScrollTest extends FullScreenActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerView.setAdapter(new FastViewAdapter(this));
+
+        ItemTouchHelper touchHelper=new ItemTouchHelper(new ItemTouchHelper.Callback() {
+            @Override public int getMovementFlags(RecyclerView recyclerView,
+                RecyclerView.ViewHolder viewHolder) {
+                return 0;
+            }
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+                RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+
+            }
+
+            @Override
+            public boolean isLongPressDragEnabled() {
+                //是否可拖拽
+                return true;
+            }
+        });
+
+        touchHelper.attachToRecyclerView(recyclerView);
     }
 
     private void initFastScrollView() {
