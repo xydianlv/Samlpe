@@ -71,8 +71,7 @@ public class FastScrollBar extends LinearLayout {
     private void initBasicView() {
 
         scrollListener = new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            @Override public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
 
                 if (moveCount < 20 || isScroll) return;
@@ -86,8 +85,7 @@ public class FastScrollBar extends LinearLayout {
                 }
             }
 
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            @Override public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
                 if (isScroll) return;
@@ -97,13 +95,11 @@ public class FastScrollBar extends LinearLayout {
         };
 
         post(new Runnable() {
-            @Override
-            public void run() {
+            @Override public void run() {
                 measuredWidth = getMeasuredWidth();
                 setTranslationX(measuredWidth);
             }
         });
-
     }
 
     private float getScrollPercent(RecyclerView recyclerView) {
@@ -121,7 +117,6 @@ public class FastScrollBar extends LinearLayout {
 
         animator.setDuration(ANIMATOR_TIME);
         animator.start();
-
     }
 
     private void hideFastScrollBar() {
@@ -135,12 +130,10 @@ public class FastScrollBar extends LinearLayout {
         animator.start();
     }
 
-
     public void setRecyclerView(final RecyclerView recyclerView) {
 
         recyclerView.post(new Runnable() {
-            @Override
-            public void run() {
+            @Override public void run() {
 
                 moveCount = recyclerView.getAdapter().getItemCount() - recyclerView.getChildCount();
 
@@ -151,12 +144,9 @@ public class FastScrollBar extends LinearLayout {
         layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
 
         recyclerView.addOnScrollListener(scrollListener);
-
     }
 
-
-    @SuppressLint("ClickableViewAccessibility")
-    @Override
+    @SuppressLint("ClickableViewAccessibility") @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         switch (event.getAction()) {
@@ -195,6 +185,5 @@ public class FastScrollBar extends LinearLayout {
         }
 
         layoutManager.scrollToPositionWithOffset((int) (divideValue * moveCount), 0);
-
     }
 }
