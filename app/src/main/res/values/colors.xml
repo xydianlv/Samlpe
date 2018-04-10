@@ -83,5 +83,34 @@
     <!--马卡龙粉-->
     <color name="color_f1b8e4">#f1b8e4</color>
 
+    <!-- 红色系 -->
+    <color name="color_ffebee">#ffebee</color>
+    <color name="color_ffcdd2">#ffcdd2</color>
+    <color name="color_ef9a9a">#ef9a9a</color>
+    <color name="color_e57373">#e57373</color>
+    <color name="color_ef5358">#ef5358</color>
+    <color name="color_f44336">#f44336</color>
+    <color name="color_e53935">#e53935</color>
+    <color name="color_d32f2f">#d32f2f</color>
+    <color name="color_c62828">#c62828</color>
+    <color name="color_b71c1c">#b71c1c</color>
+    <color name="color_ff8a80">#ff8a80</color>
+    <color name="color_ff5252">#ff5252</color>
+    <color name="color_ff1744">#ff1744</color>
+    <color name="color_d50000">#d50000</color>
+
+    <!-- 青灰色 -->
+    <color name="color_eceff1">#eceff1</color>
+    <color name="color_cfd8dc">#cfd8dc</color>
+    <color name="color_b0bec5">#b0bec5</color>
+    <color name="color_90a4ae">#90a4ae</color>
+    <color name="color_78909c">#78909c</color>
+    <color name="color_607d8b">#607d8b</color>
+    <color name="color_546e7a">#546e7a</color>
+    <color name="color_455a64">#455a64</color>
+    <color name="color_37474f">#37474f</color>
+    <color name="color_263228">#263228</color>
+
+    <color name="color_22000000">#22000000</color>
 
 </resources>

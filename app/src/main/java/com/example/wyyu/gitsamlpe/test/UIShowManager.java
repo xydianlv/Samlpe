@@ -11,6 +11,7 @@ import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlide;
+import com.example.wyyu.gitsamlpe.test.video.ActivityPlayVideo;
 
 /**
  * Created by wyyu on 2017/12/28.
@@ -48,6 +49,10 @@ class UIShowManager {
 
     static void startFileListActivity(Context context) {
         startTargetActivityFromMain(context, ActivityFileListTest.class);
+    }
+
+    static void startVideoPlayActivity(Context context){
+        startTargetActivityFromMain(context, ActivityPlayVideo.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

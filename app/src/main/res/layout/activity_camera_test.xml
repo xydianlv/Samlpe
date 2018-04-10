@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <TextureView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="120.0dp"
+      android:layout_alignParentBottom="true"
+      android:background="@color/color_22000000"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      >
+
+    <View
+        style="@style/my_divide_view"/>
+
+    <ImageView
+        android:layout_width="80.0dp"
+        android:layout_height="80.0dp"
+        android:contentDescription="@string/image"
+        />
+
+    <View
+        style="@style/my_divide_view"/>
+
+    <View
+        android:layout_width="80.0dp"
+        android:layout_height="80.0dp"
+        />
+
+    <View
+        style="@style/my_divide_view"/>
+
+    <TextView
+        android:layout_width="80.0dp"
+        android:layout_height="80.0dp"
+        android:gravity="center"
+        />
+
+    <View
+        style="@style/my_divide_view"/>
+
+  </LinearLayout>
+
+</RelativeLayout>
