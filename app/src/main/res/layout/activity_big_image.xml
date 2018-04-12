@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <View
+      android:id="@+id/big_image_back"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/color_black"
+      />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/big_image_parent"
+      >
+
+    <com.example.wyyu.gitsamlpe.test.bigimage.ImageDraw
+        android:id="@+id/check_image_draw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+  </RelativeLayout>
+
+</FrameLayout>

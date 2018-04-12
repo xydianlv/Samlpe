@@ -18,6 +18,24 @@
         <item name="colorPrimaryDark">#cc84919b</item>
     </style>
 
+    <style name="DialogTheme" parent="android:style/Theme.Dialog">
+        <!-- 去除 DialogActivity 的 toolbar -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景是否变暗 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 去除边框阴影／设置背景 （目前没发现与颜色值相关） -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否浮动在界面上 （暂时未发现这个能力） -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 窗体上面是否有遮盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 为窗体的Enter和Exit设置动画 -->
+        <item name="android:windowAnimationStyle">@null</item>
+        <!-- 是否禁止窗体显示前显示的View -->
+        <item name="android:windowDisablePreview">true</item>
+    </style>
 
     <!-- Toolbar 弹出的菜单样式 -->
     <style name="ToolbarPopupWindow" parent="ThemeOverlay.AppCompat.Light">

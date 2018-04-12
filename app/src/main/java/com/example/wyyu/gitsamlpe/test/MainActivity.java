@@ -90,6 +90,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("ImageList", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startImageListActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

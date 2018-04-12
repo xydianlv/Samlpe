@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f0eff5"
+    android:orientation="vertical">
+
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+  <View style="@style/my_divide_line" />
+
+  <com.example.wyyu.gitsamlpe.test.ListViewMain
+      android:id="@+id/fun_list_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+  <View style="@style/my_divide_line" />
+
+</LinearLayout>
