@@ -10,17 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
+import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import java.io.Serializable;
 
 /**
  * Created by wyyu on 2018/4/12.
  **/
 
-public class ActivityImageList extends FullScreenActivity{
+public class ActivityImageList extends ToolbarActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_list);
 
@@ -29,9 +28,9 @@ public class ActivityImageList extends FullScreenActivity{
 
     private void initImageList() {
 
+        initToolbar("Image", 0xffffffff, 0xff84919b);
 
         initRecyclerView();
-
     }
 
     private void initRecyclerView() {
@@ -67,13 +66,11 @@ public class ActivityImageList extends FullScreenActivity{
                 LayoutInflater.from(context).inflate(R.layout.layout_image_list, parent, false));
         }
 
-        @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        @Override public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ((ImageViewHolder) holder).setItemViewData();
         }
 
-        @Override
-        public int getItemCount() {
+        @Override public int getItemCount() {
             return itemCount;
         }
 
@@ -92,15 +89,15 @@ public class ActivityImageList extends FullScreenActivity{
                 imageView.setImageResource(R.mipmap.lock_normal);
 
                 itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                    @Override public void onClick(View v) {
 
                         // getLocationOnScreen() 获取 view 在屏幕中的 左上角 坐标
                         int[] number = new int[2];
                         v.getLocationOnScreen(number);
 
-                        ImageLocationData locationData = new ImageLocationData(
-                            number[0], number[1], number[0] + v.getWidth(), number[1] + v.getHeight());
+                        ImageLocationData locationData =
+                            new ImageLocationData(number[0], number[1], number[0] + v.getWidth(),
+                                number[1] + v.getHeight());
                         startCheckImageActivity(locationData);
                     }
                 });
@@ -115,12 +112,12 @@ public class ActivityImageList extends FullScreenActivity{
         }
     }
 
-    static class ImageLocationData implements Serializable {
+    public static class ImageLocationData implements Serializable {
 
-        int bottom;
-        int right;
-        int left;
-        int top;
+        public int bottom;
+        public int right;
+        public int left;
+        public int top;
 
         ImageLocationData(int left, int top, int right, int bottom) {
 

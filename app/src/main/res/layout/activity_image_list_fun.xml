@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:id="@+id/fun_list_root_view"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+
+    <include
+        layout="@layout/common_toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/image_fun_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+  </LinearLayout>
+
+  <com.example.wyyu.gitsamlpe.test.bigimage.weight.ImageFunView
+      android:id="@+id/image_list_fun_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="fitCenter"
+      android:background="@color/color_white"
+      android:visibility="gone"
+      />
+
+</FrameLayout>

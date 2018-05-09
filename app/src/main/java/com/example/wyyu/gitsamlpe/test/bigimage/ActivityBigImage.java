@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.test.bigimage.weight.ImageDraw;
 import java.util.ArrayList;
 import java.util.List;
 

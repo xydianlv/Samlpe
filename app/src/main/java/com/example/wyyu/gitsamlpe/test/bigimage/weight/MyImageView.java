@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.bigimage;
+package com.example.wyyu.gitsamlpe.test.bigimage.weight;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

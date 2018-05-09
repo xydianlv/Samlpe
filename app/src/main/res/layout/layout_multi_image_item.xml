@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="0.0dp"
+    android:paddingStart="0.0dp"
+    android:paddingRight="6.0dp"
+    android:paddingEnd="6.0dp"
+    android:paddingTop="0.0dp"
+    android:paddingBottom="6.0dp"
+    >
+
+  <com.example.wyyu.gitsamlpe.test.bigimage.weight.MyImageView
+      android:id="@+id/image_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="centerCrop"
+      />
+
+  <View
+      style="@style/image_cover_square"/>
+
+</FrameLayout>

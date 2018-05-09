@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <dimen name="toolbar_height">48.0dp</dimen>
+  <dimen name="bottom_bar_height">54.0dp</dimen>
+
+  <dimen name="text_10">10.0sp</dimen>
+  <dimen name="text_11">11.0sp</dimen>
+  <dimen name="text_12">12.0sp</dimen>
+
+  <dimen name="status_bar_height">0dip</dimen>
+
+</resources>

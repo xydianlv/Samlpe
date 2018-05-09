@@ -17,7 +17,7 @@
       android:id="@+id/big_image_parent"
       >
 
-    <com.example.wyyu.gitsamlpe.test.bigimage.ImageDraw
+    <com.example.wyyu.gitsamlpe.test.bigimage.weight.ImageDraw
         android:id="@+id/check_image_draw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

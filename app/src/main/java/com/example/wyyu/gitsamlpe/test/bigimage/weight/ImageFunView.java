@@ -1,0 +1,43 @@
+package com.example.wyyu.gitsamlpe.test.bigimage.weight;
+
+import android.content.Context;
+import android.support.annotation.Nullable;
+import android.util.AttributeSet;
+import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationData;
+
+/**
+ * Created by wyyu on 2018/5/8.
+ **/
+
+public class ImageFunView extends android.support.v7.widget.AppCompatImageView {
+
+    public ImageFunView(Context context) {
+        super(context);
+    }
+
+    public ImageFunView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public ImageFunView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    private LocationData locationData;
+
+    public void setData(LocationData locationData) {
+        this.locationData = locationData;
+        //invalidate();
+    }
+
+    /**
+     * onLayout 的四个参数 表示 该自定义控件在父布局中的位置
+     */
+    @Override public void layout(int l, int t, int r, int b) {
+        if (locationData == null) {
+            super.layout(l, t, r, b);
+            return;
+        }
+        super.layout(locationData.left, locationData.top, locationData.right, locationData.bottom);
+    }
+}

@@ -10,7 +10,7 @@
     android:paddingStart="0.0dp"
     >
 
-  <com.example.wyyu.gitsamlpe.test.bigimage.MyImageView
+  <com.example.wyyu.gitsamlpe.test.bigimage.weight.MyImageView
       android:id="@+id/image_list_item"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

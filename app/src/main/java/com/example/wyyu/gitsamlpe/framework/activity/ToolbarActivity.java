@@ -10,8 +10,8 @@ import com.example.wyyu.gitsamlpe.framework.toolbar.ToolbarMenuMgr;
 
 /**
  * Created by wyyu on 2017/12/28.
+ * 继承自 ToolbarActivity 的界面布局中，必须包含 <include layout="@layout/common_toolbar" /> 供父类初始化 Toolbar
  **/
-
 
 public class ToolbarActivity extends BaseActivity {
 
@@ -20,14 +20,13 @@ public class ToolbarActivity extends BaseActivity {
     private ToolbarMenuMgr toolbarMenuMgr;
     private Toolbar toolbar;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         setTheme(THEME);
         super.onCreate(savedInstanceState);
     }
 
-
-    public void addToolbarMenu(int menuIcon, String menuTitle, Toolbar.OnMenuItemClickListener clickListener) {
+    public void addToolbarMenu(int menuIcon, String menuTitle,
+        Toolbar.OnMenuItemClickListener clickListener) {
 
         if (toolbar == null) return;
 
@@ -46,10 +45,9 @@ public class ToolbarActivity extends BaseActivity {
         toolbarMenuMgr.clearMenu();
     }
 
-
     public void initToolbar(String title, int titleColor) {
 
-        if (toolbar == null) toolbar =  findViewById(R.id.toolbar);
+        if (toolbar == null) toolbar = findViewById(R.id.toolbar);
 
         toolbar.setTitleTextColor(titleColor);
 
@@ -65,17 +63,18 @@ public class ToolbarActivity extends BaseActivity {
         toolbar.setBackgroundColor(backColor);
     }
 
-    public void initToolbar(String title, int titleColor, int navigationIcon, View.OnClickListener clickListener) {
+    public void initToolbar(String title, int titleColor, int navigationIcon,
+        View.OnClickListener clickListener) {
 
         initToolbar(title, titleColor);
 
         toolbar.setNavigationIcon(navigationIcon);
 
         toolbar.setNavigationOnClickListener(clickListener);
-
     }
 
-    public void initToolbar(String title, int titleColor, int backColor, int navigationIcon, View.OnClickListener clickListener) {
+    public void initToolbar(String title, int titleColor, int backColor, int navigationIcon,
+        View.OnClickListener clickListener) {
 
         initToolbar(title, titleColor, navigationIcon, clickListener);
 
@@ -86,12 +85,8 @@ public class ToolbarActivity extends BaseActivity {
         return toolbar;
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    @Override public boolean onCreateOptionsMenu(Menu menu) {
         return (toolbarMenuMgr != null && toolbarMenuMgr.onCreateOptionsMenu(menu))
-                || super.onCreateOptionsMenu(menu);
+            || super.onCreateOptionsMenu(menu);
     }
-
-
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@color/color_white"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="@dimen/bottom_bar_height"
+    >
+
+  <RelativeLayout
+      android:id="@+id/bottom_tab_click_left"
+      android:layout_height="match_parent"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      >
+
+    <ImageView
+        android:id="@+id/bottom_tab_left"
+        android:layout_height="28.0dp"
+        android:layout_width="wrap_content"
+        android:scaleType="centerInside"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_home_normal"
+        android:contentDescription="@string/image"
+        />
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/bottom_tab_click_middle"
+      android:layout_height="match_parent"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      >
+
+    <ImageView
+        android:id="@+id/bottom_tab_middle"
+        android:layout_height="28.0dp"
+        android:layout_width="wrap_content"
+        android:scaleType="centerInside"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_find_normal"
+        android:contentDescription="@string/image"
+        />
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/bottom_tab_click_right"
+      android:layout_height="match_parent"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      >
+
+    <ImageView
+        android:id="@+id/bottom_tab_right"
+        android:layout_height="28.0dp"
+        android:layout_width="wrap_content"
+        android:scaleType="centerInside"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_news_normal"
+        android:contentDescription="@string/image"
+        />
+
+  </RelativeLayout>
+
+</LinearLayout>

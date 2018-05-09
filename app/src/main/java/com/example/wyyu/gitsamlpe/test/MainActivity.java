@@ -29,8 +29,8 @@ public class MainActivity extends ToolbarActivity {
     }
 
     private void initToolBar() {
-
         initToolbar("Test", 0xffffffff, 0xff84919b);
+
     }
 
     private void initListView() {
@@ -93,6 +93,30 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("ImageList", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startImageListActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("WeiBoTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startBlogMainActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("ThemeTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startThemeListActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("AdapterText", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startAdapterTextView(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("ProgressText", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startProgressTest(MainActivity.this);
             }
         });
 

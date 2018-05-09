@@ -2,6 +2,7 @@ package com.example.wyyu.gitsamlpe.test.theme;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.WindowManager;
 import com.example.wyyu.gitsamlpe.R;
 
 /**
@@ -14,6 +15,9 @@ public class ActivityTranslucentActivity extends Activity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translucent_theme);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     @Override public void finish() {

@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.bigimage;
+package com.example.wyyu.gitsamlpe.test.bigimage.weight;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import com.example.wyyu.gitsamlpe.test.bigimage.ActivityImageList;
 
 /**
  * Created by wyyu on 2018/4/12.

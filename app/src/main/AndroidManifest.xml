@@ -109,6 +109,36 @@
           android:theme="@android:style/Theme.NoDisplay"
           />
 
+        <!-- 仿微博客户端模块 -->
+      <activity
+          android:name=".test.weibo.ui.MainBlogActivity"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.text.ActivityAdapterText"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.dialog.ActivityProgressTest"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.bigimage.ActivityImageDetail"
+          android:screenOrientation="portrait"
+          />
+      <activity android:name=".test.bigimage.ActivityImageListFun"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.bigimage.ActivityBigImageDetail"
+          android:screenOrientation="portrait"
+          android:theme="@android:style/Theme.Translucent.NoTitleBar"
+          />
+      <activity
+          android:name=".test.bigimage.ActivityMultiImage"
+          android:screenOrientation="portrait"
+          />
+
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->
         <!--android:name="com.amap.api.v2.apikey"-->

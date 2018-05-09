@@ -2,11 +2,14 @@ package com.example.wyyu.gitsamlpe.util;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.support.v4.content.ContextCompat;
 import android.text.format.Formatter;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import android.widget.ImageView;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.util.http.HttpGet;
 import com.example.wyyu.gitsamlpe.util.http.IHttpCallBack;
@@ -63,13 +66,15 @@ public class CommonUtil {
 
     // 判读是否缺少某权限
     private static boolean lackPermission(Context context, String permission) {
-        return ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_DENIED;
+        return ContextCompat.checkSelfPermission(context, permission)
+            == PackageManager.PERMISSION_DENIED;
     }
 
     // 打开软键盘
     public static void showSoftInput(Context context, View view) {
 
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm =
+            (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
 
         if (imm == null) return;
 
@@ -79,10 +84,19 @@ public class CommonUtil {
     // 关闭软键盘
     public static void hideSoftInput(Context context, View view) {
 
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm =
+            (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
 
         if (imm == null) return;
 
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    // 获取图片宽高
+    public static BitmapFactory.Options getImageValue(int imageId) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(Resources.getSystem(), imageId, options);
+        return options;
     }
 }
