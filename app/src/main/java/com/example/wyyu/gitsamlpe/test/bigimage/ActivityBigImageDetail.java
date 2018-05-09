@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.AnimatorData;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationData;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationObservable;
@@ -49,16 +51,16 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
 
     private ImageFunView imageFunView;
     private ViewPager viewPager;
+    private View backView;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_big_image_detail);
 
-        LocationObservable.getInstance().attach(this);
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+        LocationObservable.getInstance().attach(this);
         initBigImageDetail();
     }
 
@@ -72,11 +74,8 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         initViewPager();
 
         initStaticData();
-
         initScaleData();
-
         initAnimData();
-
         startWelcomeAnimator();
     }
 
@@ -87,6 +86,8 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         index = getIntent().getIntExtra(KEY_IMAGE_INDEX, 0);
 
         imageFunView = findViewById(R.id.big_image_fun_view);
+        backView = findViewById(R.id.image_detail_back);
+        backView.setAlpha(0.0f);
     }
 
     private void initViewPager() {
@@ -123,10 +124,10 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
     private AnimatorData animatorData;
     private float scaleData;
 
-    //private float pMoveX;
-    //private float pMoveY;
-    //
-    //private float countY;
+    private float pMoveX;
+    private float pMoveY;
+
+    private float countY;
 
     private void initStaticData() {
 
@@ -159,15 +160,18 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
 
         animatorData = new AnimatorData(translateX, translateY);
 
-        //countY = 0;
-        //
-        //pMoveX = 0;
-        //pMoveY = 0;
+        countY = 0;
+
+        pMoveX = 0;
+        pMoveY = 0;
     }
 
     private void startWelcomeAnimator() {
         setTranslateAnim(animatorData.translateX, animatorData.translateY);
         setScaleAnim(1.0f, scaleData);
+
+        ObjectAnimator animAlpha = ObjectAnimator.ofFloat(backView, "alpha", 0.0f, 1.0f);
+        animatorList.add(animAlpha);
 
         animatorSet.playTogether(animatorList);
         animatorSet.setDuration(200);
@@ -221,7 +225,7 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         this.locationData = locationData;
     }
 
-    private static class ViewPagerAdapter extends PagerAdapter {
+    private class ViewPagerAdapter extends PagerAdapter {
 
         private List<ImageContainer> layoutList;
 
@@ -278,14 +282,9 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         float translateY = winHeight / 2 - (locationData.bottom + locationData.top) / 2;
         float translateX = winWidth / 2 - (locationData.right + locationData.left) / 2;
 
-        //animatorData = new AnimatorData(translateX, translateY);
+        animatorList.clear();
 
         startFinishAnimator(translateX, translateY);
-
-        //countY = 0;
-        //
-        //pMoveX = 0;
-        //pMoveY = 0;
     }
 
     private void startFinishAnimator(float targetTranslateX, float targetTranslateY) {
@@ -294,6 +293,9 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
             ObjectAnimator.ofFloat(imageFunView, "translationX", targetTranslateX, 0);
         ObjectAnimator animatorTranY =
             ObjectAnimator.ofFloat(imageFunView, "translationY", targetTranslateY, 0);
+
+        ObjectAnimator animAlpha = ObjectAnimator.ofFloat(backView, "alpha", 1.0f, 0.0f);
+        animatorList.add(animAlpha);
 
         animatorList.add(animatorTranX);
         animatorList.add(animatorTranY);
@@ -322,5 +324,54 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         }
 
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+
+                pMoveX = event.getRawX();
+                pMoveY = event.getRawY();
+
+                countY = 0;
+
+                //refreshScaleAnim(0.8f);
+
+                break;
+            case MotionEvent.ACTION_MOVE:
+
+                float mMoveX = pMoveX - event.getRawX();
+                float mMoveY = pMoveY - event.getRawY();
+
+                pMoveX = pMoveX - mMoveX;
+                pMoveY = pMoveY - mMoveY;
+
+                countY = countY + mMoveY;
+
+                ULog.show("ActivityBigImageDetail -> countY : " + countY);
+
+                if (countY >= 12) {
+                    viewPager.setVisibility(View.GONE);
+                    imageFunView.setVisibility(View.VISIBLE);
+                }
+
+                imageFunView.setScaleX(0.8f);
+                imageFunView.setScaleY(0.8f);
+
+                //findViewById(R.id.big_image_parent).scrollBy((int) mMoveX, (int) mMoveY);
+
+                break;
+            case MotionEvent.ACTION_UP:
+
+                //if (countY > -200) {
+                //    refreshScaleAnim(1.0f);
+                //    findViewById(R.id.big_image_parent).scrollTo(0, 0);
+                //} else {
+                //    finish();
+                //}
+
+                break;
+        }
+        return super.onTouchEvent(event);
     }
 }

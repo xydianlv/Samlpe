@@ -1,6 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.bigimage;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.bigimage.weight.MultiImageView;
@@ -24,6 +26,7 @@ public class ActivityMultiImage extends ToolbarActivity {
         setContentView(R.layout.activity_multi_image);
 
         initMultiImage();
+        initFunView();
     }
 
     private void initMultiImage() {
@@ -34,5 +37,28 @@ public class ActivityMultiImage extends ToolbarActivity {
             imageIdList.add(image);
         }
         ((MultiImageView) findViewById(R.id.multi_image_view)).setImageIdList(imageIdList);
+    }
+
+    private void initFunView() {
+
+        final ImageView imageView = findViewById(R.id.multi_fun_image);
+        SeekBar seekBar = findViewById(R.id.multi_seek_bar);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                imageView.setScaleX((float) i / 100);
+                imageView.setScaleY((float) i / 100);
+            }
+
+            @Override public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        seekBar.setProgress(50);
     }
 }

@@ -33,4 +33,8 @@ public class PositionObservable {
             positionChangeListener.onChange(position);
         }
     }
+
+    public void release() {
+        positionChangeListener = null;
+    }
 }

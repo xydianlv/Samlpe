@@ -33,4 +33,8 @@ public class LocationObservable {
             confirmPositionCallBack.callBack(locationData);
         }
     }
+
+    public void release() {
+        confirmPositionCallBack = null;
+    }
 }
