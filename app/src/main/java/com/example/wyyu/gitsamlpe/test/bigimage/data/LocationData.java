@@ -20,4 +20,8 @@ public class LocationData implements Serializable {
         this.left = left;
         this.top = top;
     }
+
+    @Override public String toString() {
+        return " bottom : " + bottom + " right : " + right + " left : " + left + " top : " + top;
+    }
 }

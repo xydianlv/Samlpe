@@ -27,7 +27,7 @@ public class ImageFunView extends android.support.v7.widget.AppCompatImageView {
 
     public void setData(LocationData locationData) {
         this.locationData = locationData;
-        //invalidate();
+        requestLayout();
     }
 
     /**

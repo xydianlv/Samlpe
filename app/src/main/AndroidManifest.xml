@@ -131,7 +131,6 @@
           />
       <activity
           android:name=".test.bigimage.ActivityBigImageDetail"
-          android:screenOrientation="portrait"
           android:theme="@android:style/Theme.Translucent.NoTitleBar"
           />
       <activity

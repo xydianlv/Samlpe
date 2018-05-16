@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
@@ -16,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.AnimatorData;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationData;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationObservable;
@@ -36,6 +36,8 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
     private static final String KEY_IMAGE_LOCATION_DATA = "key_image_location_data";
     private static final String KEY_IMAGE_RES_LIST = "key_image_res_list";
     private static final String KEY_IMAGE_INDEX = "key_image_index";
+
+    private static final float FUN_SCALE_VALUE = 0.8f;
 
     public static void open(Context context, LocationData locationData, int[] resList, int index) {
         Intent intent = new Intent(context, ActivityBigImageDetail.class);
@@ -86,7 +88,7 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         index = getIntent().getIntExtra(KEY_IMAGE_INDEX, 0);
 
         imageFunView = findViewById(R.id.big_image_fun_view);
-        backView = findViewById(R.id.image_detail_back);
+        backView = findViewById(R.id.image_detail_background);
         backView.setAlpha(0.0f);
     }
 
@@ -106,11 +108,20 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
 
             @Override public void onPageSelected(int position) {
                 PositionObservable.getInstance().positionUpdate(position);
+                imageFunView.setImageResource(imageArray[position]);
                 index = position;
             }
 
             @Override public void onPageScrollStateChanged(int state) {
-
+                if (imageHasScale) {
+                    return;
+                }
+                if (state == 1) {
+                    pagerIsScrollIng = true;
+                }
+                if (state == 0) {
+                    pagerIsScrollIng = false;
+                }
             }
         });
     }
@@ -128,6 +139,7 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
     private float pMoveY;
 
     private float countY;
+    private float countX;
 
     private void initStaticData() {
 
@@ -246,21 +258,112 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
             return imageArray == null ? 0 : imageArray.length;
         }
 
-        @Override public boolean isViewFromObject(View view, Object object) {
+        @Override public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
             return view == object;
         }
 
-        @Override public Object instantiateItem(ViewGroup container, int position) {
+        @NonNull @Override
+        public Object instantiateItem(@NonNull ViewGroup container, int position) {
             container.addView(layoutList.get(position));
             return layoutList.get(position);
         }
     }
 
+    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            onFinish();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private boolean pagerIsScrollIng;
+    private boolean imageHasScale;
+
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+
+                pMoveX = ev.getRawX();
+                pMoveY = ev.getRawY();
+
+                imageHasScale = false;
+                countY = 0;
+                countX = 0;
+
+                break;
+            case MotionEvent.ACTION_MOVE:
+
+                if (pagerIsScrollIng) {
+                    break;
+                }
+
+                float mMoveX = pMoveX - ev.getRawX();
+                float mMoveY = pMoveY - ev.getRawY();
+
+                pMoveX = pMoveX - mMoveX;
+                pMoveY = pMoveY - mMoveY;
+
+                countY = countY + mMoveY;
+                countX = countX + mMoveX;
+
+                if (countY <= -12 && !imageHasScale) {
+                    viewPager.setVisibility(View.GONE);
+                    imageFunView.setVisibility(View.VISIBLE);
+                    refreshScaleAnim(FUN_SCALE_VALUE);
+                    backView.setAlpha(0.8f);
+                    imageHasScale = true;
+                }
+
+                imageFunView.setTranslationX(animatorData.translateX - countX);
+                imageFunView.setTranslationY(animatorData.translateY - countY);
+
+                break;
+            case MotionEvent.ACTION_UP:
+                if (!imageHasScale) {
+                    break;
+                }
+                if (countY > -260) {
+                    backView.setAlpha(1.0f);
+                    scaleBack();
+                } else {
+                    onFinish();
+                }
+                imageHasScale = false;
+
+                break;
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    private void scaleBack() {
+
+        animatorSet = new AnimatorSet();
+        animatorList.clear();
+
+        setTranslateAnim(animatorData.translateX, animatorData.translateY);
+        setScaleAnim(scaleData, scaleData);
+
+        animatorSet.playTogether(animatorList);
+        animatorSet.setDuration(200);
+        animatorSet.start();
+
+        animatorSet.addListener(new AnimatorListenerAdapter() {
+            @Override public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                viewPager.setVisibility(View.VISIBLE);
+                imageFunView.setVisibility(View.GONE);
+            }
+        });
+    }
+
     private void onFinish() {
-        imageFunView.setImageResource(imageArray[index]);
-        imageFunView.setData(locationData);
         imageFunView.setVisibility(View.VISIBLE);
         viewPager.setVisibility(View.GONE);
+        imageFunView.setData(locationData);
 
         resetScaleData();
         resetAnimData();
@@ -275,6 +378,10 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         float widthDelete = winWidth / viewWidth;
 
         scaleData = heightDelete > widthDelete ? widthDelete : heightDelete;
+
+        if (imageHasScale) {
+            scaleData = scaleData * FUN_SCALE_VALUE;
+        }
     }
 
     private void resetAnimData() {
@@ -283,6 +390,11 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         float translateX = winWidth / 2 - (locationData.right + locationData.left) / 2;
 
         animatorList.clear();
+
+        if (imageHasScale) {
+            translateY = translateY - countY;
+            translateX = translateX - countX;
+        }
 
         startFinishAnimator(translateX, translateY);
     }
@@ -294,7 +406,8 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         ObjectAnimator animatorTranY =
             ObjectAnimator.ofFloat(imageFunView, "translationY", targetTranslateY, 0);
 
-        ObjectAnimator animAlpha = ObjectAnimator.ofFloat(backView, "alpha", 1.0f, 0.0f);
+        ObjectAnimator animAlpha =
+            ObjectAnimator.ofFloat(backView, "alpha", imageHasScale ? 0.8f : 1.0f, 0.0f);
         animatorList.add(animAlpha);
 
         animatorList.add(animatorTranX);
@@ -314,64 +427,5 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
                 overridePendingTransition(0, 0);
             }
         });
-    }
-
-    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            onFinish();
-            return true;
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-
-                pMoveX = event.getRawX();
-                pMoveY = event.getRawY();
-
-                countY = 0;
-
-                //refreshScaleAnim(0.8f);
-
-                break;
-            case MotionEvent.ACTION_MOVE:
-
-                float mMoveX = pMoveX - event.getRawX();
-                float mMoveY = pMoveY - event.getRawY();
-
-                pMoveX = pMoveX - mMoveX;
-                pMoveY = pMoveY - mMoveY;
-
-                countY = countY + mMoveY;
-
-                ULog.show("ActivityBigImageDetail -> countY : " + countY);
-
-                if (countY >= 12) {
-                    viewPager.setVisibility(View.GONE);
-                    imageFunView.setVisibility(View.VISIBLE);
-                }
-
-                imageFunView.setScaleX(0.8f);
-                imageFunView.setScaleY(0.8f);
-
-                //findViewById(R.id.big_image_parent).scrollBy((int) mMoveX, (int) mMoveY);
-
-                break;
-            case MotionEvent.ACTION_UP:
-
-                //if (countY > -200) {
-                //    refreshScaleAnim(1.0f);
-                //    findViewById(R.id.big_image_parent).scrollTo(0, 0);
-                //} else {
-                //    finish();
-                //}
-
-                break;
-        }
-        return super.onTouchEvent(event);
     }
 }
