@@ -14,4 +14,11 @@
     <attr name="cardRadiusLeftBottom" format="dimension" />
   </declare-styleable>
 
+  <declare-styleable name="PercentProgress">
+    <attr name="ringColor" format="color" />
+    <attr name="startAngle" format="integer" />
+    <attr name="endAngle" format="integer" />
+    <attr name="ringWidth" format="dimension" />
+  </declare-styleable>
+
 </resources>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.SeekBar;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 
@@ -19,6 +20,8 @@ public class ActivityProgressTest extends ToolbarActivity {
 
     private ProgressContainer progressContainer;
     private Handler handler;
+
+    private PercentProgress percentProgress;
 
     private int progress;
     private int index;
@@ -60,6 +63,23 @@ public class ActivityProgressTest extends ToolbarActivity {
 
     private void initBasicView() {
         progressContainer = findViewById(R.id.progress_container);
+        percentProgress = findViewById(R.id.percent_progress);
+        SeekBar seekBar = findViewById(R.id.percent_seek_bar);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                percentProgress.refreshProgress(progress);
+            }
+
+            @Override public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     private void startProgress() {
