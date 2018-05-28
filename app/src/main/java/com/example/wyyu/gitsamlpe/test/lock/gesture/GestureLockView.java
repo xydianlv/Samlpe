@@ -110,13 +110,13 @@ public class GestureLockView extends LinearLayout {
 
     private void initDrawTool() {
         paint = new Paint();
-
+        // 设置抗锯齿
         paint.setAntiAlias(true);
-
+        // 设置画笔颜色
         paint.setColor(0xff007ee5);
-
+        // 绘制类型，描边
         paint.setStyle(Paint.Style.STROKE);
-
+        // 描边宽度
         paint.setStrokeWidth(4);
 
         path = new Path();
@@ -158,7 +158,11 @@ public class GestureLockView extends LinearLayout {
         boolean isSelect = false;
 
         for (NodeData nodeData : nodeList) {
+
+            // 判断当前按压点是否落在节点区域
             if (pressX > nodeData.left && pressX < nodeData.right && pressY > nodeData.top && pressY < nodeData.bottom) {
+
+                // 判断当前按压点是否已经被选中
                 for (int index : selectIndexList) {
                     if (index == nodeData.index) {
                         isSelect = true;
@@ -180,6 +184,7 @@ public class GestureLockView extends LinearLayout {
         }
     }
 
+    // 判断前一个节点与后一个节点之间是否有跨越的节点，若存在跨越节点连线，则将跨越的节点纳入选中序列
     private void checkMiddleNode() {
 
         if (selectIndexList.size() > 1) {
