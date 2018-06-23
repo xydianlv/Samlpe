@@ -96,27 +96,27 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("WeiBoTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startBlogMainActivity(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("ThemeTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startThemeListActivity(MainActivity.this);
             }
         });
 
-        listViewMain.addNewItem("AdapterText", new View.OnClickListener() {
+        listViewMain.addNewItem("ProgressTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
-                UIShowManager.startAdapterTextView(MainActivity.this);
+                UIShowManager.startProgressTest(MainActivity.this);
             }
         });
 
-        listViewMain.addNewItem("ProgressText", new View.OnClickListener() {
+        listViewMain.addNewItem("SlideTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
-                UIShowManager.startProgressTest(MainActivity.this);
+                UIShowManager.startSlideActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("CardTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startNormalCardActivity(MainActivity.this);
             }
         });
 

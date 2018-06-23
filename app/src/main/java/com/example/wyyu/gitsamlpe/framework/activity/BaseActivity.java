@@ -1,8 +1,11 @@
 package com.example.wyyu.gitsamlpe.framework.activity;
 
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import com.example.wyyu.gitsamlpe.framework.message.Message;
 import com.example.wyyu.gitsamlpe.framework.message.MsgSender;
 import com.example.wyyu.gitsamlpe.framework.message.MsgType;
@@ -18,28 +21,30 @@ import java.util.HashMap;
 public class BaseActivity extends AppCompatActivity implements MsgReceiver {
 
     private HashMap<MsgType, MsgCallBack> msgCallBackHashMap;
+    private Unbinder unbinder;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initBaseData();
     }
 
+    @Override public void setContentView(@LayoutRes int layoutResID) {
+        super.setContentView(layoutResID);
+        unbinder = ButterKnife.bind(this);
+    }
+
     private void initBaseData() {
-
         msgCallBackHashMap = new HashMap<>();
-
         MsgSender.getMsgSender().attach(this);
     }
 
-    @Override
-    protected void onResume() {
+    @Override protected void onResume() {
         super.onResume();
     }
 
-    @Override
-    protected void onDestroy() {
+    @Override protected void onDestroy() {
         super.onDestroy();
+        unbinder.unbind();
         releaseMsgListener();
     }
 
@@ -54,8 +59,7 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         msgCallBackHashMap.put(msgType, callBack);
     }
 
-    @Override
-    public void onReceiveMessage(MsgType msgType, Message message) {
+    @Override public void onReceiveMessage(MsgType msgType, Message message) {
         if (msgCallBackHashMap.containsKey(msgType)) {
             msgCallBackHashMap.get(msgType).onMessageCallBack(message);
         }

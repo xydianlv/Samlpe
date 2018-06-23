@@ -137,6 +137,22 @@
           android:name=".test.bigimage.ActivityMultiImage"
           android:screenOrientation="portrait"
           />
+      <activity
+          android:name=".test.chat.ActivityChat"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.slide.ActivityScroll"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.slide.ActivitySlideT"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.card.ActivityNormalCard"
+          android:screenOrientation="portrait"
+          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->

@@ -3,17 +3,17 @@ package com.example.wyyu.gitsamlpe.test;
 import android.content.Context;
 import android.content.Intent;
 import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioRecorder;
-import com.example.wyyu.gitsamlpe.test.bigimage.ActivityImageList;
-import com.example.wyyu.gitsamlpe.test.bigimage.ActivityImageListFun;
 import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
+import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
-import com.example.wyyu.gitsamlpe.test.slide.ActivitySlide;
+import com.example.wyyu.gitsamlpe.test.slide.ActivityScroll;
+import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.video.ActivityPlayVideo;
@@ -42,7 +42,7 @@ class UIShowManager {
     }
 
     static void startSlideActivity(Context context) {
-        startTargetActivityFromMain(context, ActivitySlide.class);
+        startTargetActivityFromMain(context, ActivitySlideT.class);
     }
 
     static void startAudioRecordActivity(Context context) {
@@ -79,6 +79,10 @@ class UIShowManager {
 
     static void startBlogMainActivity(Context context) {
         startTargetActivityFromMain(context, MainBlogActivity.class);
+    }
+
+    static void startNormalCardActivity(Context context) {
+        startTargetActivityFromMain(context, ActivityNormalCard.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
