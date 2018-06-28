@@ -3,6 +3,8 @@ package com.example.wyyu.gitsamlpe.test.slide.indicator;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import com.example.wyyu.gitsamlpe.R;
 import java.util.HashMap;
 
@@ -77,6 +79,8 @@ public class SimpleNavigatorAdapter extends CommonNavigatorAdapter {
         linePagerIndicator.setLineWidth(ViewCompatExt.dip2px(context.getResources(), 9) * 1.0f);
         linePagerIndicator.setLineHeight(height);
         linePagerIndicator.setRoundRadius(height);
+        linePagerIndicator.setStartInterpolator(new AccelerateInterpolator());
+        linePagerIndicator.setEndInterpolator(new DecelerateInterpolator(2.0f));
         return linePagerIndicator;
     }
 

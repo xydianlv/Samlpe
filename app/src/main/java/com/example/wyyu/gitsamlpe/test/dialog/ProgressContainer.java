@@ -44,7 +44,7 @@ public class ProgressContainer extends RelativeLayout {
         progressBar.setMax(100);
     }
 
-    void refreshProgressPercent(int progress) {
+    public void refreshProgressPercent(int progress) {
 
         String progressInfo = String.valueOf(progress) + "%";
         percent.setText(progressInfo);

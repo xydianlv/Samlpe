@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:gravity="center_horizontal"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <View
+      style="@style/my_divide_view"
+      />
+
+  <Button
+      android:id="@+id/float_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/float_test"
+      android:background="@color/color_9fbfbf"
+      />
+
+  <Button
+      android:id="@+id/float_dialog"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/dialog_test"
+      android:background="@color/color_9fbfbf"
+      android:layout_marginTop="60.0dp"
+      />
+
+  <View
+      style="@style/my_divide_view"
+      />
+
+</LinearLayout>

@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import com.example.wyyu.gitsamlpe.framework.UToast;
+import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 
 /**
  * Created by wyyu on 2018/5/31.

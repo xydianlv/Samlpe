@@ -8,6 +8,7 @@ import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
+import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
@@ -83,6 +84,10 @@ class UIShowManager {
 
     static void startNormalCardActivity(Context context) {
         startTargetActivityFromMain(context, ActivityNormalCard.class);
+    }
+
+    static void startFloatTestActivity(Context context) {
+        startTargetActivityFromMain(context, ActivityFloatTest.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

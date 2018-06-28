@@ -70,6 +70,7 @@ public class ActivitySlideT extends BaseActivity {
         commonNavigator.setAdjustMode(true);
         commonNavigator.setSpace(UIUtils.dpToPx(9));
         commonNavigator.setIsNeedMargin(false);
+        commonNavigator.setScrollPivotX(0.65f);
         commonNavigator.setAdapter(navigatorAdapter);
         indicator.setNavigator(commonNavigator);
     }

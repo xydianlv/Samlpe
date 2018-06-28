@@ -52,13 +52,13 @@ public class LinePagerIndicator extends View implements IPagerIndicator {
         mPaint.setStyle(Paint.Style.FILL);
         mLineHeight = ViewCompatExt.dip2px(getResources(), 3);
         mLineWidth = ViewCompatExt.dip2px(getResources(), 10);
-        BitmapDrawable bd = (BitmapDrawable) getResources().getDrawable(R.mipmap.audio_pause);
+        BitmapDrawable bd = (BitmapDrawable) getResources().getDrawable(R.mipmap.navbar_select);
         lineBmp = bd.getBitmap();
     }
 
     @Override protected void onDraw(Canvas canvas) {
-        canvas.drawBitmap(lineBmp,null,mLineRect,mPaint);
-        //canvas.drawRoundRect(mLineRect, mRoundRadius, mRoundRadius, mPaint);
+        //canvas.drawBitmap(lineBmp,null,mLineRect,mPaint);
+        canvas.drawRoundRect(mLineRect, mRoundRadius, mRoundRadius, mPaint);
     }
 
     @Override

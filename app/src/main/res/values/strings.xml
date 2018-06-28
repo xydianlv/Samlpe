@@ -35,4 +35,7 @@
     <string name="transition_name">共享图片</string>
     <string name="transition_layout">共享布局</string>
 
+    <string name="float_test">float</string>
+    <string name="dialog_test">dialog</string>
+
 </resources>

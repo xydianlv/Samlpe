@@ -12,6 +12,7 @@ import com.example.wyyu.gitsamlpe.framework.message.MsgType;
 import com.example.wyyu.gitsamlpe.framework.message.MsgCallBack;
 import com.example.wyyu.gitsamlpe.framework.message.MsgReceiver;
 
+import com.example.wyyu.gitsamlpe.util.download.DownloadObservable;
 import java.util.HashMap;
 
 /**
@@ -36,6 +37,7 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
     private void initBaseData() {
         msgCallBackHashMap = new HashMap<>();
         MsgSender.getMsgSender().attach(this);
+        DownloadObservable.getObservable().attachActivity(this);
     }
 
     @Override protected void onResume() {
@@ -46,6 +48,7 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         super.onDestroy();
         unbinder.unbind();
         releaseMsgListener();
+        DownloadObservable.getObservable().detachActivity(this);
     }
 
     private void releaseMsgListener() {

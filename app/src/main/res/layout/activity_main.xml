@@ -6,13 +6,14 @@
     android:orientation="vertical"
     >
 
-    <include layout="@layout/common_toolbar" />
+  <include layout="@layout/common_toolbar"/>
 
-    <com.example.wyyu.gitsamlpe.test.ListViewMain
-        android:id="@+id/list_view_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+  <com.example.wyyu.gitsamlpe.test.ListViewMain
+      android:id="@+id/list_view_main"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      />
 
-    <View style="@style/my_divide_line" />
+  <View style="@style/my_divide_line"/>
 
 </LinearLayout>

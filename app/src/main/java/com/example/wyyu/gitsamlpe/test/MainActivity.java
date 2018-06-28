@@ -2,7 +2,6 @@ package com.example.wyyu.gitsamlpe.test;
 
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
@@ -30,7 +29,6 @@ public class MainActivity extends ToolbarActivity {
 
     private void initToolBar() {
         initToolbar("Test", 0xffffffff, 0xff84919b);
-
     }
 
     private void initListView() {
@@ -117,6 +115,12 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("CardTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startNormalCardActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("FloatTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startFloatTestActivity(MainActivity.this);
             }
         });
 

@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.UToast;
+import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 
 /**

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_00000000"
+    >
+
+  <View
+      android:id="@+id/float_view"
+      android:layout_width="40.0dp"
+      android:layout_height="40.0dp"
+      android:background="@color/color_a39480"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentRight="true"
+      android:layout_margin="40.0dp"
+      />
+
+</RelativeLayout>

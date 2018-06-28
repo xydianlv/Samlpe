@@ -25,9 +25,11 @@ public class NavigatorHelper {
     private NavigatorHelper.OnNavigatorScrollListener mNavigatorScrollListener;
 
     /**
-     * @param position
-     * @param positionOffset
-     * @param positionOffsetPixels
+     * 同步 ViewPager 的滑动监听方法
+     *
+     * @param position 当前界面所造的 Position
+     * @param positionOffset 待划入界面所占屏幕百分比
+     * @param positionOffsetPixels 待划入界面在屏幕上宽度的像素数
      */
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
