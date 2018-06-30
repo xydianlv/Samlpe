@@ -124,6 +124,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("PagerTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startPagerTestActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

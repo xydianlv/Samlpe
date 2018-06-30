@@ -160,6 +160,10 @@
           android:name=".test.floatview.ActivityFloatTest"
           android:screenOrientation="portrait"
           />
+      <activity
+          android:name=".test.pager.ActivityPagerTest"
+          android:screenOrientation="portrait"
+          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->
