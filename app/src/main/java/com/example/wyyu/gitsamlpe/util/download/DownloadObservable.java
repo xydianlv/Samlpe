@@ -122,8 +122,9 @@ public class DownloadObservable implements IDownloadObservable {
             }
             return;
         }
+        float percent = getPresentPercent();
         for (Activity data : activityMap.keySet()) {
-            activityMap.get(data).refreshDownloadValue(getPresentPercent());
+            activityMap.get(data).refreshDownloadValue(percent);
         }
     }
 

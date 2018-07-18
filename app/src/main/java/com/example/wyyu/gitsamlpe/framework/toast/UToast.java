@@ -1,6 +1,7 @@
 package com.example.wyyu.gitsamlpe.framework.toast;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.Toast;
 
 /**
@@ -30,23 +31,45 @@ public class UToast {
         }
     }
 
-    private static boolean checkToast(Context context) {
+    public static void showViewShort(Context context, View view) {
+        if (checkToast(context)) {
+            toast = new Toast(context);
+            showView(view, Toast.LENGTH_SHORT);
+        } else {
+            showView(view, Toast.LENGTH_SHORT);
+        }
+    }
 
+    public static void showViewLong(Context context, View view) {
+        if (checkToast(context)) {
+            toast = new Toast(context);
+            showView(view, Toast.LENGTH_LONG);
+        } else {
+            showView(view, Toast.LENGTH_LONG);
+        }
+    }
+
+    private static boolean checkToast(Context context) {
         if (toast == null) {
             return true;
-        } else if (!context.equals(CONTEXT_S[0])) {
+        }
+        if (!context.equals(CONTEXT_S[0])) {
             CONTEXT_S[0] = context;
             toast.cancel();
-
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     private static void showText(String text, int duration) {
         toast.setDuration(duration);
         toast.setText(text);
+        toast.show();
+    }
+
+    private static void showView(View view, int duration) {
+        toast.setDuration(duration);
+        toast.setView(view);
         toast.show();
     }
 }
