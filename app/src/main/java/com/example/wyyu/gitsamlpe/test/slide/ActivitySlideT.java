@@ -66,12 +66,13 @@ public class ActivitySlideT extends BaseActivity {
 
     private void initIndicator() {
         navigatorAdapter = new SimpleNavigatorAdapter(ITEMS, 16);
+
         CommonNavigator commonNavigator = new CommonNavigator(this);
-        commonNavigator.setAdjustMode(true);
-        commonNavigator.setSpace(UIUtils.dpToPx(9));
-        commonNavigator.setIsNeedMargin(false);
-        commonNavigator.setScrollPivotX(0.65f);
         commonNavigator.setAdapter(navigatorAdapter);
+        commonNavigator.setSpace(UIUtils.dpToPx(9));
+        commonNavigator.setIsNeedMargin(true);
+        commonNavigator.setAdjustMode(true);
+
         indicator.setNavigator(commonNavigator);
     }
 

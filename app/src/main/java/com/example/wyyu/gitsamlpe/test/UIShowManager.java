@@ -19,6 +19,7 @@ import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.video.ActivityPlayVideo;
+import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
 import com.example.wyyu.gitsamlpe.test.weibo.ui.MainBlogActivity;
 
 /**
@@ -59,8 +60,12 @@ class UIShowManager {
         startTargetActivityFromMain(context, ActivityFileListTest.class);
     }
 
+    //static void startVideoPlayActivity(Context context) {
+    //    startTargetActivityFromMain(context, ActivityPlayVideo.class);
+    //}
+
     static void startVideoPlayActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityPlayVideo.class);
+        startTargetActivityFromMain(context, ActivityVideoList.class);
     }
 
     static void startImageListActivity(Context context) {

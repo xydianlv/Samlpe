@@ -79,8 +79,8 @@ public class SimpleNavigatorAdapter extends CommonNavigatorAdapter {
         linePagerIndicator.setLineWidth(ViewCompatExt.dip2px(context.getResources(), 9) * 1.0f);
         linePagerIndicator.setLineHeight(height);
         linePagerIndicator.setRoundRadius(height);
-        linePagerIndicator.setStartInterpolator(new AccelerateInterpolator());
-        linePagerIndicator.setEndInterpolator(new DecelerateInterpolator(2.0f));
+        //linePagerIndicator.setStartInterpolator(new AccelerateInterpolator());
+        //linePagerIndicator.setEndInterpolator(new DecelerateInterpolator(2.0f));
         return linePagerIndicator;
     }
 

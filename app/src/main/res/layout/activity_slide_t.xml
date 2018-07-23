@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
     >
 
   <com.example.wyyu.gitsamlpe.test.slide.indicator.MagicIndicator
       android:id="@+id/slide_indicator"
-      android:layout_width="match_parent"
+      android:layout_width="140.0dp"
       android:layout_height="34.0dp"
-      android:layout_gravity="center_horizontal"
+      android:paddingLeft="14.0dp"
+      android:paddingRight="14.0dp"
       android:orientation="horizontal"
-      android:layout_marginLeft="75dp"
-      android:layout_marginRight="75dp"
       />
 
   <android.support.v4.view.ViewPager
