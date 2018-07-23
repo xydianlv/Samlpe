@@ -9,5 +9,6 @@
   <dimen name="text_12">12.0sp</dimen>
 
   <dimen name="status_bar_height">0dip</dimen>
+  <dimen name="grid_expected_size">120.0dp</dimen>
 
 </resources>
