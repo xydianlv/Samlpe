@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:id="@+id/typeface_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8.0dp"
+      android:text="@string/typeface_test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_262626"
+      />
+
+  <TextView
+      android:id="@+id/typeface_2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8.0dp"
+      android:text="@string/typeface_test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_262626"
+      />
+
+  <TextView
+      android:id="@+id/typeface_3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8.0dp"
+      android:text="@string/typeface_test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_262626"
+      />
+
+  <TextView
+      android:id="@+id/typeface_4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8.0dp"
+      android:text="@string/typeface_test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_262626"
+      />
+
+  <TextView
+      android:id="@+id/typeface_5"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8.0dp"
+      android:text="@string/typeface_test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_262626"
+      />
+
+  <TextView
+      android:id="@+id/typeface_6"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8.0dp"
+      android:text="@string/typeface_test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_262626"
+      />
+
+  <TextView
+      android:id="@+id/typeface_7"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8.0dp"
+      android:text="@string/typeface_test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_262626"
+      />
+
+</LinearLayout>

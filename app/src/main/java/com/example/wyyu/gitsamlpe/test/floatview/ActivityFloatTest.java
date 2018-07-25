@@ -37,6 +37,13 @@ public class ActivityFloatTest extends ToolbarActivity {
             }
         });
 
+        findViewById(R.id.float_button).setOnLongClickListener(new View.OnLongClickListener() {
+            @Override public boolean onLongClick(View v) {
+                ActivityTypeface.open(ActivityFloatTest.this);
+                return true;
+            }
+        });
+
         findViewById(R.id.float_dialog).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 new SDAlertDialog.Builder(ActivityFloatTest.this).show();

@@ -38,4 +38,6 @@
     <string name="float_test">float</string>
     <string name="dialog_test">dialog</string>
 
+    <string name="typeface_test">一段简单的测试文字</string>
+
 </resources>
