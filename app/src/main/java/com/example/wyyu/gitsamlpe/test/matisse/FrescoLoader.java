@@ -68,7 +68,7 @@ public class FrescoLoader implements View.OnAttachStateChangeListener {
     private Uri uri;
 
     private FrescoLoader() {
-
+        actualImageScaleType = ScalingUtils.ScaleType.CENTER_CROP;
     }
 
     public static FrescoLoader newFrescoLoader() {
@@ -92,11 +92,13 @@ public class FrescoLoader implements View.OnAttachStateChangeListener {
 
     // 对图片进行压缩处理，减少内存消耗
     public FrescoLoader resize(ResizeOptions resizeOptions) {
+        this.resizeOptions = resizeOptions;
         return this;
     }
 
     // 对图片进行压缩处理，减少内存消耗
     public FrescoLoader resize(int targetWidth, int targetHeight) {
+        this.resizeOptions = new ResizeOptions(targetWidth, targetHeight);
         return this;
     }
 
@@ -131,17 +133,18 @@ public class FrescoLoader implements View.OnAttachStateChangeListener {
             drawHolder = DraweeHolder.create(null, targetView.getContext());
         }
 
-        GenericDraweeHierarchy hierarchy = new GenericDraweeHierarchyBuilder(targetView.getResources())
-            .setPlaceholderImage(placeHolderDrawable,placeholderScaleType)
-            .setProgressBarImage(progressDrawable,progressBarScaleType)
-            .setFailureImage(failureDrawable,failureScaleType)
-            .setActualImageFocusPoint(actualImageFocusPoint)
-            .setActualImageScaleType(actualImageScaleType)
-            .setDesiredAspectRatio(desiredAspectRatio)
-            .setRoundingParams(roundingParams)
-            .setBackground(backgroundDrawable)
-            .setFadeDuration(fadeDuration)
-            .build();
+        GenericDraweeHierarchy hierarchy =
+            new GenericDraweeHierarchyBuilder(targetView.getResources()).setPlaceholderImage(
+                placeHolderDrawable, placeholderScaleType)
+                .setProgressBarImage(progressDrawable, progressBarScaleType)
+                .setFailureImage(failureDrawable, failureScaleType)
+                .setActualImageFocusPoint(actualImageFocusPoint)
+                .setActualImageScaleType(actualImageScaleType)
+                .setDesiredAspectRatio(desiredAspectRatio)
+                .setRoundingParams(roundingParams)
+                .setBackground(backgroundDrawable)
+                .setFadeDuration(fadeDuration)
+                .build();
         drawHolder.setHierarchy(hierarchy);
 
         ImageRequest imageRequest = ImageRequestBuilder.newBuilderWithSource(uri)

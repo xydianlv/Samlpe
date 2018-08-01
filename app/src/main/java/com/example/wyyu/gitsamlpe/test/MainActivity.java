@@ -133,7 +133,8 @@ public class MainActivity extends ToolbarActivity {
 
         listViewMain.addNewItem("ImageTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
-                MatisseHelper.openOnlySelectImage(MainActivity.this, 101);
+                UIShowManager.startLocalImageActivity(MainActivity.this);
+                //MatisseHelper.openOnlySelectImage(MainActivity.this, 101);
                 //UIShowManager.startPagerTestActivity(MainActivity.this);
             }
         });

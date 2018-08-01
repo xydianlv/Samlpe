@@ -12,6 +12,7 @@ import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
+import com.example.wyyu.gitsamlpe.test.matisse.ActivityLocalImage;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivityScroll;
@@ -98,6 +99,10 @@ class UIShowManager {
 
     static void startPagerTestActivity(Context context) {
         startTargetActivityFromMain(context, ActivityPagerTest.class);
+    }
+
+    static void startLocalImageActivity(Context context) {
+        startTargetActivityFromMain(context, ActivityLocalImage.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
