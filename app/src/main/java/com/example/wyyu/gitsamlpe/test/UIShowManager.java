@@ -13,6 +13,7 @@ import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
 import com.example.wyyu.gitsamlpe.test.matisse.ActivityLocalImage;
+import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivityScroll;
@@ -103,6 +104,10 @@ class UIShowManager {
 
     static void startLocalImageActivity(Context context) {
         startTargetActivityFromMain(context, ActivityLocalImage.class);
+    }
+
+    static void startGameNumberActivity(Context context) {
+        startTargetActivityFromMain(context, ActivityNumber.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

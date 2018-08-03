@@ -39,5 +39,13 @@
     <string name="dialog_test">dialog</string>
 
     <string name="typeface_test">一段简单的测试文字</string>
+    
+    <string name="add">+</string>
+    <string name="subject">-</string>
+    <string name="multiply">x</string>
+    <string name="delete">/</string>
+    <string name="k_left">(</string>
+    <string name="k_right">)</string>
+    <string name="k_delete">--</string>
 
 </resources>

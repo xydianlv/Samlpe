@@ -5,7 +5,6 @@ import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
-import com.example.wyyu.gitsamlpe.test.matisse.MatisseHelper;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
 public class MainActivity extends ToolbarActivity {
@@ -131,11 +130,23 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("TextTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startAdapterTextView(MainActivity.this);
+            }
+        });
+
         listViewMain.addNewItem("ImageTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startLocalImageActivity(MainActivity.this);
                 //MatisseHelper.openOnlySelectImage(MainActivity.this, 101);
                 //UIShowManager.startPagerTestActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("GameNumber", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startGameNumberActivity(MainActivity.this);
             }
         });
 
