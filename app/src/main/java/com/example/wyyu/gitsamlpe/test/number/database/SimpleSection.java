@@ -9,7 +9,16 @@ import com.example.wyyu.gitsamlpe.test.number.value.Symbol;
 public enum SimpleSection {
 
     AAAAA(3, 5, 1, 2, Symbol.加, Symbol.除, Symbol.乘, Symbol.减, 11),
-    AAAAB(2, 3, 2, 6, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 8);
+    AAAAB(2, 3, 2, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 8),
+    AAAAC(5, 2, 4, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 8),
+    AAAAD(2, 2, 4, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12),
+    AAAAE(9, 2, 5, 4, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12),
+    AAAAF(1, 2, 5, 3, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12),
+    AAAAG(3, 6, 3, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12),
+    AAAAH(1, 3, 1, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12),
+    AAAAI(1, 3, 2, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12),
+    AAAAJ(3, 6, 3, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12),
+    AAAAZ(1, 8, 3, 7, Symbol.乘, Symbol.减, Symbol.除, Symbol.加, 12);
 
     int numberA;
     int numberB;
