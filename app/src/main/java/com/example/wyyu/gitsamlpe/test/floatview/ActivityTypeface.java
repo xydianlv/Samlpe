@@ -26,20 +26,20 @@ public class ActivityTypeface extends BaseActivity {
     }
 
     private void initTypeface() {
-        ((TextView) findViewById(R.id.typeface_1)).setTypeface(
-            getTypeface("NotoSansHans-Black.otf"));
-        ((TextView) findViewById(R.id.typeface_2)).setTypeface(
-            getTypeface("NotoSansHans-Bold.otf"));
-        ((TextView) findViewById(R.id.typeface_3)).setTypeface(
-            getTypeface("NotoSansHans-DemiLight.otf"));
-        ((TextView) findViewById(R.id.typeface_4)).setTypeface(
-            getTypeface("NotoSansHans-Light.otf"));
-        ((TextView) findViewById(R.id.typeface_5)).setTypeface(
-            getTypeface("NotoSansHans-Medium.otf"));
-        ((TextView) findViewById(R.id.typeface_6)).setTypeface(
-            getTypeface("NotoSansHans-Regular.otf"));
-        ((TextView) findViewById(R.id.typeface_7)).setTypeface(
-            getTypeface("NotoSansHans-Thin-Windows.otf"));
+        //((TextView) findViewById(R.id.typeface_1)).setTypeface(
+        //    getTypeface("NotoSansHans-Black.otf"));
+        //((TextView) findViewById(R.id.typeface_2)).setTypeface(
+        //    getTypeface("NotoSansHans-Bold.otf"));
+        //((TextView) findViewById(R.id.typeface_3)).setTypeface(
+        //    getTypeface("NotoSansHans-DemiLight.otf"));
+        //((TextView) findViewById(R.id.typeface_4)).setTypeface(
+        //    getTypeface("NotoSansHans-Light.otf"));
+        //((TextView) findViewById(R.id.typeface_5)).setTypeface(
+        //    getTypeface("NotoSansHans-Medium.otf"));
+        //((TextView) findViewById(R.id.typeface_6)).setTypeface(
+        //    getTypeface("NotoSansHans-Regular.otf"));
+        //((TextView) findViewById(R.id.typeface_7)).setTypeface(
+        //    getTypeface("NotoSansHans-Thin-Windows.otf"));
     }
 
     private Typeface getTypeface(String typeName) {
