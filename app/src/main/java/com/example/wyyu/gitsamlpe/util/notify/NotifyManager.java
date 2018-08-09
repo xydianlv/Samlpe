@@ -1,17 +1,48 @@
 package com.example.wyyu.gitsamlpe.util.notify;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import com.example.wyyu.gitsamlpe.R;
+import android.text.TextUtils;
+import com.example.wyyu.gitsamlpe.framework.application.AppController;
 
 /**
  * Created by wyyu on 2018/5/28.
  **/
 
 public class NotifyManager {
+
+    public enum ChannelValue {
+
+        通知("notify", 1001);
+
+        public String channelName;
+        public int channelId;
+
+        ChannelValue(String channelName, int channelId) {
+            this.channelName = channelName;
+            this.channelId = channelId;
+        }
+
+        public int getImportance() {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+                return 0;
+            }
+            switch (channelId) {
+                case 1001:
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        return NotificationManager.IMPORTANCE_DEFAULT;
+                    }
+                default:
+                    return NotificationManager.IMPORTANCE_DEFAULT;
+            }
+        }
+    }
 
     private static class NotifyManagerHolder {
         private static NotifyManager manager = new NotifyManager();
@@ -21,27 +52,60 @@ public class NotifyManager {
         return NotifyManagerHolder.manager;
     }
 
-    private NotifyManager() {
+    private NotificationManager notificationManager;
 
+    private NotifyManager() {
+        initNotificationManager();
     }
 
-    public void sendNotify(@NonNull Context context) {
+    private void initNotificationManager() {
+        notificationManager = (NotificationManager) AppController.getAppContext()
+            .getSystemService(Context.NOTIFICATION_SERVICE);
+    }
 
-        int smallIcon = Build.VERSION.SDK_INT < 21 ? R.mipmap.audio_pause : R.mipmap.audio_play;
-        String appName = "测试";
+    /**
+     * 发送通知栏消息
+     *
+     * @param channelValue 该条消息所属消息通道
+     * @param title 消息标题
+     * @param text 消息内容
+     * @param smallIcon 小图标
+     * @param bigIcon 大图标
+     * @param intent 点击状态栏消息跳转
+     */
+    public void sendNotify(ChannelValue channelValue, String title, String text, int smallIcon,
+        int bigIcon, PendingIntent intent) {
 
-        NotificationCompat.Builder notifyBuilder =
-            new NotificationCompat.Builder(context, "私信").setContentTitle(appName)
-                .setContentText("树洞消息")
-                .setWhen(System.currentTimeMillis())
-                .setSmallIcon(smallIcon)
-                .setAutoCancel(true)
-                .setDefaults(0);
-
-        NotificationManagerCompat manager = NotificationManagerCompat.from(context);
-
-        if (manager.areNotificationsEnabled()) {
-            manager.notify(10010, notifyBuilder.build());
+        if (channelValue == null || smallIcon == 0) {
+            return;
         }
+        if (notificationManager == null) {
+            initNotificationManager();
+        }
+        Context context = AppController.getAppContext();
+
+        NotificationCompat.Builder builder =
+            new NotificationCompat.Builder(context, channelValue.channelName);
+
+        builder.setContentTitle(TextUtils.isEmpty(title) ? "" : title);
+        builder.setContentText(TextUtils.isEmpty(text) ? "" : text);
+        builder.setDefaults(Notification.DEFAULT_ALL);
+        builder.setSmallIcon(smallIcon);
+
+        if (bigIcon != 0) {
+            builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(), bigIcon));
+        }
+        if (intent != null) {
+            builder.setContentIntent(intent);
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channelSection =
+                new NotificationChannel(channelValue.channelName, channelValue.channelName,
+                    channelValue.getImportance());
+            notificationManager.createNotificationChannel(channelSection);
+        }
+
+        notificationManager.notify(channelValue.channelId, builder.build());
     }
 }

@@ -184,6 +184,10 @@
           android:name=".test.volume.ActivityVolume"
           android:screenOrientation="portrait"
           />
+      <activity
+          android:name=".test.notify.ActivityNotifyTest"
+          android:screenOrientation="portrait"
+          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->

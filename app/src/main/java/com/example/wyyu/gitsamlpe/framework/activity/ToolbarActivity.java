@@ -45,6 +45,10 @@ public class ToolbarActivity extends BaseActivity {
         toolbarMenuMgr.clearMenu();
     }
 
+    public void initToolbar(String title) {
+        initToolbar(title, 0xffffffff, 0xff84919b);
+    }
+
     public void initToolbar(String title, int titleColor) {
 
         if (toolbar == null) toolbar = findViewById(R.id.toolbar);
