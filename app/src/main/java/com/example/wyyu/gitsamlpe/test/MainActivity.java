@@ -150,6 +150,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("VolumeTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startVolumeTestActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

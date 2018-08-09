@@ -22,6 +22,7 @@ import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.video.ActivityPlayVideo;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
+import com.example.wyyu.gitsamlpe.test.volume.ActivityVolume;
 import com.example.wyyu.gitsamlpe.test.weibo.ui.MainBlogActivity;
 
 /**
@@ -108,6 +109,10 @@ class UIShowManager {
 
     static void startGameNumberActivity(Context context) {
         startTargetActivityFromMain(context, ActivityNumber.class);
+    }
+
+    static void startVolumeTestActivity(Context context){
+        startTargetActivityFromMain(context, ActivityVolume.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

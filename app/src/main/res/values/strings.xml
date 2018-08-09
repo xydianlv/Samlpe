@@ -43,9 +43,12 @@
     <string name="add">+</string>
     <string name="subject">-</string>
     <string name="multiply">x</string>
-    <string name="delete">/</string>
     <string name="k_left">(</string>
     <string name="k_right">)</string>
     <string name="k_delete">--</string>
+
+    <string name="other">其他</string>
+    <string name="clean">清空</string>
+    <string name="delete">删除</string>
 
 </resources>

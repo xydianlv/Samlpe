@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+  <TextView
+      android:id="@+id/kernel_result"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/number"
+      android:textColor="@color/color_262626"
+      android:textSize="18.0dp"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="160.0dp"
+      />
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      >
+
+    <TextView
+        android:id="@+id/kernel_symbol_a"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_symbol_b"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_symbol_c"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_symbol_d"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_symbol_clean"
+        android:layout_width="64.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/clean"
+        android:textSize="14.0dp"
+        android:textColor="@color/color_white"
+        android:background="@color/color_f16d7a"
+        />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginTop="12.0dp"
+      >
+
+    <TextView
+        android:id="@+id/kernel_number_a"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_number_b"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_number_c"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_number_d"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/add"
+        android:textSize="18.0dp"
+        android:background="@color/color_f2f4f6"
+        />
+
+    <View
+        android:layout_width="6.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/kernel_symbol_delete"
+        android:layout_width="64.0dp"
+        android:layout_height="32.0dp"
+        android:gravity="center"
+        android:text="@string/delete"
+        android:textColor="@color/color_white"
+        android:textSize="14.0dp"
+        android:background="@color/color_e27386"
+        />
+
+  </LinearLayout>
+
+</LinearLayout>

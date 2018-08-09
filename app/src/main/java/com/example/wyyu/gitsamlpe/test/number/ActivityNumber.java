@@ -1,10 +1,12 @@
 package com.example.wyyu.gitsamlpe.test.number;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
+import com.example.wyyu.gitsamlpe.test.number.value.Creator;
+import com.example.wyyu.gitsamlpe.test.number.widget.NumberKernelView;
 
 /**
  * Created by wyyu on 2018/8/3.
@@ -12,26 +14,27 @@ import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 
 public class ActivityNumber extends FullScreenActivity {
 
-    @BindView(R.id.game_num_score_a) TextView scoreA;
-    @BindView(R.id.game_num_score_b) TextView scoreB;
-    @BindView(R.id.game_num_target) TextView target;
-    @BindView(R.id.game_num_time) TextView time;
-
-    @BindView(R.id.game_num_fun_add) TextView add;
-    @BindView(R.id.game_num_fun_sub) TextView subjet;
-    @BindView(R.id.game_num_fun_mul) TextView multiply;
-    @BindView(R.id.game_num_fun_delete) TextView delete;
-    @BindView(R.id.game_num_fun_left) TextView funLeft;
-    @BindView(R.id.game_num_fun_right) TextView funRight;
-
-    @BindView(R.id.game_num_data_a) TextView dataA;
-    @BindView(R.id.game_num_data_b) TextView dataB;
-    @BindView(R.id.game_num_data_c) TextView dataC;
-    @BindView(R.id.game_num_data_d) TextView dataD;
-    @BindView(R.id.game_num_data_delete) TextView dataDelete;
+    @BindView(R.id.game_num_kernel_view) NumberKernelView kernelView;
+    @BindView(R.id.game_num_other) View other;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number);
+
+        initActivity();
+    }
+
+    private void initActivity() {
+
+        other.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                setData();
+            }
+        });
+        setData();
+    }
+
+    private void setData() {
+        kernelView.setKernelValue(Creator.getCreator().getOperateValue(Creator.EquationType.一级));
     }
 }
