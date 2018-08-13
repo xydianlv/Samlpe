@@ -1,9 +1,12 @@
 package com.example.wyyu.gitsamlpe.framework.volume;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.media.AudioManager;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
 import java.util.LinkedList;
@@ -22,6 +25,8 @@ public class VolumeObservable implements IVolumeObservable {
         return ObservableHolder.observable;
     }
 
+    private static final int MESSAGE_HIDE_VIEW = 0;
+
     private IVolumeSeekView volumeSeekView;
     private VolumeReceiver volumeReceiver;
     private AudioManager audioManager;
@@ -29,17 +34,34 @@ public class VolumeObservable implements IVolumeObservable {
     private LinkedList<Activity> activityList;
     private boolean showSeekView;
 
+    private Handler handler;
+
     private VolumeObservable() {
         volumeReceiver = new VolumeReceiver();
         volumeSeekView = new VolumeSeekView();
         activityList = new LinkedList<>();
 
         initAudioManager();
+        initBasicValue();
     }
 
     private void initAudioManager() {
         audioManager =
             (AudioManager) AppController.getAppContext().getSystemService(Context.AUDIO_SERVICE);
+    }
+
+    @SuppressLint("HandlerLeak") private void initBasicValue() {
+
+        handler = new Handler() {
+            @Override public void handleMessage(Message msg) {
+                if (msg == null || msg.what != MESSAGE_HIDE_VIEW) {
+                    return;
+                }
+                volumeSeekView.hide();
+                showSeekView = false;
+            }
+        };
+        showSeekView = false;
     }
 
     @Override public void onClickVolumeDown() {
@@ -110,13 +132,17 @@ public class VolumeObservable implements IVolumeObservable {
         if (volumeSeekView == null) {
             volumeSeekView = new VolumeSeekView();
         }
-        volumeSeekView.show(activityList.getFirst(),
-            audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
-            audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
-    }
+        if (showSeekView) {
+            volumeSeekView.refreshProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+        } else {
+            volumeSeekView.show(activityList.getLast(),
+                audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+                audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+        }
 
-    private void checkShowTime() {
-
+        showSeekView = true;
+        handler.removeMessages(MESSAGE_HIDE_VIEW);
+        handler.sendEmptyMessageDelayed(MESSAGE_HIDE_VIEW, 2000);
     }
 
     private IntentFilter getFilter() {

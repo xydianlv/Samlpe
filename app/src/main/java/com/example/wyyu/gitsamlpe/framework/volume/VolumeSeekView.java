@@ -6,7 +6,6 @@ import android.graphics.PixelFormat;
 import android.os.Build;
 import android.view.Gravity;
 import android.view.WindowManager;
-import com.example.wyyu.gitsamlpe.util.UIUtils;
 
 /**
  * Created by wyyu on 2018/8/11.
@@ -22,9 +21,7 @@ public class VolumeSeekView implements IVolumeSeekView {
     VolumeSeekView() {
         layoutParams = new WindowManager.LayoutParams();
 
-        layoutParams.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
-        layoutParams.height = UIUtils.dpToPx(98.0f);
-        layoutParams.width = UIUtils.dpToPx(140.0f);
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
 
         layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
             | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
