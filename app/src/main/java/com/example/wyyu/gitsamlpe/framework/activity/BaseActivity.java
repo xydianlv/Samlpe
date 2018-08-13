@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 
+import android.view.KeyEvent;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import com.example.wyyu.gitsamlpe.framework.message.Message;
@@ -12,6 +13,7 @@ import com.example.wyyu.gitsamlpe.framework.message.MsgType;
 import com.example.wyyu.gitsamlpe.framework.message.MsgCallBack;
 import com.example.wyyu.gitsamlpe.framework.message.MsgReceiver;
 
+import com.example.wyyu.gitsamlpe.framework.volume.VolumeObservable;
 import com.example.wyyu.gitsamlpe.util.download.DownloadObservable;
 import java.util.HashMap;
 
@@ -38,6 +40,7 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         msgCallBackHashMap = new HashMap<>();
         MsgSender.getMsgSender().attach(this);
         DownloadObservable.getObservable().attachActivity(this);
+        VolumeObservable.getObservable().attachActivity(this);
     }
 
     @Override protected void onResume() {
@@ -49,6 +52,7 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         unbinder.unbind();
         releaseMsgListener();
         DownloadObservable.getObservable().detachActivity(this);
+        VolumeObservable.getObservable().detachActivity(this);
     }
 
     private void releaseMsgListener() {
@@ -66,5 +70,16 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         if (msgCallBackHashMap.containsKey(msgType)) {
             msgCallBackHashMap.get(msgType).onMessageCallBack(message);
         }
+    }
+
+    @Override public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN) {
+            VolumeObservable.getObservable().onClickVolumeDown();
+            return true;
+        } else if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP) {
+            VolumeObservable.getObservable().onClickVolumeUp();
+            return true;
+        }
+        return super.dispatchKeyEvent(event);
     }
 }

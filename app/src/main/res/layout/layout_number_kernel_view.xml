@@ -16,9 +16,14 @@
       android:textSize="18.0dp"
       />
 
-  <View
-      android:layout_width="0.0dp"
-      android:layout_height="160.0dp"
+  <TextView
+      android:id="@+id/kernel_section"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="160.0dp"
+      android:layout_marginBottom="40.0dp"
+      android:textColor="@color/color_262626"
+      android:textSize="18.0dp"
       />
 
   <LinearLayout
