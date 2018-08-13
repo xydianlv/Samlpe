@@ -23,9 +23,9 @@ public class VolumeSeekView implements IVolumeSeekView {
 
         layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
 
-        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-            | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
-            | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;
+        //layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
+        //    | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+        //    | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;
         if (Build.VERSION.SDK_INT > 18 && Build.VERSION.SDK_INT < 23) {
             layoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
         } else {
