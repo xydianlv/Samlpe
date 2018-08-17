@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.matisse;
+package com.example.wyyu.gitsamlpe.test.image.matisse;
 
 import android.database.Cursor;
 import android.support.annotation.NonNull;

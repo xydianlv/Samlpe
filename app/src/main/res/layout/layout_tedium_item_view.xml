@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:id="@+id/tedium_item_text"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/typeface_test"
+      android:textColor="@color/color_84919b"
+      android:textSize="16sp"
+      android:paddingTop="12.0dp"
+      android:paddingBottom="12.0dp"
+      />
+
+  <View
+      android:id="@+id/tedium_item_line"
+      style="@style/my_divide_line"
+      />
+
+</LinearLayout>

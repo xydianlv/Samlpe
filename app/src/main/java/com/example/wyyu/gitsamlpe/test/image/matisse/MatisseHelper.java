@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.matisse;
+package com.example.wyyu.gitsamlpe.test.image.matisse;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;

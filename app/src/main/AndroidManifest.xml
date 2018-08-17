@@ -173,7 +173,7 @@
           android:screenOrientation="portrait"
           />
       <activity
-          android:name=".test.matisse.ActivityLocalImage"
+          android:name=".test.image.matisse.ActivityLocalImage"
           android:screenOrientation="portrait"
           />
       <activity
@@ -186,6 +186,14 @@
           />
       <activity
           android:name=".test.notify.ActivityNotifyTest"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.image.edit.ActivityEditImage"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.image.shot.ActivityShotScreen"
           android:screenOrientation="portrait"
           />
 

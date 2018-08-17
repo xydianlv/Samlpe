@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+  <ScrollView
+      android:id="@+id/shot_screen_scroll"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@mipmap/image_test_1"
+          android:contentDescription="@string/image"
+          />
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@mipmap/image_test_2"
+          android:contentDescription="@string/image"
+          android:layout_marginTop="12.0dp"
+          />
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@mipmap/image_test_3"
+          android:contentDescription="@string/image"
+          android:layout_marginTop="12.0dp"
+          />
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@mipmap/image_test_4"
+          android:contentDescription="@string/image"
+          android:layout_marginTop="12.0dp"
+          />
+
+    </LinearLayout>
+
+  </ScrollView>
+
+  <TextView
+      android:id="@+id/shot_screen_save"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end"
+      android:background="@drawable/dialog_round_back_grey"
+      android:text="@string/save"
+      android:paddingLeft="12.0dp"
+      android:paddingRight="12.0dp"
+      android:paddingTop="6.0dp"
+      android:paddingBottom="6.0dp"
+      android:textColor="@color/color_white"
+      />
+
+</FrameLayout>

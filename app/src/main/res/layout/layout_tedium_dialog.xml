@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingLeft="24.0dp"
+    android:paddingRight="24.0dp"
+    android:background="@color/color_00000000"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:background="@drawable/dialog_round_back_white"
+      android:paddingLeft="13.0dp"
+      android:paddingRight="13.0dp"
+      >
+
+    <TextView
+        android:id="@+id/tedium_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_455a64"
+        android:textSize="20sp"
+        android:text="@string/text"
+        android:paddingTop="13.0dp"
+        android:paddingBottom="13.0dp"
+        />
+
+    <View
+        style="@style/my_divide_line"/>
+
+    <LinearLayout
+        android:id="@+id/tedium_dialog_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        />
+
+  </LinearLayout>
+
+</FrameLayout>

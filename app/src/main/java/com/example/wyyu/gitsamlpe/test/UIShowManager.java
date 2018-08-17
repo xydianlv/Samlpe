@@ -9,19 +9,19 @@ import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
+import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
+import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
-import com.example.wyyu.gitsamlpe.test.matisse.ActivityLocalImage;
+import com.example.wyyu.gitsamlpe.test.image.matisse.ActivityLocalImage;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
-import com.example.wyyu.gitsamlpe.test.slide.ActivityScroll;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
-import com.example.wyyu.gitsamlpe.test.video.ActivityPlayVideo;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
 import com.example.wyyu.gitsamlpe.test.volume.ActivityVolume;
 import com.example.wyyu.gitsamlpe.test.weibo.ui.MainBlogActivity;
@@ -118,6 +118,14 @@ class UIShowManager {
 
     static void startNotifyTestActivity(Context context){
         startTargetActivityFromMain(context, ActivityNotifyTest.class);
+    }
+
+    static void startEditImgTestActivity(Context context){
+        startTargetActivityFromMain(context, ActivityEditImage.class);
+    }
+
+    static void startShotScreenTestActivity(Context context){
+        startTargetActivityFromMain(context, ActivityShotScreen.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

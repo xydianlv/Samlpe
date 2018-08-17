@@ -63,6 +63,8 @@ dependencies {
   implementation 'com.google.android.exoplayer:exoplayer:2.7.3'
   // 本地图片选择框架
   implementation 'com.zhihu.android:matisse:0.4.3'
+  // 图片编辑框架
+  implementation 'com.github.yalantis:ucrop:2.2.2-native'
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

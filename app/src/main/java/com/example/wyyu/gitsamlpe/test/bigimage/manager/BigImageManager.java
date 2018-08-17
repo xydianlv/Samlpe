@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
 import android.view.WindowManager;
-import com.example.wyyu.gitsamlpe.framework.FullScreenDialog;
+import com.example.wyyu.gitsamlpe.framework.dialog.FullScreenDialog;
 import com.example.wyyu.gitsamlpe.test.bigimage.weight.ImageContainer;
 
 /**

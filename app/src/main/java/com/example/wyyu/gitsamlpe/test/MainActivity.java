@@ -162,6 +162,18 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("EditImgTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startEditImgTestActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("ShotScreenTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startShotScreenTestActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.framework;
+package com.example.wyyu.gitsamlpe.framework.dialog;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

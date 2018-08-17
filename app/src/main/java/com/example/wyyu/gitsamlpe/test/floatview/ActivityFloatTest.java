@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.SDAlertDialog;
+import com.example.wyyu.gitsamlpe.framework.dialog.SDAlertDialog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.util.download.DownloadObservable;
 

@@ -35,11 +35,13 @@
     <string name="transition_name">共享图片</string>
     <string name="transition_layout">共享布局</string>
 
+    <string name="select_image">选择照片</string>
+
     <string name="float_test">float</string>
     <string name="dialog_test">dialog</string>
 
     <string name="typeface_test">一段简单的测试文字</string>
-    
+
     <string name="add">+</string>
     <string name="subject">-</string>
     <string name="multiply">x</string>
@@ -50,5 +52,6 @@
     <string name="other">其他</string>
     <string name="clean">清空</string>
     <string name="delete">删除</string>
+    <string name="save">保存</string>
 
 </resources>

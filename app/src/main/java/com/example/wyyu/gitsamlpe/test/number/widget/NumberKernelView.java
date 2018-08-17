@@ -154,7 +154,7 @@ public class NumberKernelView extends LinearLayout implements View.OnClickListen
     }
 
     private void onClickSymbol(@Symbol int symbol) {
-        sectionTxt = sectionTxt + symbol;
+        sectionTxt = sectionTxt + OperateUtil.getOperateSign(symbol);
         section.setText(sectionTxt);
     }
 
