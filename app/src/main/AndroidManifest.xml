@@ -196,6 +196,16 @@
           android:name=".test.image.shot.ActivityShotScreen"
           android:screenOrientation="portrait"
           />
+      <activity
+          android:name=".test.softkeyboard.ActivitySoftKeyboard"
+          android:screenOrientation="portrait"
+          android:windowSoftInputMode="stateHidden|adjustResize"
+          />
+      <activity
+          android:name=".test.softkeyboard.ActivityShowKeyboard"
+          android:screenOrientation="portrait"
+          android:windowSoftInputMode="stateHidden|adjustResize"
+          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->

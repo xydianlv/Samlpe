@@ -7,6 +7,7 @@
     <string name="empty"> </string>
     <string name="number">47</string>
     <string name="text">Text</string>
+    <string name="test">Test</string>
 
     <string name="top_text">TopTextView</string>
     <string name="bottom_text">BottomTextView</string>
@@ -53,5 +54,7 @@
     <string name="clean">清空</string>
     <string name="delete">删除</string>
     <string name="save">保存</string>
+    <string name="publish">发布</string>
+    <string name="auto_open_soft">自动弹出软键盘</string>
 
 </resources>

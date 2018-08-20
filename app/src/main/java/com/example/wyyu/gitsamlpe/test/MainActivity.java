@@ -174,6 +174,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("SoftKeyboard", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startSoftKeyboardActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

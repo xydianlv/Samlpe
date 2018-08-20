@@ -4,7 +4,7 @@ package com.example.wyyu.gitsamlpe.framework.touch;
  * Created by wyyu on 2018/5/31.
  **/
 
-public class OnPressListenerAdapter implements TouchListenerLayout.OnPressListener {
+public abstract class OnPressListenerAdapter implements TouchListenerLayout.OnPressListener {
 
     @Override public void onScrollRight() {
 

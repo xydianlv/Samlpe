@@ -114,7 +114,8 @@ public class CommonUtil {
         return options;
     }
 
-    public static boolean savePictureFromIntentToFile(Intent data, ContentResolver contentResolver, int maxSideLen, File saveFile) {
+    public static boolean savePictureFromIntentToFile(Intent data, ContentResolver contentResolver,
+        int maxSideLen, File saveFile) {
         Uri selectedImage = data.getData();
         String path = CommonUtil.getPicturePathFromUri(selectedImage, contentResolver);
         if (null != path) {
@@ -132,7 +133,8 @@ public class CommonUtil {
         return saveBitmap2file(bitmap, saveFile, Bitmap.CompressFormat.JPEG, 80);
     }
 
-    public static boolean compressPicture(File srcFile, File destFile, int quality, int maxSideLength) {
+    public static boolean compressPicture(File srcFile, File destFile, int quality,
+        int maxSideLength) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         if (maxSideLength > 0) {
             options.inJustDecodeBounds = true;
@@ -140,7 +142,8 @@ public class CommonUtil {
             ULog.show("src width: " + options.outWidth + ", height: " + options.outHeight);
 
             options.inJustDecodeBounds = false;
-            options.inSampleSize = Math.max(options.outWidth / maxSideLength, options.outHeight / maxSideLength);
+            options.inSampleSize =
+                Math.max(options.outWidth / maxSideLength, options.outHeight / maxSideLength);
             ULog.show("inSampleSize: " + options.inSampleSize);
         }
 
@@ -152,8 +155,14 @@ public class CommonUtil {
 
         bmp = rotateAndScale(bmp, getPictureDegree(srcFile.getPath()), maxSideLength, true);
 
-        boolean ret = CommonUtil.saveBitmap2file(bmp, destFile, Bitmap.CompressFormat.JPEG, quality);
-        ULog.show("dst width: " + bmp.getWidth() + ", height: " + bmp.getHeight() + ", size: " + destFile.length());
+        boolean ret =
+            CommonUtil.saveBitmap2file(bmp, destFile, Bitmap.CompressFormat.JPEG, quality);
+        ULog.show("dst width: "
+            + bmp.getWidth()
+            + ", height: "
+            + bmp.getHeight()
+            + ", size: "
+            + destFile.length());
         bmp.recycle();
 
         return ret;
@@ -194,12 +203,12 @@ public class CommonUtil {
         return 0;
     }
 
-    public static boolean saveBitmap2file(Bitmap bmp, File file, Bitmap.CompressFormat format, int quality) {
+    public static boolean saveBitmap2file(Bitmap bmp, File file, Bitmap.CompressFormat format,
+        int quality) {
         if (null == bmp) {
             return false;
         }
-        if (file.isFile())
-            file.delete();
+        if (file.isFile()) file.delete();
         OutputStream stream = null;
         try {
             stream = new FileOutputStream(file);
@@ -214,7 +223,7 @@ public class CommonUtil {
         if (null == uri) {
             return null;
         }
-        String[] filePathColumn = { MediaStore.Images.Media.DATA};
+        String[] filePathColumn = { MediaStore.Images.Media.DATA };
         String picturePath = null;
         Cursor cursor = null;
 
@@ -247,10 +256,10 @@ public class CommonUtil {
 
         options.inJustDecodeBounds = false;
         options.inPreferredConfig = Bitmap.Config.RGB_565;
-        options.inSampleSize = (int) Math.max(options.outWidth / maxSideLen, options.outHeight / maxSideLen);
+        options.inSampleSize =
+            (int) Math.max(options.outWidth / maxSideLen, options.outHeight / maxSideLen);
         Bitmap bmp = BitmapFactory.decodeFileDescriptor(fd, null, options);
-        if (null == bmp)
-            return null;
+        if (null == bmp) return null;
 
         return rotateAndScale(bmp, 0, maxSideLen, true);
     }
@@ -287,5 +296,9 @@ public class CommonUtil {
             }
         }
         return b;
+    }
+
+    public static int dpToPx(float dp) {
+        return Math.round(dp * 3);
     }
 }

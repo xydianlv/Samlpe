@@ -20,6 +20,7 @@ import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
+import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
@@ -126,6 +127,10 @@ class UIShowManager {
 
     static void startShotScreenTestActivity(Context context){
         startTargetActivityFromMain(context, ActivityShotScreen.class);
+    }
+
+    static void startSoftKeyboardActivity(Context context){
+        startTargetActivityFromMain(context, ActivitySoftKeyboard.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

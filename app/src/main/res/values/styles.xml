@@ -130,4 +130,19 @@
         <item name="android:background">@drawable/mask_post_video</item>
     </style>
 
+    <style name="EditBackground"
+        parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_back</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="android:hint">期待你的精彩发言</item>
+        <item name="android:textSize">14.0dp</item>
+        <item name="android:textColor">#242529</item>
+        <item name="android:minHeight">28dp</item>
+        <item name="android:textCursorDrawable">@drawable/edit_cursor</item>
+        <item name="android:textColorHint">@color/color_999ead</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
 </resources>

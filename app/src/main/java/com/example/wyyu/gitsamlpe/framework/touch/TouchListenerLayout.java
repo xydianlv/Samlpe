@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 
 /**
  * Created by wyyu on 2018/5/31.
@@ -60,18 +59,14 @@ public class TouchListenerLayout extends FrameLayout {
         if (Math.abs(dRawX) > Math.abs(dRawY)) {
             if (dRawX > 0) {
                 pressListenerAdapter.onScrollLeft();
-                UToast.showShort(getContext(), "left");
             } else {
                 pressListenerAdapter.onScrollRight();
-                UToast.showShort(getContext(), "right");
             }
         } else {
             if (dRawY > 0) {
                 pressListenerAdapter.onScrollTop();
-                UToast.showShort(getContext(), "top");
             } else {
                 pressListenerAdapter.onScrollBottom();
-                UToast.showShort(getContext(), "bottom");
             }
         }
     }

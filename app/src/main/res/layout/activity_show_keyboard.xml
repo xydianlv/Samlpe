@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/color_white"
+    >
+
+  <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      >
+
+    <include
+        layout="@layout/common_toolbar"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/test"
+        android:gravity="center"
+        android:textColor="@color/color_242529"
+        android:textSize="18.0dp"
+        />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="46.0dp"
+      android:orientation="vertical"
+      android:layout_gravity="bottom"
+      >
+
+    <View
+        style="@style/my_divide_line"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="10.0dp"
+        android:paddingRight="10.0dp"
+        >
+
+      <EditText
+          android:id="@+id/show_keyboard_edit"
+          android:layout_height="wrap_content"
+          android:layout_width="0.0dp"
+          android:layout_weight="1"
+          style="@style/EditBackground"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/publish"
+          android:textColor="@color/color_white"
+          android:textSize="13.0dp"
+          android:paddingLeft="12.0dp"
+          android:paddingRight="12.0dp"
+          android:paddingTop="4.0dp"
+          android:paddingBottom="4.0dp"
+          android:layout_marginStart="8.0dp"
+          android:layout_marginLeft="8.0dp"
+          android:background="@drawable/button_publish_back"
+          />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</FrameLayout>
