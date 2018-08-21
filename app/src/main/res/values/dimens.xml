@@ -11,4 +11,6 @@
   <dimen name="status_bar_height">0dip</dimen>
   <dimen name="grid_expected_size">120.0dp</dimen>
 
+  <dimen name="media_grid_size">48.0dp</dimen>
+
 </resources>

@@ -10,6 +10,19 @@
       layout="@layout/common_toolbar"
       />
 
+  <TextView
+      android:id="@+id/local_image_text"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="@string/test"
+      android:textSize="14.0dp"
+      android:textColor="@color/color_242529"
+      android:paddingTop="4.0dp"
+      android:paddingBottom="4.0dp"
+      android:background="@color/color_white"
+      />
+
   <android.support.v7.widget.RecyclerView
       android:id="@+id/local_image_recycler"
       android:layout_width="match_parent"

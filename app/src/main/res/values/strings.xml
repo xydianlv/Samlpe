@@ -56,5 +56,6 @@
     <string name="save">保存</string>
     <string name="publish">发布</string>
     <string name="auto_open_soft">自动弹出软键盘</string>
+    <string name="bottom_sheet_dialog">BottomSheetDialog</string>
 
 </resources>

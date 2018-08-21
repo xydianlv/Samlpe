@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+  <attr name="album.thumbnail.placeholder" format="reference|color"/>
+
   <declare-styleable name="CardView">
     <attr name="cardShadowColor" format="color" />
     <attr name="cardShadowRadius" format="dimension" />

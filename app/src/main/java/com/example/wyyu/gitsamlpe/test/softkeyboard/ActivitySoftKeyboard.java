@@ -1,7 +1,9 @@
 package com.example.wyyu.gitsamlpe.test.softkeyboard;
 
 import android.os.Bundle;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.view.ViewCompat;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import butterknife.BindView;
@@ -24,6 +26,7 @@ public class ActivitySoftKeyboard extends ToolbarActivity {
 
     @BindView(R.id.soft_test_open_other) View openOther;
     @BindView(R.id.soft_test_root_view) View rootView;
+    @BindView(R.id.soft_test_dialog) View dialog;
 
     private boolean isKeyboardShowing;
 
@@ -94,5 +97,21 @@ public class ActivitySoftKeyboard extends ToolbarActivity {
                 ActivityShowKeyboard.open(ActivitySoftKeyboard.this);
             }
         });
+
+        dialog.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                showBottomSheetDialog();
+            }
+        });
+    }
+
+    private void showBottomSheetDialog() {
+        BottomSheetDialog dialog = new BottomSheetDialog(this);
+
+        View contentView =
+            LayoutInflater.from(this).inflate(R.layout.layout_bottom_sheet_dialog_test, null);
+        dialog.setContentView(contentView);
+
+        dialog.show();
     }
 }
