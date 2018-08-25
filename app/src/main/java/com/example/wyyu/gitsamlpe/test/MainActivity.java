@@ -180,6 +180,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("PermissionTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startCheckPermissionActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

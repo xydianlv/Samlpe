@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="24.0dp"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:gravity="center_horizontal"
+      android:layout_centerInParent="true"
+      tools:ignore="UselessParent"
+      android:padding="12.0dp"
+      android:background="@drawable/dialog_round_back_white"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textColor="@color/color_242529"
+        android:textSize="16.0dp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/check_dialog_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dp"
+        />
+
+    <TextView
+        android:id="@+id/check_dialog_button_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dp"
+        android:text="@string/go_open"
+        android:textColor="@color/color_white"
+        android:textSize="14.0dp"
+        android:paddingTop="6.0dp"
+        android:paddingBottom="6.0dp"
+        android:paddingLeft="24.0dp"
+        android:paddingRight="24.0dp"
+        android:background="@drawable/dialog_round_back_grey"
+        />
+
+  </LinearLayout>
+
+</RelativeLayout>

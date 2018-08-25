@@ -18,6 +18,7 @@ import com.example.wyyu.gitsamlpe.test.image.matisse.ActivityLocalImage;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
+import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
@@ -113,24 +114,28 @@ class UIShowManager {
         startTargetActivityFromMain(context, ActivityNumber.class);
     }
 
-    static void startVolumeTestActivity(Context context){
+    static void startVolumeTestActivity(Context context) {
         startTargetActivityFromMain(context, ActivityVolume.class);
     }
 
-    static void startNotifyTestActivity(Context context){
+    static void startNotifyTestActivity(Context context) {
         startTargetActivityFromMain(context, ActivityNotifyTest.class);
     }
 
-    static void startEditImgTestActivity(Context context){
+    static void startEditImgTestActivity(Context context) {
         startTargetActivityFromMain(context, ActivityEditImage.class);
     }
 
-    static void startShotScreenTestActivity(Context context){
+    static void startShotScreenTestActivity(Context context) {
         startTargetActivityFromMain(context, ActivityShotScreen.class);
     }
 
-    static void startSoftKeyboardActivity(Context context){
+    static void startSoftKeyboardActivity(Context context) {
         startTargetActivityFromMain(context, ActivitySoftKeyboard.class);
+    }
+
+    static void startCheckPermissionActivity(Context context) {
+        startTargetActivityFromMain(context, ActivityPermissionTest.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
