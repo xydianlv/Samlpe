@@ -128,6 +128,7 @@ public class ActivityCheckPermission extends AppCompatActivity {
 
     private void permissionGranted() {
         PermissionObservable.getObservable().permissionGranted(permissionItem.itemKey);
+        PermissionCheck.getInstance().onPermissionCheckFinished(permissionItem.itemKey);
 
         finish();
         overridePendingTransition(0, 0);
@@ -135,6 +136,7 @@ public class ActivityCheckPermission extends AppCompatActivity {
 
     private void permissionDenied() {
         PermissionObservable.getObservable().permissionDenied(permissionItem.itemKey);
+        PermissionCheck.getInstance().onPermissionCheckFinished(permissionItem.itemKey);
 
         finish();
         overridePendingTransition(0, 0);

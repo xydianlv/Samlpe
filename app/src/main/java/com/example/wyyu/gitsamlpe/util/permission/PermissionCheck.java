@@ -73,4 +73,24 @@ public class PermissionCheck {
             ActivityCheckPermission.open(AppController.getAppContext(), permissionItem);
         }
     }
+
+    // 当 ActivityCheckPermission 判断完一组权限后，告诉 PermissionCheck 检测是否还需要继续判断
+    void onPermissionCheckFinished(@PermissionItemKey int itemKey) {
+        if (permissionItemList == null || permissionItemList.isEmpty()) {
+            return;
+        }
+        for (PermissionItem permissionItem : permissionItemList) {
+            if (permissionItem.itemKey == itemKey) {
+                permissionItemList.remove(permissionItem);
+                break;
+            }
+        }
+        if (permissionItemList.isEmpty()) {
+            return;
+        }
+        permissionItem = permissionItemList.poll();
+        if (permissionItem != null) {
+            requestPermission();
+        }
+    }
 }
