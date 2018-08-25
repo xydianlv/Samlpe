@@ -7,8 +7,8 @@ package com.example.wyyu.gitsamlpe.util.permission;
 public interface IPermissionObserver {
 
     // 成功获取权限
-    void permissionGranted();
+    void permissionGranted(@PermissionItemKey int itemKey);
 
     // 拒绝提供权限
-    void permissionDenied();
+    void permissionDenied(@PermissionItemKey int itemKey);
 }

@@ -8,19 +8,25 @@ import java.io.Serializable;
 
 public class PermissionItem implements Serializable {
 
+    // 业务需要的一组权限
     public String[] permissionArray;
     public String rationalText;
     public String confirmText;
     public String denyText;
 
+    // 是否需要打开手机设置界面
     public boolean goSetting;
 
-    public PermissionItem(String... permissionArray) {
+    // 用来标示这组权限所对应的业务，方便在回调中检索使用
+    public  @PermissionItemKey int itemKey;
+
+    public PermissionItem(@PermissionItemKey int itemKey, String... permissionArray) {
         if (permissionArray == null || permissionArray.length <= 0) {
             throw new IllegalArgumentException("permissions must have one content at least");
         }
 
         this.permissionArray = permissionArray;
+        this.itemKey = itemKey;
     }
 
     public PermissionItem rationalText(String rationalText) {

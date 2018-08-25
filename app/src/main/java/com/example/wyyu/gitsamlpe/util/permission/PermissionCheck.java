@@ -18,65 +18,59 @@ public class PermissionCheck {
         return CheckHolder.permissionCheck;
     }
 
-    private LinkedList<PermissionWrapper> wrapperLinkedList;
+    // 一组需要判断的权限集合，一般按照产品功能模块儿组合出一组权限添加进来
+    private LinkedList<PermissionItem> permissionItemList;
     private PermissionRequestListener requestListener;
 
-    private PermissionWrapper permissionWrapper;
+    private PermissionItem permissionItem;
 
     private PermissionCheck() {
         requestListener = new PermissionRequestListener() {
             @Override public boolean onRequestFinished(String[] permissionArray) {
-                permissionWrapper = wrapperLinkedList.poll();
-                if (permissionWrapper != null) {
+                permissionItem = permissionItemList.poll();
+                if (permissionItem != null) {
                     requestPermission();
                 }
-                return permissionWrapper != null;
+                return permissionItem != null;
             }
         };
-        wrapperLinkedList = new LinkedList<>();
+        permissionItemList = new LinkedList<>();
     }
 
-    public void check(PermissionItem permissionItem, PermissionListener permissionListener) {
-        if (permissionItem == null || permissionListener == null) {
+    public void check(PermissionItem permissionItemFun) {
+        if (permissionItemFun == null) {
             return;
         }
         if (!PermissionUtil.isOverMarshmallow()) {
-            onPermissionGranted(permissionItem, permissionListener);
+            onPermissionGranted(permissionItemFun);
         } else {
-            wrapperLinkedList.add(new PermissionWrapper(permissionItem, permissionListener));
-            if (permissionWrapper == null) {
-                permissionWrapper = wrapperLinkedList.poll();
+            permissionItemList.add(permissionItemFun);
+            if (permissionItem == null) {
+                permissionItem = permissionItemList.poll();
                 requestPermission();
             }
         }
     }
 
-    private void onPermissionGranted(PermissionItem permissionItem,
-        PermissionListener permissionListener) {
+    private void onPermissionGranted(PermissionItem permissionItem) {
 
         Assert.assertNotNull(permissionItem);
 
-        if (permissionListener != null) {
-            permissionListener.permissionGranted();
-        }
+        PermissionObservable.getObservable().permissionGranted(permissionItem.itemKey);
 
         requestListener.onRequestFinished(permissionItem.permissionArray);
     }
 
     private void requestPermission() {
-        if (permissionWrapper == null) {
+        if (permissionItem == null) {
             return;
         }
 
-        PermissionListener listener = permissionWrapper.permissionListener;
-        PermissionItem item = permissionWrapper.permissionItem;
-
         if (PermissionUtil.hasSelfPermissions(AppController.getAppContext(),
-            item.permissionArray)) {
-            onPermissionGranted(item, listener);
+            permissionItem.permissionArray)) {
+            onPermissionGranted(permissionItem);
         } else {
-            ActivityCheckPermission.open(AppController.getAppContext(), item.permissionArray,
-                item.rationalText, item.confirmText, item.denyText, item.goSetting);
+            ActivityCheckPermission.open(AppController.getAppContext(), permissionItem);
         }
     }
 }

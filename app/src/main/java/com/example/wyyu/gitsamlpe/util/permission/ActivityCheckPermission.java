@@ -32,38 +32,22 @@ public class ActivityCheckPermission extends AppCompatActivity {
     public static final int REQ_CODE_REQUEST_SYSTEM_ALERT_WINDOW = 120;
     public static final int REQ_CODE_REQUEST_WRITE_SETTING = 121;
 
-    public static final String KEY_PERMISSION_ARRAY = "permissionArray";
-    public static final String KEY_RATIONALE_TEXT = "rationale_text";
-    public static final String KEY_CONFIRM_TEXT = "confirm_text";
-    public static final String KEY_GO_SETTING = "go_setting";
-    public static final String KEY_DENY_TEXT = "deny_text";
-
+    private static final String KEY_PERMISSION_ITEM = "key_permission_item";
     private static final String VALUE_DENIED_PERMISSION = "你拒绝了该权限";
 
-    public static void open(Context context, String[] permissionArray, String rationaleText,
-        String confirmText, String denyText, boolean goSetting) {
+    public static void open(Context context, PermissionItem permissionItem) {
         Intent intent = new Intent(context, ActivityCheckPermission.class);
-        intent.putExtra(KEY_PERMISSION_ARRAY, permissionArray);
-        intent.putExtra(KEY_RATIONALE_TEXT, rationaleText);
-        intent.putExtra(KEY_CONFIRM_TEXT, confirmText);
-        intent.putExtra(KEY_DENY_TEXT, denyText);
-        intent.putExtra(KEY_GO_SETTING, goSetting);
+        intent.putExtra(KEY_PERMISSION_ITEM, permissionItem);
         context.startActivity(intent);
     }
-
-    private PermissionRequestListener requestListener;
-    private PermissionListener permissionListener;
-
-    private String[] permissionArray;
-    private String rationaleMessage;
-    private String packageName;
-    private String confirmText;
-    private String denyMessage;
 
     private boolean hasRequestedSystemAlertWindow;
     private String permissionSystemAlertWindow;
     private boolean hasRequestedWriteSettings;
     private String permissionWriteSettings;
+
+    private PermissionItem permissionItem;
+    private String packageName;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,16 +79,17 @@ public class ActivityCheckPermission extends AppCompatActivity {
     private void dispatchIntent() {
         Intent intent = getIntent();
         if (intent == null) {
+            finish();
             return;
         }
+        permissionItem = (PermissionItem) intent.getSerializableExtra(KEY_PERMISSION_ITEM);
 
-        permissionArray = intent.getStringArrayExtra(KEY_PERMISSION_ARRAY);
-        rationaleMessage = intent.getStringExtra(KEY_RATIONALE_TEXT);
-        confirmText = intent.getStringExtra(KEY_CONFIRM_TEXT);
-        denyMessage = intent.getStringExtra(KEY_DENY_TEXT);
-
-        if (intent.getBooleanExtra(KEY_GO_SETTING, false)) {
-            new PermissionDialog(this, Arrays.asList(permissionArray)).show();
+        if (permissionItem == null) {
+            finish();
+            return;
+        }
+        if (permissionItem.goSetting) {
+            new PermissionDialog(this, Arrays.asList(permissionItem.permissionArray)).show();
         } else {
             checkPermissionArray(false);
         }
@@ -113,7 +98,7 @@ public class ActivityCheckPermission extends AppCompatActivity {
     private void checkPermissionArray(boolean isRequested) {
 
         List<String> needPermissionList =
-            PermissionUtil.findDeniedPermissions(this, permissionArray);
+            PermissionUtil.findDeniedPermissions(this, permissionItem.permissionArray);
 
         boolean showRationale = false;
         for (String permission : needPermissionList) {
@@ -134,7 +119,7 @@ public class ActivityCheckPermission extends AppCompatActivity {
             permissionGranted();
         } else if (isRequested) {
             permissionDenied();
-        } else if (showRationale && !TextUtils.isEmpty(rationaleMessage)) {
+        } else if (showRationale && !TextUtils.isEmpty(permissionItem.rationalText)) {
             showRationaleDialog(needPermissionList);
         } else {
             requestPermissions(needPermissionList);
@@ -142,43 +127,23 @@ public class ActivityCheckPermission extends AppCompatActivity {
     }
 
     private void permissionGranted() {
-        if (permissionListener != null) {
-            permissionListener.permissionGranted();
-            permissionListener = null;
-        }
-
-        if (requestListener != null) {
-            requestListener.onRequestFinished(permissionArray);
-            requestListener = null;
-        }
-
-        PermissionObservable.getObservable().permissionGranted();
+        PermissionObservable.getObservable().permissionGranted(permissionItem.itemKey);
 
         finish();
         overridePendingTransition(0, 0);
     }
 
     private void permissionDenied() {
-        if (permissionListener != null) {
-            permissionListener.permissionDenied();
-            permissionListener = null;
-        }
-
-        if (requestListener != null) {
-            requestListener.onRequestFinished(permissionArray);
-            requestListener = null;
-        }
-
-        PermissionObservable.getObservable().permissionDenied();
+        PermissionObservable.getObservable().permissionDenied(permissionItem.itemKey);
 
         finish();
         overridePendingTransition(0, 0);
     }
 
     private void showRationaleDialog(final List<String> permissionList) {
-        new SDAlertDialog.Builder(this).setMessage(rationaleMessage)
+        new SDAlertDialog.Builder(this).setMessage(permissionItem.rationalText)
             .setCancel("", null)
-            .setConfirm(confirmText, new View.OnClickListener() {
+            .setConfirm(permissionItem.confirmText, new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     requestPermissions(permissionList);
                 }
@@ -187,8 +152,8 @@ public class ActivityCheckPermission extends AppCompatActivity {
     }
 
     private void showPermissionDenyDialog() {
-        UToast.showShort(this,
-            TextUtils.isEmpty(denyMessage) ? VALUE_DENIED_PERMISSION : denyMessage);
+        UToast.showShort(this, TextUtils.isEmpty(permissionItem.denyText) ? VALUE_DENIED_PERMISSION
+            : permissionItem.denyText);
 
         permissionDenied();
     }

@@ -22,21 +22,21 @@ public class PermissionObservable implements IPermissionObservable {
         observerHashSet = new HashSet<>();
     }
 
-    @Override public void permissionGranted() {
+    @Override public void permissionGranted(int itemKey) {
         if (observerHashSet == null || observerHashSet.isEmpty()) {
             return;
         }
         for (IPermissionObserver observer : observerHashSet) {
-            observer.permissionGranted();
+            observer.permissionGranted(itemKey);
         }
     }
 
-    @Override public void permissionDenied() {
+    @Override public void permissionDenied(int itemKey) {
         if (observerHashSet == null || observerHashSet.isEmpty()) {
             return;
         }
         for (IPermissionObserver observer : observerHashSet) {
-            observer.permissionDenied();
+            observer.permissionDenied(itemKey);
         }
     }
 

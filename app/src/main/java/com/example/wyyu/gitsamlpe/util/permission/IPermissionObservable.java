@@ -7,10 +7,10 @@ package com.example.wyyu.gitsamlpe.util.permission;
 public interface IPermissionObservable {
 
     // 成功获取权限
-    void permissionGranted();
+    void permissionGranted(@PermissionItemKey int itemKey);
 
     // 拒绝提供权限
-    void permissionDenied();
+    void permissionDenied(@PermissionItemKey int itemKey);
 
     // 绑定观察者到发布器
     void attach(IPermissionObserver observer);
