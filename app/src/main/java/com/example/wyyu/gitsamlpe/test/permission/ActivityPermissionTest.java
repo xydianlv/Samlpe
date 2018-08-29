@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.framework.toast.TToast;
 import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 import com.example.wyyu.gitsamlpe.util.permission.IPermissionObserver;
 import com.example.wyyu.gitsamlpe.util.permission.PermissionCheck;
@@ -38,6 +39,18 @@ public class ActivityPermissionTest extends ToolbarActivity implements IPermissi
         findViewById(R.id.check_permission_button).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 checkPermission();
+            }
+        });
+
+        findViewById(R.id.show_toast_button).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                TToast.showShort("ShowToast");
+            }
+        });
+
+        findViewById(R.id.check_toast_button).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                ActivityCheckToast.open(ActivityPermissionTest.this);
             }
         });
     }

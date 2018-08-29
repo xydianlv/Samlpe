@@ -9,6 +9,7 @@ import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
+import com.example.wyyu.gitsamlpe.test.fragment.ActivitySlideTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
@@ -136,6 +137,10 @@ class UIShowManager {
 
     static void startCheckPermissionActivity(Context context) {
         startTargetActivityFromMain(context, ActivityPermissionTest.class);
+    }
+
+    static void startDialogFragmentTestActivity(Context context) {
+        startTargetActivityFromMain(context, ActivitySlideTest.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

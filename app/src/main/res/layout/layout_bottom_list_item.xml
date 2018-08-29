@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:id="@+id/bottom_list_item_text"
+      android:layout_width="match_parent"
+      android:layout_height="120.0dp"
+      android:gravity="center"
+      android:text="@string/test"
+      android:textSize="16.0dp"
+      android:textColor="@color/color_242529"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+</LinearLayout>

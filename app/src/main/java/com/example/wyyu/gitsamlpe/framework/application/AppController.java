@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.framework.application;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
+import com.example.wyyu.gitsamlpe.util.UIUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
@@ -18,6 +19,7 @@ public class AppController extends Application {
         application = this;
 
         Fresco.initialize(getAppContext());
+        UIUtils.init(getAppContext());
     }
 
     public static Context getAppContext() {

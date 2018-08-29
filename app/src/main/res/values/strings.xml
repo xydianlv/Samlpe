@@ -61,5 +61,8 @@
     <string name="go_open">去开启</string>
     <string name="title">标题</string>
     <string name="check_permission">检测权限</string>
+    <string name="check_toast">检测Toast</string>
+    <string name="show_toast">展示Toast</string>
+    <string name="show_dialog">展示Dialog</string>
 
 </resources>

@@ -186,6 +186,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("DialogFragment", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startDialogFragmentTestActivity(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

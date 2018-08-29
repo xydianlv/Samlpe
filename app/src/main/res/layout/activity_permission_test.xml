@@ -26,4 +26,32 @@
       android:background="@drawable/dialog_round_back_grey"
       />
 
+  <TextView
+      android:id="@+id/show_toast_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/show_toast"
+      android:textColor="@color/color_white"
+      android:paddingTop="6.0dp"
+      android:paddingBottom="6.0dp"
+      android:paddingLeft="12.0dp"
+      android:paddingRight="12.0dp"
+      android:layout_marginTop="32.0dp"
+      android:background="@drawable/dialog_round_back_grey"
+      />
+
+  <TextView
+      android:id="@+id/check_toast_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/check_toast"
+      android:textColor="@color/color_white"
+      android:paddingTop="6.0dp"
+      android:paddingBottom="6.0dp"
+      android:paddingLeft="12.0dp"
+      android:paddingRight="12.0dp"
+      android:layout_marginTop="32.0dp"
+      android:background="@drawable/dialog_round_back_grey"
+      />
+
 </LinearLayout>

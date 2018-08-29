@@ -88,27 +88,22 @@
             />
       <activity
           android:name=".test.theme.ActivityDialogTheme"
-          android:screenOrientation="portrait"
           android:theme="@style/DialogTheme"
           />
       <activity
           android:name=".test.theme.ActivityTranslucentActivity"
-          android:screenOrientation="portrait"
           android:theme="@android:style/Theme.Translucent.NoTitleBar"
           />
       <activity
           android:name=".test.theme.ActivityWallPaperTheme"
-          android:screenOrientation="portrait"
           android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
           />
       <activity
           android:name=".test.theme.ActivityPanelTheme"
-          android:screenOrientation="portrait"
           android:theme="@android:style/Theme.Panel"
           />
       <activity
           android:name=".test.theme.ActivityDisplayTheme"
-          android:screenOrientation="portrait"
           android:theme="@android:style/Theme.NoDisplay"
           />
 
@@ -212,6 +207,14 @@
           />
       <activity
           android:name=".test.permission.ActivityPermissionTest"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.permission.ActivityCheckToast"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.fragment.ActivitySlideTest"
           android:screenOrientation="portrait"
           />
 
