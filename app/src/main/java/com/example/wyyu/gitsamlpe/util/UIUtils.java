@@ -1,6 +1,9 @@
 package com.example.wyyu.gitsamlpe.util;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Rect;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.view.Display;
@@ -58,5 +61,23 @@ public class UIUtils {
 
     public static int getScreenWidth() {
         return screenWidth;
+    }
+
+    public static int getStatusHeightByDimen(Context context) {
+        Resources resources = context.getResources();
+        int statusHeight = 0;
+        //获取status_bar_height资源的ID
+        int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            //根据资源ID获取响应的尺寸值
+            statusHeight = resources.getDimensionPixelSize(resourceId);
+        }
+        return statusHeight;
+    }
+
+    public static int getStatusHeightByDecor(Activity context) {
+        Rect rectangle= new Rect();
+        context.getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
+        return rectangle.top;
     }
 }

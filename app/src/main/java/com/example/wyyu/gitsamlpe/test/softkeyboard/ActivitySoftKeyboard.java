@@ -12,14 +12,15 @@ import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.framework.touch.OnPressListenerAdapter;
 import com.example.wyyu.gitsamlpe.framework.touch.TouchListenerLayout;
 import com.example.wyyu.gitsamlpe.util.CommonUtil;
+import com.example.wyyu.gitsamlpe.util.SoftInputMonitor;
 
 /**
  * Created by wyyu on 2018/8/20.
  **/
 
-public class ActivitySoftKeyboard extends ToolbarActivity {
+public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMonitor.Listener {
 
-    private static final int MINI_KEYBOARD_HEIGHT = CommonUtil.dpToPx(150);
+    //private static final int MINI_KEYBOARD_HEIGHT = CommonUtil.dpToPx(150);
 
     @BindView(R.id.soft_test_touch_layout) TouchListenerLayout touchLayout;
     @BindView(R.id.soft_test_publish_view) BottomPublishView publishView;
@@ -28,33 +29,34 @@ public class ActivitySoftKeyboard extends ToolbarActivity {
     @BindView(R.id.soft_test_root_view) View rootView;
     @BindView(R.id.soft_test_dialog) View dialog;
 
-    private boolean isKeyboardShowing;
+    private SoftInputMonitor softInputMonitor;
+    //private boolean isKeyboardShowing;
 
-    ViewTreeObserver.OnGlobalLayoutListener globalLayoutListener =
-        new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override public void onGlobalLayout() {
-                if (rootView == null) {
-                    return;
-                }
-                boolean fitsSystemWindows = ViewCompat.getFitsSystemWindows(rootView);
-                boolean isKeyBoarShow;
-                if (fitsSystemWindows && rootView.getPaddingBottom() > 0) {
-                    isKeyBoarShow = rootView.getPaddingBottom() > MINI_KEYBOARD_HEIGHT;
-                } else {
-                    isKeyBoarShow = rootView.getRootView().getHeight() - rootView.getHeight()
-                        > MINI_KEYBOARD_HEIGHT;
-                }
-                if (isKeyboardShowing == isKeyBoarShow || publishView == null) {
-                    return;
-                }
-                if (isKeyBoarShow) {
-                    publishView.showInfoView();
-                } else {
-                    publishView.hideInfoView();
-                }
-                isKeyboardShowing = isKeyBoarShow;
-            }
-        };
+    //ViewTreeObserver.OnGlobalLayoutListener globalLayoutListener =
+    //    new ViewTreeObserver.OnGlobalLayoutListener() {
+    //        @Override public void onGlobalLayout() {
+    //            if (rootView == null) {
+    //                return;
+    //            }
+    //            boolean fitsSystemWindows = ViewCompat.getFitsSystemWindows(rootView);
+    //            boolean isKeyBoarShow;
+    //            if (fitsSystemWindows && rootView.getPaddingBottom() > 0) {
+    //                isKeyBoarShow = rootView.getPaddingBottom() > MINI_KEYBOARD_HEIGHT;
+    //            } else {
+    //                isKeyBoarShow = rootView.getRootView().getHeight() - rootView.getHeight()
+    //                    > MINI_KEYBOARD_HEIGHT;
+    //            }
+    //            if (isKeyboardShowing == isKeyBoarShow || publishView == null) {
+    //                return;
+    //            }
+    //            if (isKeyBoarShow) {
+    //                publishView.showInfoView();
+    //            } else {
+    //                publishView.hideInfoView();
+    //            }
+    //            isKeyboardShowing = isKeyBoarShow;
+    //        }
+    //    };
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,23 +67,31 @@ public class ActivitySoftKeyboard extends ToolbarActivity {
 
     @Override protected void onResume() {
         super.onResume();
-        if (rootView != null && rootView.getViewTreeObserver() != null) {
-            rootView.getViewTreeObserver().removeOnGlobalLayoutListener(globalLayoutListener);
-            rootView.getViewTreeObserver().addOnGlobalLayoutListener(globalLayoutListener);
+        if (softInputMonitor != null) {
+            softInputMonitor.setListener(this);
+            softInputMonitor.startMonitoring(this);
         }
+        //if (rootView != null && rootView.getViewTreeObserver() != null) {
+        //    rootView.getViewTreeObserver().removeOnGlobalLayoutListener(globalLayoutListener);
+        //    rootView.getViewTreeObserver().addOnGlobalLayoutListener(globalLayoutListener);
+        //}
     }
 
     @Override protected void onPause() {
         super.onPause();
-        if (rootView != null && rootView.getViewTreeObserver() != null) {
-            rootView.getViewTreeObserver().removeOnGlobalLayoutListener(globalLayoutListener);
+        if (softInputMonitor != null) {
+            softInputMonitor.setListener(null);
+            softInputMonitor.stopMonitoring();
         }
+        //if (rootView != null && rootView.getViewTreeObserver() != null) {
+        //    rootView.getViewTreeObserver().removeOnGlobalLayoutListener(globalLayoutListener);
+        //}
     }
 
     private void initActivity() {
 
         initToolbar("SoftKeyboard", 0xffffffff, 0xff84919b);
-        isKeyboardShowing = false;
+        //isKeyboardShowing = false;
 
         touchLayout.setOnPressListener(new OnPressListenerAdapter() {
             @Override public void onPressDown() {
@@ -103,6 +113,8 @@ public class ActivitySoftKeyboard extends ToolbarActivity {
                 showBottomSheetDialog();
             }
         });
+
+        softInputMonitor = new SoftInputMonitor();
     }
 
     private void showBottomSheetDialog() {
@@ -113,5 +125,14 @@ public class ActivitySoftKeyboard extends ToolbarActivity {
         dialog.setContentView(contentView);
 
         dialog.show();
+    }
+
+    @Override public void onSoftInputVisibilityChanged(boolean visible, int softInputHeight,
+        int statusBarHeight) {
+        if (visible) {
+            publishView.showInfoView();
+        } else {
+            publishView.hideInfoView();
+        }
     }
 }

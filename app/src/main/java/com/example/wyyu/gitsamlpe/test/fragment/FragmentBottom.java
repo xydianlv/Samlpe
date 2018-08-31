@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
@@ -11,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.util.UIUtils;
 
 /**
  * Created by wyyu on 2018/8/28.
@@ -83,6 +86,8 @@ public class FragmentBottom extends DialogFragment {
 
         Window window = getDialog().getWindow();
 
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING
+            | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         window.setBackgroundDrawable(new ColorDrawable());
 
         WindowManager.LayoutParams layoutParams = window.getAttributes();
@@ -90,6 +95,14 @@ public class FragmentBottom extends DialogFragment {
         layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
         layoutParams.gravity = Gravity.BOTTOM;
         window.setAttributes(layoutParams);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            View decorView = window.getDecorView();
+            int sysUIFlag = decorView.getSystemUiVisibility();
+            sysUIFlag |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            decorView.setSystemUiVisibility(sysUIFlag);
+            decorView.setPadding(0, UIUtils.getStatusHeightByDimen(getContext()), 0, 0);
+        }
     }
 
     @Override public void onDestroyView() {
@@ -132,6 +145,17 @@ public class FragmentBottom extends DialogFragment {
 
             @Override public void onAnimationRepeat(Animation animation) {
 
+            }
+        });
+
+        getDialog().setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK && isShowing) {
+                    hide();
+                    isShowing = false;
+                    return true;
+                }
+                return false;
             }
         });
     }
