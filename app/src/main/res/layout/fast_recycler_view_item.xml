@@ -30,6 +30,33 @@
             android:textColor="@color/color_84919b"
             android:textSize="14.0sp" />
 
+        <TextView
+            android:text="@string/number_f"
+            style="@style/RedCountBack"
+            />
+
+        <TextView
+            android:text="@string/number_t"
+            style="@style/RedCountBack"
+            android:layout_marginLeft="12.0dp"
+            android:layout_marginStart="12.0dp"
+            />
+
+        <TextView
+            android:text="@string/number_o"
+            style="@style/RedCountBack"
+            android:layout_marginLeft="12.0dp"
+            android:layout_marginStart="12.0dp"
+            />
+
+        <View
+            android:layout_width="9.0dp"
+            android:layout_height="9.0dp"
+            android:layout_marginLeft="12.0dp"
+            android:layout_marginStart="12.0dp"
+            android:background="@drawable/button_circle_back_red"
+            />
+
     </LinearLayout>
 
     <View

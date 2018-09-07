@@ -5,9 +5,13 @@
     <string name="forget_pass">忘记密码？</string>
     <string name="ellipsis">。。。</string>
     <string name="empty"> </string>
-    <string name="number">47</string>
     <string name="text">Text</string>
     <string name="test">Test</string>
+
+    <string name="number">0</string>
+    <string name="number_o">0</string>
+    <string name="number_t">47</string>
+    <string name="number_f">99+</string>
 
     <string name="top_text">TopTextView</string>
     <string name="bottom_text">BottomTextView</string>
