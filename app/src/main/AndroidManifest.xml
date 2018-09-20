@@ -55,7 +55,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".test.audio.ActivityAudioRecorder"
+            android:name=".test.audio.recorder.ActivityAudioRecorder"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".test.card.ActivityCard"
@@ -215,6 +215,10 @@
           />
       <activity
           android:name=".test.fragment.ActivitySlideTest"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.audio.player.ActivityAudioList"
           android:screenOrientation="portrait"
           />
 

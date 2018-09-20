@@ -2,7 +2,8 @@ package com.example.wyyu.gitsamlpe.test;
 
 import android.content.Context;
 import android.content.Intent;
-import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioRecorder;
+import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
+import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
@@ -141,6 +142,10 @@ class UIShowManager {
 
     static void startDialogFragmentTestActivity(Context context) {
         startTargetActivityFromMain(context, ActivitySlideTest.class);
+    }
+
+    static void startAudioPlayTest(Context context) {
+        startTargetActivityFromMain(context, ActivityAudioList.class);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

@@ -171,4 +171,10 @@
         <item name="android:background">@drawable/button_circle_red_90</item>
     </style>
 
+    <style name="ClickableItem">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
 </resources>

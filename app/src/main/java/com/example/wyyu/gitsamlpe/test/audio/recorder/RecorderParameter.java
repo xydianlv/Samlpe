@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.audio;
+package com.example.wyyu.gitsamlpe.test.audio.recorder;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;
@@ -7,7 +7,7 @@ import android.media.AudioRecord;
  * Created by wyyu on 2018/1/9.
  **/
 
-class RecorderParameter {
+public class RecorderParameter {
 
     // 每个采样所需的 bit 数
     private int bitPerSample;
@@ -16,14 +16,14 @@ class RecorderParameter {
     // 声道数
     private int channel;
 
-    RecorderParameter() {
+    public RecorderParameter() {
 
         bitPerSample = 16;
         sampleRate = 44100;
         channel = 2;
     }
 
-    RecorderParameter(int channel, int sampleRate, int bitPerSample) {
+    public RecorderParameter(int channel, int sampleRate, int bitPerSample) {
 
         this.bitPerSample = bitPerSample;
         this.sampleRate = sampleRate;
@@ -31,21 +31,21 @@ class RecorderParameter {
     }
 
     // 每秒所需字节数
-    int getBytePerSecond() {
+    public int getBytePerSecond() {
         return sampleRate * channel * bitPerSample / 8;
     }
 
     // 每个采样需要的字节数
-    int getBlockAlign() {
+    public int getBlockAlign() {
         return channel * bitPerSample / 8;
     }
 
     // 缓冲区大小
-    int getBufferSize() {
+    public int getBufferSize() {
         return AudioRecord.getMinBufferSize(sampleRate, getChannelConfig(), getAudioFormat());
     }
 
-    int getChannelConfig() {
+    public int getChannelConfig() {
 
         int channelConfig = AudioFormat.CHANNEL_IN_DEFAULT;
         if (channel == 1) {
@@ -57,7 +57,7 @@ class RecorderParameter {
         return channelConfig;
     }
 
-    int getAudioFormat() {
+    public int getAudioFormat() {
 
         int audioFormat = AudioFormat.ENCODING_DEFAULT;
         if (bitPerSample == 8) {
@@ -69,15 +69,15 @@ class RecorderParameter {
         return audioFormat;
     }
 
-    int getBitPerSample() {
+    public int getBitPerSample() {
         return bitPerSample;
     }
 
-    int getSampleRate() {
+    public int getSampleRate() {
         return sampleRate;
     }
 
-    int getChannel() {
+    public int getChannel() {
         return channel;
     }
 }

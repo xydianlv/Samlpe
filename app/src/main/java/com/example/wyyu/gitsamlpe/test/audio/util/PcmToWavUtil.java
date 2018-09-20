@@ -1,7 +1,8 @@
-package com.example.wyyu.gitsamlpe.test.audio;
+package com.example.wyyu.gitsamlpe.test.audio.util;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;
+import com.example.wyyu.gitsamlpe.test.audio.recorder.RecorderParameter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

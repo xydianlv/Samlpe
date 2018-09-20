@@ -192,6 +192,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("AudioPlayTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startAudioPlayTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }
