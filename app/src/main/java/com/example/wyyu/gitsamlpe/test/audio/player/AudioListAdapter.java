@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import com.example.wyyu.gitsamlpe.R;
 import java.util.LinkedList;
 import java.util.List;
@@ -44,15 +42,18 @@ public class AudioListAdapter extends RecyclerView.Adapter {
 
     private class AudioItemHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.audio_item_duration) TextView duration;
-        @BindView(R.id.audio_item_seek_bar) SeekBar seekBar;
-        @BindView(R.id.audio_item_name) TextView name;
-        @BindView(R.id.audio_item_button) View click;
+        private TextView duration;
+        private SeekBar seekBar;
+        private TextView name;
+        private View click;
 
         AudioItemHolder(View itemView) {
             super(itemView);
 
-            ButterKnife.bind(this, itemView);
+            duration = itemView.findViewById(R.id.audio_item_duration);
+            seekBar = itemView.findViewById(R.id.audio_item_seek_bar);
+            name = itemView.findViewById(R.id.audio_item_name);
+            click = itemView.findViewById(R.id.audio_item_button);
         }
 
         void bindValue(AudioDataBean audioData) {

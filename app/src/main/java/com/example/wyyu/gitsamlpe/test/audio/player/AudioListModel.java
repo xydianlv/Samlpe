@@ -40,7 +40,7 @@ public class AudioListModel extends ViewModel {
                     return;
                 }
                 if (cursor.moveToFirst()) {
-                    while (cursor.isAfterLast()) {
+                    while (!cursor.isAfterLast()) {
                         AudioDataBean audio = new AudioDataBean();
 
                         audio.id =
