@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <!-- 设置 groupIndicator 为 null，否则左侧自动添加一个默认的尖头 -->
+  <ExpandableListView
+      android:id="@+id/expandable_list_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:groupIndicator="@null"
+      />
+
+  <!--<ExpandableListView-->
+      <!--android:id="@+id/expandable_list_view"-->
+      <!--android:layout_width="match_parent"-->
+      <!--android:layout_height="match_parent"-->
+      <!--/>-->
+
+</LinearLayout>

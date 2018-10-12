@@ -34,6 +34,17 @@ public class AudioListAdapter extends RecyclerView.Adapter {
 
     @Override public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ((AudioItemHolder) holder).bindValue(audioDataList.get(position));
+
+        final AudioDataBean audioData = audioDataList.get(position);
+        AudioItemHolder audioHolder = (AudioItemHolder) holder;
+
+        audioHolder.bindValue(audioData);
+
+        audioHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                AudioPlayer.getPlayer().play(new AudioPlayInfo(audioData.id, audioData.path));
+            }
+        });
     }
 
     @Override public int getItemCount() {
@@ -61,6 +72,7 @@ public class AudioListAdapter extends RecyclerView.Adapter {
                 return;
             }
 
+            duration.setText(String.valueOf(audioData.duration));
             name.setText(audioData.name);
         }
     }

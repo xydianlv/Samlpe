@@ -198,6 +198,18 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("ExpandListView", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startExpandListView(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("DynamicSizeTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startDynamicSizeTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

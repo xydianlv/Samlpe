@@ -27,6 +27,11 @@ public class ActivityAudioList extends ToolbarActivity {
         initActivity();
     }
 
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        AudioPlayer.getPlayer().stop();
+    }
+
     private void initActivity() {
         initBasicView();
         initRecyclerView();

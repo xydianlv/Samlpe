@@ -8,11 +8,13 @@ import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
+import com.example.wyyu.gitsamlpe.test.dynamic.ActivityDynamicSize;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
 import com.example.wyyu.gitsamlpe.test.fragment.ActivitySlideTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
+import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
@@ -146,6 +148,14 @@ class UIShowManager {
 
     static void startAudioPlayTest(Context context) {
         startTargetActivityFromMain(context, ActivityAudioList.class);
+    }
+
+    static void startExpandListView(Context context) {
+        ActivityExpandableListView.open(context);
+    }
+
+    static void startDynamicSizeTest(Context context) {
+        ActivityDynamicSize.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

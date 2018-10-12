@@ -221,6 +221,14 @@
           android:name=".test.audio.player.ActivityAudioList"
           android:screenOrientation="portrait"
           />
+      <activity
+          android:name=".test.list.ActivityExpandableListView"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.dynamic.ActivityDynamicSize"
+          android:screenOrientation="portrait"
+          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->

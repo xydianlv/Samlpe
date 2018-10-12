@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/color_white"
+    >
+
+  <TextView
+      android:id="@+id/expand_item_child_txt"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/text_12"
+      android:textSize="@dimen/text_10"
+      android:textColor="@color/color_263228"
+      />
+
+  <View
+      style="@style/DivideLine"
+      android:layout_gravity="bottom"
+      />
+
+</FrameLayout>
