@@ -5,6 +5,7 @@ import android.content.Intent;
 import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
 import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
+import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
@@ -156,6 +157,10 @@ class UIShowManager {
 
     static void startDynamicSizeTest(Context context) {
         ActivityDynamicSize.open(context);
+    }
+
+    static void startBroadcastTest(Context context) {
+        ActivityBroadcastTest.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/color_white"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <TextView
+      android:id="@+id/broad_test_bt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/test"
+      android:textColor="@color/color_white"
+      android:paddingLeft="@dimen/text_12"
+      android:paddingRight="@dimen/text_12"
+      android:paddingTop="4.0dp"
+      android:paddingBottom="4.0dp"
+      android:layout_marginTop="24.0dp"
+      android:background="@drawable/dialog_round_back_grey"
+      />
+
+</LinearLayout>
