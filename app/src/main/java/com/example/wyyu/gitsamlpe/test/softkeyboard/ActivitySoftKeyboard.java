@@ -27,6 +27,7 @@ public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMo
 
     @BindView(R.id.soft_test_open_other) View openOther;
     @BindView(R.id.soft_test_root_view) View rootView;
+    @BindView(R.id.soft_test_switch) View switchPanel;
     @BindView(R.id.soft_test_dialog) View dialog;
 
     private SoftInputMonitor softInputMonitor;
@@ -111,6 +112,12 @@ public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMo
         dialog.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 showBottomSheetDialog();
+            }
+        });
+
+        switchPanel.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+
             }
         });
 

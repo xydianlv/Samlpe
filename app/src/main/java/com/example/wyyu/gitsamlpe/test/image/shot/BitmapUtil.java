@@ -1,15 +1,19 @@
 package com.example.wyyu.gitsamlpe.test.image.shot;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by wyyu on 2018/8/17.
@@ -41,6 +45,114 @@ public class BitmapUtil {
         try {
             fOut.close();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 从SD卡上获取图片。如果不存在则返回null</br>
+     *
+     * @param path 图片的path地址
+     * @param width 期望图片的宽
+     * @param height 期望图片的高
+     * @return 代表图片的Bitmap对象
+     */
+    public static Bitmap getBitmapFromSDCard(String path, int width, int height) {
+        InputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(new File(path));
+            if (inputStream != null && inputStream.available() > 0) {
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream, null,
+                    getScaleBitmapOptions(path, width, height));
+                return bitmap;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 根据指定的宽高设置相关参数，避免出现OOM现象</br>
+     *
+     * @param url 图片得url地址
+     * @param width 期望图片的宽
+     * @param height 期望图片的高
+     * @return BitmapFactory.Options对象
+     */
+    private static BitmapFactory.Options getScaleBitmapOptions(String url, int width, int height) {
+        InputStream inputStream = getBitmapStream(url);
+        if (inputStream == null) {
+            return null;
+        }
+        BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();
+        bmpFactoryOptions.inJustDecodeBounds = true;
+        try {
+            BitmapFactory.decodeStream(inputStream, null, bmpFactoryOptions);
+
+            int heightRatio = (int) Math.ceil(bmpFactoryOptions.outHeight / height);
+            int widthRatio = (int) Math.ceil(bmpFactoryOptions.outWidth / width);
+
+            /*
+             * If both of the ratios are greater than 1, one of the sides of the
+             * image is greater than the screen
+             */
+            if (heightRatio > 1 && widthRatio > 1) {
+                if (heightRatio > widthRatio) {
+                    // Height ratio is larger, scale according to it
+                    bmpFactoryOptions.inSampleSize = heightRatio;
+                } else {
+                    // Width ratio is larger, scale according to it
+                    bmpFactoryOptions.inSampleSize = widthRatio;
+                }
+            }
+
+            // Decode it for real
+            bmpFactoryOptions.inJustDecodeBounds = false;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // 关闭java 层的stream
+        closeInputStream(inputStream);
+
+        return bmpFactoryOptions;
+    }
+
+    /**
+     * 根据url地址获取图片本地Stream</br>
+     *
+     * @return 本地图片的Stream，否则返回null
+     */
+    public static InputStream getBitmapStream(String path) {
+        InputStream is = null;
+        try {
+            try {
+                is = new FileInputStream(new File(path));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            if (is == null || is.available() <= 0) {
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("BitmapUtil", "读取图片流出错" + e.toString());
+        }
+        return is;
+    }
+
+    /**
+     * 关闭输入流</br>
+     *
+     * @param inputStream 输入流
+     */
+    private static void closeInputStream(InputStream inputStream) {
+        try {
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
