@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/toolbar_height"
+      android:orientation="horizontal"
+      >
+
+    <FrameLayout
+        android:id="@+id/send_msg_icon_a"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/padding_12"
+        android:paddingRight="@dimen/padding_12"
+        tools:ignore="UselessParent"
+        >
+
+      <ImageView
+          android:layout_width="24.0dp"
+          android:layout_height="24.0dp"
+          android:src="@mipmap/ic_news_normal"
+          android:layout_gravity="center"
+          android:contentDescription="@string/image"
+          />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/send_msg_edit"
+        android:layout_height="match_parent"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        android:hint="@string/empty"
+        android:background="@null"
+        android:textSize="16.0dp"
+        android:textColor="@color/color_262626"
+        />
+
+    <FrameLayout
+        android:id="@+id/send_msg_icon_b"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/padding_12"
+        android:paddingRight="@dimen/padding_12"
+        tools:ignore="UselessParent"
+        >
+
+      <ImageView
+          android:layout_width="24.0dp"
+          android:layout_height="24.0dp"
+          android:src="@mipmap/ic_find_normal"
+          android:layout_gravity="center"
+          android:contentDescription="@string/image"
+          />
+
+    </FrameLayout>
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+</LinearLayout>

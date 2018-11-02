@@ -13,4 +13,6 @@
 
   <dimen name="media_grid_size">48.0dp</dimen>
 
+  <dimen name="padding_12">12.0dp</dimen>
+
 </resources>

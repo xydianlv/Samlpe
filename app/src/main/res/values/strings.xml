@@ -70,4 +70,7 @@
     <string name="show_toast">展示Toast</string>
     <string name="show_dialog">展示Dialog</string>
 
+    <string name="switch_panel_1">第一张切换板</string>
+    <string name="switch_panel_2">第二张切换板</string>
+
 </resources>

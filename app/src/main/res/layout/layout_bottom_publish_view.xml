@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:clickable="true"
     android:focusable="true"
+    android:background="@color/color_white"
     >
 
   <View

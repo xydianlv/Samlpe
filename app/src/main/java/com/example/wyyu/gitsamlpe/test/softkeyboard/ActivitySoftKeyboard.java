@@ -117,7 +117,7 @@ public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMo
 
         switchPanel.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-
+                ActivitySwitchPanelTest.open(ActivitySoftKeyboard.this);
             }
         });
 
