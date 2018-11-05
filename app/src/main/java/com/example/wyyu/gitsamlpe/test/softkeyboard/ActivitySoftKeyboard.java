@@ -2,16 +2,14 @@ package com.example.wyyu.gitsamlpe.test.softkeyboard;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetDialog;
-import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import butterknife.BindView;
+import butterknife.OnClick;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.framework.touch.OnPressListenerAdapter;
 import com.example.wyyu.gitsamlpe.framework.touch.TouchListenerLayout;
-import com.example.wyyu.gitsamlpe.util.CommonUtil;
 import com.example.wyyu.gitsamlpe.util.SoftInputMonitor;
 
 /**
@@ -20,44 +18,10 @@ import com.example.wyyu.gitsamlpe.util.SoftInputMonitor;
 
 public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMonitor.Listener {
 
-    //private static final int MINI_KEYBOARD_HEIGHT = CommonUtil.dpToPx(150);
-
     @BindView(R.id.soft_test_touch_layout) TouchListenerLayout touchLayout;
     @BindView(R.id.soft_test_publish_view) BottomPublishView publishView;
 
-    @BindView(R.id.soft_test_open_other) View openOther;
-    @BindView(R.id.soft_test_root_view) View rootView;
-    @BindView(R.id.soft_test_switch) View switchPanel;
-    @BindView(R.id.soft_test_dialog) View dialog;
-
     private SoftInputMonitor softInputMonitor;
-    //private boolean isKeyboardShowing;
-
-    //ViewTreeObserver.OnGlobalLayoutListener globalLayoutListener =
-    //    new ViewTreeObserver.OnGlobalLayoutListener() {
-    //        @Override public void onGlobalLayout() {
-    //            if (rootView == null) {
-    //                return;
-    //            }
-    //            boolean fitsSystemWindows = ViewCompat.getFitsSystemWindows(rootView);
-    //            boolean isKeyBoarShow;
-    //            if (fitsSystemWindows && rootView.getPaddingBottom() > 0) {
-    //                isKeyBoarShow = rootView.getPaddingBottom() > MINI_KEYBOARD_HEIGHT;
-    //            } else {
-    //                isKeyBoarShow = rootView.getRootView().getHeight() - rootView.getHeight()
-    //                    > MINI_KEYBOARD_HEIGHT;
-    //            }
-    //            if (isKeyboardShowing == isKeyBoarShow || publishView == null) {
-    //                return;
-    //            }
-    //            if (isKeyBoarShow) {
-    //                publishView.showInfoView();
-    //            } else {
-    //                publishView.hideInfoView();
-    //            }
-    //            isKeyboardShowing = isKeyBoarShow;
-    //        }
-    //    };
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,10 +36,6 @@ public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMo
             softInputMonitor.setListener(this);
             softInputMonitor.startMonitoring(this);
         }
-        //if (rootView != null && rootView.getViewTreeObserver() != null) {
-        //    rootView.getViewTreeObserver().removeOnGlobalLayoutListener(globalLayoutListener);
-        //    rootView.getViewTreeObserver().addOnGlobalLayoutListener(globalLayoutListener);
-        //}
     }
 
     @Override protected void onPause() {
@@ -84,9 +44,6 @@ public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMo
             softInputMonitor.setListener(null);
             softInputMonitor.stopMonitoring();
         }
-        //if (rootView != null && rootView.getViewTreeObserver() != null) {
-        //    rootView.getViewTreeObserver().removeOnGlobalLayoutListener(globalLayoutListener);
-        //}
     }
 
     private void initActivity() {
@@ -103,25 +60,27 @@ public class ActivitySoftKeyboard extends ToolbarActivity implements SoftInputMo
             }
         });
 
-        openOther.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                ActivityShowKeyboard.open(ActivitySoftKeyboard.this);
-            }
-        });
-
-        dialog.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                showBottomSheetDialog();
-            }
-        });
-
-        switchPanel.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                ActivitySwitchPanelTest.open(ActivitySoftKeyboard.this);
-            }
-        });
-
         softInputMonitor = new SoftInputMonitor();
+    }
+
+    @OnClick({
+        R.id.soft_test_switch_custom, R.id.soft_test_open_other, R.id.soft_test_dialog,
+        R.id.soft_test_switch
+    }) public void onEvent(View view) {
+        switch (view.getId()) {
+            case R.id.soft_test_switch_custom:
+                ActivityCustomSwitchPanel.open(ActivitySoftKeyboard.this);
+                break;
+            case R.id.soft_test_open_other:
+                ActivityShowKeyboard.open(ActivitySoftKeyboard.this);
+                break;
+            case R.id.soft_test_dialog:
+                showBottomSheetDialog();
+                break;
+            case R.id.soft_test_switch:
+                ActivitySwitchPanelTest.open(ActivitySoftKeyboard.this);
+                break;
+        }
     }
 
     private void showBottomSheetDialog() {

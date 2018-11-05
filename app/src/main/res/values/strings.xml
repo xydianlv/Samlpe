@@ -62,6 +62,7 @@
     <string name="auto_open_soft">自动弹出软键盘</string>
     <string name="bottom_sheet_dialog">BottomSheetDialog</string>
     <string name="switch_panel">SwitchPanel</string>
+    <string name="switch_panel_custom">SwitchPanelCustom</string>
 
     <string name="go_open">去开启</string>
     <string name="title">标题</string>

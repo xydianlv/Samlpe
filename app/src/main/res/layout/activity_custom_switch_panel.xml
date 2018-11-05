@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.dreamtobe.kpswitch.widget.KPSwitchRootFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/color_1ed1ff"
+      android:layout_marginTop="@dimen/toolbar_height"
+      android:layout_marginBottom="@dimen/toolbar_height"
+      >
+
+    <com.example.wyyu.gitsamlpe.framework.touch.TouchListenerLayout
+        android:id="@+id/switch_panel_touch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120.0dp"
+            android:gravity="center"
+            android:textSize="20.0dp"
+            android:textColor="@color/color_262626"
+            android:text="@string/test"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120.0dp"
+            android:gravity="center"
+            android:textSize="20.0dp"
+            android:textColor="@color/color_262626"
+            android:text="@string/test"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120.0dp"
+            android:gravity="center"
+            android:textSize="20.0dp"
+            android:textColor="@color/color_262626"
+            android:text="@string/test"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120.0dp"
+            android:gravity="center"
+            android:textSize="20.0dp"
+            android:textColor="@color/color_262626"
+            android:text="@string/test"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120.0dp"
+            android:gravity="center"
+            android:textSize="20.0dp"
+            android:textColor="@color/color_262626"
+            android:text="@string/test"
+            />
+
+      </LinearLayout>
+
+    </com.example.wyyu.gitsamlpe.framework.touch.TouchListenerLayout>
+
+  </ScrollView>
+
+  <com.example.wyyu.gitsamlpe.test.softkeyboard.CustomPublishView
+      android:id="@+id/switch_panel_publish"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      />
+
+</cn.dreamtobe.kpswitch.widget.KPSwitchRootFrameLayout>

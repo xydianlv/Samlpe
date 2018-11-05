@@ -237,6 +237,7 @@
           android:screenOrientation="portrait"
           />
       <activity android:name=".test.broadcast.ActivityBroadcastTest"/>
+      <activity android:name=".test.softkeyboard.ActivityCustomSwitchPanel"/>
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->
