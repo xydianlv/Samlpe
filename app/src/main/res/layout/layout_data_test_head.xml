@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <EditText
+      android:id="@+id/data_test_head_edit"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@null"
+      android:hint="@string/test_input"
+      android:textSize="15.0dp"
+      android:textColor="@color/color_84919b"
+      android:padding="@dimen/padding_12"
+      />
+
+  <TextView
+      android:id="@+id/data_test_head_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/test_bt"
+      android:textColor="@color/color_white"
+      android:paddingLeft="20.0dp"
+      android:paddingRight="20.0dp"
+      android:paddingTop="8.0dp"
+      android:paddingBottom="8.0dp"
+      android:layout_margin="@dimen/padding_12"
+      android:background="@drawable/dialog_round_back_grey"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+</LinearLayout>

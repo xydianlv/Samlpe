@@ -8,6 +8,7 @@ import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
+import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.dynamic.ActivityDynamicSize;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
@@ -161,6 +162,10 @@ class UIShowManager {
 
     static void startBroadcastTest(Context context) {
         ActivityBroadcastTest.open(context);
+    }
+
+    static void startDatabaseTest(Context context) {
+        ActivityDataBase.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

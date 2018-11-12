@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.framework.application;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
+import com.example.wyyu.gitsamlpe.test.database.TDataBase;
 import com.example.wyyu.gitsamlpe.util.UIUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
@@ -20,6 +21,7 @@ public class AppController extends Application {
 
         Fresco.initialize(getAppContext());
         UIUtils.init(getAppContext());
+        TDataBase.init();
     }
 
     public static Context getAppContext() {

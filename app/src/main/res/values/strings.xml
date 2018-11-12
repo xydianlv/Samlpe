@@ -74,4 +74,7 @@
     <string name="switch_panel_1">第一张切换板</string>
     <string name="switch_panel_2">第二张切换板</string>
 
+    <string name="test_input">文字数据…</string>
+    <string name="test_bt">添加到数据库</string>
+
 </resources>

@@ -216,6 +216,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("DatabaseTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startDatabaseTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

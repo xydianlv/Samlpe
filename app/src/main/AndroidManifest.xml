@@ -236,8 +236,18 @@
           android:name=".test.dynamic.ActivityDynamicSize"
           android:screenOrientation="portrait"
           />
-      <activity android:name=".test.broadcast.ActivityBroadcastTest"/>
-      <activity android:name=".test.softkeyboard.ActivityCustomSwitchPanel"/>
+      <activity
+          android:name=".test.broadcast.ActivityBroadcastTest"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.softkeyboard.ActivityCustomSwitchPanel"
+          android:screenOrientation="portrait"
+          />
+      <activity
+          android:name=".test.database.ActivityDataBase"
+          android:screenOrientation="portrait"
+          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->

@@ -6,5 +6,5 @@ package com.example.wyyu.gitsamlpe.framework.message;
 
 public enum MsgType {
 
-    LOCATION_CHANGE
+    LOCATION_CHANGE, DATA_CHANGE
 }
