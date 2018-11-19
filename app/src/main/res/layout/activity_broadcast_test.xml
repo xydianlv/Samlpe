@@ -26,4 +26,18 @@
       android:background="@drawable/dialog_round_back_grey"
       />
 
+  <TextView
+      android:id="@+id/broad_test_dialog"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/dialog_test"
+      android:textColor="@color/color_white"
+      android:paddingLeft="@dimen/text_12"
+      android:paddingRight="@dimen/text_12"
+      android:paddingTop="4.0dp"
+      android:paddingBottom="4.0dp"
+      android:layout_marginTop="48.0dp"
+      android:background="@drawable/dialog_round_back_grey"
+      />
+
 </LinearLayout>

@@ -58,6 +58,7 @@
     <string name="clean">清空</string>
     <string name="delete">删除</string>
     <string name="save">保存</string>
+    <string name="back">返回</string>
     <string name="publish">发布</string>
     <string name="auto_open_soft">自动弹出软键盘</string>
     <string name="bottom_sheet_dialog">BottomSheetDialog</string>

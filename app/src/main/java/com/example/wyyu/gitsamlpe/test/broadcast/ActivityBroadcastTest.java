@@ -3,11 +3,11 @@ package com.example.wyyu.gitsamlpe.test.broadcast;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.database.ContentObserver;
 import android.os.Bundle;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.framework.pagedialog.PageDialog;
 
 /**
  * Created by wyyu on 2018/10/17.
@@ -32,6 +32,7 @@ public class ActivityBroadcastTest extends ToolbarActivity implements View.OnCli
 
         initToolbar("BroadCast");
 
+        findViewById(R.id.broad_test_dialog).setOnClickListener(this);
         findViewById(R.id.broad_test_bt).setOnClickListener(this);
 
         scanReceiver = new ScanReceiver();
@@ -49,11 +50,18 @@ public class ActivityBroadcastTest extends ToolbarActivity implements View.OnCli
             case R.id.broad_test_bt:
                 sendBroadcast();
                 break;
+            case R.id.broad_test_dialog:
+                showTestDialog();
+                break;
         }
     }
 
     private void sendBroadcast() {
         Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         sendBroadcast(intent);
+    }
+
+    private void showTestDialog() {
+        PageDialog.show(this);
     }
 }

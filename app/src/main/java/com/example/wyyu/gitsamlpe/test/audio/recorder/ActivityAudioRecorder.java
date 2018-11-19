@@ -3,18 +3,26 @@ package com.example.wyyu.gitsamlpe.test.audio.recorder;
 import android.Manifest;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
+import java.util.concurrent.TimeUnit;
+import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
 import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by wyyu on 2018/1/9.
  **/
 
-public class ActivityAudioRecorder extends FullScreenActivity {
+public class ActivityAudioRecorder extends AppCompatActivity {
 
     private static final int LIMITATION_SECONDS = 30;
     private AudioRecorder audioRecorder;
@@ -48,6 +56,45 @@ public class ActivityAudioRecorder extends FullScreenActivity {
         resetButton = findViewById(R.id.bt_reset);
         playButton = findViewById(R.id.bt_play);
         mainButton = findViewById(R.id.bt_main);
+
+        findViewById(R.id.test_bt).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                startTimeShow();
+            }
+        });
+    }
+
+    private void startTimeShow() {
+
+        // initial - 延迟指定时间开始执行，period - 相隔指定时长执行一次，take - 执行总次数
+        Observable<Integer> observableT = Observable.interval(2, 1, TimeUnit.SECONDS)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .take(6)
+            .map(new Func1<Long, Integer>() {
+                @Override public Integer call(Long aLong) {
+                    return aLong.intValue();
+                }
+            });
+
+        // 开始执行
+        observableT.doOnSubscribe(new Action0() {
+            @Override public void call() {
+
+            }
+        }).subscribe(new Observer<Integer>() {
+            @Override public void onCompleted() {
+
+            }
+
+            @Override public void onError(Throwable e) {
+
+            }
+
+            @Override public void onNext(Integer integer) {
+
+            }
+        });
     }
 
     private void initBasicValue() {

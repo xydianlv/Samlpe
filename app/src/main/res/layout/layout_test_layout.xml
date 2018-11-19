@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:id="@+id/test_layout_head"
+      android:layout_width="match_parent"
+      android:layout_height="48.0dp"
+      android:text="@string/back"
+      android:gravity="center"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="48.0dp"
+      android:text="@string/test"
+      android:gravity="center"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="48.0dp"
+      android:text="@string/test"
+      android:gravity="center"
+      />
+
+</LinearLayout>
