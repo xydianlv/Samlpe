@@ -76,7 +76,8 @@ public class ActivityLocalImage extends ToolbarActivity
                 if (album.isAll() && SelectionSpec.getInstance().capture) {
                     album.addCaptureCount();
                 }
-                photoCollection.load(album, SelectionSpec.getInstance().capture);
+
+                onAlbumSelect(album);
             }
 
             @Override public void onNothingSelected(AdapterView<?> parent) {
@@ -109,7 +110,8 @@ public class ActivityLocalImage extends ToolbarActivity
         if (album.isAll() && SelectionSpec.getInstance().capture) {
             album.addCaptureCount();
         }
-        photoCollection.load(album, SelectionSpec.getInstance().capture);
+
+        onAlbumSelect(album);
     }
 
     @Override public void onAlbumReset() {
@@ -133,5 +135,20 @@ public class ActivityLocalImage extends ToolbarActivity
 
     @Override public void onReset() {
         imageAdapter.swapCursor(null);
+    }
+
+    private void onAlbumSelect(Album album) {
+        if (album == null) {
+            return;
+        }
+
+        if (photoCollection == null) {
+            photoCollection = new AlbumPhotoCollection();
+        }
+
+        photoCollection.onDestroy();
+        photoCollection.onCreate(this, this);
+
+        photoCollection.load(album, true);
     }
 }
