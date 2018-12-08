@@ -4,20 +4,12 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:layout_margin="1.0dp"
-    android:id="@+id/img_item_root"
     >
-
-  <com.facebook.drawee.view.SimpleDraweeView
-      android:id="@+id/local_image_item"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      />
 
   <ImageView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:src="@mipmap/img_picture_mask"
-      android:scaleType="fitXY"
+      android:src="@mipmap/img_volume"
       android:contentDescription="@string/image"
       />
 

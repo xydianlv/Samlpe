@@ -14,21 +14,19 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.zhihu.matisse.internal.entity.Item;
 
 /**
- * Created by wyyu on 2018/8/1.
+ * Created by wyyu on 2018/12/8.
  **/
 
-public class LocalImageAdapter extends RecyclerView.Adapter {
+public class LocalMediaAdapter extends RecyclerCursorAdapter {
 
     private static final int ITEM_CAPTURE = 1;
     private static final int ITEM_MEDIA = 0;
 
     private FrescoEngine frescoEngine;
-    private Cursor cursor;
-
     private Drawable mPlaceholder;
 
-    LocalImageAdapter(Cursor cursor) {
-        this.cursor = cursor;
+    LocalMediaAdapter() {
+        super(null);
 
         frescoEngine = new FrescoEngine();
 
@@ -40,23 +38,32 @@ public class LocalImageAdapter extends RecyclerView.Adapter {
 
     @NonNull @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ImageViewHolder(LayoutInflater.from(parent.getContext())
-            .inflate(R.layout.layout_local_image_view, parent, false));
+        if (viewType == ITEM_CAPTURE) {
+            return new CaptureHolder(LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.layout_capture_view, parent, false));
+        } else {
+            return new ImageViewHolder(LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.layout_local_image_view, parent, false));
+        }
     }
 
-    @Override public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-        cursor.moveToPosition(position);
+    @Override protected void onBindViewHolder(RecyclerView.ViewHolder holder, Cursor cursor) {
+        if (holder instanceof CaptureHolder) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    if (clickListener != null) {
+                        clickListener.onCapture();
+                    }
+                }
+            });
+            return;
+        }
 
         ((ImageViewHolder) holder).bind(Item.valueOf(cursor));
     }
 
-    @Override public int getItemViewType(int position) {
+    @Override protected int getItemViewType(int position, Cursor cursor) {
         return Item.valueOf(cursor).isCapture() ? ITEM_CAPTURE : ITEM_MEDIA;
-    }
-
-    @Override public int getItemCount() {
-        return cursor == null || cursor.isClosed() ? 0 : cursor.getCount();
     }
 
     private class ImageViewHolder extends RecyclerView.ViewHolder {
@@ -86,15 +93,16 @@ public class LocalImageAdapter extends RecyclerView.Adapter {
         }
     }
 
-    void swapCursor(Cursor newCursor) {
-        if (newCursor == null) {
-            notifyItemRangeRemoved(0, getItemCount());
-            return;
-        }
-        if (newCursor == cursor) {
-            return;
-        }
-        cursor = newCursor;
-        notifyDataSetChanged();
+    private OnMediaClickListener clickListener;
+
+    void setOnMediaClickListener(OnMediaClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    public interface OnMediaClickListener {
+
+        void onClickItem();
+
+        void onCapture();
     }
 }
