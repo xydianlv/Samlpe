@@ -158,7 +158,7 @@ public class ActivityLocalImage extends ToolbarActivity
         albumAdapter.swapCursor(cursor);
         albumsSpinner.setSelection(this, albumCollection.getCurrentSelection());
 
-        cursor.moveToPosition(albumCollection.getCurrentSelection());
+        cursor.moveToFirst();
         Album album = Album.valueOf(cursor);
         if (album.isAll() && SelectionSpec.getInstance().capture) {
             album.addCaptureCount();

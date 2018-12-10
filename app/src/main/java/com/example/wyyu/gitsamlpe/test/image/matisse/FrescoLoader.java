@@ -148,12 +148,12 @@ public class FrescoLoader implements View.OnAttachStateChangeListener {
             return;
         }
 
-        if (drawHolder == null) {
-            Object tag = targetView.getTag();
-            if (tag instanceof DraweeHolder) {
-                drawHolder = (DraweeHolder<DraweeHierarchy>) tag;
-            }
-        }
+        //if (drawHolder == null) {
+        //    Object tag = targetView.getTag();
+        //    if (tag instanceof DraweeHolder) {
+        //        drawHolder = (DraweeHolder<DraweeHierarchy>) tag;
+        //    }
+        //}
 
         if (drawHolder == null) {
             drawHolder = DraweeHolder.create(null, targetView.getContext());
