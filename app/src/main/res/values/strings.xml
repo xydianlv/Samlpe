@@ -78,4 +78,9 @@
     <string name="test_input">文字数据…</string>
     <string name="test_bt">添加到数据库</string>
 
+    <string name="dialog_normal">NormalDialog</string>
+    <string name="dialog_full">FullDialog</string>
+
+    <string name="fresco_basic">FrescoBasic</string>
+
 </resources>

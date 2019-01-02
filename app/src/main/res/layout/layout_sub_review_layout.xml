@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_round_back_grey"
+    >
+
+  <TextView
+      android:id="@+id/sub_review_content"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:maxLines="2"
+      android:textSize="13.0dp"
+      android:ellipsize="end"
+      android:lineSpacingMultiplier="1.1"
+      />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:maxLines="1"
+      android:text="@string/test"
+      android:textSize="13.0dp"
+      android:ellipsize="end"
+      android:textColor="@color/color_1a1a1a"
+      android:layout_marginTop="4.0dp"
+      />
+
+</LinearLayout>

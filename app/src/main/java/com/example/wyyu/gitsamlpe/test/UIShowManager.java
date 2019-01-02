@@ -9,11 +9,13 @@ import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
+import com.example.wyyu.gitsamlpe.test.dialog.ActivityFullDialog;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.dynamic.ActivityDynamicSize;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
 import com.example.wyyu.gitsamlpe.test.fragment.ActivitySlideTest;
+import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
@@ -166,6 +168,14 @@ class UIShowManager {
 
     static void startDatabaseTest(Context context) {
         ActivityDataBase.open(context);
+    }
+
+    static void dialogShowTest(Context context) {
+        ActivityFullDialog.open(context);
+    }
+
+    static void frescoShowTest(Context context) {
+        ActivityFrescoTest.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

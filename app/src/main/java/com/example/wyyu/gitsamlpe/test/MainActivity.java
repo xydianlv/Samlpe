@@ -222,6 +222,18 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("DialogShowTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.dialogShowTest(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("FrescoShowTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.frescoShowTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

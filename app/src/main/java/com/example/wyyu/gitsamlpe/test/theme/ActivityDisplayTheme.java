@@ -14,7 +14,7 @@ public class ActivityDisplayTheme extends Activity{
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_translucent_theme);
+        setContentView(R.layout.activity_display_theme);
     }
 
     @Override protected void onResume() {

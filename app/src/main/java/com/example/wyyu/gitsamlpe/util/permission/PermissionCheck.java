@@ -2,7 +2,6 @@ package com.example.wyyu.gitsamlpe.util.permission;
 
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
 import java.util.LinkedList;
-import junit.framework.Assert;
 
 /**
  * Created by wyyu on 2018/8/25.
@@ -54,7 +53,9 @@ public class PermissionCheck {
 
     private void onPermissionGranted(PermissionItem permissionItem) {
 
-        Assert.assertNotNull(permissionItem);
+        if (permissionItem == null) {
+            return;
+        }
 
         PermissionObservable.getObservable().permissionGranted(permissionItem.itemKey);
 
