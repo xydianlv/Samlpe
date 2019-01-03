@@ -11,25 +11,46 @@
       layout="@layout/common_toolbar"
       />
 
-  <View
-      style="@style/my_divide_view"
-      />
-
-  <Button
+  <TextView
       android:id="@+id/float_button"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="@string/float_test"
-      android:background="@color/color_9fbfbf"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      android:paddingTop="@dimen/padding_6"
+      android:paddingBottom="@dimen/padding_6"
+      android:textColor="@color/color_white"
+      android:background="@drawable/dialog_round_back_grey"
+      android:layout_marginTop="60.0dp"
       />
 
-  <Button
-      android:id="@+id/float_dialog"
+  <TextView
+    android:id="@+id/float_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/dialog_test"
+    android:paddingLeft="@dimen/padding_12"
+    android:paddingRight="@dimen/padding_12"
+    android:paddingTop="@dimen/padding_6"
+    android:paddingBottom="@dimen/padding_6"
+    android:textColor="@color/color_white"
+    android:background="@drawable/dialog_round_back_grey"
+    android:layout_marginTop="48.0dp"
+    />
+
+  <TextView
+      android:id="@+id/float_sys"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/dialog_test"
-      android:background="@color/color_9fbfbf"
-      android:layout_marginTop="60.0dp"
+      android:text="@string/float_sys"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      android:paddingTop="@dimen/padding_6"
+      android:paddingBottom="@dimen/padding_6"
+      android:textColor="@color/color_white"
+      android:background="@drawable/dialog_round_back_grey"
+      android:layout_marginTop="48.0dp"
       />
 
   <View
