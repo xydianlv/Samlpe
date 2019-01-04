@@ -53,8 +53,18 @@
       android:layout_marginTop="48.0dp"
       />
 
-  <View
-      style="@style/my_divide_view"
+  <TextView
+      android:id="@+id/live_service"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/live_service"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      android:paddingTop="@dimen/padding_6"
+      android:paddingBottom="@dimen/padding_6"
+      android:textColor="@color/color_white"
+      android:background="@drawable/dialog_round_back_grey"
+      android:layout_marginTop="48.0dp"
       />
 
 </LinearLayout>

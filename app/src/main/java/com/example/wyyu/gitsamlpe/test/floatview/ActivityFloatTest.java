@@ -2,6 +2,7 @@ package com.example.wyyu.gitsamlpe.test.floatview;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -57,6 +58,12 @@ public class ActivityFloatTest extends ToolbarActivity {
             }
         });
 
+        findViewById(R.id.live_service).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                startLiveService();
+            }
+        });
+
         handler = new Handler() {
             @Override public void handleMessage(Message msg) {
                 if (msg.what != 0 || value > 400) {
@@ -74,5 +81,13 @@ public class ActivityFloatTest extends ToolbarActivity {
 
     private void showSysFloatView() {
         startService(new Intent(this, FloatingService.class));
+    }
+
+    private void startLiveService() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(new Intent(this, KeepLiveService.class));
+        } else {
+            startService(new Intent(this, KeepLiveService.class));
+        }
     }
 }

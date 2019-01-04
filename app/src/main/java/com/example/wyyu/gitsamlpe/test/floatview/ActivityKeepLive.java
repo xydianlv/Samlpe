@@ -37,6 +37,10 @@ public class ActivityKeepLive extends AppCompatActivity implements MsgReceiver {
         MsgSender.getMsgSender().attach(this);
     }
 
+    @Override protected void onResume() {
+        super.onResume();
+    }
+
     @Override protected void onDestroy() {
         super.onDestroy();
         MsgSender.getMsgSender().detach(this);

@@ -45,6 +45,7 @@
     <string name="float_test">float</string>
     <string name="float_sys">sysFloat</string>
     <string name="dialog_test">dialog</string>
+    <string name="live_service">liveService</string>
 
     <string name="typeface_test">一段简单的测试文字</string>
 

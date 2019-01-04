@@ -263,7 +263,7 @@
           android:exported="false"
           android:finishOnTaskLaunch="false"
           android:launchMode="singleInstance"
-          android:process=":live"
+          android:process=":process"
           android:theme="@style/LiveActivity"
           />
 
@@ -278,6 +278,12 @@
           />
       <service
           android:name=".test.floatview.FloatingService"
+          />
+      <service
+          android:name=".test.floatview.InnerService"
+          />
+      <service
+          android:name=".test.floatview.KeepLiveService"
           />
 
     </application>

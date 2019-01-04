@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/padding_12"
+    android:paddingRight="@dimen/padding_12"
+    android:paddingTop="@dimen/padding_6"
+    android:paddingBottom="@dimen/padding_6"
+    android:background="@drawable/button_circle_red_90"
+    >
+
+  <TextView
+      android:id="@+id/float_number"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/number"
+      android:textSize="12.0dp"
+      android:textColor="@color/color_white"
+      android:layout_gravity="center"
+      />
+
+</FrameLayout>
