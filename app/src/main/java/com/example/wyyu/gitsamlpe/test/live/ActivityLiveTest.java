@@ -8,6 +8,4 @@ import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 
 public class ActivityLiveTest extends ToolbarActivity {
 
-
-
 }
