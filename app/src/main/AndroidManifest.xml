@@ -266,9 +266,6 @@
           android:process=":process"
           android:theme="@style/LiveActivity"
           />
-      <activity
-          android:name=".test.live.ActivityLiveTest"
-          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->
