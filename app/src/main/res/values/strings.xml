@@ -95,4 +95,9 @@
     <string name="progress_bar">ProgressBar</string>
     <string name="press_overlay">pressOverlay</string>
 
+    <string name="back_thread">后台进程</string>
+    <string name="float_view">前台悬浮窗</string>
+    <string name="close_listener">熄屏监听</string>
+    <string name="notify_bar">常驻通知栏</string>
+
 </resources>

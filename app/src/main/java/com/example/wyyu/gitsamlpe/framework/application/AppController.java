@@ -24,7 +24,7 @@ public class AppController extends Application {
         UIUtils.init(getAppContext());
         TDataBase.init();
 
-        //KeepLiveManager.getManager().init(getAppContext());
+        KeepLiveManager.getManager().init();
     }
 
     public static Context getAppContext() {

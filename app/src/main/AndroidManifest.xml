@@ -301,6 +301,12 @@
       <service
           android:name=".test.live.KeepLiveService"
           />
+      <service
+          android:name=".test.live.KeepLiveOnlyService"
+          />
+      <service
+          android:name=".test.live.KeepLiveOnlyFloat"
+          />
 
     </application>
 

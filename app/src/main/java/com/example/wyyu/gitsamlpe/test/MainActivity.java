@@ -5,7 +5,6 @@ import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
-import com.example.wyyu.gitsamlpe.test.live.KeepLiveManager;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
 public class MainActivity extends ToolbarActivity {
@@ -26,8 +25,6 @@ public class MainActivity extends ToolbarActivity {
         initListView();
 
         ULog.show(FileManager.getFileManager().getAudioDir());
-
-        KeepLiveManager.getManager().init(this);
     }
 
     private void initToolBar() {
@@ -240,6 +237,12 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("BlogTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startBlogMainActivity(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("LiveTest", new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                UIShowManager.startLiveTest(MainActivity.this);
             }
         });
 

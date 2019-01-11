@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+  <LinearLayout
+      android:id="@+id/live_test_back_service"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/bottom_bar_height"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_thread"
+        android:textColor="@color/color_262626"
+        android:textSize="15.0dp"
+        />
+
+    <View
+        style="@style/my_divide_view"
+        />
+
+    <View
+        android:id="@+id/live_test_service_check"
+        android:layout_width="18.0dp"
+        android:layout_height="18.0dp"
+        android:background="@drawable/bg_round_grey"
+        />
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      android:layout_marginLeft="@dimen/padding_12"
+      android:layout_marginStart="@dimen/padding_12"
+      />
+
+  <LinearLayout
+      android:id="@+id/live_test_float"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/bottom_bar_height"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/float_view"
+        android:textColor="@color/color_262626"
+        android:textSize="15.0dp"
+        />
+
+    <View
+        style="@style/my_divide_view"
+        />
+
+    <View
+        android:id="@+id/live_test_float_check"
+        android:layout_width="18.0dp"
+        android:layout_height="18.0dp"
+        android:background="@drawable/bg_round_grey"
+        />
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      android:layout_marginLeft="@dimen/padding_12"
+      android:layout_marginStart="@dimen/padding_12"
+      />
+
+  <LinearLayout
+      android:id="@+id/live_test_close_listener"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/bottom_bar_height"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close_listener"
+        android:textColor="@color/color_262626"
+        android:textSize="15.0dp"
+        />
+
+    <View
+        style="@style/my_divide_view"
+        />
+
+    <View
+        android:id="@+id/live_test_listener_check"
+        android:layout_width="18.0dp"
+        android:layout_height="18.0dp"
+        android:background="@drawable/bg_round_grey"
+        />
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      android:layout_marginLeft="@dimen/padding_12"
+      android:layout_marginStart="@dimen/padding_12"
+      />
+
+  <LinearLayout
+      android:id="@+id/live_test_notify"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/bottom_bar_height"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notify_bar"
+        android:textColor="@color/color_262626"
+        android:textSize="15.0dp"
+        />
+
+    <View
+        style="@style/my_divide_view"
+        />
+
+    <View
+        android:id="@+id/live_test_notify_check"
+        android:layout_width="18.0dp"
+        android:layout_height="18.0dp"
+        android:background="@drawable/bg_round_grey"
+        />
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+</LinearLayout>

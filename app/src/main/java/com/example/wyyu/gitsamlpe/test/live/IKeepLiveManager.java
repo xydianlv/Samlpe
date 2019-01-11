@@ -1,16 +1,26 @@
 package com.example.wyyu.gitsamlpe.test.live;
 
-import android.content.Context;
-
 /**
  * Created by wyyu on 2019/1/8.
  **/
 
 public interface IKeepLiveManager {
 
-    void init(Context context);
+    void init();
 
-    void startPixelActivity();
+    void startBackService();
 
-    void finishPixelActivity();
+    void closeBackService();
+
+    void showFloatView();
+
+    void hideFloatView();
+
+    void openCloseListener();
+
+    void closeCloseListener();
+
+    void showNotifyBar();
+
+    void hideNotifyBar();
 }

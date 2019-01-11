@@ -1,9 +1,15 @@
 package com.example.wyyu.gitsamlpe.test.live;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
+import android.support.v4.app.NotificationCompat;
+import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.application.AppController;
 
 /**
  * Created by wyyu on 2019/1/8.
@@ -19,20 +25,55 @@ public class KeepLiveManager implements IKeepLiveManager {
         return ManagerHolder.manager;
     }
 
-    private KeepLiveReceiver keepLiveReceiver;
-    private Context context;
+    private static final String CHANNEL_NAME = "notify";
+    private static final int CHANNEL_ID = 1001;
 
-    private boolean hasInit;
+    private NotificationManager notificationManager;
+    private KeepLiveReceiver keepLiveReceiver;
 
     private KeepLiveManager() {
         keepLiveReceiver = new KeepLiveReceiver();
-        hasInit = false;
+        initNotificationManager();
     }
 
-    @Override public void init(Context context) {
-        if (context == null || hasInit) {
-            return;
+    private void initNotificationManager() {
+        notificationManager = (NotificationManager) AppController.getAppContext()
+            .getSystemService(Context.NOTIFICATION_SERVICE);
+    }
+
+    @Override public void init() {
+
+    }
+
+    @Override public void startBackService() {
+        Context context = AppController.getAppContext();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            context.startForegroundService(new Intent(context, KeepLiveOnlyService.class));
+        } else {
+            context.startService(new Intent(context, KeepLiveOnlyService.class));
         }
+    }
+
+    @Override public void closeBackService() {
+
+    }
+
+    @Override public void showFloatView() {
+        Context context = AppController.getAppContext();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            context.startForegroundService(new Intent(context, KeepLiveOnlyFloat.class));
+        } else {
+            context.startService(new Intent(context, KeepLiveOnlyFloat.class));
+        }
+    }
+
+    @Override public void hideFloatView() {
+
+    }
+
+    @Override public void openCloseListener() {
         if (keepLiveReceiver == null) {
             keepLiveReceiver = new KeepLiveReceiver();
         }
@@ -40,27 +81,40 @@ public class KeepLiveManager implements IKeepLiveManager {
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         intentFilter.addAction(Intent.ACTION_SCREEN_ON);
 
-        context.registerReceiver(keepLiveReceiver, intentFilter);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            context.startForegroundService(new Intent(context, KeepLiveService.class));
-        } else {
-            context.startService(new Intent(context, KeepLiveService.class));
-        }
-
-        this.context = context;
-        this.hasInit = true;
+        AppController.getAppContext().registerReceiver(keepLiveReceiver, intentFilter);
     }
 
-    @Override public void startPixelActivity() {
-        if (context == null) {
+    @Override public void closeCloseListener() {
+        if (keepLiveReceiver == null) {
             return;
         }
-        KeepLiveActivity.open(context);
+        AppController.getAppContext().unregisterReceiver(keepLiveReceiver);
     }
 
-    @Override public void finishPixelActivity() {
-        Intent intent = new Intent(FinishPixelReceiver.ACTION_FINISH_PIXEL);
-        context.sendBroadcast(intent);
+    @Override public void showNotifyBar() {
+        if (notificationManager == null) {
+            initNotificationManager();
+        }
+
+        Context context = AppController.getAppContext();
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_NAME);
+
+        builder.setContentTitle("");
+        builder.setContentText("");
+        builder.setDefaults(Notification.DEFAULT_ALL);
+        builder.setSmallIcon(R.mipmap.arrow_right);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channelSection = new NotificationChannel(CHANNEL_NAME, CHANNEL_NAME,
+                NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channelSection);
+        }
+
+        notificationManager.notify(CHANNEL_ID, builder.build());
+    }
+
+    @Override public void hideNotifyBar() {
+
     }
 }

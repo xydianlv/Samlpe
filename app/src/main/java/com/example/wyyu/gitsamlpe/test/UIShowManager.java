@@ -19,6 +19,7 @@ import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
+import com.example.wyyu.gitsamlpe.test.live.ActivityLiveTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
@@ -176,6 +177,10 @@ class UIShowManager {
 
     static void frescoShowTest(Context context) {
         ActivityFrescoTest.open(context);
+    }
+
+    static void startLiveTest(Context context) {
+        ActivityLiveTest.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
