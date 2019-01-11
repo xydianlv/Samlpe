@@ -191,4 +191,16 @@
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
+    <style name="ClickableText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/padding_12</item>
+        <item name="android:paddingRight">@dimen/padding_12</item>
+        <item name="android:paddingTop">@dimen/padding_6</item>
+        <item name="android:paddingBottom">@dimen/padding_6</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:background">@drawable/dialog_round_back_grey</item>
+        <item name="android:layout_marginTop">48.0dp</item>
+    </style>
+
 </resources>

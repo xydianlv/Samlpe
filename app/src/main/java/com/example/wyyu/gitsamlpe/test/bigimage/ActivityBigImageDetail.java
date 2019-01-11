@@ -16,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.AnimatorData;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationData;
@@ -108,7 +109,7 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
 
             @Override public void onPageSelected(int position) {
                 PositionObservable.getInstance().positionUpdate(position);
-                imageFunView.setImageResource(imageArray[position]);
+                imageFunView.setImage(ImageSource.resource(imageArray[position]));
                 index = position;
             }
 
@@ -149,7 +150,7 @@ public class ActivityBigImageDetail extends Activity implements OnConfirmPositio
         winHeight = getWindowManager().getDefaultDisplay().getHeight();
         winWidth = getWindowManager().getDefaultDisplay().getWidth();
 
-        imageFunView.setImageResource(imageArray[index]);
+        imageFunView.setImage(ImageSource.resource(imageArray[index]));
         imageFunView.setData(locationData);
         viewPager.setVisibility(View.GONE);
     }

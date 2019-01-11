@@ -18,6 +18,8 @@ import com.example.wyyu.gitsamlpe.framework.message.MsgType;
 public class ActivityKeepLive extends AppCompatActivity implements MsgReceiver {
 
     public static void open(Context context) {
+        Intent intent = new Intent(context, ActivityKeepLive.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(new Intent(context, ActivityKeepLive.class));
     }
 

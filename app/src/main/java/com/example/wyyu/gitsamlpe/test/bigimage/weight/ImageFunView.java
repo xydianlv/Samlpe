@@ -3,13 +3,14 @@ package com.example.wyyu.gitsamlpe.test.bigimage.weight;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationData;
 
 /**
  * Created by wyyu on 2018/5/8.
  **/
 
-public class ImageFunView extends android.support.v7.widget.AppCompatImageView {
+public class ImageFunView extends SubsamplingScaleImageView {
 
     public ImageFunView(Context context) {
         super(context);
@@ -17,10 +18,6 @@ public class ImageFunView extends android.support.v7.widget.AppCompatImageView {
 
     public ImageFunView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public ImageFunView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
     }
 
     private LocationData locationData;

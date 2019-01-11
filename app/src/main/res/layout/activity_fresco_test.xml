@@ -3,6 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_f0eff5"
     >
 
   <LinearLayout
@@ -32,6 +34,176 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="@string/fresco_basic"
+          android:textColor="@color/color_white"
+          android:padding="@dimen/padding_12"
+          android:layout_gravity="end|bottom"
+          />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="10.0dp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120.0dp"
+        >
+
+      <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/fresco_test_place_holder"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:placeholderImage="@color/color_09a4ff"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/black_20"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/place_holder"
+          android:textColor="@color/color_white"
+          android:padding="@dimen/padding_12"
+          android:layout_gravity="end|bottom"
+          />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="10.0dp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120.0dp"
+        >
+
+      <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/fresco_test_failure"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:failureImage="@color/color_e27386"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/black_20"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/failure_image"
+          android:textColor="@color/color_white"
+          android:padding="@dimen/padding_12"
+          android:layout_gravity="end|bottom"
+          />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="10.0dp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120.0dp"
+        >
+
+      <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/fresco_test_retry"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:retryImage="@color/color_b7d28d"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/black_20"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/retry_image"
+          android:textColor="@color/color_white"
+          android:padding="@dimen/padding_12"
+          android:layout_gravity="end|bottom"
+          />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="10.0dp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120.0dp"
+        >
+
+      <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/fresco_test_progress"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:progressBarImage="@color/color_607d8b"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/black_20"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/progress_bar"
+          android:textColor="@color/color_white"
+          android:padding="@dimen/padding_12"
+          android:layout_gravity="end|bottom"
+          />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="10.0dp"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120.0dp"
+        >
+
+      <com.facebook.drawee.view.SimpleDraweeView
+          android:id="@+id/fresco_test_press"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:pressedStateOverlayImage="@color/color_orange"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@color/black_20"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/press_overlay"
           android:textColor="@color/color_white"
           android:padding="@dimen/padding_12"
           android:layout_gravity="end|bottom"

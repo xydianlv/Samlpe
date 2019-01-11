@@ -69,17 +69,18 @@ dependencies {
   implementation 'com.zhihu.android:matisse:0.4.3'
   // 图片编辑框架
   implementation 'com.github.yalantis:ucrop:2.2.2-native'
-
   // 官方MVP架构 LifeCycle
   implementation "android.arch.lifecycle:runtime:1.1.1"
   implementation 'android.arch.lifecycle:extensions:1.1.1'
-
   // 可切换软键盘
   implementation 'cn.dreamtobe.kpswitch:library:1.6.1'
-
   // 数据库读写框架
   implementation 'com.tencent.wcdb:wcdb-android:1.0.6'
   implementation 'android.arch.persistence:db:1.1.1'
+  // 消息收发框架
+  implementation 'com.jeremyliao:live-event-bus:1.1.0'
+  // 可缩放查看大图库
+  implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
 
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.2'

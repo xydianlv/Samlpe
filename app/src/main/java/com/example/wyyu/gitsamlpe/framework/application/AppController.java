@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import com.example.wyyu.gitsamlpe.test.database.TDataBase;
-import com.example.wyyu.gitsamlpe.test.floatview.KeepLiveManager;
+import com.example.wyyu.gitsamlpe.test.live.KeepLiveManager;
 import com.example.wyyu.gitsamlpe.util.UIUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
@@ -24,7 +24,7 @@ public class AppController extends Application {
         UIUtils.init(getAppContext());
         TDataBase.init();
 
-        KeepLiveManager.getManager().init();
+        //KeepLiveManager.getManager().init(getAppContext());
     }
 
     public static Context getAppContext() {

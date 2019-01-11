@@ -269,6 +269,16 @@
       <activity
           android:name=".test.live.ActivityLiveTest"
           />
+      <activity
+          android:name=".test.live.KeepLiveActivity"
+          android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+          android:excludeFromRecents="true"
+          android:exported="false"
+          android:finishOnTaskLaunch="false"
+          android:launchMode="singleInstance"
+          android:process=":process"
+          android:theme="@style/LiveActivity"
+          />
 
       <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
         <!--<meta-data-->
@@ -287,6 +297,9 @@
           />
       <service
           android:name=".test.floatview.KeepLiveService"
+          />
+      <service
+          android:name=".test.live.KeepLiveService"
           />
 
     </application>

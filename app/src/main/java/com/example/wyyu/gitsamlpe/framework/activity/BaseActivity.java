@@ -3,7 +3,6 @@ package com.example.wyyu.gitsamlpe.framework.activity;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
-
 import android.view.KeyEvent;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -12,7 +11,6 @@ import com.example.wyyu.gitsamlpe.framework.message.MsgSender;
 import com.example.wyyu.gitsamlpe.framework.message.MsgType;
 import com.example.wyyu.gitsamlpe.framework.message.MsgCallBack;
 import com.example.wyyu.gitsamlpe.framework.message.MsgReceiver;
-
 import com.example.wyyu.gitsamlpe.framework.volume.VolumeObservable;
 import com.example.wyyu.gitsamlpe.util.download.DownloadObservable;
 import java.util.HashMap;
@@ -41,6 +39,12 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         MsgSender.getMsgSender().attach(this);
         DownloadObservable.getObservable().attachActivity(this);
         VolumeObservable.getObservable().attachActivity(this);
+
+        registerToLiveBus();
+    }
+
+    protected void registerToLiveBus() {
+
     }
 
     @Override protected void onResume() {

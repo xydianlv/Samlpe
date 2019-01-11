@@ -36,6 +36,8 @@ public class BottomSwitchTab extends LinearLayout implements View.OnClickListene
         new int[] { R.mipmap.ic_home_select, R.mipmap.ic_find_select, R.mipmap.ic_news_select };
     private static final int ICON_COUNT = 3;
 
+    private OnSwitchTabClickListener switchTabClickListener;
+
     private ImageView[] iconArray;
     private int presentIndex;
 
@@ -61,6 +63,10 @@ public class BottomSwitchTab extends LinearLayout implements View.OnClickListene
         iconArray[presentIndex].setImageResource(ICON_NORMAL[presentIndex]);
         iconArray[selectIndex].setImageResource(ICON_SELECT[selectIndex]);
         presentIndex = selectIndex;
+
+        if (switchTabClickListener != null) {
+            switchTabClickListener.onSwitch(presentIndex);
+        }
     }
 
     @Override public void onClick(View view) {
@@ -75,5 +81,14 @@ public class BottomSwitchTab extends LinearLayout implements View.OnClickListene
                 refreshSelectStatus(2);
                 break;
         }
+    }
+
+    public void setOnSwitchTabClickListener(OnSwitchTabClickListener switchTabClickListener) {
+        this.switchTabClickListener = switchTabClickListener;
+    }
+
+    public interface OnSwitchTabClickListener {
+
+        void onSwitch(int index);
     }
 }

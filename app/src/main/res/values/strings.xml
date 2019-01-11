@@ -26,6 +26,8 @@
     <string name="g">G</string>
     <string name="n">N</string>
     <string name="p">P</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
 
     <string name="file_sort">排序</string>
     <string name="file_sort_time">按时间排序</string>
@@ -46,6 +48,9 @@
     <string name="float_sys">sysFloat</string>
     <string name="dialog_test">dialog</string>
     <string name="live_service">liveService</string>
+    <string name="bus_test">busTest</string>
+    <string name="bus_check">busCheck</string>
+    <string name="cut">cut</string>
 
     <string name="typeface_test">一段简单的测试文字</string>
 
@@ -84,5 +89,10 @@
     <string name="dialog_full">FullDialog</string>
 
     <string name="fresco_basic">FrescoBasic</string>
+    <string name="place_holder">PlaceHolder</string>
+    <string name="failure_image">FailureImage</string>
+    <string name="retry_image">RetryImage</string>
+    <string name="progress_bar">ProgressBar</string>
+    <string name="press_overlay">pressOverlay</string>
 
 </resources>

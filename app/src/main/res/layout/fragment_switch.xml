@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+  <com.example.wyyu.gitsamlpe.framework.NoScrollViewPager
+      android:id="@+id/switch_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+  <TextView
+      android:id="@+id/switch_index"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:layout_marginBottom="48.0dp"
+      android:layout_gravity="bottom|center_horizontal"
+      android:visibility="gone"
+      />
+
+  <TextView
+      android:id="@+id/switch_cut"
+      style="@style/ClickableText"
+      android:text="@string/cut"
+      android:layout_gravity="center_horizontal"
+      android:visibility="gone"
+      />
+
+</FrameLayout>
