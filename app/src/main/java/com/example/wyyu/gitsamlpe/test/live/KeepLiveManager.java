@@ -111,7 +111,10 @@ public class KeepLiveManager implements IKeepLiveManager {
             notificationManager.createNotificationChannel(channelSection);
         }
 
-        notificationManager.notify(CHANNEL_ID, builder.build());
+        Notification notification = builder.build();
+        notification.flags = Notification.FLAG_ONGOING_EVENT;
+
+        notificationManager.notify(CHANNEL_ID, notification);
     }
 
     @Override public void hideNotifyBar() {
