@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="12.0dp"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.percent.PercentCore
+      android:id="@+id/percent_1"
+      android:layout_width="match_parent"
+      android:layout_height="32.0dp"
+      android:layout_margin="12.0dp"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="12.0dp"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.percent.PercentCore
+      android:id="@+id/percent_2"
+      android:layout_width="match_parent"
+      android:layout_height="32.0dp"
+      android:layout_margin="12.0dp"
+      />
+
+</LinearLayout>

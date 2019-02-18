@@ -2,6 +2,7 @@ package com.example.wyyu.gitsamlpe.test;
 
 import android.content.Context;
 import android.content.Intent;
+import com.example.wyyu.gitsamlpe.test.animation.ActivitySpringAnimation;
 import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
 import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
@@ -27,6 +28,7 @@ import com.example.wyyu.gitsamlpe.test.image.matisse.ActivityLocalImage;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
+import com.example.wyyu.gitsamlpe.test.percent.ActivityPercentTest;
 import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
@@ -181,6 +183,14 @@ class UIShowManager {
 
     static void startLiveTest(Context context) {
         ActivityLiveTest.open(context);
+    }
+
+    static void startSpringAnimation(Context context) {
+        ActivitySpringAnimation.open(context);
+    }
+
+    static void startPercentTest(Context context) {
+        ActivityPercentTest.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

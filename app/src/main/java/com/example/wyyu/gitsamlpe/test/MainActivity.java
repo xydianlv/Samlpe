@@ -246,6 +246,18 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("SpringAnim", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startSpringAnimation(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("PercentTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startPercentTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

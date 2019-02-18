@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.BaseActivity;
+import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 import com.example.wyyu.gitsamlpe.test.slide.indicator.CommonNavigator;
 import com.example.wyyu.gitsamlpe.test.slide.indicator.MagicIndicator;
 import com.example.wyyu.gitsamlpe.test.slide.indicator.SimpleNavigatorAdapter;
@@ -28,6 +29,9 @@ public class ActivitySlideT extends BaseActivity {
 
     private SimpleNavigatorAdapter navigatorAdapter;
 
+    private int presentPosition;
+    private boolean hasChange;
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_t);
@@ -38,7 +42,8 @@ public class ActivitySlideT extends BaseActivity {
 
     private void initViewPager() {
 
-        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
+        final PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(pagerAdapter);
         viewPager.setOffscreenPageLimit(2);
         viewPager.setCurrentItem(0);
 
@@ -48,6 +53,7 @@ public class ActivitySlideT extends BaseActivity {
                 if (indicator != null) {
                     indicator.onPageScrolled(position, positionOffset, positionOffsetPixels);
                 }
+                presentPosition = position;
             }
 
             @Override public void onPageSelected(int position) {
@@ -59,6 +65,14 @@ public class ActivitySlideT extends BaseActivity {
             @Override public void onPageScrollStateChanged(int state) {
                 if (indicator != null) {
                     indicator.onPageScrollStateChanged(state);
+                }
+                if (state == 1) {
+                    hasChange = false;
+                } else if (state == 2) {
+                    hasChange = true;
+                }
+                if (state == 0 && !hasChange && presentPosition == pagerAdapter.getCount() - 1) {
+                    UToast.showShort(ActivitySlideT.this, "最后一页");
                 }
             }
         });
