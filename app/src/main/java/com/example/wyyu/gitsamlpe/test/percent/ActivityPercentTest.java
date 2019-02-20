@@ -28,7 +28,7 @@ public class ActivityPercentTest extends FullScreenActivity {
 
         percentCoreA.setPercentValue(0.41f, 0xffff0000, 0xffcccccc);
 
-        PercentCore percentCoreB = findViewById(R.id.percent_2);
+        PercentBack percentCoreB = findViewById(R.id.percent_2);
 
         percentCoreB.setPercentValue(0.24f, 0xff00ff00, 0xffeeeeee);
     }
