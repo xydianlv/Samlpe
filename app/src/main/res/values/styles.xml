@@ -1,5 +1,43 @@
 <resources>
 
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 闪动黑屏问题 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 应用主背景色 -->
+        <item name="android:windowBackground">@color/color_white</item>
+        <!-- 设置无标题栏 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <!-- 设置无 ActionBar -->
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <!-- 应用的主要色调，actionBar 默认使用该色调 -->
+        <item name="colorPrimary">@color/color_white</item>
+        <!-- 应用的主要暗色调，statusBar 默认使用该颜色 -->
+        <item name="colorPrimaryDark">@color/color_black</item>
+        <!-- 控件在选中时默认使用该颜色 -->
+        <item name="colorAccent">@color/color_white</item>
+
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="colorControlNormal">@color/theme_control</item>
+        <item name="colorControlActivated">@color/theme_control</item>
+        <item name="colorControlHighlight">@color/theme_control</item>
+
+        <item name="android:scrollbarFadeDuration">150</item>
+        <item name="android:scrollbarDefaultDelayBeforeFade">150</item>
+        <item name="android:scrollbarSize">6dip</item>
+    </style>
+
+    <style name="Base" parent="BaseTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="Base.TransparentStatusBar" parent="Base">
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

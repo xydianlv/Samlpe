@@ -1,325 +1,348 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wyyu.gitsamlpe">
+    package="com.example.wyyu.gitsamlpe"
+    >
 
-    <!-- 位置权限 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 网络权限 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-    <!-- 麦克风权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <!-- 硬盘文件读写权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!-- 读写权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><!-- 只读权限 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /><!-- 创建／删除文件权限 -->
-    <!-- 摄像头权限 -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <!-- 悬浮窗显示权限 -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <!-- 位置权限 -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <!-- 网络权限 -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+  <!-- 麦克风权限 -->
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <!-- 硬盘文件读写权限 -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/><!-- 读写权限 -->
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/><!-- 只读权限 -->
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/><!-- 创建／删除文件权限 -->
+  <!-- 摄像头权限 -->
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <!-- 悬浮窗显示权限 -->
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
-    <application
-        android:name=".framework.application.AppController"
-        android:allowBackup="true"
-        android:icon="@mipmap/test_logo_grey"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/test_logo_grey"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+  <application
+      android:name=".framework.application.AppController"
+      android:allowBackup="true"
+      android:icon="@mipmap/test_logo_grey"
+      android:label="@string/app_name"
+      android:roundIcon="@mipmap/test_logo_grey"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme"
+      >
 
-        <activity
-            android:name=".test.MainActivity"
-            android:theme="@style/FullScreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <activity
+        android:name=".test.MainActivity"
+        android:theme="@style/FullScreenTheme"
+        >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
 
-        <activity
-            android:name=".test.lock.gesture.ActivityGestureLockTest"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".test.lock.finger.ActivityFingerLockTest"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".test.recyclerview.ActivityFastScrollTest"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustNothing" />
-        <activity
-            android:name=".test.location.ActivityLocation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".test.slide.ActivitySlide"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustNothing" />
-        <activity
-            android:name=".test.audio.recorder.ActivityAudioRecorder"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".test.card.ActivityCard"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".test.file.ActivityFileListTest"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".test.video.ActivityPlayVideo"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".test.video.ActivityCameraTest"
-            android:screenOrientation="portrait"
-            />
-        <activity
-            android:name=".test.bigimage.ActivityImageList"
-            android:screenOrientation="portrait"
-            />
-        <activity
-            android:name=".test.bigimage.ActivityBigImage"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            />
+    <activity
+        android:name=".test.lock.gesture.ActivityGestureLockTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.lock.finger.ActivityFingerLockTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.recyclerview.ActivityFastScrollTest"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateVisible|adjustNothing"
+        />
+    <activity
+        android:name=".test.location.ActivityLocation"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.slide.ActivitySlide"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustNothing"
+        />
+    <activity
+        android:name=".test.audio.recorder.ActivityAudioRecorder"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.card.ActivityCard"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.file.ActivityFileListTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.video.ActivityPlayVideo"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.video.ActivityCameraTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bigimage.ActivityImageList"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bigimage.ActivityBigImage"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        />
 
 
-        <!-- Activity Theme 展示列表 -->
-        <activity
-            android:name=".test.theme.ActivityThemeList"
-            android:screenOrientation="portrait"
-            />
-      <activity
-          android:name=".test.theme.ActivityDialogTheme"
-          android:theme="@style/DialogTheme"
-          />
-      <activity
-          android:name=".test.theme.ActivityTranslucentActivity"
-          android:theme="@android:style/Theme.Translucent.NoTitleBar"
-          />
-      <activity
-          android:name=".test.theme.ActivityWallPaperTheme"
-          android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
-          />
-      <activity
-          android:name=".test.theme.ActivityPanelTheme"
-          android:theme="@android:style/Theme.Panel"
-          />
-      <activity
-          android:name=".test.theme.ActivityDisplayTheme"
-          android:theme="@android:style/Theme.NoDisplay"
-          />
+    <!-- Activity Theme 展示列表 -->
+    <activity
+        android:name=".test.theme.ActivityThemeList"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.theme.ActivityDialogTheme"
+        android:theme="@style/DialogTheme"
+        />
+    <activity
+        android:name=".test.theme.ActivityTranslucentActivity"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        />
+    <activity
+        android:name=".test.theme.ActivityWallPaperTheme"
+        android:theme="@android:style/Theme.Wallpaper.NoTitleBar"
+        />
+    <activity
+        android:name=".test.theme.ActivityPanelTheme"
+        android:theme="@android:style/Theme.Panel"
+        />
+    <activity
+        android:name=".test.theme.ActivityDisplayTheme"
+        android:theme="@android:style/Theme.NoDisplay"
+        />
+    <activity
+        android:name=".test.theme.ActivityFromBottom"
+        android:theme="@style/BaseTheme"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.theme.ActivityTransparentStatus"
+        android:screenOrientation="portrait"
+        android:theme="@style/Base.TransparentStatusBar"
+        />
 
-        <!-- 仿微博客户端模块 -->
-      <activity
-          android:name=".test.weibo.ui.MainBlogActivity"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.text.ActivityAdapterText"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.dialog.ActivityProgressTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.bigimage.ActivityImageDetail"
-          android:screenOrientation="portrait"
-          />
-      <activity android:name=".test.bigimage.ActivityImageListFun"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.bigimage.ActivityBigImageDetail"
-          android:theme="@android:style/Theme.Translucent.NoTitleBar"
-          />
-      <activity
-          android:name=".test.bigimage.ActivityMultiImage"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.chat.ActivityChat"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.slide.ActivityScroll"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.slide.ActivitySlideT"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.card.ActivityNormalCard"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.floatview.ActivityFloatTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.pager.ActivityPagerTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.video.ActivityVideoList"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.floatview.ActivityTypeface"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.image.matisse.ActivityLocalImage"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.number.ActivityNumber"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.volume.ActivityVolume"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.notify.ActivityNotifyTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.image.edit.ActivityEditImage"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.image.shot.ActivityShotScreen"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.softkeyboard.ActivitySoftKeyboard"
-          android:screenOrientation="portrait"
-          android:windowSoftInputMode="stateHidden|adjustResize"
-          android:configChanges="orientation|screenSize|keyboardHidden"
-          />
-      <activity
-          android:name=".test.softkeyboard.ActivityShowKeyboard"
-          android:screenOrientation="portrait"
-          android:configChanges="orientation|screenSize|keyboardHidden"
-          android:windowSoftInputMode="stateHidden|adjustResize"
-          />
-      <activity
-          android:name=".test.softkeyboard.ActivitySwitchPanelTest"
-          android:screenOrientation="portrait"
-          android:windowSoftInputMode="stateHidden|adjustResize"
-          />
-      <activity
-          android:name=".util.permission.ActivityCheckPermission"
-          android:theme="@style/Transparent"
-          />
-      <activity
-          android:name=".test.permission.ActivityPermissionTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.permission.ActivityCheckToast"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.fragment.ActivitySlideTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.audio.player.ActivityAudioList"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.list.ActivityExpandableListView"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.dynamic.ActivityDynamicSize"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.broadcast.ActivityBroadcastTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.softkeyboard.ActivityCustomSwitchPanel"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.database.ActivityDataBase"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.dialog.ActivityFullDialog"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.fresco.ActivityFrescoTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.floatview.ActivityKeepLive"
-          android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
-          android:excludeFromRecents="true"
-          android:exported="false"
-          android:finishOnTaskLaunch="false"
-          android:launchMode="singleInstance"
-          android:process=":process"
-          android:theme="@style/LiveActivity"
-          />
-      <activity
-          android:name=".test.live.ActivityLiveTest"
-          />
-      <activity
-          android:name=".test.live.KeepLiveActivity"
-          android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
-          android:excludeFromRecents="true"
-          android:exported="false"
-          android:finishOnTaskLaunch="false"
-          android:launchMode="singleInstance"
-          android:process=":process"
-          android:theme="@style/LiveActivity"
-          />
-      <activity
-          android:name=".test.skin.ActivitySkinTest"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.animation.ActivitySpringAnimation"
-          android:screenOrientation="portrait"
-          />
-      <activity
-          android:name=".test.percent.ActivityPercentTest"
-          android:screenOrientation="portrait"
-          />
+    <!-- 仿微博客户端模块 -->
+    <activity
+        android:name=".test.weibo.ui.MainBlogActivity"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.text.ActivityAdapterText"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.dialog.ActivityProgressTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bigimage.ActivityImageDetail"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bigimage.ActivityImageListFun"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bigimage.ActivityBigImageDetail"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        />
+    <activity
+        android:name=".test.bigimage.ActivityMultiImage"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.chat.ActivityChat"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.slide.ActivityScroll"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.slide.ActivitySlideT"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.card.ActivityNormalCard"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.floatview.ActivityFloatTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.ActivityPagerTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.video.ActivityVideoList"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.floatview.ActivityTypeface"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.image.matisse.ActivityLocalImage"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.number.ActivityNumber"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.volume.ActivityVolume"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.notify.ActivityNotifyTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.image.edit.ActivityEditImage"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.image.shot.ActivityShotScreen"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.softkeyboard.ActivitySoftKeyboard"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        android:configChanges="orientation|screenSize|keyboardHidden"
+        />
+    <activity
+        android:name=".test.softkeyboard.ActivityShowKeyboard"
+        android:screenOrientation="portrait"
+        android:configChanges="orientation|screenSize|keyboardHidden"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        />
+    <activity
+        android:name=".test.softkeyboard.ActivitySwitchPanelTest"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        />
+    <activity
+        android:name=".util.permission.ActivityCheckPermission"
+        android:theme="@style/Transparent"
+        />
+    <activity
+        android:name=".test.permission.ActivityPermissionTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.permission.ActivityCheckToast"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.fragment.ActivitySlideTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.audio.player.ActivityAudioList"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.list.ActivityExpandableListView"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.dynamic.ActivityDynamicSize"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.broadcast.ActivityBroadcastTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.softkeyboard.ActivityCustomSwitchPanel"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.database.ActivityDataBase"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.dialog.ActivityFullDialog"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.fresco.ActivityFrescoTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.floatview.ActivityKeepLive"
+        android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+        android:excludeFromRecents="true"
+        android:exported="false"
+        android:finishOnTaskLaunch="false"
+        android:launchMode="singleInstance"
+        android:process=":process"
+        android:theme="@style/LiveActivity"
+        />
+    <activity
+        android:name=".test.live.ActivityLiveTest"
+        />
+    <activity
+        android:name=".test.live.KeepLiveActivity"
+        android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+        android:excludeFromRecents="true"
+        android:exported="false"
+        android:finishOnTaskLaunch="false"
+        android:launchMode="singleInstance"
+        android:process=":process"
+        android:theme="@style/LiveActivity"
+        />
+    <activity
+        android:name=".test.skin.ActivitySkinTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.animation.ActivitySpringAnimation"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.percent.ActivityPercentTest"
+        android:screenOrientation="portrait"
+        />
 
-      <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
-        <!--<meta-data-->
-        <!--android:name="com.amap.api.v2.apikey"-->
-        <!--android:value="8fe6dd7309f606df0b0edee404251bbc" />-->
-        <!--<service android:name="com.amap.api.location.APSService" />-->
+    <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
+    <!--<meta-data-->
+    <!--android:name="com.amap.api.v2.apikey"-->
+    <!--android:value="8fe6dd7309f606df0b0edee404251bbc" />-->
+    <!--<service android:name="com.amap.api.location.APSService" />-->
 
-      <service
-          android:name=".framework.service.TestService"
-          />
-      <service
-          android:name=".test.floatview.FloatingService"
-          />
-      <service
-          android:name=".test.floatview.InnerService"
-          />
-      <service
-          android:name=".test.floatview.KeepLiveService"
-          />
-      <service
-          android:name=".test.live.KeepLiveService"
-          />
-      <service
-          android:name=".test.live.KeepLiveOnlyService"
-          />
-      <service
-          android:name=".test.live.KeepLiveOnlyFloat"
-          />
+    <service
+        android:name=".framework.service.TestService"
+        />
+    <service
+        android:name=".test.floatview.FloatingService"
+        />
+    <service
+        android:name=".test.floatview.InnerService"
+        />
+    <service
+        android:name=".test.floatview.KeepLiveService"
+        />
+    <service
+        android:name=".test.live.KeepLiveService"
+        />
+    <service
+        android:name=".test.live.KeepLiveOnlyService"
+        />
+    <service
+        android:name=".test.live.KeepLiveOnlyFloat"
+        />
 
-    </application>
+  </application>
 
 </manifest>

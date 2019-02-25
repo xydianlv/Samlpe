@@ -3,7 +3,6 @@ package com.example.wyyu.gitsamlpe.test.theme;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.view.WindowManager;
 
 /**
  * Created by wyyu on 2018/4/12.
@@ -29,6 +28,14 @@ class UIShowThemeManager {
 
     static void showNoDisplayActivity(Context context) {
         showTargetActivity(context, ActivityDisplayTheme.class);
+    }
+
+    static void showBottomActivity(Context context) {
+        showTargetActivity(context, ActivityFromBottom.class);
+    }
+
+    static void showStatusBarActivity(Context context) {
+        showTargetActivity(context, ActivityTransparentStatus.class);
     }
 
     private static void showTargetActivity(Context context, Class activity) {

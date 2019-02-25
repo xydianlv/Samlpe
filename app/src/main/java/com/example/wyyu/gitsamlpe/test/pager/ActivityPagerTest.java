@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.test.pager;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
@@ -49,7 +50,6 @@ public class ActivityPagerTest extends ToolbarActivity {
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override public void onPageScrolled(int position, float positionOffset,
                 int positionOffsetPixels) {
-
             }
 
             @Override public void onPageSelected(int position) {
@@ -57,7 +57,6 @@ public class ActivityPagerTest extends ToolbarActivity {
             }
 
             @Override public void onPageScrollStateChanged(int state) {
-
             }
         });
     }

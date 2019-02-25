@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/color_white"
+    >
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="120.0dp"
+      android:src="@mipmap/image_test_2"
+      android:scaleType="centerCrop"
+      android:contentDescription="@string/image"
+      />
+
+  <FrameLayout
+      android:id="@+id/status_title"
+      android:layout_width="match_parent"
+      android:layout_height="42.0dp"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="14.0dp"
+        android:textColor="@color/color_white"
+        android:layout_gravity="center"
+        />
+
+  </FrameLayout>
+
+</FrameLayout>
