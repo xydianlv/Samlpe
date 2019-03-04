@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <com.example.wyyu.gitsamlpe.test.list.HolderHeadView
+      android:id="@+id/base_holder_head"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.list.HolderContentView
+      android:id="@+id/base_holder_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.list.HolderFootView
+      android:id="@+id/base_holder_foot"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      />
+
+</LinearLayout>

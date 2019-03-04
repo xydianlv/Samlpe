@@ -258,6 +258,24 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("DetectorTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startDetectorTest(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("MultiHolderTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startMultiHolderTest(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("UiVisibilityTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startUiVisibilityTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

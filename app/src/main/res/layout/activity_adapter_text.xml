@@ -18,13 +18,26 @@
   <View
       android:layout_width="0.0dp"
       android:layout_height="36.0dp"
-    />
+      />
 
   <com.example.wyyu.gitsamlpe.test.text.ExpandTextView
       android:id="@+id/expand_text_view"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="36.0dp"
+      />
+
+  <TextView
+      android:id="@+id/img_span_text_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:maxLines="4"
       />
 
 </LinearLayout>

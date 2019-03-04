@@ -1,6 +1,10 @@
 package com.example.wyyu.gitsamlpe.test.text;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
+import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 
@@ -23,5 +27,14 @@ public class ActivityAdapterText extends ToolbarActivity {
         ExpandTextView expandTextView = findViewById(R.id.expand_text_view);
         expandTextView.setMaxLines(4);
         expandTextView.setText(TEST_TEXT);
+
+        TextView text = findViewById(R.id.img_span_text_view);
+        Drawable drawable = getResources().getDrawable(R.drawable.img_volume);
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+
+        SpannableString spannableString = new SpannableString(TEST_TEXT);
+        spannableString.setSpan(text, 0, 1, ImageSpan.ALIGN_BASELINE);
+
+        text.setText(spannableString);
     }
 }

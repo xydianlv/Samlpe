@@ -38,6 +38,10 @@ class UIShowThemeManager {
         showTargetActivity(context, ActivityTransparentStatus.class);
     }
 
+    static void showSwipeBackActivity(Context context) {
+        ActivitySwipeRight.open(context);
+    }
+
     private static void showTargetActivity(Context context, Class activity) {
         context.startActivity(new Intent(context, activity));
     }

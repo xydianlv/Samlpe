@@ -314,6 +314,20 @@
         android:name=".test.percent.ActivityPercentTest"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.touch.ActivityGestureDetectorTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.list.ActivityMultiHolder"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.theme.ActivitySwipeRight"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.visibility.ActivitySystemUiVisibility"/>
+    <activity android:name=".test.visibility.ActivityUiVisibilityTest"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

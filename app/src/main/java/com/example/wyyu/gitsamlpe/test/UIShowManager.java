@@ -20,6 +20,7 @@ import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
+import com.example.wyyu.gitsamlpe.test.list.ActivityMultiHolder;
 import com.example.wyyu.gitsamlpe.test.live.ActivityLiveTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
@@ -35,7 +36,9 @@ import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
+import com.example.wyyu.gitsamlpe.test.touch.ActivityGestureDetectorTest;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
+import com.example.wyyu.gitsamlpe.test.visibility.ActivitySystemUiVisibility;
 import com.example.wyyu.gitsamlpe.test.volume.ActivityVolume;
 import com.example.wyyu.gitsamlpe.test.weibo.ui.MainBlogActivity;
 
@@ -191,6 +194,18 @@ class UIShowManager {
 
     static void startPercentTest(Context context) {
         ActivityPercentTest.open(context);
+    }
+
+    static void startDetectorTest(Context context) {
+        ActivityGestureDetectorTest.open(context);
+    }
+
+    static void startMultiHolderTest(Context context) {
+        ActivityMultiHolder.open(context);
+    }
+
+    static void startUiVisibilityTest(Context context){
+        ActivitySystemUiVisibility.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

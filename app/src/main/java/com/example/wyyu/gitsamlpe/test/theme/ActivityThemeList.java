@@ -77,6 +77,12 @@ public class ActivityThemeList extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("SwipeBackActivity", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowThemeManager.showSwipeBackActivity(ActivityThemeList.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }
