@@ -33,6 +33,7 @@
     <activity
         android:name=".test.MainActivity"
         android:theme="@style/FullScreenTheme"
+        android:screenOrientation="portrait"
         >
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
@@ -326,8 +327,18 @@
         android:name=".test.theme.ActivitySwipeRight"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.visibility.ActivitySystemUiVisibility"/>
-    <activity android:name=".test.visibility.ActivityUiVisibilityTest"/>
+    <activity
+        android:name=".test.visibility.ActivitySystemUiVisibility"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.visibility.ActivityUiVisibilityTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.animation.ActivityBezier"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

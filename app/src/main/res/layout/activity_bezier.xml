@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+  <!--<FrameLayout-->
+  <!--android:layout_width="180.0dp"-->
+  <!--android:layout_height="180.0dp"-->
+  <!--android:layout_gravity="center_horizontal"-->
+  <!--&gt;-->
+
+  <!--<View-->
+  <!--android:id="@+id/bezier_start"-->
+  <!--android:layout_height="24.0dp"-->
+  <!--android:layout_width="24.0dp"-->
+  <!--android:layout_gravity="center"-->
+  <!--android:background="@drawable/button_circle_back_chocolate"-->
+  <!--/>-->
+
+  <!--</FrameLayout>-->
+
+  <View
+      android:id="@+id/bezier_start"
+      android:layout_height="24.0dp"
+      android:layout_width="24.0dp"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="120.0dp"
+      android:background="@drawable/button_circle_back_chocolate"
+      />
+
+  <FrameLayout
+      android:layout_width="72.0dp"
+      android:layout_height="72.0dp"
+      android:layout_gravity="center"
+      android:layout_marginTop="64.0dp"
+      android:layout_marginRight="120.0dp"
+      android:layout_marginEnd="120.0dp"
+      >
+
+    <View
+        android:id="@+id/bezier_end"
+        android:layout_height="24.0dp"
+        android:layout_width="24.0dp"
+        android:layout_gravity="center"
+        />
+
+  </FrameLayout>
+
+  <TextView
+      android:id="@+id/bezier_click"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/start"
+      android:layout_gravity="bottom|center_horizontal"
+      android:layout_marginBottom="48.0dp"
+      android:textColor="@color/color_white"
+      android:paddingLeft="12.0dp"
+      android:paddingRight="12.0dp"
+      android:paddingTop="4.0dp"
+      android:paddingBottom="4.0dp"
+      android:background="@drawable/button_publish_back"
+      />
+
+  <View
+      android:id="@+id/bezier_location"
+      android:layout_width="24.0dp"
+      android:layout_height="24.0dp"
+      android:background="@color/color_1a1a1a"
+      android:layout_marginTop="24.0dp"
+      />
+
+  <TextView
+      android:id="@+id/bezier_location_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="15.0dp"
+      android:textColor="@color/color_1a1a1a"
+      android:layout_gravity="end"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      android:layout_marginTop="24.0dp"
+      />
+
+</FrameLayout>

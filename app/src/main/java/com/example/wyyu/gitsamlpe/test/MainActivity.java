@@ -276,6 +276,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("BezierAnimTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startBezierAnimTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

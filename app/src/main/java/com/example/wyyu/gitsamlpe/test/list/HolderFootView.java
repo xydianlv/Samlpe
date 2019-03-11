@@ -5,9 +5,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.window.ContentView;
+import com.example.wyyu.gitsamlpe.framework.window.PopupShowTest;
+import com.example.wyyu.gitsamlpe.framework.window.ShowType;
 
 /**
  * Created by wyyu on 2019/3/1.
@@ -39,6 +43,28 @@ public class HolderFootView extends FrameLayout {
         textMiddle = findViewById(R.id.foot_text_middle);
         textRight = findViewById(R.id.foot_text_right);
         textLeft = findViewById(R.id.foot_text_left);
+
+        textMiddle.setOnLongClickListener(new OnLongClickListener() {
+            @Override public boolean onLongClick(View v) {
+                new PopupShowTest(getContext()).show(textMiddle, new ContentView(getContext()),
+                    ShowType.左上角);
+                return false;
+            }
+        });
+        textRight.setOnLongClickListener(new OnLongClickListener() {
+            @Override public boolean onLongClick(View v) {
+                new PopupShowTest(getContext()).show(textRight, new ContentView(getContext()),
+                    ShowType.左上角);
+                return false;
+            }
+        });
+        textLeft.setOnLongClickListener(new OnLongClickListener() {
+            @Override public boolean onLongClick(View v) {
+                new PopupShowTest(getContext()).show(textLeft, new ContentView(getContext()),
+                    ShowType.左上角);
+                return false;
+            }
+        });
     }
 
     public void setFootValue(MultiData multiData) {

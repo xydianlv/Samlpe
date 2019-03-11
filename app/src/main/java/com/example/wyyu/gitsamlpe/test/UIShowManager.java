@@ -2,6 +2,7 @@ package com.example.wyyu.gitsamlpe.test;
 
 import android.content.Context;
 import android.content.Intent;
+import com.example.wyyu.gitsamlpe.test.animation.ActivityBezier;
 import com.example.wyyu.gitsamlpe.test.animation.ActivitySpringAnimation;
 import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
 import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
@@ -206,6 +207,10 @@ class UIShowManager {
 
     static void startUiVisibilityTest(Context context){
         ActivitySystemUiVisibility.open(context);
+    }
+
+    static void startBezierAnimTest(Context context){
+        ActivityBezier.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
