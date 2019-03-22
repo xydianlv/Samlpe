@@ -47,7 +47,7 @@ public class HolderFootView extends FrameLayout {
         textMiddle.setOnLongClickListener(new OnLongClickListener() {
             @Override public boolean onLongClick(View v) {
                 new PopupShowTest(getContext()).show(textMiddle, new ContentView(getContext()),
-                    ShowType.左上角);
+                    ShowType.左下角);
                 return false;
             }
         });
@@ -61,7 +61,7 @@ public class HolderFootView extends FrameLayout {
         textLeft.setOnLongClickListener(new OnLongClickListener() {
             @Override public boolean onLongClick(View v) {
                 new PopupShowTest(getContext()).show(textLeft, new ContentView(getContext()),
-                    ShowType.左上角);
+                    ShowType.右上角);
                 return false;
             }
         });

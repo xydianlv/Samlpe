@@ -76,22 +76,24 @@ public class PopupShowTest extends FrameLayout {
         int height = contentView.getHeight();
         int width = contentView.getWidth();
 
+        int aHeight = anchorView.getHeight();
+        int aWidth = anchorView.getWidth();
+
         switch (showType) {
             case ShowType.左上角:
                 showContentView(anchorView, contentView, location[0] - width, location[1] - height);
                 break;
             case ShowType.左下角:
                 showContentView(anchorView, contentView, location[0] - width,
-                    location[1] + height + anchorView.getHeight());
+                    location[1] + height + aHeight);
                 break;
             case ShowType.右上角:
-                showContentView(anchorView, contentView,
-                    location[0] + anchorView.getWidth() + width, location[1] - height);
+                showContentView(anchorView, contentView, location[0] + aWidth + width,
+                    location[1] - height);
                 break;
             case ShowType.右下角:
-                showContentView(anchorView, contentView,
-                    location[0] + width + anchorView.getWidth(),
-                    location[0] + height + anchorView.getHeight());
+                showContentView(anchorView, contentView, location[0] + width + aWidth,
+                    location[0] + height + aHeight);
                 break;
         }
     }
@@ -134,5 +136,9 @@ public class PopupShowTest extends FrameLayout {
         //container.setY(y);
 
         popupWindow.showAtLocation(anchorView, Gravity.TOP, 0, 0);
+    }
+
+    private void adaptShow(@ShowType int showType) {
+
     }
 }
