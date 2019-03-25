@@ -1,7 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.livedata;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.os.SystemClock;
 import java.util.Timer;
@@ -13,9 +12,9 @@ import java.util.TimerTask;
 
 public class LiveDataTimerViewModel extends ViewModel {
 
-    private static final int ONE_SECOND = 1000;
+    private static final int ONE_SECOND = 3000;
 
-    private MutableLiveData<Long> elapsedTime = new MutableLiveData<>();
+    private TestLiveData<String> elapsedTime = new TestLiveData<>();
 
     private long mInitialTime;
 
@@ -27,12 +26,16 @@ public class LiveDataTimerViewModel extends ViewModel {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override public void run() {
                 long newValue = (SystemClock.elapsedRealtime() - mInitialTime) / 1000;
-                elapsedTime.postValue(newValue);
+                elapsedTime.postValue(String.valueOf(newValue));
             }
         }, ONE_SECOND, ONE_SECOND);
     }
 
-    public LiveData<Long> getElapsedTime() {
+    LiveData<String> getElapsedTime() {
         return elapsedTime;
+    }
+
+    void setElapsedText(String text) {
+        elapsedTime.setValue(text);
     }
 }

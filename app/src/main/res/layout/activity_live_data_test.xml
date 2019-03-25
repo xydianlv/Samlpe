@@ -1,18 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
     >
 
+  <android.support.v4.view.ViewPager
+      android:id="@+id/live_data_pager"
+      android:layout_width="match_parent"
+      android:layout_height="0.0dp"
+      android:layout_weight="1"
+      />
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="0.2dp"
+      android:background="@color/color_b0bec5"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="84.0dp"
+      android:orientation="horizontal"
+      android:gravity="center"
+      >
+
+    <EditText
+        android:id="@+id/live_data_edit"
+        android:layout_width="240.0dp"
+        android:layout_height="48.0dp"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:textSize="@dimen/text_16"
+        android:gravity="center_vertical"
+        android:textColorHint="@color/color_cfd8dc"
+        android:hint="@string/input_live_data"
+        tools:ignore="Autofill,TextFields"
+        />
+
+    <TextView
+        android:id="@+id/live_data_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_16"
+        android:text="@string/save"
+        android:textColor="@color/color_b7d28d"
+        />
+
+  </LinearLayout>
+
   <TextView
-      android:id="@+id/live_data_test_time"
+      android:id="@+id/live_data_open"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
-      android:textColor="@color/color_1a1a1a"
-      android:textSize="@dimen/text_12"
+      android:textColor="@color/color_09a4ff"
+      android:textSize="@dimen/text_16"
+      android:text="@string/open_new_activity"
       android:paddingTop="20.0dp"
       android:paddingBottom="20.0dp"
       />

@@ -23,6 +23,7 @@ import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
 import com.example.wyyu.gitsamlpe.test.list.ActivityMultiHolder;
 import com.example.wyyu.gitsamlpe.test.live.ActivityLiveTest;
+import com.example.wyyu.gitsamlpe.test.livedata.ActivityLiveDataTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
@@ -211,6 +212,10 @@ class UIShowManager {
 
     static void startBezierAnimTest(Context context){
         ActivityBezier.open(context);
+    }
+
+    static void startLiveDataTest(Context context){
+        ActivityLiveDataTest.open(context);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

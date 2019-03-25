@@ -282,6 +282,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("LiveDataTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startLiveDataTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

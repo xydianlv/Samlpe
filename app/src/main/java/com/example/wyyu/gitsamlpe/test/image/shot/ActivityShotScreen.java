@@ -1,5 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.image.shot;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -18,6 +19,10 @@ import java.io.File;
  **/
 
 public class ActivityShotScreen extends FullScreenActivity {
+
+    public static void open(Context context) {
+        context.startActivity(new Intent(context, ActivityShotScreen.class));
+    }
 
     @BindView(R.id.shot_screen_scroll) ScrollView scrollView;
 
