@@ -121,6 +121,12 @@ public class FrescoLoader implements View.OnAttachStateChangeListener {
         return this;
     }
 
+    // 设置图片的缩放样式
+    public FrescoLoader imageScaleType(ScalingUtils.ScaleType scaleType) {
+        this.actualImageScaleType = scaleType;
+        return this;
+    }
+
     //
     public FrescoLoader cornersRadius(int radius) {
         return this;

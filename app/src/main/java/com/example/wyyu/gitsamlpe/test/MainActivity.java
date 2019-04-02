@@ -288,6 +288,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("LocalVideoList", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startLocalVideoList(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  //====================================== Theme Zhihu ===========================================
+
+  <style name="Matisse.Zhihu" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/color_white</item>
+    <item name="colorPrimaryDark">@color/color_white</item>
+    <item name="colorAccent">@color/color_blue</item>
+    <item name="android:windowBackground">@color/color_white</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowIsFloating">false</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="listPopupWindowStyle">@style/Popup.Zhihu</item>
+  </style>
+
+  <style name="Toolbar.Zhihu" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+  </style>
+
+  <style name="Popup.Zhihu" parent="Widget.AppCompat.Light.ListPopupWindow">
+    <item name="android:popupBackground">@color/zhihu_album_popup_bg</item>
+  </style>
+
+  <style name="DayTheme"
+      parent="Matisse.Zhihu">
+  </style>
+
+  //===================================== Theme Dracula ==========================================
+
+  <style name="Matisse.Dracula" parent="Theme.AppCompat.NoActionBar">
+    <item name="colorPrimary">@color/dracula_primary</item>
+    <item name="colorPrimaryDark">@color/dracula_primary_dark</item>
+    <item name="android:windowBackground">@color/color_white</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowIsFloating">false</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:listPopupWindowStyle">@style/Popup.Dracula</item>
+    <item name="listPopupWindowStyle">@style/Popup.Dracula</item>
+  </style>
+
+  <style name="NightTheme"
+      parent="Matisse.Dracula">
+  </style>
+
+  <style name="Toolbar.Dracula" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+  </style>
+
+  <style name="Popup.Dracula" parent="Widget.AppCompat.ListPopupWindow">
+    <item name="android:popupBackground">@color/dracula_album_popup_bg</item>
+  </style>
+
+</resources>

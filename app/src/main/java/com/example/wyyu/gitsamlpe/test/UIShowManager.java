@@ -1,5 +1,6 @@
 package com.example.wyyu.gitsamlpe.test;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import com.example.wyyu.gitsamlpe.test.animation.ActivityBezier;
@@ -40,6 +41,7 @@ import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.touch.ActivityGestureDetectorTest;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
+import com.example.wyyu.gitsamlpe.test.video.local.ActivityLocalVideoList;
 import com.example.wyyu.gitsamlpe.test.visibility.ActivitySystemUiVisibility;
 import com.example.wyyu.gitsamlpe.test.volume.ActivityVolume;
 import com.example.wyyu.gitsamlpe.test.weibo.ui.MainBlogActivity;
@@ -216,6 +218,10 @@ class UIShowManager {
 
     static void startLiveDataTest(Context context){
         ActivityLiveDataTest.open(context);
+    }
+
+    static void startLocalVideoList(Activity activity){
+        ActivityLocalVideoList.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

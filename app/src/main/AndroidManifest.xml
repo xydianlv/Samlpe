@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.wyyu.gitsamlpe"
     >
 
@@ -14,7 +15,6 @@
   <!-- 硬盘文件读写权限 -->
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/><!-- 读写权限 -->
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/><!-- 只读权限 -->
-  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/><!-- 创建／删除文件权限 -->
   <!-- 摄像头权限 -->
   <uses-permission android:name="android.permission.CAMERA"/>
   <!-- 悬浮窗显示权限 -->
@@ -28,6 +28,7 @@
       android:roundIcon="@mipmap/test_logo_grey"
       android:supportsRtl="true"
       android:theme="@style/AppTheme"
+      tools:ignore="AllowBackup,GoogleAppIndexingWarning"
       >
 
     <activity
@@ -339,7 +340,14 @@
         android:name=".test.animation.ActivityBezier"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.livedata.ActivityLiveDataTest"/>
+    <activity
+        android:name=".test.livedata.ActivityLiveDataTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.video.local.ActivityLocalVideoList"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
