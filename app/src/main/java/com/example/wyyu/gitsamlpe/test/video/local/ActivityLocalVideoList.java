@@ -24,9 +24,11 @@ import com.example.matisse.internal.entity.Album;
 import com.example.matisse.internal.entity.Item;
 import com.example.matisse.internal.model.AlbumCollection;
 import com.example.matisse.internal.model.AlbumMediaCollection;
+import com.example.matisse.internal.utils.LocalMediaUtil;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
+import com.example.wyyu.gitsamlpe.test.video.player.LiteVideoPlayer;
 import java.util.LinkedList;
 import java.util.List;
 import rx.Observable;
@@ -92,12 +94,19 @@ public class ActivityLocalVideoList extends FullScreenActivity
         super.onResume();
     }
 
+    @Override protected void onPause() {
+        super.onPause();
+        LiteVideoPlayer.getPlayer().stop();
+    }
+
     @Override protected void onDestroy() {
         super.onDestroy();
 
         if (albumCollection != null) {
             albumCollection.onDestroy();
         }
+
+        LiteVideoPlayer.getPlayer().release();
     }
 
     @OnClick({ R.id.local_video_title }) public void onIconClick(View view) {
@@ -168,7 +177,11 @@ public class ActivityLocalVideoList extends FullScreenActivity
                 @Override public void call(Subscriber<? super List<Item>> subscriber) {
                     List<Item> itemList = new LinkedList<>();
                     for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-                        itemList.add(Item.valueOf(cursor));
+                        Item item = Item.valueOf(cursor);
+                        if (item.height == 0 || item.width == 0) {
+                            LocalMediaUtil.getMediaUtil().judgeVideoShow(item);
+                        }
+                        itemList.add(item);
                     }
                     subscriber.onNext(itemList);
                     subscriber.onCompleted();
@@ -244,6 +257,9 @@ public class ActivityLocalVideoList extends FullScreenActivity
         videoList.setLayoutManager(new LinearLayoutManager(this));
         videoList.setAdapter(videoAdapter);
         videoList.setItemAnimator(null);
+
+        videoList.setRecycledViewPool(new RecyclerView.RecycledViewPool());
+        videoList.setItemViewCacheSize(0);
     }
 
     private void initAnimatorValue() {

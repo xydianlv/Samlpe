@@ -26,17 +26,17 @@ public class Item implements Parcelable {
         }
     };
 
-    public static final long ITEM_ID_CAPTURE = -1;
-    public static final String ITEM_DISPLAY_NAME_CAPTURE = "Capture";
-    public final long id;
-    public final String mimeType;
-    public final Uri uri;
-    public final String path;
-    public final int width;
-    public final int height;
-    public final long size;
-    public final long duration; // only for video, in ms
-    public final long time;
+    public static long ITEM_ID_CAPTURE = -1;
+    public static String ITEM_DISPLAY_NAME_CAPTURE = "Capture";
+    public long id;
+    public String mimeType;
+    public Uri uri;
+    public String path;
+    public int width;
+    public int height;
+    public long size;
+    public long duration; // only for video, in ms
+    public long time;
 
     public String videoThumbnail;
     //图片选择界面该图片在选中列表中的序列

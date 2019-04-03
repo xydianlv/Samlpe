@@ -8,6 +8,8 @@ import com.example.matisse.internal.entity.Item;
  **/
 public class VideoInfo {
 
+    public long id;
+
     public String localPath;
 
     public int height;
@@ -24,11 +26,25 @@ public class VideoInfo {
         if (item == null) {
             return;
         }
+        id = item.id;
         localPath = item.path;
         height = item.height;
         width = item.width;
         duration = item.duration;
         size = item.size;
         uri = item.uri;
+    }
+
+    VideoInfo(VideoInfo videoInfo) {
+        if (videoInfo == null) {
+            return;
+        }
+        id = videoInfo.id;
+        localPath = videoInfo.localPath;
+        height = videoInfo.height;
+        width = videoInfo.width;
+        duration = videoInfo.duration;
+        size = videoInfo.size;
+        uri = videoInfo.uri;
     }
 }

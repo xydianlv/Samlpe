@@ -1,10 +1,13 @@
 package com.example.wyyu.gitsamlpe.test.video.player;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.SurfaceTexture;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -12,11 +15,13 @@ import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
+import com.example.wyyu.gitsamlpe.framework.touch.OnPressListenerAdapter;
+import com.example.wyyu.gitsamlpe.framework.touch.TouchListenerLayout;
 import com.example.wyyu.gitsamlpe.test.image.matisse.AspectRatioFrameLayout;
 import com.example.wyyu.gitsamlpe.test.image.matisse.FrescoLoader;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -25,27 +30,16 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.postprocessors.IterativeBoxBlurPostProcessor;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
-import com.google.android.exoplayer2.ExoPlaybackException;
-import com.google.android.exoplayer2.ExoPlayerFactory;
-import com.google.android.exoplayer2.PlaybackParameters;
-import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.Timeline;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
-import com.google.android.exoplayer2.source.MediaSource;
-import com.google.android.exoplayer2.source.TrackGroupArray;
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
-import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
-import com.google.android.exoplayer2.upstream.DataSource;
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import java.util.concurrent.TimeUnit;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
 
 /**
  * Created by wyyu on 2019/4/2.
  **/
 public class LiteVideoPlayerView extends FrameLayout
-    implements View.OnClickListener, TextureView.SurfaceTextureListener {
+    implements View.OnClickListener, TextureView.SurfaceTextureListener,
+    LiteVideoPlayer.VideoPlayerListener {
 
     public LiteVideoPlayerView(@NonNull Context context) {
         this(context, null);
@@ -61,16 +55,8 @@ public class LiteVideoPlayerView extends FrameLayout
         initPlayerView();
     }
 
-    @IntDef({ PlayStatus.PREPARE, PlayStatus.PLAYING, PlayStatus.PAUSE, PlayStatus.COMPLETE })
-    @Retention(RetentionPolicy.SOURCE) public @interface PlayStatus {
-        int PREPARE = 0;
-        int PLAYING = 1;
-        int PAUSE = 2;
-        int COMPLETE = 3;
-    }
-
-    private static DataSource.Factory mediaDataSourceFactory;
     private AspectRatioFrameLayout playerRoot;
+    private LiteResizeTextureView textureView;
     private SurfaceTexture surfaceTexture;
 
     private SimpleDraweeView videoCover;
@@ -78,34 +64,31 @@ public class LiteVideoPlayerView extends FrameLayout
     private ImageView startButton;
     private ImageView pauseButton;
 
-    private SimpleExoPlayer exoPlayer;
     private Drawable placeHolder;
     private VideoInfo videoInfo;
 
-    private @PlayStatus int presentStatus;
+    private AnimatorSet startAnim;
+    private AnimatorSet pauseAnim;
+
+    private boolean showPause;
 
     private void initPlayerView() {
         LayoutInflater.from(getContext()).inflate(R.layout.layout_lite_video_player, this);
 
         initValue();
         initView();
-        initPlayer();
+        initAnim();
     }
 
     private void initValue() {
-        mediaDataSourceFactory =
-            new DefaultDataSourceFactory(AppController.getAppContext(), "exo-player");
-
         TypedArray ta = AppController.getAppContext()
             .getTheme()
             .obtainStyledAttributes(new int[] { com.zhihu.matisse.R.attr.item_placeholder });
         placeHolder = ta.getDrawable(0);
-
-        presentStatus = PlayStatus.PREPARE;
     }
 
     private void initView() {
-        LiteResizeTextureView textureView = findViewById(R.id.video_player_texture);
+        textureView = findViewById(R.id.video_player_texture);
         textureView.setSurfaceTextureListener(this);
 
         playerRoot = findViewById(R.id.video_Player_root);
@@ -118,68 +101,89 @@ public class LiteVideoPlayerView extends FrameLayout
 
         startButton.setOnClickListener(this);
         pauseButton.setOnClickListener(this);
+
+        TouchListenerLayout listenerLayout = findViewById(R.id.video_player_touch);
+        listenerLayout.setOnPressListener(new OnPressListenerAdapter() {
+            @Override public void onPressDown() {
+                super.onPressDown();
+                if (videoInfo != null
+                    && videoInfo.id == LiteVideoPlayer.getPlayer().currentId()
+                    && LiteVideoPlayer.getPlayer().currentStatus()
+                    == LiteVideoPlayer.PlayStatus.PLAYING
+                    && !showPause) {
+                    autoShowPause();
+                }
+            }
+        });
     }
 
-    private void initPlayer() {
-        exoPlayer = ExoPlayerFactory.newSimpleInstance(getContext(), new DefaultTrackSelector());
-
-        exoPlayer.addListener(new Player.EventListener() {
-            @Override public void onTimelineChanged(Timeline timeline, @Nullable Object manifest,
-                int reason) {
-
+    private void autoShowPause() {
+        if (pauseButton == null) {
+            return;
+        }
+        pauseButton.setVisibility(VISIBLE);
+        showPause = true;
+        AndroidSchedulers.mainThread().createWorker().schedule(new Action0() {
+            @Override public void call() {
+                if (pauseButton != null) {
+                    pauseButton.setVisibility(GONE);
+                    showPause = false;
+                }
             }
+        }, 2000, TimeUnit.MILLISECONDS);
+    }
 
-            @Override public void onTracksChanged(TrackGroupArray trackGroups,
-                TrackSelectionArray trackSelections) {
+    private void initAnim() {
+        ObjectAnimator startRotate = ObjectAnimator.ofFloat(startButton, "rotation", 0.0f, -90.0f);
+        ObjectAnimator startAlpha = ObjectAnimator.ofFloat(startButton, "alpha", 1.0f, 0.0f);
+        ObjectAnimator pauseRotate = ObjectAnimator.ofFloat(pauseButton, "rotation", 90.0f, 0.0f);
+        ObjectAnimator pauseAlpha = ObjectAnimator.ofFloat(pauseButton, "alpha", 0.0f, 1.0f);
+        startAnim = new AnimatorSet();
+        startAnim.playTogether(startRotate, startAlpha, pauseRotate, pauseAlpha);
+        startAnim.setInterpolator(new LinearInterpolator());
+        startAnim.setDuration(200);
 
-            }
-
-            @Override public void onLoadingChanged(boolean isLoading) {
-
-            }
-
-            @Override public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
-
-            }
-
-            @Override public void onRepeatModeChanged(int repeatMode) {
-
-            }
-
-            @Override public void onShuffleModeEnabledChanged(boolean shuffleModeEnabled) {
-
-            }
-
-            @Override public void onPlayerError(ExoPlaybackException error) {
-
-            }
-
-            @Override public void onPositionDiscontinuity(int reason) {
-
-            }
-
-            @Override
-            public void onPlaybackParametersChanged(PlaybackParameters playbackParameters) {
-
-            }
-
-            @Override public void onSeekProcessed() {
-
+        startAnim.addListener(new AnimatorListenerAdapter() {
+            @Override public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (startButton != null) {
+                    startButton.setVisibility(GONE);
+                    startButton.setAlpha(1.0f);
+                    startButton.setRotation(0.0f);
+                }
+                if (pauseButton != null) {
+                    pauseButton.setVisibility(VISIBLE);
+                }
             }
         });
 
-        exoPlayer.setRepeatMode(Player.REPEAT_MODE_ALL);
-        exoPlayer.setPlayWhenReady(true);
+        ObjectAnimator startRotateE = ObjectAnimator.ofFloat(startButton, "rotation", -90.0f, 0.0f);
+        ObjectAnimator startAlphaE = ObjectAnimator.ofFloat(startButton, "alpha", 0.0f, 1.0f);
+        ObjectAnimator pauseRotateE = ObjectAnimator.ofFloat(pauseButton, "rotation", 0.0f, 90.0f);
+        ObjectAnimator pauseAlphaE = ObjectAnimator.ofFloat(pauseButton, "alpha", 1.0f, 0.0f);
+        pauseAnim = new AnimatorSet();
+        pauseAnim.playTogether(startRotateE, startAlphaE, pauseRotateE, pauseAlphaE);
+        pauseAnim.setInterpolator(new LinearInterpolator());
+        pauseAnim.setDuration(200);
+
+        pauseAnim.addListener(new AnimatorListenerAdapter() {
+            @Override public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (startButton != null) {
+                    startButton.setVisibility(VISIBLE);
+                }
+                if (pauseButton != null) {
+                    pauseButton.setVisibility(GONE);
+                    pauseButton.setAlpha(1.0f);
+                    pauseButton.setRotation(0.0f);
+                }
+            }
+        });
     }
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int width, int height) {
-        try {
-            exoPlayer.setVideoSurface(new Surface(surfaceTexture));
-            this.surfaceTexture = surfaceTexture;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        this.surfaceTexture = surfaceTexture;
     }
 
     @Override
@@ -198,59 +202,60 @@ public class LiteVideoPlayerView extends FrameLayout
     @Override public void onClick(View v) {
         switch (v.getId()) {
             case R.id.video_player_start:
-                onClickStart();
+                LiteVideoPlayer.getPlayer().start(new Surface(surfaceTexture), videoInfo, this);
+                startAnim();
                 break;
             case R.id.video_player_pause:
-                onClickPause();
+                LiteVideoPlayer.getPlayer().stop();
+                pauseAnim();
                 break;
         }
     }
 
-    private void onClickStart() {
-        if (presentStatus == PlayStatus.PREPARE) {
-            prepare();
+    @Override public void onStateChange(long videoId, int status) {
+        if (videoInfo == null || videoInfo.id != videoId) {
+            return;
         }
-        exoPlayer.setPlayWhenReady(true);
-    }
-
-    private void prepare() {
-        try {
-            MediaSource mediaSource =
-                new ExtractorMediaSource.Factory(mediaDataSourceFactory).createMediaSource(
-                    videoInfo.uri);
-            exoPlayer.prepare(mediaSource, true, true);
-        } catch (Exception e) {
-            ULog.show(e.getMessage());
-        }
-    }
-
-    private void onClickPause() {
-        exoPlayer.setPlayWhenReady(false);
-    }
-
-    private void refreshStatus() {
-        switch (presentStatus) {
-            case PlayStatus.PREPARE:
+        switch (status) {
+            case LiteVideoPlayer.PlayStatus.PREPARE:
                 startButton.setVisibility(VISIBLE);
                 pauseButton.setVisibility(GONE);
                 videoCover.setVisibility(VISIBLE);
                 break;
-            case PlayStatus.PAUSE:
-                pauseButton.setVisibility(VISIBLE);
-                startButton.setVisibility(GONE);
+            case LiteVideoPlayer.PlayStatus.PAUSE:
                 videoCover.setVisibility(GONE);
                 break;
-            case PlayStatus.PLAYING:
-                pauseButton.setVisibility(VISIBLE);
-                startButton.setVisibility(GONE);
+            case LiteVideoPlayer.PlayStatus.PLAYING:
                 videoCover.setVisibility(GONE);
                 break;
-            case PlayStatus.COMPLETE:
+            case LiteVideoPlayer.PlayStatus.COMPLETE:
                 startButton.setVisibility(VISIBLE);
                 pauseButton.setVisibility(GONE);
                 videoCover.setVisibility(VISIBLE);
                 break;
+            case LiteVideoPlayer.PlayStatus.LOADING:
+                break;
         }
+    }
+
+    private void startAnim() {
+        startButton.setVisibility(VISIBLE);
+        pauseButton.setVisibility(VISIBLE);
+        startAnim.start();
+
+        AndroidSchedulers.mainThread().createWorker().schedule(new Action0() {
+            @Override public void call() {
+                if (pauseButton != null) {
+                    pauseButton.setVisibility(GONE);
+                }
+            }
+        }, 2600, TimeUnit.MILLISECONDS);
+    }
+
+    private void pauseAnim() {
+        startButton.setVisibility(VISIBLE);
+        pauseButton.setVisibility(VISIBLE);
+        pauseAnim.start();
     }
 
     public void setVideoInfo(@NonNull VideoInfo videoInfo) {
@@ -259,6 +264,8 @@ public class LiteVideoPlayerView extends FrameLayout
         } else {
             playerRoot.setAspectRatio(1.0f);
         }
+
+        textureView.setVideoSize(videoInfo.width, videoInfo.height);
 
         FrescoLoader.newFrescoLoader()
             .placeHolder(placeHolder)
@@ -275,9 +282,12 @@ public class LiteVideoPlayerView extends FrameLayout
         videoBack.setController(
             Fresco.newDraweeControllerBuilder().setImageRequest(backRequest).build());
 
-        this.presentStatus = PlayStatus.PREPARE;
         this.videoInfo = videoInfo;
 
-        refreshStatus();
+        if (videoInfo.id == LiteVideoPlayer.getPlayer().currentId()) {
+            onStateChange(videoInfo.id, LiteVideoPlayer.getPlayer().currentStatus());
+        } else {
+            onStateChange(videoInfo.id, LiteVideoPlayer.PlayStatus.PREPARE);
+        }
     }
 }

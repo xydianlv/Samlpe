@@ -51,11 +51,6 @@ public class LocalVideoAdapter extends RecyclerView.Adapter {
         notifyDataSetChanged();
     }
 
-    public interface OnItemClickListener {
-
-        void onClick(ResultItem item, int position);
-    }
-
     private class VideoItemHolder extends RecyclerView.ViewHolder {
 
         private LiteVideoPlayerView playerView;
