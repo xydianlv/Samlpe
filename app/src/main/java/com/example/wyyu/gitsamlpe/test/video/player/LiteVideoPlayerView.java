@@ -58,6 +58,7 @@ public class LiteVideoPlayerView extends FrameLayout
     private AspectRatioFrameLayout playerRoot;
     private LiteResizeTextureView textureView;
     private SurfaceTexture surfaceTexture;
+    private Surface surface;
 
     private SimpleDraweeView videoCover;
     private SimpleDraweeView videoBack;
@@ -69,8 +70,6 @@ public class LiteVideoPlayerView extends FrameLayout
 
     private AnimatorSet startAnim;
     private AnimatorSet pauseAnim;
-
-    private boolean showPause;
 
     private void initPlayerView() {
         LayoutInflater.from(getContext()).inflate(R.layout.layout_lite_video_player, this);
@@ -89,8 +88,6 @@ public class LiteVideoPlayerView extends FrameLayout
 
     private void initView() {
         textureView = findViewById(R.id.video_player_texture);
-        textureView.setSurfaceTextureListener(this);
-
         playerRoot = findViewById(R.id.video_Player_root);
         videoCover = findViewById(R.id.video_player_cover);
         videoBack = findViewById(R.id.video_player_back);
@@ -98,19 +95,19 @@ public class LiteVideoPlayerView extends FrameLayout
         pauseButton = findViewById(R.id.video_player_pause);
 
         playerRoot.setResizeMode(AspectRatioFrameLayout.RESIZE_MODE_FIXED_WIDTH);
+        textureView.setSurfaceTextureListener(this);
 
         startButton.setOnClickListener(this);
         pauseButton.setOnClickListener(this);
 
-        TouchListenerLayout listenerLayout = findViewById(R.id.video_player_touch);
-        listenerLayout.setOnPressListener(new OnPressListenerAdapter() {
+        TouchListenerLayout touchLayout = findViewById(R.id.video_player_touch);
+        touchLayout.setOnPressListener(new OnPressListenerAdapter() {
             @Override public void onPressDown() {
                 super.onPressDown();
                 if (videoInfo != null
                     && videoInfo.id == LiteVideoPlayer.getPlayer().currentId()
                     && LiteVideoPlayer.getPlayer().currentStatus()
-                    == LiteVideoPlayer.PlayStatus.PLAYING
-                    && !showPause) {
+                    == LiteVideoPlayer.PlayStatus.PLAYING) {
                     autoShowPause();
                 }
             }
@@ -118,16 +115,14 @@ public class LiteVideoPlayerView extends FrameLayout
     }
 
     private void autoShowPause() {
-        if (pauseButton == null) {
+        if (pauseButton == null || pauseButton.getVisibility() == VISIBLE) {
             return;
         }
         pauseButton.setVisibility(VISIBLE);
-        showPause = true;
         AndroidSchedulers.mainThread().createWorker().schedule(new Action0() {
             @Override public void call() {
                 if (pauseButton != null) {
                     pauseButton.setVisibility(GONE);
-                    showPause = false;
                 }
             }
         }, 2000, TimeUnit.MILLISECONDS);
@@ -183,26 +178,32 @@ public class LiteVideoPlayerView extends FrameLayout
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int width, int height) {
+        // SurfaceTexture 准备就绪
         this.surfaceTexture = surfaceTexture;
+        this.surface = new Surface(surfaceTexture);
     }
 
     @Override
     public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-
+        // SurfaceTexture 缓冲大小变化
     }
 
     @Override public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-        return surfaceTexture == null;
+        // SurfaceTexture 即将被销毁
+        //if (videoInfo != null && videoInfo.id == LiteVideoPlayer.getPlayer().currentId()) {
+        //    LiteVideoPlayer.getPlayer().stop();
+        //}
+        return surface == null;
     }
 
     @Override public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-
+        // SurfaceTexture 通过 updateImage 更新
     }
 
     @Override public void onClick(View v) {
         switch (v.getId()) {
             case R.id.video_player_start:
-                LiteVideoPlayer.getPlayer().start(new Surface(surfaceTexture), videoInfo, this);
+                LiteVideoPlayer.getPlayer().start(surface, videoInfo, this);
                 startAnim();
                 break;
             case R.id.video_player_pause:
@@ -264,7 +265,6 @@ public class LiteVideoPlayerView extends FrameLayout
         } else {
             playerRoot.setAspectRatio(1.0f);
         }
-
         textureView.setVideoSize(videoInfo.width, videoInfo.height);
 
         FrescoLoader.newFrescoLoader()
@@ -283,11 +283,13 @@ public class LiteVideoPlayerView extends FrameLayout
             Fresco.newDraweeControllerBuilder().setImageRequest(backRequest).build());
 
         this.videoInfo = videoInfo;
+        onStateChange(videoInfo.id, LiteVideoPlayer.PlayStatus.PREPARE);
 
-        if (videoInfo.id == LiteVideoPlayer.getPlayer().currentId()) {
-            onStateChange(videoInfo.id, LiteVideoPlayer.getPlayer().currentStatus());
-        } else {
-            onStateChange(videoInfo.id, LiteVideoPlayer.PlayStatus.PREPARE);
-        }
+        //if (videoInfo.id == LiteVideoPlayer.getPlayer().currentId()) {
+        //    onStateChange(videoInfo.id, LiteVideoPlayer.PlayStatus.PREPARE);
+        //    LiteVideoPlayer.getPlayer().start(new Surface(surfaceTexture), videoInfo, this);
+        //} else {
+        //    onStateChange(videoInfo.id, LiteVideoPlayer.PlayStatus.PREPARE);
+        //}
     }
 }

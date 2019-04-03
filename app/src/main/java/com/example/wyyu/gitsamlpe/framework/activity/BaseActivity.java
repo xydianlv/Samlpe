@@ -38,7 +38,7 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         msgCallBackHashMap = new HashMap<>();
         MsgSender.getMsgSender().attach(this);
         DownloadObservable.getObservable().attachActivity(this);
-        VolumeObservable.getObservable().attachActivity(this);
+        //VolumeObservable.getObservable().attachActivity(this);
 
         registerToLiveBus();
     }
@@ -56,7 +56,7 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         unbinder.unbind();
         releaseMsgListener();
         DownloadObservable.getObservable().detachActivity(this);
-        VolumeObservable.getObservable().detachActivity(this);
+        //VolumeObservable.getObservable().detachActivity(this);
     }
 
     private void releaseMsgListener() {
@@ -77,13 +77,13 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
     }
 
     @Override public boolean dispatchKeyEvent(KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN) {
-            VolumeObservable.getObservable().onClickVolumeDown();
-            return true;
-        } else if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP) {
-            VolumeObservable.getObservable().onClickVolumeUp();
-            return true;
-        }
+        //if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN) {
+        //    VolumeObservable.getObservable().onClickVolumeDown();
+        //    return true;
+        //} else if (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP) {
+        //    VolumeObservable.getObservable().onClickVolumeUp();
+        //    return true;
+        //}
         return super.dispatchKeyEvent(event);
     }
 }

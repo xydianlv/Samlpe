@@ -90,7 +90,13 @@ public class LiteVideoPlayer {
             @Override public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
                 switch (playbackState) {
                     case Player.STATE_IDLE:
-                        break;
+                        // LiteVideoPlayerView 中的 TextureView 回调 onSurfaceTextureDestroyed 后 Player 会调到这个状态
+                        presentStatus = PlayStatus.PREPARE;
+                        if (playerListener != null) {
+                            playerListener.onStateChange(videoInfo.id, presentStatus);
+                        }
+                        videoInfo = null;
+                        return;
                     case Player.STATE_BUFFERING:
                         presentStatus = PlayStatus.PREPARE;
                         break;
@@ -228,7 +234,7 @@ public class LiteVideoPlayer {
      *
      * @return 视频ID
      */
-    public long currentId() {
+    long currentId() {
         return videoInfo == null ? 0 : videoInfo.id;
     }
 
@@ -237,7 +243,7 @@ public class LiteVideoPlayer {
      *
      * @return 播放器当前状态
      */
-    public @PlayStatus int currentStatus() {
+    @PlayStatus int currentStatus() {
         return presentStatus;
     }
 }
