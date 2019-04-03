@@ -18,6 +18,12 @@
       tools:ignore="SpUsage"
       />
 
+  <com.example.wyyu.gitsamlpe.test.video.player.LiteVideoPlayerView
+      android:id="@+id/video_item_player"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
   <com.example.wyyu.gitsamlpe.test.image.matisse.AspectRatioFrameLayout
       android:id="@+id/video_item_layout"
       android:layout_width="match_parent"

@@ -240,11 +240,6 @@ public class ActivityLocalVideoList extends FullScreenActivity
         albumList.setItemAnimator(null);
 
         videoAdapter = new LocalVideoAdapter();
-        videoAdapter.setItemClickListener(new LocalVideoAdapter.OnItemClickListener() {
-            @Override public void onClick(ResultItem item, int position) {
-
-            }
-        });
 
         videoList.setLayoutManager(new LinearLayoutManager(this));
         videoList.setAdapter(videoAdapter);

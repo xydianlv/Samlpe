@@ -1,7 +1,5 @@
 package com.example.wyyu.gitsamlpe.test.video.local;
 
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,11 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.matisse.internal.entity.Item;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.application.AppController;
-import com.example.wyyu.gitsamlpe.test.image.matisse.AspectRatioFrameLayout;
-import com.example.wyyu.gitsamlpe.test.image.matisse.FrescoLoader;
-import com.facebook.drawee.drawable.ScalingUtils;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.example.wyyu.gitsamlpe.test.video.player.LiteVideoPlayerView;
+import com.example.wyyu.gitsamlpe.test.video.player.VideoInfo;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,17 +19,9 @@ import java.util.List;
 
 public class LocalVideoAdapter extends RecyclerView.Adapter {
 
-    private OnItemClickListener itemClickListener;
-
     private List<Item> videoItemList;
-    private Drawable placeHolder;
 
     LocalVideoAdapter() {
-        TypedArray ta = AppController.getAppContext()
-            .getTheme()
-            .obtainStyledAttributes(new int[] { com.zhihu.matisse.R.attr.item_placeholder });
-        placeHolder = ta.getDrawable(0);
-
         videoItemList = new LinkedList<>();
     }
 
@@ -64,10 +51,6 @@ public class LocalVideoAdapter extends RecyclerView.Adapter {
         notifyDataSetChanged();
     }
 
-    void setItemClickListener(OnItemClickListener itemClickListener) {
-        this.itemClickListener = itemClickListener;
-    }
-
     public interface OnItemClickListener {
 
         void onClick(ResultItem item, int position);
@@ -75,35 +58,19 @@ public class LocalVideoAdapter extends RecyclerView.Adapter {
 
     private class VideoItemHolder extends RecyclerView.ViewHolder {
 
-        private AspectRatioFrameLayout ratioFrameLayout;
-        private SimpleDraweeView videoCover;
+        private LiteVideoPlayerView playerView;
         private TextView videoInfo;
 
         VideoItemHolder(@NonNull View itemView) {
             super(itemView);
 
-            ratioFrameLayout = itemView.findViewById(R.id.video_item_layout);
-            videoCover = itemView.findViewById(R.id.video_item_cover);
+            playerView = itemView.findViewById(R.id.video_item_player);
             videoInfo = itemView.findViewById(R.id.video_item_info);
-
-            ratioFrameLayout.setResizeMode(AspectRatioFrameLayout.RESIZE_MODE_FIXED_WIDTH);
         }
 
         void cache(Item item) {
             videoInfo.setText(item.getContentUri().toString());
-
-            if (item.width > item.height) {
-                ratioFrameLayout.setAspectRatio((float) item.width / item.height);
-            } else {
-                ratioFrameLayout.setAspectRatio(1.0f);
-            }
-
-            FrescoLoader.newFrescoLoader()
-                .placeHolder(placeHolder)
-                .resize(120, 120)
-                .imageScaleType(ScalingUtils.ScaleType.FIT_CENTER)
-                .uri(item.getContentUri())
-                .into(videoCover);
+            playerView.setVideoInfo(new VideoInfo(item));
         }
     }
 }
