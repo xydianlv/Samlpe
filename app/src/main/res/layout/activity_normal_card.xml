@@ -35,6 +35,30 @@
         android:layout_marginTop="20.0dp"
         />
 
+    <FrameLayout
+        android:id="@+id/card_anim_click"
+        android:layout_width="100.0dp"
+        android:layout_height="100.0dp"
+        android:layout_marginTop="120.0dp"
+        >
+
+      <View
+          android:id="@+id/card_anim_test_b"
+          android:layout_width="64.0dp"
+          android:layout_height="64.0dp"
+          android:layout_gravity="center"
+          android:background="@color/color_999ead"
+          />
+
+      <View
+          android:id="@+id/card_anim_test_t"
+          android:layout_width="64.0dp"
+          android:layout_height="64.0dp"
+          android:layout_gravity="center"
+          android:background="@color/color_ffcdd2"
+          />
+
+    </FrameLayout>
 
   </LinearLayout>
 

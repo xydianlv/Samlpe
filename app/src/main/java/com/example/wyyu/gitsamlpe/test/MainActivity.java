@@ -82,12 +82,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("PlayVideo", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startVideoPlayActivity(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("ImageList", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startImageListActivity(MainActivity.this);
