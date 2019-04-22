@@ -21,13 +21,28 @@ public class ActivityAdapterText extends ToolbarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adapter_text);
 
+        initActivity();
+    }
+
+    private void initActivity() {
+        showAdapterText();
+        showExpandText();
+        showSpanText();
+        showAnimText();
+    }
+
+    private void showAdapterText() {
         AdapterTextView textView = findViewById(R.id.adapter_text_view);
         textView.setShowText(TEST_TEXT);
+    }
 
+    private void showExpandText() {
         ExpandTextView expandTextView = findViewById(R.id.expand_text_view);
         expandTextView.setMaxLines(4);
         expandTextView.setText(TEST_TEXT);
+    }
 
+    private void showSpanText() {
         TextView text = findViewById(R.id.img_span_text_view);
         Drawable drawable = getResources().getDrawable(R.drawable.img_volume);
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
@@ -36,5 +51,13 @@ public class ActivityAdapterText extends ToolbarActivity {
         spannableString.setSpan(text, 0, 1, ImageSpan.ALIGN_BASELINE);
 
         text.setText(spannableString);
+    }
+
+    private void showAnimText() {
+        AnimTextView textView = findViewById(R.id.anim_text_view);
+
+        getLifecycle().addObserver(textView);
+
+        textView.setContentText("少时不识愁滋味\n爱上层楼\n爱上层楼\n为赋新词强说愁\n而今识尽愁滋味\n欲说还休\n欲说还休\n却道天凉好个秋");
     }
 }
