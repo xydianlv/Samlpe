@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item>
+    <rotate
+        android:pivotX="50%p"
+        android:pivotY="50%p"
+        android:fromDegrees="-81"
+        android:toDegrees="-81"
+        >
+      <bitmap
+          android:src="@drawable/icon_jz_play_pause"
+          android:alpha="0.1"
+          android:antialias="true"
+          android:tileMode="disabled"
+          />
+    </rotate>
+  </item>
+
+  <item>
+    <rotate
+        android:pivotX="50%p"
+        android:pivotY="50%p"
+        android:fromDegrees="9"
+        android:toDegrees="9"
+        >
+      <bitmap
+          android:src="@drawable/icon_jz_play_start"
+          android:alpha="0.9"
+          android:antialias="true"
+          android:tileMode="disabled"
+          />
+    </rotate>
+  </item>
+
+</layer-list>

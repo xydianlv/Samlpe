@@ -67,6 +67,15 @@
         android:background="@drawable/selector_click_view"
         />
 
+    <ImageView
+        android:id="@+id/card_select_img"
+        android:layout_width="64.0dp"
+        android:layout_height="64.0dp"
+        android:layout_marginTop="40.0dp"
+        android:contentDescription="@string/image"
+        android:background="@drawable/selector_click_img"
+        />
+
   </LinearLayout>
 
 </ScrollView>

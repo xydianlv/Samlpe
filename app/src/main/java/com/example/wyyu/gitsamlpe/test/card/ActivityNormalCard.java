@@ -25,6 +25,9 @@ public class ActivityNormalCard extends FullScreenActivity {
     private View selectTest;
     private boolean select;
 
+    private View imgTest;
+    private boolean selectImg;
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal_card);
@@ -36,6 +39,7 @@ public class ActivityNormalCard extends FullScreenActivity {
         initBasicValue();
         loadAnim();
         testSelect();
+        imgSelect();
     }
 
     private void initBasicValue() {
@@ -75,5 +79,16 @@ public class ActivityNormalCard extends FullScreenActivity {
             }
         });
         select = false;
+    }
+
+    private void imgSelect() {
+        imgTest = findViewById(R.id.card_select_img);
+        imgTest.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                selectImg = !selectImg;
+                imgTest.setSelected(selectImg);
+            }
+        });
+        selectImg = false;
     }
 }
