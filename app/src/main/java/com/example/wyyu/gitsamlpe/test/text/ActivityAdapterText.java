@@ -1,7 +1,9 @@
 package com.example.wyyu.gitsamlpe.test.text;
 
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ public class ActivityAdapterText extends ToolbarActivity {
         showExpandText();
         showSpanText();
         showAnimText();
+        showTypeface();
     }
 
     private void showAdapterText() {
@@ -59,5 +62,29 @@ public class ActivityAdapterText extends ToolbarActivity {
         getLifecycle().addObserver(textView);
 
         textView.setContentText("少时不识愁滋味\n爱上层楼\n爱上层楼\n为赋新词强说愁\n而今识尽愁滋味\n欲说还休\n欲说还休\n却道天凉好个秋");
+    }
+
+    private void showTypeface() {
+
+        Typeface typeNormal = ResourcesCompat.getFont(this, R.font.sans_normal);
+        TextView textNormalA = findViewById(R.id.text_type_normal_a);
+        TextView textNormalB = findViewById(R.id.text_type_normal_b);
+        TextView textNormalC = findViewById(R.id.text_type_normal_c);
+
+        textNormalA.setTypeface(typeNormal);
+        textNormalB.setTypeface(typeNormal);
+        textNormalC.setTypeface(typeNormal);
+
+        Typeface typeLight = ResourcesCompat.getFont(this, R.font.sans_light);
+        TextView textLightA = findViewById(R.id.text_type_light_a);
+        TextView textLightB = findViewById(R.id.text_type_light_b);
+        TextView textLightC = findViewById(R.id.text_type_light_c);
+
+        textLightA.setTypeface(typeLight);
+        textLightB.setTypeface(typeLight);
+        textLightC.setTypeface(typeLight);
+
+        TextView textView = findViewById(R.id.text_type_serif);
+        textView.setTypeface(Typeface.SERIF);
     }
 }

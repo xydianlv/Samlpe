@@ -20,8 +20,10 @@ public class ActivityNormalCard extends FullScreenActivity {
 
     private View animViewT;
     private View animViewB;
-
     private boolean showB;
+
+    private View selectTest;
+    private boolean select;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class ActivityNormalCard extends FullScreenActivity {
     private void initActivity() {
         initBasicValue();
         loadAnim();
+        testSelect();
     }
 
     private void initBasicValue() {
@@ -61,5 +64,16 @@ public class ActivityNormalCard extends FullScreenActivity {
         setBackB = (AnimationSet) AnimationUtils.loadAnimation(this, R.anim.anim_set_r_a_0_0);
 
         showB = false;
+    }
+
+    private void testSelect() {
+        selectTest = findViewById(R.id.card_select_test);
+        selectTest.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                select = !select;
+                selectTest.setSelected(select);
+            }
+        });
+        select = false;
     }
 }

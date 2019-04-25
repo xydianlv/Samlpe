@@ -122,12 +122,14 @@
     <color name="color_242529">#242529</color>
 
     <color name="black_04">#0a000000</color>
+    <color name="black_10">#1A000000</color>
     <color name="black_20">#33000000</color>
-    <color name="black_30">#4b000000</color>
+    <color name="black_30">#4D000000</color>
     <color name="black_40">#66000000</color>
     <color name="black_50">#80000000</color>
     <color name="black_60">#99000000</color>
-    <color name="black_70">#b4000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_80">#CC000000</color>
     <color name="white_90">#e6ffffff</color>
     <color name="white_75">#c0ffffff</color>
     <color name="white_04">#0affffff</color>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+      android:id="@+id/select"
+      android:state_selected="true"
+      android:drawable="@drawable/layer_select_test_10"
+      />
+
+  <item
+      android:id="@+id/normal"
+      android:state_selected="false"
+      android:drawable="@drawable/layer_select_test_00"
+      />
+
+  <transition
+      android:fromId="@id/normal"
+      android:toId="@id/select"
+      >
+
+    <animation-list>
+
+      <item
+          android:drawable="@drawable/layer_select_test_00"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_01"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_02"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_03"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_04"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_05"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_06"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_07"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_08"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_09"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_10"
+          android:duration="30"
+          />
+
+    </animation-list>
+
+  </transition>
+
+  <transition
+      android:fromId="@id/select"
+      android:toId="@id/normal"
+      >
+
+    <animation-list>
+
+      <item
+          android:drawable="@drawable/layer_select_test_10"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_09"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_08"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_07"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_06"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_05"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_04"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_03"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_02"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_01"
+          android:duration="30"
+          />
+      <item
+          android:drawable="@drawable/layer_select_test_00"
+          android:duration="30"
+          />
+
+    </animation-list>
+
+  </transition>
+
+</animated-selector>

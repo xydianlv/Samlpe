@@ -14,14 +14,15 @@ import rx.functions.Action0;
 /**
  * Created by wyyu on 2019/4/22.
  **/
+
 public class AnimTextView extends AppCompatTextView implements LifecycleObserver {
 
     public AnimTextView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public AnimTextView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public AnimTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
