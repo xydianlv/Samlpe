@@ -76,6 +76,29 @@
         android:background="@drawable/selector_click_img"
         />
 
+    <View
+        android:id="@+id/card_select_vector"
+        android:layout_width="64.0dp"
+        android:layout_height="64.0dp"
+        android:layout_marginTop="40.0dp"
+        android:contentDescription="@string/image"
+        android:background="@drawable/selector_click_test"
+        />
+
+    <View
+        android:id="@+id/card_play_vector"
+        android:layout_width="64.0dp"
+        android:layout_height="64.0dp"
+        android:layout_marginTop="40.0dp"
+        android:contentDescription="@string/image"
+        android:background="@drawable/selector_play_vector"
+        />
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="60.0dp"
+        />
+
   </LinearLayout>
 
 </ScrollView>

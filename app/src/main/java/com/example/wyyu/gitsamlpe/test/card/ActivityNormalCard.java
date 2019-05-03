@@ -28,6 +28,12 @@ public class ActivityNormalCard extends FullScreenActivity {
     private View imgTest;
     private boolean selectImg;
 
+    private View vectorTest;
+    private boolean selectVector;
+
+    private View playTest;
+    private boolean selectPlay;
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_normal_card);
@@ -40,6 +46,8 @@ public class ActivityNormalCard extends FullScreenActivity {
         loadAnim();
         testSelect();
         imgSelect();
+        vectorSelect();
+        playSelect();
     }
 
     private void initBasicValue() {
@@ -90,5 +98,27 @@ public class ActivityNormalCard extends FullScreenActivity {
             }
         });
         selectImg = false;
+    }
+
+    private void vectorSelect() {
+        vectorTest = findViewById(R.id.card_select_vector);
+        vectorTest.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                selectVector = !selectVector;
+                vectorTest.setSelected(selectVector);
+            }
+        });
+        selectVector = false;
+    }
+
+    private void playSelect() {
+        playTest = findViewById(R.id.card_play_vector);
+        playTest.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                selectPlay = !selectPlay;
+                playTest.setSelected(selectPlay);
+            }
+        });
+        selectPlay = false;
     }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vector_start_and_pause"
+    >
+
+  <target
+      android:name="group_start"
+      android:animation="@animator/anim_rotate_from_n_90"
+      />
+
+  <target
+      android:name="start"
+      android:animation="@animator/anim_alpha_to_full"
+      />
+
+  <target
+      android:name="group_pause"
+      android:animation="@animator/anim_rotate_to_90"
+      />
+
+  <target
+      android:name="pause_a"
+      android:animation="@animator/anim_stroke_to_zero"
+      />
+
+  <target
+      android:name="pause_b"
+      android:animation="@animator/anim_stroke_to_zero"
+      />
+
+</animated-vector>

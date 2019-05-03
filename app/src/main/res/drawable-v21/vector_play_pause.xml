@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100.0dp"
+    android:height="100.0dp"
+    android:viewportHeight="100"
+    android:viewportWidth="100"
+    >
+
+  <path
+      android:fillColor="#66000000"
+      android:pathData="M50,0 a49,49 0,1 0 1,0"
+      />
+
+  <group
+      android:name="group_pause"
+      android:pivotX="49"
+      android:pivotY="49"
+      >
+
+    <!--<path-->
+        <!--android:name="pause_a"-->
+        <!--android:fillColor="#ffffffff"-->
+        <!--android:pathData="-->
+        <!--M34,34 L34,66 C35,70 41,70 42,66-->
+        <!--L42,34 C41,29 35,29, 34,34"-->
+        <!--/>-->
+
+    <!--<path-->
+        <!--android:name="pause_b"-->
+        <!--android:fillColor="#ffffffff"-->
+        <!--android:pathData="-->
+        <!--M58,34 L58,66 C59,70 65,70 66,66-->
+        <!--L66,34 C65,29 59,29, 58,34"-->
+        <!--/>-->
+
+    <path
+        android:name="pause_a"
+        android:strokeLineCap="round"
+        android:strokeWidth="8"
+        android:strokeColor="#ffffff"
+        android:pathData="M38,35 L38,65"
+        />
+
+    <path
+        android:name="pause_b"
+        android:strokeLineCap="round"
+        android:strokeWidth="8"
+        android:strokeColor="#ffffff"
+        android:pathData="M62,35 L62,65"
+        />
+
+  </group>
+
+</vector>
