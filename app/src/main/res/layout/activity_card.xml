@@ -47,14 +47,22 @@
       android:id="@+id/bt_start"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="开始"
+      android:text="@string/start_t"
       />
 
   <Button
       android:id="@+id/bt_stop"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="结束"
+      android:text="@string/end_t"
+      />
+
+  <Button
+      android:id="@+id/bt_request"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12.0dp"
+      android:text="@string/request_t"
       />
 
   <View

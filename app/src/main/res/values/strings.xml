@@ -53,6 +53,10 @@
     <string name="bus_check">busCheck</string>
     <string name="cut">cut</string>
 
+    <string name="start_t">开始</string>
+    <string name="end_t">结束</string>
+    <string name="request_t">请求</string>
+
     <string name="typeface_test">一段简单的测试文字</string>
 
     <string name="add">+</string>
