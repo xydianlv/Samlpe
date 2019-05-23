@@ -9,6 +9,7 @@ import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
 import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
+import com.example.wyyu.gitsamlpe.test.bubbling.ActivityBubbling;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
@@ -208,20 +209,24 @@ class UIShowManager {
         ActivityMultiHolder.open(context);
     }
 
-    static void startUiVisibilityTest(Context context){
+    static void startUiVisibilityTest(Context context) {
         ActivitySystemUiVisibility.open(context);
     }
 
-    static void startBezierAnimTest(Context context){
+    static void startBezierAnimTest(Context context) {
         ActivityBezier.open(context);
     }
 
-    static void startLiveDataTest(Context context){
+    static void startLiveDataTest(Context context) {
         ActivityLiveDataTest.open(context);
     }
 
-    static void startLocalVideoList(Activity activity){
+    static void startLocalVideoList(Activity activity) {
         ActivityLocalVideoList.open(activity);
+    }
+
+    static void startBubblingTest(Activity activity) {
+        ActivityBubbling.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

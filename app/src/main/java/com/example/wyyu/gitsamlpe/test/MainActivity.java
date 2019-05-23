@@ -288,6 +288,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("BubblingTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startBubblingTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

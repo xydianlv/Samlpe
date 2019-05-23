@@ -348,6 +348,10 @@
         android:name=".test.video.local.ActivityLocalVideoList"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.bubbling.ActivityBubbling"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
