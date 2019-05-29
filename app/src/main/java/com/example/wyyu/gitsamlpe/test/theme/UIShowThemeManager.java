@@ -42,6 +42,10 @@ class UIShowThemeManager {
         ActivitySwipeRight.open(context);
     }
 
+    static void showResultTestActivity(Activity activity, int requestCode) {
+        ActivityResultTest.openForResult(activity, requestCode);
+    }
+
     private static void showTargetActivity(Context context, Class activity) {
         context.startActivity(new Intent(context, activity));
     }

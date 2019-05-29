@@ -1,5 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.theme;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
@@ -83,6 +84,16 @@ public class ActivityThemeList extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("ActivityResultTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowThemeManager.showResultTestActivity(ActivityThemeList.this, 0);
+            }
+        });
+
         listViewMain.refreshList();
+    }
+
+    @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
