@@ -21,6 +21,7 @@ import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
 import com.example.wyyu.gitsamlpe.test.fragment.ActivitySlideTest;
 import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
+import com.example.wyyu.gitsamlpe.test.image.local.ActivityLocalImageList;
 import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
 import com.example.wyyu.gitsamlpe.test.list.ActivityMultiHolder;
@@ -126,7 +127,7 @@ class UIShowManager {
     }
 
     static void startLocalImageActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityLocalImage.class);
+        startTargetActivityFromMain(context, ActivityLocalImageList.class);
     }
 
     static void startGameNumberActivity(Context context) {

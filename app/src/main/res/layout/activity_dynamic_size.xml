@@ -48,10 +48,10 @@
         />
 
     <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24.0dp"
-      />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24.0dp"
+        />
 
     <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
         android:layout_width="36.0dp"
@@ -62,6 +62,48 @@
     <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
         android:layout_width="84.0dp"
         android:layout_height="84.0dp"
+        android:layout_marginTop="24.0dp"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+        android:layout_width="28.0dp"
+        android:layout_height="28.0dp"
+        android:layout_marginTop="24.0dp"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+        android:layout_width="48.0dp"
+        android:layout_height="48.0dp"
+        android:layout_marginTop="24.0dp"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+        android:layout_width="64.0dp"
+        android:layout_height="64.0dp"
+        android:layout_marginTop="24.0dp"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+        android:layout_width="100.0dp"
+        android:layout_height="100.0dp"
+        android:layout_marginTop="24.0dp"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarLayout
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:layout_marginTop="24.0dp"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarLayout
+        android:layout_width="48.0dp"
+        android:layout_height="48.0dp"
+        android:layout_marginTop="24.0dp"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarLayout
+        android:layout_width="72.0dp"
+        android:layout_height="72.0dp"
         android:layout_marginTop="24.0dp"
         />
 

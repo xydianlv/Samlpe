@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+  <FrameLayout
+      android:id="@+id/avatar_img_container"
+      android:layout_width="38.0dp"
+      android:layout_height="38.0dp"
+      android:layout_gravity="center"
+      >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/avatar_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/image"
+        app:roundAsCircle="true"
+        app:placeholderImage="@mipmap/multi_image_1"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_round_grey"
+        />
+
+  </FrameLayout>
+
+  <ImageView
+      android:id="@+id/avatar_frame"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:src="@mipmap/img_avatar_frame"
+      android:contentDescription="@string/image"
+      />
+
+  <FrameLayout
+      android:id="@+id/avatar_icon_container"
+      android:layout_width="40.0dp"
+      android:layout_height="40.0dp"
+      android:layout_gravity="center"
+      >
+
+    <ImageView
+        android:layout_width="10.0dp"
+        android:layout_height="10.0dp"
+        android:layout_gravity="end|bottom"
+        android:src="@mipmap/icon_jz_play_start"
+        android:contentDescription="@string/image"
+        />
+
+  </FrameLayout>
+
+</FrameLayout>

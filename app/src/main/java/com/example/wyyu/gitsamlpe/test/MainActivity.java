@@ -82,7 +82,7 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("ImageList", new View.OnClickListener() {
+        listViewMain.addNewItem("MultiImage", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startImageListActivity(MainActivity.this);
             }
@@ -118,7 +118,7 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("PagerTest", new View.OnClickListener() {
+        listViewMain.addNewItem("BannerTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startPagerTestActivity(MainActivity.this);
             }
@@ -130,7 +130,7 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("ImageTest", new View.OnClickListener() {
+        listViewMain.addNewItem("LocalImageList", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startLocalImageActivity(MainActivity.this);
                 //MatisseHelper.openOnlySelectImage(MainActivity.this, 101);

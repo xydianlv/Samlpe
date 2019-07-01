@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+  <!-- 用户头像 -->
+  <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/avatar_layout_img"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="centerCrop"
+      android:contentDescription="@string/image"
+      app:roundAsCircle="true"
+      app:placeholderImage="@mipmap/multi_image_1"
+      />
+
+  <!-- 头像框 -->
+  <ImageView
+      android:id="@+id/avatar_layout_frame"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="fitStart"
+      android:src="@mipmap/img_avatar_frame"
+      android:contentDescription="@string/image"
+      />
+
+  <!-- 头像上的图标-->
+  <FrameLayout
+      android:id="@+id/avatar_layout_icon_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      >
+
+    <ImageView
+        android:id="@+id/avatar_layout_icon_play"
+        android:layout_width="16.0dp"
+        android:layout_height="16.0dp"
+        android:src="@mipmap/audio_play"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="2.0dp"
+        android:contentDescription="@string/image"
+        />
+
+  </FrameLayout>
+
+</FrameLayout>

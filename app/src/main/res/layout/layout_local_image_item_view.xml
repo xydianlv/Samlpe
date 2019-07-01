@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.wyyu.gitsamlpe.test.image.matisse.AspectRatioFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/local_img_root"
+    android:layout_margin="2.0dp"
+    >
+
+  <ImageView
+      android:id="@+id/local_img_image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:contentDescription="@string/image"
+      />
+
+  <FrameLayout
+      android:id="@+id/local_img_select_click"
+      android:layout_width="42.0dp"
+      android:layout_height="42.0dp"
+      android:padding="@dimen/padding_6"
+      android:layout_gravity="bottom|end"
+      android:visibility="gone"
+      >
+
+    <TextView
+        android:id="@+id/local_img_select_index"
+        android:layout_width="20.0dp"
+        android:layout_height="20.0dp"
+        android:gravity="center"
+        android:text="@string/number"
+        android:textColor="@color/color_white"
+        android:textSize="12.0dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/bg_round_white_black_100"
+        android:visibility="gone"
+        tools:ignore="SpUsage"
+        />
+
+    <View
+        android:layout_width="20.0dp"
+        android:layout_height="20.0dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/bg_round_white_black_30"
+        />
+
+  </FrameLayout>
+
+</com.example.wyyu.gitsamlpe.test.image.matisse.AspectRatioFrameLayout>
