@@ -21,6 +21,7 @@ public class ActivityProgressTest extends ToolbarActivity {
     private ProgressContainer progressContainer;
     private Handler handler;
 
+    private ProgressDrawable progressDrawable;
     private PercentProgress percentProgress;
 
     private int progress;
@@ -37,6 +38,7 @@ public class ActivityProgressTest extends ToolbarActivity {
         initToolbar("Progress", 0xffffffff, 0xff84919b);
         initBasicValue();
         initBasicView();
+        initPercentDrawable();
 
         startProgress();
     }
@@ -56,6 +58,9 @@ public class ActivityProgressTest extends ToolbarActivity {
                 progress = progress + 20;
                 progressContainer.refreshProgressInfo(index, MAX_NUMBER);
                 progressContainer.refreshProgressPercent(progress);
+
+                progressDrawable.onLevelChange(progress);
+
                 handler.sendEmptyMessageDelayed(HANDLER_MESSAGE, 1000);
             }
         };
@@ -80,6 +85,11 @@ public class ActivityProgressTest extends ToolbarActivity {
 
             }
         });
+    }
+
+    private void initPercentDrawable() {
+        progressDrawable = new ProgressDrawable();
+        findViewById(R.id.percent_drawable_test).setBackground(progressDrawable);
     }
 
     private void startProgress() {
