@@ -187,25 +187,33 @@ public class ActivityFrescoTest extends BaseActivity {
 
         AndroidSchedulers.mainThread().createWorker().schedule(new Action0() {
             @Override public void call() {
-                progress.setImageURI(uri);
+                if (progress != null) {
+                    progress.setImageURI(uri);
+                }
             }
         }, TIME_INTERVAL * 2, TimeUnit.MILLISECONDS);
 
         AndroidSchedulers.mainThread().createWorker().schedule(new Action0() {
             @Override public void call() {
-                failure.setImageURI(uri);
+                if (failure != null) {
+                    failure.setImageURI(uri);
+                }
             }
         }, TIME_INTERVAL * 3, TimeUnit.MILLISECONDS);
 
         AndroidSchedulers.mainThread().createWorker().schedule(new Action0() {
             @Override public void call() {
-                press.setImageURI(uri);
+                if (press != null) {
+                    press.setImageURI(uri);
+                }
             }
         }, TIME_INTERVAL * 4, TimeUnit.MILLISECONDS);
 
         AndroidSchedulers.mainThread().createWorker().schedule(new Action0() {
             @Override public void call() {
-                retry.setImageURI(uri);
+                if (retry != null) {
+                    retry.setImageURI(uri);
+                }
             }
         }, TIME_INTERVAL * 5, TimeUnit.MILLISECONDS);
     }

@@ -9,8 +9,27 @@
       android:id="@+id/detector_test"
       android:layout_width="120.0dp"
       android:layout_height="120.0dp"
-      android:layout_gravity="center"
+      android:layout_gravity="center_horizontal"
       android:background="@color/color_a39480"
+      />
+
+  <View
+      android:id="@+id/detector_test_red"
+      android:layout_width="100.0dp"
+      android:layout_height="100.0dp"
+      android:layout_gravity="center"
+      android:background="@color/color_ef9a9a"
+      />
+
+  <View
+      android:id="@+id/detector_test_green"
+      android:layout_width="100.0dp"
+      android:layout_height="100.0dp"
+      android:layout_gravity="center"
+      android:layout_marginRight="40.0dp"
+      android:layout_marginEnd="40.0dp"
+      android:layout_marginBottom="40.0dp"
+      android:background="@color/color_b7d28d"
       />
 
 </FrameLayout>

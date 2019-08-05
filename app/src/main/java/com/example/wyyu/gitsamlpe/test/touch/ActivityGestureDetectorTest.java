@@ -3,8 +3,10 @@ package com.example.wyyu.gitsamlpe.test.touch;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.BaseActivity;
+import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 
 /**
  * Created by wyyu on 2019/2/26.
@@ -37,6 +39,18 @@ public class ActivityGestureDetectorTest extends BaseActivity {
 
             @Override public boolean onLongClick() {
                 return false;
+            }
+        });
+
+        findViewById(R.id.detector_test_green).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UToast.showShort(ActivityGestureDetectorTest.this, "green");
+            }
+        });
+
+        findViewById(R.id.detector_test_red).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UToast.showShort(ActivityGestureDetectorTest.this, "red");
             }
         });
     }
