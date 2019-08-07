@@ -31,6 +31,7 @@ import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
 import com.example.wyyu.gitsamlpe.test.image.matisse.ActivityLocalImage;
+import com.example.wyyu.gitsamlpe.test.nine.ActivityNinePatchTest;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
@@ -228,6 +229,10 @@ class UIShowManager {
 
     static void startBubblingTest(Activity activity) {
         ActivityBubbling.open(activity);
+    }
+
+    static void startNinePatchTest(Activity activity) {
+        ActivityNinePatchTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

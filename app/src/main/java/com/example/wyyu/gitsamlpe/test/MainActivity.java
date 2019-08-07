@@ -294,6 +294,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("NinePatchTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startNinePatchTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }
