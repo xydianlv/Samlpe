@@ -300,6 +300,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("TangramTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startTangramTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

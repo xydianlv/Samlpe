@@ -40,6 +40,7 @@ import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
+import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangramTest;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.touch.ActivityGestureDetectorTest;
@@ -233,6 +234,10 @@ class UIShowManager {
 
     static void startNinePatchTest(Activity activity) {
         ActivityNinePatchTest.open(activity);
+    }
+
+    static void startTangramTest(Activity activity) {
+        ActivityTangramTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
