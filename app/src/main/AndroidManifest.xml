@@ -364,7 +364,15 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.tangram.ActivityTangramTest"
+        android:name=".test.tangram.ActivityDefault"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.tangram.ActivityTangram"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.tangram.ActivityDefine"
         android:screenOrientation="portrait"
         />
 

@@ -33,6 +33,8 @@ public class ChildLayoutB extends FrameLayout implements ITangramViewLifeCycle {
         initChildLayout();
     }
 
+    public static final String CELL_TYPE = "child_layout_b";
+
     private TextView textIndex;
     private TextView textStyle;
 
@@ -48,7 +50,7 @@ public class ChildLayoutB extends FrameLayout implements ITangramViewLifeCycle {
     }
 
     @Override public void postBindView(BaseCell cell) {
-        String jsonString = cell.optStringParam("item");
+        String jsonString = cell.optStringParam("bean");
         cacheItemValue(JSON.parseObject(jsonString, TestBean.class));
     }
 

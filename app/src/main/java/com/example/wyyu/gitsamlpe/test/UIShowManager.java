@@ -30,7 +30,6 @@ import com.example.wyyu.gitsamlpe.test.livedata.ActivityLiveDataTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
-import com.example.wyyu.gitsamlpe.test.image.matisse.ActivityLocalImage;
 import com.example.wyyu.gitsamlpe.test.nine.ActivityNinePatchTest;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
@@ -40,7 +39,7 @@ import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
-import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangramTest;
+import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangram;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.touch.ActivityGestureDetectorTest;
@@ -237,7 +236,7 @@ class UIShowManager {
     }
 
     static void startTangramTest(Activity activity) {
-        ActivityTangramTest.open(activity);
+        ActivityTangram.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

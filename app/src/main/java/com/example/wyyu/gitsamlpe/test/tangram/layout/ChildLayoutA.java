@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.alibaba.fastjson.JSON;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.TestBean;
@@ -46,8 +45,7 @@ public class ChildLayoutA extends FrameLayout implements ITangramViewLifeCycle {
     }
 
     @Override public void postBindView(BaseCell cell) {
-        String jsonString = cell.optStringParam("items");
-        //cacheItemValue(JSON.parseObject(jsonString, TestBean.class));
+        cacheItemValue((TestBean) cell.optParam(TestBean.CELL_KEY));
     }
 
     @Override public void postUnBindView(BaseCell cell) {

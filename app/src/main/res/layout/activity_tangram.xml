@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:id="@+id/tangram_default"
+      android:layout_width="match_parent"
+      android:layout_height="54.0dp"
+      android:text="@string/tangram_default"
+      android:textColor="@color/color_1a1a1a"
+      android:gravity="center_vertical"
+      android:textSize="14.0dp"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+
+  <TextView
+      android:id="@+id/tangram_define"
+      android:layout_width="match_parent"
+      android:layout_height="54.0dp"
+      android:text="@string/tangram_define"
+      android:textColor="@color/color_1a1a1a"
+      android:gravity="center_vertical"
+      android:textSize="14.0dp"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:id="@+id/tangram_card"
+      android:layout_width="match_parent"
+      android:layout_height="54.0dp"
+      android:text="@string/tangram_card"
+      android:textColor="@color/color_1a1a1a"
+      android:gravity="center_vertical"
+      android:textSize="14.0dp"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+</LinearLayout>

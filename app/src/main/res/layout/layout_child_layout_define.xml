@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64.0dp"
+    >
+
+  <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      >
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        android:textSize="14.0dp"
+        android:text="@string/test"
+        android:textColor="@color/color_1a1a1a"
+        tools:ignore="SpUsage"
+        />
+
+    <View
+        android:layout_width="12.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test"
+        android:textSize="12.0dp"
+        android:textColor="@color/black_40"
+        tools:ignore="SpUsage"
+        />
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      android:layout_gravity="bottom"
+      />
+
+</FrameLayout>
