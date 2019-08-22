@@ -10,9 +10,10 @@ public class DefineBean extends CellBean {
     public static final String CELL_KEY = "type_key";
 
     public int index;
+    public int count;
 
     public DefineBean() {
-
+        count = 0;
     }
 
     @Override String getCellType() {

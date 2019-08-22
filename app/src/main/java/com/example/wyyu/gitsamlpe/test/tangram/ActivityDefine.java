@@ -16,6 +16,7 @@ import com.example.wyyu.gitsamlpe.test.tangram.bean.CellDefine;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.DefineBean;
 import com.example.wyyu.gitsamlpe.test.tangram.cell.ArrayBuilder;
 import com.example.wyyu.gitsamlpe.test.tangram.cell.CellLayoutType;
+import com.example.wyyu.gitsamlpe.test.tangram.support.DefineClickSupport;
 import com.tmall.wireless.tangram.TangramBuilder;
 import com.tmall.wireless.tangram.TangramEngine;
 import com.tmall.wireless.tangram.util.IInnerImageSetter;
@@ -77,6 +78,8 @@ public class ActivityDefine extends ToolbarActivity {
     private void initList() {
 
         engine.registerCell(CellDefine.CELL_TYPE, CellDefine.class, CellDefine.CELL_LAYOUT);
+
+        engine.addSimpleClickSupport(new DefineClickSupport());
 
         engine.bindView(recyclerView);
 
