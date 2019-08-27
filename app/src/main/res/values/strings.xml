@@ -113,7 +113,9 @@
     <string name="nine_from_local_file">来自文件目录的.9图</string>
 
     <string name="tangram_default">TangramDefault</string>
-    <string name="tangram_card">TangramCard</string>
     <string name="tangram_define">TangramDefine</string>
+    <string name="tangram_card">TangramCard</string>
+
+    <string name="load_more">加载更多</string>
 
 </resources>

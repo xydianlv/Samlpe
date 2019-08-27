@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/padding_12"
+    android:paddingBottom="@dimen/padding_12"
+    >
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="@dimen/text_12"
+      android:textColor="@color/color_84919b"
+      android:text="@string/load_more"
+      android:layout_gravity="center"
+      />
+
+</FrameLayout>

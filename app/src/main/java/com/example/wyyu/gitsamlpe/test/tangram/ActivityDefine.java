@@ -1,5 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.tangram;
 
+import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,10 +14,14 @@ import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.image.matisse.FrescoLoader;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.CellDefine;
+import com.example.wyyu.gitsamlpe.test.tangram.bean.CellLoad;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.DefineBean;
+import com.example.wyyu.gitsamlpe.test.tangram.bean.LoadBean;
 import com.example.wyyu.gitsamlpe.test.tangram.cell.ArrayBuilder;
 import com.example.wyyu.gitsamlpe.test.tangram.cell.CellLayoutType;
 import com.example.wyyu.gitsamlpe.test.tangram.support.DefineClickSupport;
+import com.example.wyyu.gitsamlpe.test.tangram.support.EventLoadMore;
+import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.tmall.wireless.tangram.TangramBuilder;
 import com.tmall.wireless.tangram.TangramEngine;
 import com.tmall.wireless.tangram.util.IInnerImageSetter;
@@ -62,6 +67,14 @@ public class ActivityDefine extends ToolbarActivity {
         initList();
 
         loadList();
+
+        LiveEventBus.get()
+            .with(EventLoadMore.EVENT, EventLoadMore.class)
+            .observe(this, new Observer<EventLoadMore>() {
+                @Override public void onChanged(@Nullable EventLoadMore event) {
+                    append();
+                }
+            });
     }
 
     private void initBasicValue() {
@@ -78,8 +91,12 @@ public class ActivityDefine extends ToolbarActivity {
     private void initList() {
 
         engine.registerCell(CellDefine.CELL_TYPE, CellDefine.class, CellDefine.CELL_LAYOUT);
+        engine.registerCell(CellLoad.CELL_TYPE, CellLoad.class, CellLoad.CELL_LAYOUT);
 
         engine.addSimpleClickSupport(new DefineClickSupport());
+
+        // 预加载
+        engine.setPreLoadNumber(5);
 
         engine.bindView(recyclerView);
 
@@ -128,9 +145,15 @@ public class ActivityDefine extends ToolbarActivity {
             builder.addCell(bean.toJsonObject());
         }
 
+        builder.addCell(new LoadBean().toJsonObject());
+
         JSONArray array = new JSONArray();
         array.put(builder.toObject());
 
         return array;
+    }
+
+    private void append() {
+
     }
 }

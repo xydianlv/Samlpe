@@ -2,6 +2,7 @@ package com.example.wyyu.gitsamlpe.test.tangram.bean;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import com.example.wyyu.gitsamlpe.test.tangram.layout.ChildLayoutDefine;
 import com.tmall.wireless.tangram.MVHelper;
 import com.tmall.wireless.tangram.structure.BaseCell;
@@ -30,6 +31,10 @@ public class CellDefine extends BaseCell<ChildLayoutDefine> {
 
     }
 
+    public CellDefine(DefineBean defineBean) {
+        this.defineBean = defineBean;
+    }
+
     @Override public void parseStyle(@Nullable JSONObject data) {
     }
 
@@ -48,6 +53,8 @@ public class CellDefine extends BaseCell<ChildLayoutDefine> {
     @Override public void bindView(@NonNull ChildLayoutDefine view) {
         view.cacheValue(defineBean);
         view.setOnClickListener(this);
+
+        Log.e("CellBindViewTest", "position : " + pos);
     }
 
     public DefineBean getDefineBean() {

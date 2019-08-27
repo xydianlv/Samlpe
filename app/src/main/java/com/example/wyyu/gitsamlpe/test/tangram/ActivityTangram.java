@@ -35,6 +35,7 @@ public class ActivityTangram extends ToolbarActivity {
                 ActivityDefine.open(ActivityTangram.this);
                 break;
             case R.id.tangram_card:
+                ActivityCard.open(ActivityTangram.this);
                 break;
         }
     }
