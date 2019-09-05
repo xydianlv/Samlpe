@@ -144,6 +144,7 @@ public class FrescoLoader implements View.OnAttachStateChangeListener {
 
     //
     public FrescoLoader autoPlayAnimation(boolean auto) {
+        this.autoPlayAnimation = true;
         return this;
     }
 

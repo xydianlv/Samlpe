@@ -30,6 +30,7 @@ import com.example.wyyu.gitsamlpe.test.livedata.ActivityLiveDataTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
+import com.example.wyyu.gitsamlpe.test.lottie.ActivityLottieTest;
 import com.example.wyyu.gitsamlpe.test.nine.ActivityNinePatchTest;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
@@ -233,6 +234,10 @@ class UIShowManager {
 
     static void startNinePatchTest(Activity activity) {
         ActivityNinePatchTest.open(activity);
+    }
+
+    static void startLottieTest(Activity activity) {
+        ActivityLottieTest.open(activity);
     }
 
     static void startTangramTest(Activity activity) {

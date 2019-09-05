@@ -379,6 +379,10 @@
         android:name=".test.tangram.ActivityCard"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.lottie.ActivityLottieTest"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

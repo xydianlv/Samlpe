@@ -2,10 +2,12 @@ package com.example.wyyu.gitsamlpe.test.tangram;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import butterknife.OnClick;
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 
 /**
@@ -25,7 +27,7 @@ public class ActivityTangram extends ToolbarActivity {
         initToolbar("Tangram", 0xffffffff, 0xff84919b);
     }
 
-    @OnClick({ R.id.tangram_default, R.id.tangram_card, R.id.tangram_define })
+    @OnClick({ R.id.tangram_default, R.id.tangram_card, R.id.tangram_define, R.id.deep_link_test })
     public void onEvent(View view) {
         switch (view.getId()) {
             case R.id.tangram_default:
@@ -37,6 +39,21 @@ public class ActivityTangram extends ToolbarActivity {
             case R.id.tangram_card:
                 ActivityCard.open(ActivityTangram.this);
                 break;
+            case R.id.deep_link_test:
+                turnToDeepLink("weixin://dl/moments");
+                break;
+        }
+    }
+
+    private void turnToDeepLink(String deepLink) {
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(deepLink));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } catch (Exception exception) {
+            ULog.show(exception.getMessage());
         }
     }
 }

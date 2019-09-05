@@ -288,15 +288,21 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("BubblingTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startBubblingTest(MainActivity.this);
-            }
-        });
+        //listViewMain.addNewItem("BubblingTest", new View.OnClickListener() {
+        //    @Override public void onClick(View v) {
+        //        UIShowManager.startBubblingTest(MainActivity.this);
+        //    }
+        //});
 
         listViewMain.addNewItem("NinePatchTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startNinePatchTest(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("LottieTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startLottieTest(MainActivity.this);
             }
         });
 

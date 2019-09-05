@@ -4,27 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.NinePatch;
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
 import android.os.Bundle;
 import android.view.View;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
-import com.example.wyyu.gitsamlpe.test.image.shot.BitmapUtil;
 import com.example.wyyu.gitsamlpe.test.nine.util.NinePatchChunk;
-import com.example.wyyu.gitsamlpe.util.UIUtils;
-import com.example.wyyu.gitsamlpe.util.file.StorageUtil;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import rx.Observable;
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+import rx.functions.Func1;
 
 /**
  * Created by wyyu on 2019-08-07.
@@ -36,8 +32,6 @@ public class ActivityNinePatchTest extends FullScreenActivity {
         context.startActivity(new Intent(context, ActivityNinePatchTest.class));
     }
 
-    private static final String NINE_PATCH_PATH = "/Download/img_review_bubble.9.png";
-
     @BindView(R.id.nine_patch_height) View testHeight;
     @BindView(R.id.nine_patch_width) View testWidth;
 
@@ -45,43 +39,90 @@ public class ActivityNinePatchTest extends FullScreenActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nine_patch_test);
 
-        initActivity();
+        cacheAndLoad();
     }
 
-    private void initActivity() {
-
-        Observable.unsafeCreate(new Observable.OnSubscribe<Drawable>() {
-            @Override public void call(Subscriber<? super Drawable> subscriber) {
-                File imgFile = new File(StorageUtil.getExternalStoragePath(), NINE_PATCH_PATH);
-                if (imgFile.exists()) {
-                    Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-                    //byte[] chunk = bitmap.getNinePatchChunk();
-                    //NinePatch.isNinePatchChunk(chunk);
-                    //NinePatchDrawable drawable =
-                    //    new NinePatchDrawable(getResources(), bitmap, bitmap.getNinePatchChunk(),
-                    //        new Rect(), null);
-                    NinePatchDrawable drawable =
-                        NinePatchChunk.create9PatchDrawable(ActivityNinePatchTest.this, bitmap,
-                            null);
-                    subscriber.onNext(drawable);
+    private void cacheAndLoad() {
+        Observable.unsafeCreate(new Observable.OnSubscribe<String>() {
+            @Override public void call(Subscriber<? super String> subscriber) {
+                File cacheFile = getCacheDir();
+                if (cacheFile == null) {
+                    subscriber.onError(new Throwable("缓存目录获取失败"));
                 } else {
-                    subscriber.onError(new Throwable("文件不存在"));
+                    File file = new File(cacheFile.getAbsolutePath() + "/nine.9.png");
+                    if (file.exists()) {
+                        subscriber.onNext(file.getAbsolutePath());
+                    } else {
+                        ByteArrayOutputStream byteOutputStream = null;
+                        FileOutputStream outputStream = null;
+                        InputStream inputStream = null;
+                        byte[] buffer = new byte[10];
+                        try {
+                            byteOutputStream = new ByteArrayOutputStream();
+                            outputStream = new FileOutputStream(file);
+                            // 需要保留文件格式的资源放在 assets 目录下加载到 SD
+                            inputStream = getAssets().open("img_nine_patch.9.png");
+                            int len;
+                            while ((len = inputStream.read(buffer)) != -1) {
+                                byteOutputStream.write(buffer, 0, len);
+                            }
+                            outputStream.write(byteOutputStream.toByteArray());
+                            outputStream.flush();
+                            subscriber.onNext(file.getAbsolutePath());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            subscriber.onError(new Throwable("缓存本地失败"));
+                        } finally {
+                            if (outputStream != null) {
+                                try {
+                                    outputStream.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            if (inputStream != null) {
+                                try {
+                                    inputStream.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            if (byteOutputStream != null) {
+                                try {
+                                    byteOutputStream.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    }
                 }
-
                 subscriber.onCompleted();
             }
-        })
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Action1<Drawable>() {
-                @Override public void call(Drawable drawable) {
+        }).map(new Func1<String, Drawable>() {
+            @Override public Drawable call(String s) {
+                File imgFile = new File(s);
+                if (imgFile.exists()) {
+                    Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                    return NinePatchChunk.create9PatchDrawable(ActivityNinePatchTest.this, bitmap,
+                        null);
+                } else {
+                    return null;
+                }
+            }
+        }).subscribe(new Action1<Drawable>() {
+            @Override public void call(Drawable drawable) {
+                if (testWidth != null) {
                     testWidth.setBackground(drawable);
+                }
+                if (testHeight != null) {
                     testHeight.setBackground(drawable);
                 }
-            }, new Action1<Throwable>() {
-                @Override public void call(Throwable throwable) {
-                    ULog.show(throwable.getMessage());
-                }
-            });
+            }
+        }, new Action1<Throwable>() {
+            @Override public void call(Throwable throwable) {
+                ULog.show(throwable.getMessage());
+            }
+        });
     }
 }
