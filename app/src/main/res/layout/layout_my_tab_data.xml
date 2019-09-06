@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_my_tab_data"
+    >
+
+  <TextView
+      android:layout_height="wrap_content"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      android:text="@string/test"
+      android:gravity="center"
+      android:textSize="12.0dp"
+      android:textColor="@color/color_333333"
+      android:drawableTop="@mipmap/icon_test"
+      android:drawablePadding="8.0dp"
+      android:paddingTop="18.0dp"
+      android:paddingBottom="16.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_height="wrap_content"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      android:text="@string/test"
+      android:gravity="center"
+      android:textSize="12.0dp"
+      android:textColor="@color/color_333333"
+      android:drawableTop="@mipmap/icon_test"
+      android:drawablePadding="8.0dp"
+      android:paddingTop="18.0dp"
+      android:paddingBottom="16.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_height="wrap_content"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      android:text="@string/test"
+      android:gravity="center"
+      android:textSize="12.0dp"
+      android:textColor="@color/color_333333"
+      android:drawableTop="@mipmap/icon_test"
+      android:drawablePadding="8.0dp"
+      android:paddingTop="18.0dp"
+      android:paddingBottom="16.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_height="wrap_content"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      android:text="@string/test"
+      android:gravity="center"
+      android:textSize="12.0dp"
+      android:textColor="@color/color_333333"
+      android:drawableTop="@mipmap/icon_test"
+      android:drawablePadding="8.0dp"
+      android:paddingTop="18.0dp"
+      android:paddingBottom="16.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_height="wrap_content"
+      android:layout_width="0.0dp"
+      android:layout_weight="1"
+      android:text="@string/test"
+      android:gravity="center"
+      android:textSize="12.0dp"
+      android:textColor="@color/color_333333"
+      android:drawableTop="@mipmap/icon_test"
+      android:drawablePadding="8.0dp"
+      android:paddingTop="18.0dp"
+      android:paddingBottom="16.0dp"
+      tools:ignore="SpUsage"
+      />
+
+</LinearLayout>

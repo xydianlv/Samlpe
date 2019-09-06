@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingTop="18.0dp"
+      >
+
+    <com.example.wyyu.gitsamlpe.test.weibo.weight.MyTabHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="14.0dp"
+        android:paddingRight="14.0dp"
+        android:paddingTop="18.0dp"
+        android:paddingBottom="12.0dp"
+        android:background="@drawable/bg_my_tab_bottom"
+        >
+
+      <com.example.wyyu.gitsamlpe.test.weibo.weight.MyTabData
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="460.0dp"
+          android:background="@drawable/bg_my_tab_data"
+          />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</ScrollView>

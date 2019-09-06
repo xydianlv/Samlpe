@@ -39,7 +39,21 @@ public class MainBlogActivity extends FullScreenActivity {
         viewPager.setOffscreenPageLimit(2);
         viewPager.setCurrentItem(0);
 
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override public void onPageScrolled(int i, float v, int i1) {
 
+            }
+
+            @Override public void onPageSelected(int i) {
+                if (switchTab != null) {
+                    switchTab.refreshSelectStatus(i);
+                }
+            }
+
+            @Override public void onPageScrollStateChanged(int i) {
+
+            }
+        });
     }
 
     private void initSwitchTab() {
@@ -59,11 +73,12 @@ public class MainBlogActivity extends FullScreenActivity {
         BlogPagerAdapter(FragmentManager fm) {
             super(fm);
 
-            fragmentList = new ArrayList<>(3);
+            fragmentList = new ArrayList<>(4);
 
             fragmentList.add(FragmentNormal.getFragment(0));
+            fragmentList.add(FragmentNormal.getFragment(1));
             fragmentList.add(FragmentSwitch.getFragment());
-            fragmentList.add(FragmentNormal.getFragment(2));
+            fragmentList.add(FragmentMe.getFragment());
         }
 
         @Override public Fragment getItem(int i) {

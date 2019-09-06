@@ -1,68 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/color_white"
     android:layout_width="match_parent"
-    android:gravity="center_vertical"
     android:layout_height="@dimen/bottom_bar_height"
-    android:baselineAligned="false"
     >
 
-  <RelativeLayout
-      android:id="@+id/bottom_tab_click_left"
+  <LinearLayout
+      android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_width="0.0dp"
-      android:layout_weight="1"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      android:baselineAligned="false"
       >
 
-    <ImageView
-        android:id="@+id/bottom_tab_left"
-        android:layout_height="28.0dp"
-        android:layout_width="wrap_content"
-        android:scaleType="centerInside"
-        android:layout_centerInParent="true"
-        android:src="@mipmap/ic_home_normal"
-        android:contentDescription="@string/image"
-        />
+    <FrameLayout
+        android:id="@+id/bottom_tab_click_a"
+        android:layout_height="match_parent"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        >
 
-  </RelativeLayout>
+      <ImageView
+          android:id="@+id/bottom_tab_a"
+          android:layout_height="28.0dp"
+          android:layout_width="wrap_content"
+          android:scaleType="centerInside"
+          android:layout_gravity="center"
+          android:src="@mipmap/icon_main_tab_home"
+          android:contentDescription="@string/image"
+          />
 
-  <RelativeLayout
-      android:id="@+id/bottom_tab_click_middle"
-      android:layout_height="match_parent"
-      android:layout_width="0.0dp"
-      android:layout_weight="1"
-      >
+    </FrameLayout>
 
-    <ImageView
-        android:id="@+id/bottom_tab_middle"
-        android:layout_height="28.0dp"
-        android:layout_width="wrap_content"
-        android:scaleType="centerInside"
-        android:layout_centerInParent="true"
-        android:src="@mipmap/ic_find_normal"
-        android:contentDescription="@string/image"
-        />
+    <FrameLayout
+        android:id="@+id/bottom_tab_click_b"
+        android:layout_height="match_parent"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        >
 
-  </RelativeLayout>
+      <ImageView
+          android:id="@+id/bottom_tab_b"
+          android:layout_height="28.0dp"
+          android:layout_width="wrap_content"
+          android:scaleType="centerInside"
+          android:layout_gravity="center"
+          android:src="@mipmap/icon_main_tab_find"
+          android:contentDescription="@string/image"
+          />
 
-  <RelativeLayout
-      android:id="@+id/bottom_tab_click_right"
-      android:layout_height="match_parent"
-      android:layout_width="0.0dp"
-      android:layout_weight="1"
-      >
+    </FrameLayout>
 
-    <ImageView
-        android:id="@+id/bottom_tab_right"
-        android:layout_height="28.0dp"
-        android:layout_width="wrap_content"
-        android:scaleType="centerInside"
-        android:layout_centerInParent="true"
-        android:src="@mipmap/ic_news_normal"
-        android:contentDescription="@string/image"
-        />
+    <FrameLayout
+        android:id="@+id/bottom_tab_click_c"
+        android:layout_height="match_parent"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        >
 
-  </RelativeLayout>
+      <ImageView
+          android:id="@+id/bottom_tab_c"
+          android:layout_height="28.0dp"
+          android:layout_width="wrap_content"
+          android:scaleType="centerInside"
+          android:layout_gravity="center"
+          android:src="@mipmap/icon_main_tab_msg"
+          android:contentDescription="@string/image"
+          />
 
-</LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_tab_click_d"
+        android:layout_height="match_parent"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        >
+
+      <ImageView
+          android:id="@+id/bottom_tab_d"
+          android:layout_height="28.0dp"
+          android:layout_width="wrap_content"
+          android:scaleType="centerInside"
+          android:layout_gravity="center"
+          android:src="@mipmap/icon_main_tab_me"
+          android:contentDescription="@string/image"
+          />
+
+    </FrameLayout>
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+</FrameLayout>

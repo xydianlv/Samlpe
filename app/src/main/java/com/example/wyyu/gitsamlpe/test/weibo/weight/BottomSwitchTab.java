@@ -30,11 +30,16 @@ public class BottomSwitchTab extends LinearLayout implements View.OnClickListene
         initBottomTab();
     }
 
-    private static final int[] ICON_NORMAL =
-        new int[] { R.mipmap.ic_home_normal, R.mipmap.ic_find_normal, R.mipmap.ic_news_normal };
-    private static final int[] ICON_SELECT =
-        new int[] { R.mipmap.ic_home_select, R.mipmap.ic_find_select, R.mipmap.ic_news_select };
-    private static final int ICON_COUNT = 3;
+    private static final int[] ICON_NORMAL = new int[] {
+        R.mipmap.icon_main_tab_home, R.mipmap.icon_main_tab_find, R.mipmap.icon_main_tab_msg,
+        R.mipmap.icon_main_tab_me
+    };
+    private static final int[] ICON_SELECT = new int[] {
+        R.mipmap.icon_main_tab_home, R.mipmap.icon_main_tab_find, R.mipmap.icon_main_tab_msg,
+        R.mipmap.icon_main_tab_me
+    };
+
+    private static final int ICON_COUNT = 4;
 
     private OnSwitchTabClickListener switchTabClickListener;
 
@@ -47,13 +52,15 @@ public class BottomSwitchTab extends LinearLayout implements View.OnClickListene
 
         iconArray = new ImageView[ICON_COUNT];
 
-        iconArray[0] = findViewById(R.id.bottom_tab_left);
-        iconArray[1] = findViewById(R.id.bottom_tab_middle);
-        iconArray[2] = findViewById(R.id.bottom_tab_right);
+        iconArray[0] = findViewById(R.id.bottom_tab_a);
+        iconArray[1] = findViewById(R.id.bottom_tab_b);
+        iconArray[2] = findViewById(R.id.bottom_tab_c);
+        iconArray[3] = findViewById(R.id.bottom_tab_d);
 
-        findViewById(R.id.bottom_tab_click_left).setOnClickListener(this);
-        findViewById(R.id.bottom_tab_click_middle).setOnClickListener(this);
-        findViewById(R.id.bottom_tab_click_right).setOnClickListener(this);
+        findViewById(R.id.bottom_tab_click_a).setOnClickListener(this);
+        findViewById(R.id.bottom_tab_click_b).setOnClickListener(this);
+        findViewById(R.id.bottom_tab_click_c).setOnClickListener(this);
+        findViewById(R.id.bottom_tab_click_d).setOnClickListener(this);
 
         presentIndex = 0;
         refreshSelectStatus(0);
@@ -71,14 +78,17 @@ public class BottomSwitchTab extends LinearLayout implements View.OnClickListene
 
     @Override public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.bottom_tab_click_left:
+            case R.id.bottom_tab_click_a:
                 refreshSelectStatus(0);
                 break;
-            case R.id.bottom_tab_click_middle:
+            case R.id.bottom_tab_click_b:
                 refreshSelectStatus(1);
                 break;
-            case R.id.bottom_tab_click_right:
+            case R.id.bottom_tab_click_c:
                 refreshSelectStatus(2);
+                break;
+            case R.id.bottom_tab_click_d:
+                refreshSelectStatus(3);
                 break;
         }
     }
