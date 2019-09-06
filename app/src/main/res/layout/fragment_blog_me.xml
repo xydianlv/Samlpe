@@ -9,7 +9,6 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="vertical"
-      android:paddingTop="18.0dp"
       >
 
     <com.example.wyyu.gitsamlpe.test.weibo.weight.MyTabHeader
@@ -17,29 +16,43 @@
         android:layout_height="wrap_content"
         />
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="14.0dp"
-        android:paddingRight="14.0dp"
-        android:paddingTop="18.0dp"
-        android:paddingBottom="12.0dp"
-        android:background="@drawable/bg_my_tab_bottom"
+        android:background="@color/color_f5f5f7"
         >
-
-      <com.example.wyyu.gitsamlpe.test.weibo.weight.MyTabData
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          />
 
       <View
           android:layout_width="match_parent"
-          android:layout_height="460.0dp"
-          android:background="@drawable/bg_my_tab_data"
+          android:layout_height="100.0dp"
+          android:background="@drawable/bg_my_tab_bottom"
           />
 
-    </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:paddingLeft="14.0dp"
+          android:paddingRight="14.0dp"
+          android:paddingTop="18.0dp"
+          android:paddingBottom="12.0dp"
+          >
+
+        <com.example.wyyu.gitsamlpe.test.weibo.weight.MyTabData
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="460.0dp"
+            android:layout_marginTop="10.0dp"
+            android:background="@drawable/bg_my_tab_data"
+            />
+
+      </LinearLayout>
+
+    </FrameLayout>
 
   </LinearLayout>
 

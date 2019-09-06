@@ -144,12 +144,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("VolumeTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startVolumeTestActivity(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("NotifyTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startNotifyTestActivity(MainActivity.this);
@@ -309,6 +303,12 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("TangramTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startTangramTest(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("DownloadTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startDownloadTest(MainActivity.this);
             }
         });
 

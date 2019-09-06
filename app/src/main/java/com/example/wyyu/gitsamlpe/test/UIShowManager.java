@@ -15,6 +15,7 @@ import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityFullDialog;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
+import com.example.wyyu.gitsamlpe.test.download.ActivityDownloadTest;
 import com.example.wyyu.gitsamlpe.test.dynamic.ActivityDynamicSize;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
@@ -242,6 +243,10 @@ class UIShowManager {
 
     static void startTangramTest(Activity activity) {
         ActivityTangram.open(activity);
+    }
+
+    static void startDownloadTest(Activity activity) {
+        ActivityDownloadTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

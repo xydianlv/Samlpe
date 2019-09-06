@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:paddingTop="18.0dp"
     android:background="@color/color_white"
     >
 
