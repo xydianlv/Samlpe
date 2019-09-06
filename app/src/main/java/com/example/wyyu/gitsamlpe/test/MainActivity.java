@@ -138,11 +138,11 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("GameNumber", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startGameNumberActivity(MainActivity.this);
-            }
-        });
+        //listViewMain.addNewItem("GameNumber", new View.OnClickListener() {
+        //    @Override public void onClick(View view) {
+        //        UIShowManager.startGameNumberActivity(MainActivity.this);
+        //    }
+        //});
 
         listViewMain.addNewItem("NotifyTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
