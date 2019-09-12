@@ -46,4 +46,17 @@ public class MultiHolderAdapter extends RecyclerView.Adapter {
         this.multiDataList.addAll(multiDataList);
         notifyDataSetChanged();
     }
+
+    void appendDataList(List<MultiData> multiDataList) {
+        if (multiDataList == null || multiDataList.isEmpty()) {
+            return;
+        }
+        if (this.multiDataList == null) {
+            this.multiDataList = new LinkedList<>();
+        }
+        int startIndex = this.multiDataList.size() - 1;
+        this.multiDataList.addAll(multiDataList);
+
+        notifyItemRangeInserted(startIndex, multiDataList.size());
+    }
 }

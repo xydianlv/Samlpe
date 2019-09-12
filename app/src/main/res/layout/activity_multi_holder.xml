@@ -11,4 +11,13 @@
       android:layout_height="match_parent"
       />
 
+  <View
+      android:id="@+id/multi_append_view"
+      android:layout_width="48.0dp"
+      android:layout_height="48.0dp"
+      android:layout_gravity="center_horizontal|bottom"
+      android:layout_marginBottom="84.0dp"
+      android:background="@drawable/button_circle_back_grey"
+      />
+
 </FrameLayout>

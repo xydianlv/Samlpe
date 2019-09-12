@@ -120,4 +120,6 @@
 
     <string name="load_more">加载更多</string>
 
+    <string name="alarm_info">这是一个Alarm测试\n每隔10秒会发出一个Intent\n展示一个全局的Toast\n点击按钮启动</string>
+
 </resources>

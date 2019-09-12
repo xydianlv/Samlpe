@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
@@ -23,6 +24,9 @@ public class ActivityMultiHolder extends FullScreenActivity {
     }
 
     @BindView(R.id.multi_recycler_view) RecyclerView recyclerView;
+    @BindView(R.id.multi_append_view) View appendView;
+
+    private MultiHolderAdapter adapter;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +37,11 @@ public class ActivityMultiHolder extends FullScreenActivity {
 
     private void initActivity() {
         initRecyclerView();
+        initAppend();
     }
 
     private void initRecyclerView() {
-        MultiHolderAdapter adapter = new MultiHolderAdapter();
+        adapter = new MultiHolderAdapter();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(null);
@@ -55,10 +60,22 @@ public class ActivityMultiHolder extends FullScreenActivity {
 
         List<MultiData> multiDataList = new ArrayList<>();
 
-        for (int index = 0; index < 50; index++) {
+        for (int index = 0; index < 32; index++) {
             multiDataList.add(new MultiData(index, index % 3));
         }
 
         adapter.setMultiDataList(multiDataList);
+    }
+
+    private void initAppend() {
+        appendView.setOnClickListener(v -> {
+            List<MultiData> multiDataList = new ArrayList<>();
+
+            for (int index = 0; index < 16; index++) {
+                multiDataList.add(new MultiData(index, index % 3));
+            }
+
+            adapter.appendDataList(multiDataList);
+        });
     }
 }
