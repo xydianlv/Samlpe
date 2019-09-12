@@ -44,7 +44,7 @@ public class ActivityMultiHolder extends FullScreenActivity {
         adapter = new MultiHolderAdapter();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setItemAnimator(null);
+        //recyclerView.setItemAnimator(null);
         recyclerView.setAdapter(adapter);
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
