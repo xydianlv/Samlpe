@@ -32,6 +32,7 @@ import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
 import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
 import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
 import com.example.wyyu.gitsamlpe.test.lottie.ActivityLottieTest;
+import com.example.wyyu.gitsamlpe.test.multi.ActivityMultiListTest;
 import com.example.wyyu.gitsamlpe.test.nine.ActivityNinePatchTest;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
@@ -247,6 +248,10 @@ class UIShowManager {
 
     static void startDownloadTest(Activity activity) {
         ActivityDownloadTest.open(activity);
+    }
+
+    static void startMultiListTest(Activity activity) {
+        ActivityMultiListTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

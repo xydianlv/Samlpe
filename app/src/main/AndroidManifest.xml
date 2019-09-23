@@ -391,6 +391,18 @@
         android:name=".test.alarm.ActivityAlarmTest"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.multi.ActivityMultiListTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.multi.delegate.ActivityDelegateList"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.multi.multitype.ActivityMultiTypeList"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

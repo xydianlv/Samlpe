@@ -312,6 +312,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("MultiListTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startMultiListTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }
