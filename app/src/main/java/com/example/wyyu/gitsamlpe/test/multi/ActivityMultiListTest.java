@@ -7,8 +7,11 @@ import android.view.View;
 import butterknife.OnClick;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.test.multi.custom.ActivityCustomList;
+import com.example.wyyu.gitsamlpe.test.multi.define.ActivityDefineList;
 import com.example.wyyu.gitsamlpe.test.multi.delegate.ActivityDelegateList;
 import com.example.wyyu.gitsamlpe.test.multi.multitype.ActivityMultiTypeList;
+import java.util.ArrayList;
 
 /**
  * Created by wyyu on 2019-09-23.
@@ -25,15 +28,26 @@ public class ActivityMultiListTest extends ToolbarActivity {
         setContentView(R.layout.activity_multi_list_test);
 
         initToolbar("MultiListTest", 0xffffffff, 0xff84919b);
+
+        ArrayList<Object> list = new ArrayList<>();
     }
 
-    @OnClick({ R.id.adapter_delegate, R.id.multi_type_adapter }) public void onEvent(View view) {
+    @OnClick({
+        R.id.adapter_delegate, R.id.multi_type_adapter, R.id.define_list_adapter,
+        R.id.custom_list_adapter
+    }) public void onEvent(View view) {
         switch (view.getId()) {
             case R.id.adapter_delegate:
                 ActivityDelegateList.open(ActivityMultiListTest.this);
                 break;
             case R.id.multi_type_adapter:
                 ActivityMultiTypeList.open(ActivityMultiListTest.this);
+                break;
+            case R.id.define_list_adapter:
+                ActivityDefineList.open(ActivityMultiListTest.this);
+                break;
+            case R.id.custom_list_adapter:
+                ActivityCustomList.open(ActivityMultiListTest.this);
                 break;
         }
     }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="120.0dp"
+    android:layout_width="match_parent"
+    android:background="@color/color_white"
+    >
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:orientation="vertical"
+      tools:ignore="UseCompoundDrawables"
+      >
+
+    <ImageView
+        android:layout_width="48.0dp"
+        android:layout_height="48.0dp"
+        android:src="@mipmap/multi_image_6"
+        android:contentDescription="@string/image"
+        />
+
+    <TextView
+        android:id="@+id/item_custom_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120.0dp"
+        android:gravity="center"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/color_1a1a1a"
+        android:paddingTop="@dimen/padding_12"
+        />
+
+  </LinearLayout>
+
+  <View
+      style="@style/my_divide_line"
+      android:layout_gravity="bottom"
+      />
+
+</FrameLayout>

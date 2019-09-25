@@ -111,4 +111,5 @@ dependencies {
 
   implementation project(':matisse')
   implementation project(':banner')
+  implementation project(':multi')
 }

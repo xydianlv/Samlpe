@@ -403,6 +403,14 @@
         android:name=".test.multi.multitype.ActivityMultiTypeList"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.multi.define.ActivityDefineList"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.multi.custom.ActivityCustomList"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

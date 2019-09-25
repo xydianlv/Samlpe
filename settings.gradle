@@ -1,1 +1,1 @@
-include ':app', ':location', ':matisse', ':banner'
+include ':app', ':location', ':matisse', ':banner', ':multi'

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="48.0dp"
+    android:layout_width="match_parent"
+    >
+
+  <ImageView
+      android:layout_width="24.0dp"
+      android:layout_height="24.0dp"
+      android:src="@mipmap/icon_test"
+      android:layout_gravity="center"
+      android:contentDescription="@string/image"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      android:layout_gravity="bottom"
+      />
+
+</FrameLayout>

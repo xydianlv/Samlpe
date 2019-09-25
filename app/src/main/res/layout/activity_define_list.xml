@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_white"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/define_list_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <View
+        android:id="@+id/define_click_test"
+        android:layout_width="42.0dp"
+        android:layout_height="42.0dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="32.0dp"
+        android:background="@color/color_e57373"
+        />
+
+    <View
+        android:id="@+id/define_click_test_r"
+        android:layout_width="42.0dp"
+        android:layout_height="42.0dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="32.0dp"
+        android:background="@color/color_dcff83"
+        />
+
+  </FrameLayout>
+
+</LinearLayout>

@@ -124,5 +124,7 @@
 
     <string name="adapter_delegate">AdapterDelegate</string>
     <string name="multi_type_adapter">MultiTypeAdapter</string>
+    <string name="define_list_adapter">DefineListAdapter</string>
+    <string name="custom_list_adapter">CustomListAdapter</string>
 
 </resources>
