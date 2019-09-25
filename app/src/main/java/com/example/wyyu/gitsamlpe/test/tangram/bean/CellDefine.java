@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.test.tangram.bean;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 import com.example.wyyu.gitsamlpe.test.tangram.layout.ChildLayoutDefine;
 import com.tmall.wireless.tangram.MVHelper;
 import com.tmall.wireless.tangram.structure.BaseCell;
@@ -24,23 +25,36 @@ public class CellDefine extends BaseCell<ChildLayoutDefine> {
     public static final Class CELL_LAYOUT = ChildLayoutDefine.class;
 
     public static final String CELL_TYPE = "type_define";
+    private static final String CELL_BEAN = "bean_define";
+    private static final String CELL_FROM = "from_define";
+
+    public static Class<? extends View> getCellLayout() {
+        return ChildLayoutDefine.class;
+    }
+
+    public static BaseCell buildPostToCell(@NonNull DefineBean defineBean,
+        @NonNull MVHelper resolver, String from) throws JSONException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("type", CELL_TYPE);
+        jsonObject.put(CELL_BEAN, defineBean);
+        jsonObject.put(CELL_FROM, from);
+
+        CellDefine cellDefine = new CellDefine();
+        resolver.parseCell(cellDefine, jsonObject);
+
+        return cellDefine;
+    }
 
     private DefineBean defineBean;
-
-    public CellDefine() {
-
-    }
-
-    public CellDefine(DefineBean defineBean) {
-        this.defineBean = defineBean;
-    }
+    private String cellFrom;
 
     @Override public void parseStyle(@Nullable JSONObject data) {
     }
 
     @Override public void parseWith(@NonNull JSONObject data, @NonNull final MVHelper resolver) {
         try {
-            defineBean = (DefineBean) data.get(DefineBean.CELL_KEY);
+            defineBean = (DefineBean) data.get(CELL_BEAN);
+            cellFrom = data.getString(CELL_FROM);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -54,7 +68,7 @@ public class CellDefine extends BaseCell<ChildLayoutDefine> {
         view.cacheValue(defineBean);
         view.setOnClickListener(this);
 
-        Log.e("CellBindViewTest", "position : " + pos);
+        Log.e("CellBindViewTest", "position : " + pos + " from : " + cellFrom);
     }
 
     public DefineBean getDefineBean() {

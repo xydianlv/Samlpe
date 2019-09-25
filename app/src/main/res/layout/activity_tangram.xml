@@ -69,6 +69,23 @@
       />
 
   <TextView
+      android:id="@+id/tangram_cell"
+      android:layout_width="match_parent"
+      android:layout_height="54.0dp"
+      android:text="@string/tangram_cell"
+      android:textColor="@color/color_1a1a1a"
+      android:gravity="center_vertical"
+      android:textSize="14.0dp"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
       android:id="@+id/deep_link_test"
       android:layout_width="match_parent"
       android:layout_height="54.0dp"

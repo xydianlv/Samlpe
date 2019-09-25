@@ -27,8 +27,10 @@ public class ActivityTangram extends ToolbarActivity {
         initToolbar("Tangram", 0xffffffff, 0xff84919b);
     }
 
-    @OnClick({ R.id.tangram_default, R.id.tangram_card, R.id.tangram_define, R.id.deep_link_test })
-    public void onEvent(View view) {
+    @OnClick({
+        R.id.tangram_default, R.id.tangram_card, R.id.tangram_define, R.id.tangram_cell,
+        R.id.deep_link_test
+    }) public void onEvent(View view) {
         switch (view.getId()) {
             case R.id.tangram_default:
                 ActivityDefault.open(ActivityTangram.this);
@@ -38,6 +40,9 @@ public class ActivityTangram extends ToolbarActivity {
                 break;
             case R.id.tangram_card:
                 ActivityCard.open(ActivityTangram.this);
+                break;
+            case R.id.tangram_cell:
+                ActivityCell.open(ActivityTangram.this);
                 break;
             case R.id.deep_link_test:
                 turnToDeepLink("weixin://dl/moments");
