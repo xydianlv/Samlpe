@@ -150,11 +150,11 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("EditImgTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startEditImgTestActivity(MainActivity.this);
-            }
-        });
+        //listViewMain.addNewItem("EditImgTest", new View.OnClickListener() {
+        //    @Override public void onClick(View view) {
+        //        UIShowManager.startEditImgTestActivity(MainActivity.this);
+        //    }
+        //});
 
         listViewMain.addNewItem("ShotScreenTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -270,12 +270,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("LiveDataTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startLiveDataTest(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("LocalVideoList", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startLocalVideoList(MainActivity.this);
@@ -318,9 +312,9 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("AnnotionTest", new View.OnClickListener() {
+        listViewMain.addNewItem("LithoTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
-                UIShowManager.startAnnotionTest(MainActivity.this);
+                UIShowManager.startLithoTest(MainActivity.this);
             }
         });
 

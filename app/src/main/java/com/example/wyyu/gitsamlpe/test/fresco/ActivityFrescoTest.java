@@ -76,7 +76,7 @@ public class ActivityFrescoTest extends BaseActivity {
 
     private void initBasic() {
         final Uri uri = Uri.parse(
-            "http://img.hb.aicdn.com/62dbd9aa279a929d8f5bce64cf488c6570d0113cbd91-RfF1C1_fw658");
+            "https://hbimg.huabanimg.com/f15e1f42c78a95d70f55a3676f7b4afd0f7886f31882b0-CKYaMM");
         basic.setImageURI(uri);
 
         RoundingParams roundingParams = new RoundingParams();

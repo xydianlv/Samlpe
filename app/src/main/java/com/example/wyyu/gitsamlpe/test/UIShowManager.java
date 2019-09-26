@@ -27,6 +27,7 @@ import com.example.wyyu.gitsamlpe.test.image.local.ActivityLocalImageList;
 import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
 import com.example.wyyu.gitsamlpe.test.list.ActivityMultiHolder;
+import com.example.wyyu.gitsamlpe.test.litho.ActivityLithoTest;
 import com.example.wyyu.gitsamlpe.test.live.ActivityLiveTest;
 import com.example.wyyu.gitsamlpe.test.livedata.ActivityLiveDataTest;
 import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
@@ -257,6 +258,10 @@ class UIShowManager {
 
     static void startAnnotionTest(Activity activity) {
         ActivityAnnotionTest.open(activity);
+    }
+
+    static void startLithoTest(Activity activity) {
+        ActivityLithoTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

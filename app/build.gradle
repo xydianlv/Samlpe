@@ -104,6 +104,15 @@ dependencies {
   implementation 'com.liulishuo.okdownload:okdownload:1.0.5'
   implementation 'com.liulishuo.okdownload:sqlite:1.0.5'
   implementation 'com.liulishuo.okdownload:okhttp:1.0.5'
+  // Litho 动态加载布局框架
+  implementation 'com.facebook.litho:litho-core:0.21.0'
+  implementation 'com.facebook.litho:litho-widget:0.21.0'
+  implementation 'com.facebook.litho:litho-annotations:0.21.0'
+  annotationProcessor 'com.facebook.litho:litho-processor:0.21.0'
+  // Litho 框架已扩展的自定义控件
+  implementation 'com.facebook.litho:litho-sections-core:0.21.0'
+  implementation 'com.facebook.litho:litho-sections-widget:0.21.0'
+  implementation 'com.facebook.litho:litho-sections-annotations:0.21.0'
 
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
