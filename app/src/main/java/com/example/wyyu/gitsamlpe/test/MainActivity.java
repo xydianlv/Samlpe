@@ -318,6 +318,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("AnnotionTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startAnnotionTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

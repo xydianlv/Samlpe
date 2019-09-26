@@ -112,4 +112,8 @@ dependencies {
   implementation project(':matisse')
   implementation project(':banner')
   implementation project(':multi')
+
+  implementation project(':debug_annotate')
+
+  annotationProcessor project(':debug_processor')
 }

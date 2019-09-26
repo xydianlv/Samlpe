@@ -11,7 +11,6 @@ import com.example.wyyu.gitsamlpe.test.multi.custom.ActivityCustomList;
 import com.example.wyyu.gitsamlpe.test.multi.define.ActivityDefineList;
 import com.example.wyyu.gitsamlpe.test.multi.delegate.ActivityDelegateList;
 import com.example.wyyu.gitsamlpe.test.multi.multitype.ActivityMultiTypeList;
-import java.util.ArrayList;
 
 /**
  * Created by wyyu on 2019-09-23.
@@ -28,8 +27,6 @@ public class ActivityMultiListTest extends ToolbarActivity {
         setContentView(R.layout.activity_multi_list_test);
 
         initToolbar("MultiListTest", 0xffffffff, 0xff84919b);
-
-        ArrayList<Object> list = new ArrayList<>();
     }
 
     @OnClick({

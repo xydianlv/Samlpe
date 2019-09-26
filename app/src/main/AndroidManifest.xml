@@ -415,6 +415,10 @@
         android:name=".test.tangram.ActivityCell"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.annotion.ActivityAnnotionTest"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

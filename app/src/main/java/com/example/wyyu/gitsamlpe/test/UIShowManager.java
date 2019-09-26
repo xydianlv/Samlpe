@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import com.example.wyyu.gitsamlpe.test.animation.ActivityBezier;
 import com.example.wyyu.gitsamlpe.test.animation.ActivitySpringAnimation;
+import com.example.wyyu.gitsamlpe.test.annotion.ActivityAnnotionTest;
 import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
 import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
@@ -252,6 +253,10 @@ class UIShowManager {
 
     static void startMultiListTest(Activity activity) {
         ActivityMultiListTest.open(activity);
+    }
+
+    static void startAnnotionTest(Activity activity) {
+        ActivityAnnotionTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
