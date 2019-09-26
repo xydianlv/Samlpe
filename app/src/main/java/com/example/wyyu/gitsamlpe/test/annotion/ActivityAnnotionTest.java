@@ -12,6 +12,8 @@ import com.wyyu.debug_annotate.StringAnnotate;
 
 /**
  * Created by wyyu on 2019-09-26.
+ *
+ * 注解编译期动态注入测试
  **/
 
 @StringAnnotate(value = "Method") public class ActivityAnnotionTest extends ToolbarActivity {
@@ -20,6 +22,7 @@ import com.wyyu.debug_annotate.StringAnnotate;
         context.startActivity(new Intent(context, ActivityAnnotionTest.class));
     }
 
+    @BindView(R.id.annotion_default) TextView textDefault;
     @BindView(R.id.annotion_text) TextView textView;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ import com.wyyu.debug_annotate.StringAnnotate;
 
         initToolbar("AnnotionTest", 0xffffffff, 0xff84919b);
         initActivity();
+    }
+
+    @Override protected void onDestroy() {
+        super.onDestroy();
     }
 
     private void initActivity() {
