@@ -1,5 +1,6 @@
-package com.example.wyyu.gitsamlpe.test.litho.spec;
+package com.example.wyyu.gitsamlpe.test.litho.multi.spec;
 
+import com.example.wyyu.gitsamlpe.test.litho.Datum;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
 import com.facebook.litho.annotations.FromEvent;
@@ -16,23 +17,20 @@ import com.facebook.yoga.YogaEdge;
 import java.util.List;
 
 /**
- * Created by wyyu on 2019-09-26.
+ * Created by wyyu on 2019-09-27.
  **/
 
 @LayoutSpec
-class MainListSpec {
+class MultiListSpec {
 
     @OnCreateLayout
     static Component onCreateLayout(ComponentContext c, @Prop List<Datum> dataModels) {
 
         return RecyclerCollectionComponent.create(c)
             .disablePTR(true)
-            .section(
-                DataDiffSection.<Datum>create(new SectionContext(c))
-                    .data(dataModels)
-                    .renderEventHandler(MainList.onRender(c))
-                    .build())
-            .paddingDip(YogaEdge.TOP, 8)
+            .section(DataDiffSection.<Datum>create(new SectionContext(c)).data(dataModels)
+                .renderEventHandler(MultiList.onRender(c))
+                .build())
             .testKey("main_screen")
             .build();
     }

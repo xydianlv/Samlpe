@@ -53,7 +53,9 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
 
     @Override protected void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        if (unbinder != null) {
+            unbinder.unbind();
+        }
         releaseMsgListener();
         DownloadObservable.getObservable().detachActivity(this);
         //VolumeObservable.getObservable().detachActivity(this);

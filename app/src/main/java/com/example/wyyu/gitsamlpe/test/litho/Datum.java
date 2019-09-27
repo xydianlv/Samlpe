@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.litho.spec;
+package com.example.wyyu.gitsamlpe.test.litho;
 
 import com.facebook.litho.ComponentContext;
 import com.facebook.litho.widget.RenderInfo;
