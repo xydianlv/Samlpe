@@ -419,9 +419,22 @@
         android:name=".test.annotion.ActivityAnnotionTest"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.litho.main.ActivityLithoTest"/>
-    <activity android:name=".test.litho.simple.ActivitySimpleList"/>
-    <activity android:name=".test.litho.multi.ActivityLithoMulti"/>
+    <activity
+        android:name=".test.litho.main.ActivityLithoTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.litho.simple.ActivitySimpleList"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.litho.multi.ActivityLithoMulti"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.litho.custom.ActivityCustom"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
