@@ -35,6 +35,18 @@
           android:layout_height="wrap_content"
           />
 
+      <com.example.wyyu.gitsamlpe.test.litho.custom.widget.LayoutFoot
+          android:id="@+id/custom_foot_a"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+      <com.facebook.litho.LithoView
+          android:id="@+id/custom_litho"
+          android:layout_width="match_parent"
+          android:layout_height="120.0dp"
+          />
+
     </LinearLayout>
 
   </ScrollView>

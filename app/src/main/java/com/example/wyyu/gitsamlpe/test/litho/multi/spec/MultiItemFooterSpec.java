@@ -17,7 +17,7 @@ import com.facebook.yoga.YogaPositionType;
  * Created by wyyu on 2019-09-27.
  **/
 
-@LayoutSpec class MultiItemFooterSpec {
+@LayoutSpec public class MultiItemFooterSpec {
 
     @OnCreateLayout
     static Component onCreateLayout(ComponentContext componentContext, @Prop ItemBean itemBean) {
