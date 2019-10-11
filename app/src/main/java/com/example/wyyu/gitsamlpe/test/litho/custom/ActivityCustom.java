@@ -1,6 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.litho.custom;
 
 import android.os.Bundle;
+import android.util.Log;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.litho.custom.component.ComponentFoot;
@@ -31,10 +32,10 @@ public class ActivityCustom extends ToolbarActivity {
     private void initActivity() {
         initToolbar("Custom", 0xffffffff, 0xff84919b);
 
-        initHead();
+        //initHead();
         initContent();
-        initFoot();
-        initLitho();
+        //initFoot();
+        //initLitho();
     }
 
     private void initHead() {
@@ -42,8 +43,19 @@ public class ActivityCustom extends ToolbarActivity {
     }
 
     private void initContent() {
+
+        Log.e("LayoutContentTest", "\n\n\n");
+
         ((LayoutContent) findViewById(R.id.custom_content_a)).setContentValue(CONTENT,
-            R.mipmap.image_test_1);
+            R.mipmap.image_test_1, 0);
+        ((LayoutContent) findViewById(R.id.custom_content_b)).setContentValue(CONTENT,
+            R.mipmap.image_test_1, 1);
+
+        AndroidSchedulers.mainThread()
+            .createWorker()
+            .schedule(
+                () -> ((LayoutContent) findViewById(R.id.custom_content_b)).setContentValue(CONTENT,
+                    R.mipmap.image_test_1, 2), 5000, TimeUnit.MILLISECONDS);
     }
 
     private void initFoot() {

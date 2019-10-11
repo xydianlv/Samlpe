@@ -17,7 +17,7 @@
       android:layout_height="match_parent"
       >
 
-    <LinearLayout
+    <com.example.wyyu.gitsamlpe.test.litho.custom.widget.LithoContainerL
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -27,6 +27,7 @@
           android:id="@+id/custom_head_a"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:visibility="gone"
           />
 
       <com.example.wyyu.gitsamlpe.test.litho.custom.widget.LayoutContent
@@ -39,15 +40,30 @@
           android:id="@+id/custom_foot_a"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:visibility="gone"
           />
 
       <com.facebook.litho.LithoView
           android:id="@+id/custom_litho"
           android:layout_width="match_parent"
-          android:layout_height="120.0dp"
+          android:layout_height="1000.0dp"
+          android:visibility="gone"
           />
 
-    </LinearLayout>
+      <View
+          android:layout_width="0.8dp"
+          android:layout_height="700.0dp"
+          android:background="@color/color_ededf2"
+          android:layout_gravity="center_horizontal"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.litho.custom.widget.LayoutContent
+          android:id="@+id/custom_content_b"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+
+    </com.example.wyyu.gitsamlpe.test.litho.custom.widget.LithoContainerL>
 
   </ScrollView>
 

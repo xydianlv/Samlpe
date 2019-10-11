@@ -10,6 +10,7 @@ import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.litho.Datum;
 import com.example.wyyu.gitsamlpe.test.litho.custom.ActivityCustom;
+import com.example.wyyu.gitsamlpe.test.litho.define.ActivityDefineList;
 import com.example.wyyu.gitsamlpe.test.litho.multi.ActivityLithoMulti;
 import com.example.wyyu.gitsamlpe.test.litho.simple.ActivitySimpleList;
 import com.facebook.litho.Component;
@@ -30,7 +31,8 @@ public class ActivityLithoTest extends ToolbarActivity {
     private static final Datum[] DATUM_ARRAY = new Datum[] {
         new DecadeMain("SimpleList", ActivitySimpleList.class, Color.WHITE),
         new DecadeMain("MulyiList", ActivityLithoMulti.class, Color.WHITE),
-        new DecadeMain("Custom", ActivityCustom.class, Color.WHITE)
+        new DecadeMain("Custom", ActivityCustom.class, Color.WHITE),
+        new DecadeMain("Define", ActivityDefineList.class, Color.WHITE)
     };
 
     @BindView(R.id.litho_container) FrameLayout container;
