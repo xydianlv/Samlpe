@@ -8,9 +8,8 @@ import com.example.wyyu.gitsamlpe.test.litho.define.data.DefineImage;
 import com.facebook.litho.Column;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
-import com.facebook.litho.LithoView;
+import com.facebook.litho.ComponentLifecycle;
 import com.facebook.litho.StateContainer;
-import com.facebook.litho.annotations.State;
 import com.facebook.litho.widget.Image;
 import com.facebook.litho.widget.Text;
 import com.facebook.yoga.YogaEdge;
@@ -21,17 +20,29 @@ import com.facebook.yoga.YogaEdge;
 
 public class ContentTest extends Component {
 
+    private ContentTest preContent;
     private DefineData defineData;
-    private LithoView contentView;
 
     public ContentTest() {
         super("ContentTest");
-        contentView = null;
+
+        preContent = null;
+        defineData = null;
     }
 
     @Override public ContentTest makeShallowCopy() {
         ContentTest contentCopy = (ContentTest) super.makeShallowCopy();
-        contentCopy.defineData = defineData;
+        if (preContent == null) {
+            contentCopy.preContent = this;
+            contentCopy.defineData = defineData;
+        } else {
+            ContentTest fun = this;
+            while (fun.preContent != null) {
+                fun = fun.preContent;
+            }
+            contentCopy.preContent = fun;
+            contentCopy.defineData = fun.defineData;
+        }
         return contentCopy;
     }
 
@@ -81,15 +92,19 @@ public class ContentTest extends Component {
         return true;
     }
 
-    public LithoView getContentView(ComponentContext componentContext) {
-        if (contentView == null) {
-            contentView = LithoView.create(componentContext, onCreateLayout(componentContext));
-        }
-        return contentView;
-    }
-
     public void setDefineData(DefineData defineData) {
         this.defineData = defineData;
-        this.contentView.rerenderForAccessibility(true);
+
+        ComponentContext treeContext = getScopedContext();
+        if (treeContext != null) {
+            treeContext.updateStateSync(new ContentStateUpdate(), "");
+        }
+    }
+
+    private static final class ContentStateUpdate implements ComponentLifecycle.StateUpdate {
+
+        @Override public void updateState(StateContainer stateContainer) {
+
+        }
     }
 }

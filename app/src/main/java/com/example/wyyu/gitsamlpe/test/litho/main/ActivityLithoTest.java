@@ -30,8 +30,8 @@ public class ActivityLithoTest extends ToolbarActivity {
 
     private static final Datum[] DATUM_ARRAY = new Datum[] {
         new DecadeMain("SimpleList", ActivitySimpleList.class, Color.WHITE),
-        new DecadeMain("MulyiList", ActivityLithoMulti.class, Color.WHITE),
         new DecadeMain("Custom", ActivityCustom.class, Color.WHITE),
+        new DecadeMain("MulyiList", ActivityLithoMulti.class, Color.WHITE),
         new DecadeMain("Define", ActivityDefineList.class, Color.WHITE)
     };
 

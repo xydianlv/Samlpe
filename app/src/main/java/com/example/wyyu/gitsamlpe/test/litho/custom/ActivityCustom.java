@@ -32,7 +32,7 @@ public class ActivityCustom extends ToolbarActivity {
     private void initActivity() {
         initToolbar("Custom", 0xffffffff, 0xff84919b);
 
-        //initHead();
+        initHead();
         initContent();
         //initFoot();
         //initLitho();
