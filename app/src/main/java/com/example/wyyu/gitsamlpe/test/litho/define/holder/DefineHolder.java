@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.test.litho.custom.widget.LithoContainer;
-import com.example.wyyu.gitsamlpe.test.litho.define.component.ContentTest;
+import com.example.wyyu.gitsamlpe.test.litho.define.component.ContentTestT;
 import com.example.wyyu.gitsamlpe.test.litho.define.component.FooterRoot;
 import com.example.wyyu.gitsamlpe.test.litho.define.component.HeaderTest;
 import com.example.wyyu.gitsamlpe.test.litho.define.data.DefineData;
@@ -25,7 +25,7 @@ public class DefineHolder extends RecyclerView.ViewHolder {
     private LithoContainer footer;
     private LithoContainer content;
 
-    private ContentTest contentTest;
+    private ContentTestT contentTest;
     private HeaderTest headerTest;
     private FooterRoot footerRoot;
 
@@ -44,7 +44,7 @@ public class DefineHolder extends RecyclerView.ViewHolder {
     }
 
     private void initComponent() {
-        contentTest = new ContentTest();
+        contentTest = new ContentTestT();
         footerRoot = new FooterRoot();
         headerTest = new HeaderTest();
     }
@@ -57,13 +57,13 @@ public class DefineHolder extends RecyclerView.ViewHolder {
         ComponentContext componentContext = new ComponentContext(context);
 
         header.addView(LithoView.create(componentContext, headerTest));
-        content.addView(LithoView.create(componentContext, contentTest));
+        content.addView(contentTest.createView(context));
         footer.addView(LithoView.create(componentContext, footerRoot));
     }
 
     public void cacheValue(DefineData defineData) {
         footerRoot.setDefineData(defineData);
         headerTest.setDefineData(defineData);
-        contentTest.setDefineData(defineData);
+        contentTest.setViewData(defineData);
     }
 }
