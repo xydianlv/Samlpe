@@ -55,6 +55,10 @@ public class UIUtils {
         return Math.round(pixelDensity * dp);
     }
 
+    public static int pxToDp(float px) {
+        return Math.round(px / pixelDensity);
+    }
+
     public static int getScreenHeight() {
         return screenHeight;
     }
@@ -76,7 +80,7 @@ public class UIUtils {
     }
 
     public static int getStatusHeightByDecor(Activity context) {
-        Rect rectangle= new Rect();
+        Rect rectangle = new Rect();
         context.getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
         return rectangle.top;
     }

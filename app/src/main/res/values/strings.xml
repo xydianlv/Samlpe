@@ -128,4 +128,8 @@
     <string name="define_list_adapter">DefineListAdapter</string>
     <string name="custom_list_adapter">CustomListAdapter</string>
 
+    <string name="litho_text">LithoText</string>
+    <string name="litho_percent">LithoPercent</string>
+    <string name="litho_multi_img">LithoMultiImg</string>
+
 </resources>

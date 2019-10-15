@@ -76,7 +76,7 @@ public class ActivityFrescoTest extends BaseActivity {
 
     private void initBasic() {
         final Uri uri = Uri.parse(
-            "https://hbimg.huabanimg.com/f15e1f42c78a95d70f55a3676f7b4afd0f7886f31882b0-CKYaMM");
+            "https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/def4418e778a49a6bf0c2102f4b25590.jpg");
         basic.setImageURI(uri);
 
         RoundingParams roundingParams = new RoundingParams();
@@ -171,7 +171,7 @@ public class ActivityFrescoTest extends BaseActivity {
                     // 图片加载监听
                     .setControllerListener(controllerListener)
                     // 节省不必要的内存分配
-                    .setOldController(placeHolder.getController())
+                    .setOldController(placeHolder == null ? null : placeHolder.getController())
                     // 构建一个 Controller
                     .build();
 
@@ -181,7 +181,9 @@ public class ActivityFrescoTest extends BaseActivity {
                 //DraweeController controller = Fresco.newDraweeControllerBuilder()
                 //    .setFirstAvailableImageRequests(requestArray)
                 //    .build();
-                placeHolder.setController(controller);
+                if (placeHolder != null) {
+                    placeHolder.setController(controller);
+                }
             }
         }, TIME_INTERVAL, TimeUnit.MILLISECONDS);
 
