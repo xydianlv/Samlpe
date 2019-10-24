@@ -1,9 +1,12 @@
 package com.example.wyyu.gitsamlpe.test.card;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 
@@ -48,6 +51,7 @@ public class ActivityNormalCard extends FullScreenActivity {
         imgSelect();
         vectorSelect();
         playSelect();
+        playRefresh();
     }
 
     private void initBasicValue() {
@@ -120,5 +124,15 @@ public class ActivityNormalCard extends FullScreenActivity {
             }
         });
         selectPlay = false;
+    }
+
+    private void playRefresh() {
+        ImageView imageView = findViewById(R.id.card_play_refresh);
+        imageView.setImageResource(R.drawable.anim_video_refresh);
+        Drawable animationDrawable = imageView.getDrawable();
+        if (animationDrawable instanceof AnimationDrawable) {
+            ((AnimationDrawable) animationDrawable).setOneShot(false);
+            ((AnimationDrawable) animationDrawable).start();
+        }
     }
 }

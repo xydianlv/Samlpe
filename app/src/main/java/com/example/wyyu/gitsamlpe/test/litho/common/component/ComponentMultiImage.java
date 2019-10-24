@@ -122,6 +122,9 @@ public class ComponentMultiImage extends AbsComponentCacheView<Object> {
 
         roundingParams.setCornersRadii(topLeft, bottomRight, bottomRight, topLeft);
 
+        roundingParams.setBorderColor(0xff00ff00);
+        roundingParams.setBorderWidth(UIUtils.dpToPx(2.0f));
+
         //roundingParams.setCornersRadius(12.0f);
         //roundingParams.setRoundAsCircle(true);
 

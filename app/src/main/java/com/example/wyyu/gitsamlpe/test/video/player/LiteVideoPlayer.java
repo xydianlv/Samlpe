@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.test.video.player;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Surface;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
@@ -71,12 +72,12 @@ public class LiteVideoPlayer {
         exoPlayer.addListener(new Player.EventListener() {
             @Override public void onTimelineChanged(Timeline timeline, @Nullable Object manifest,
                 int reason) {
-
+                Log.e("LiteVideoPlayerTest", "onTimelineChanged -> TimeLine : "+timeline.toString());
             }
 
             @Override public void onTracksChanged(TrackGroupArray trackGroups,
                 TrackSelectionArray trackSelections) {
-
+                Log.e("LiteVideoPlayerTest", "onTracksChanged");
             }
 
             @Override public void onLoadingChanged(boolean isLoading) {
@@ -125,7 +126,7 @@ public class LiteVideoPlayer {
             }
 
             @Override public void onPlayerError(ExoPlaybackException error) {
-
+                //
             }
 
             @Override public void onPositionDiscontinuity(int reason) {
@@ -138,7 +139,8 @@ public class LiteVideoPlayer {
             }
 
             @Override public void onSeekProcessed() {
-
+                //
+                Log.e("LiteVideoPlayerTest", "onSeekProcessed");
             }
         });
 

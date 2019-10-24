@@ -5,6 +5,7 @@ import android.widget.FrameLayout;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.test.litho.common.component.ComponentCard;
 import com.example.wyyu.gitsamlpe.test.litho.common.component.ComponentMultiImage;
 import com.example.wyyu.gitsamlpe.test.litho.common.component.ComponentPercent;
 import com.example.wyyu.gitsamlpe.test.litho.common.component.ComponentText;
@@ -18,6 +19,7 @@ public class ActivityLithoCommon extends ToolbarActivity {
     @BindView(R.id.percent_container) FrameLayout percentContainer;
     @BindView(R.id.text_container) FrameLayout textContainer;
     @BindView(R.id.multi_img_container) FrameLayout multiImgContainer;
+    @BindView(R.id.card_container) FrameLayout cardContainer;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +40,8 @@ public class ActivityLithoCommon extends ToolbarActivity {
 
         multiImgContainer.removeAllViews();
         multiImgContainer.addView(new ComponentMultiImage().createView(this));
+
+        cardContainer.removeAllViews();
+        cardContainer.addView(new ComponentCard().createView(this));
     }
 }

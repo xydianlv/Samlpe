@@ -94,6 +94,23 @@
         android:background="@drawable/selector_play_vector"
         />
 
+    <FrameLayout
+        android:layout_width="120.0dp"
+        android:layout_height="80.0dp"
+        android:layout_marginTop="40.0dp"
+        android:background="@color/black_60"
+        >
+
+      <ImageView
+          android:id="@+id/card_play_refresh"
+          android:layout_width="28.0dp"
+          android:layout_height="28.0dp"
+          android:contentDescription="@string/image"
+          android:layout_gravity="center"
+          />
+
+    </FrameLayout>
+
     <View
         android:layout_width="0.0dp"
         android:layout_height="60.0dp"
