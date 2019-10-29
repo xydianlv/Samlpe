@@ -55,16 +55,19 @@ public class CustomBinderB extends HolderBinder {
 
         private void startAnim() {
 
-            float divideSize = 120.0f - 48.0f;
+            float divideWidth = 160.0f - 48.0f;
+            float divideHeight = 120.0f - 48.0f;
 
             ValueAnimator animator = ValueAnimator.ofInt(0, 100);
             animator.setInterpolator(new LinearInterpolator());
-            animator.setDuration(200);
+            animator.setDuration(320);
             animator.addUpdateListener(animation -> {
                 float percent = (int) animation.getAnimatedValue() * 1.0f / 100;
-                int currentSize = UIUtils.dpToPx(percent * divideSize + 48.0f);
+                int currentWidth = UIUtils.dpToPx(percent * divideWidth + 48.0f);
+                int currentHeight = UIUtils.dpToPx(percent * divideHeight + 48.0f);
 
-                imageView.setLayoutParams(new LinearLayout.LayoutParams(currentSize, currentSize));
+                imageView.setLayoutParams(
+                    new LinearLayout.LayoutParams(currentWidth, currentHeight));
             });
 
             animator.start();
