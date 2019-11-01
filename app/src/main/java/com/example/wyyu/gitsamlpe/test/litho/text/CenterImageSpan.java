@@ -13,7 +13,7 @@ import android.text.style.ImageSpan;
 
 public class CenterImageSpan extends ImageSpan {
 
-    public CenterImageSpan(@NonNull Drawable drawable) {
+    CenterImageSpan(@NonNull Drawable drawable) {
         super(drawable);
     }
 
