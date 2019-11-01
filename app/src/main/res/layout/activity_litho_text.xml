@@ -61,7 +61,7 @@
           android:paddingVertical="12.0dp"
           android:textColor="@color/color_1a1a1a"
           android:textSize="@dimen/text_15"
-          android:text="@string/litho_percent"
+          android:text="@string/local_text"
           tools:ignore="SpUsage,UnusedAttribute"
           />
 
@@ -71,13 +71,19 @@
           android:layout_marginStart="14.0dp"
           />
 
-      <FrameLayout
-          android:id="@+id/percent_container"
+      <com.example.wyyu.gitsamlpe.test.litho.text.MarkTextView
+          android:id="@+id/mark_text"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:paddingHorizontal="14.0dp"
-          android:paddingVertical="12.0dp"
-          tools:ignore="UnusedAttribute"
+          android:textColor="@color/color_1a1a1a"
+          android:textSize="15.0dp"
+          android:maxLines="5"
+          android:lineSpacingMultiplier="1.3"
+          android:paddingLeft="14.0dp"
+          android:paddingRight="14.0dp"
+          android:paddingTop="12.0dp"
+          android:paddingBottom="12.0dp"
+          tools:ignore="SpUsage"
           />
 
       <View
@@ -91,7 +97,7 @@
           android:paddingVertical="12.0dp"
           android:textColor="@color/color_1a1a1a"
           android:textSize="@dimen/text_15"
-          android:text="@string/litho_multi_img"
+          android:text="@string/poem_text"
           tools:ignore="SpUsage,UnusedAttribute"
           />
 
@@ -101,73 +107,19 @@
           android:layout_marginStart="14.0dp"
           />
 
-      <FrameLayout
-          android:id="@+id/multi_img_container"
+      <com.example.wyyu.gitsamlpe.test.litho.text.MarkTextView
+          android:id="@+id/poem_text"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:paddingHorizontal="14.0dp"
-          android:paddingVertical="12.0dp"
-          tools:ignore="UnusedAttribute"
-          />
-
-      <View
-          style="@style/DivideLine"
-          />
-
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingHorizontal="14.0dp"
-          android:paddingVertical="12.0dp"
           android:textColor="@color/color_1a1a1a"
-          android:textSize="@dimen/text_15"
-          android:text="@string/litho_card"
-          tools:ignore="SpUsage,UnusedAttribute"
-          />
-
-      <View
-          style="@style/DivideLine"
-          android:layout_marginLeft="14.0dp"
-          android:layout_marginStart="14.0dp"
-          />
-
-      <FrameLayout
-          android:id="@+id/card_container"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingHorizontal="14.0dp"
-          android:paddingVertical="12.0dp"
-          tools:ignore="UnusedAttribute"
-          />
-
-      <View
-          style="@style/DivideLine"
-          />
-
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingHorizontal="14.0dp"
-          android:paddingVertical="12.0dp"
-          android:textColor="@color/color_1a1a1a"
-          android:textSize="@dimen/text_15"
-          android:text="@string/litho_row_text"
-          tools:ignore="SpUsage,UnusedAttribute"
-          />
-
-      <View
-          style="@style/DivideLine"
-          android:layout_marginLeft="14.0dp"
-          android:layout_marginStart="14.0dp"
-          />
-
-      <FrameLayout
-          android:id="@+id/row_text_container"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingHorizontal="14.0dp"
-          android:paddingVertical="12.0dp"
-          tools:ignore="UnusedAttribute"
+          android:textSize="15.0dp"
+          android:maxLines="3"
+          android:lineSpacingMultiplier="1.3"
+          android:paddingLeft="14.0dp"
+          android:paddingRight="14.0dp"
+          android:paddingTop="12.0dp"
+          android:paddingBottom="12.0dp"
+          tools:ignore="SpUsage"
           />
 
       <View

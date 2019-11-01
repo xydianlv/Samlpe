@@ -22,6 +22,16 @@ public interface IComponent<T> {
     Component createLayout(ComponentContext context, T data);
 
     /**
+     * 创建一个构建 LithoView 的 Component
+     *
+     * @param context 初始化 Component 的 ComponentContext
+     * @param data 往组件中填充的数据
+     * @param params 扩展参数¬
+     * @return 可创建 LithoView 的 的Component
+     */
+    Component createLayout(ComponentContext context, T data, Object... params);
+
+    /**
      * 解析组件的点击事件
      *
      * @param eventHandler 点击事件
@@ -34,6 +44,14 @@ public interface IComponent<T> {
      * @param data 数据集合
      */
     void setViewData(T data);
+
+    /**
+     * 传入自定义控件需要展示的数据
+     *
+     * @param data 数据集合
+     * @param params 扩展参数
+     */
+    void setViewData(T data, Object... params);
 
     /**
      * 生成 LithoView

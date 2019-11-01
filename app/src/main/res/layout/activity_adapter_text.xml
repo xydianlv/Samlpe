@@ -39,6 +39,22 @@
         />
 
     <TextView
+        android:id="@+id/img_ellipse_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15.0dp"
+        android:textColor="@color/color_262626"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:ignore="SpUsage"
+        />
+
+    <View
+        android:layout_width="0.0dp"
+        android:layout_height="36.0dp"
+        />
+
+    <TextView
         android:id="@+id/img_span_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -204,7 +220,7 @@
     <View
         android:layout_width="0.0dp"
         android:layout_height="24.0dp"
-      />
+        />
 
     <TextView
         android:layout_width="match_parent"

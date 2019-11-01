@@ -10,6 +10,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.text.style.ClickableSpan;
 import android.text.style.ImageSpan;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.framework.toast.UToast;
+import com.example.wyyu.gitsamlpe.util.UIUtils;
 
 /**
  * Created by wyyu on 2018/5/4.
@@ -37,6 +39,7 @@ public class ActivityAdapterText extends ToolbarActivity {
     private void initActivity() {
         showAdapterText();
         showExpandText();
+        showEllipseText();
         showSpanText();
         showAnimText();
         showTypeface();
@@ -51,6 +54,15 @@ public class ActivityAdapterText extends ToolbarActivity {
         ExpandTextView expandTextView = findViewById(R.id.expand_text_view);
         expandTextView.setMaxLines(4);
         expandTextView.setText(TEST_TEXT);
+    }
+
+    private void showEllipseText() {
+        TextView textView = findViewById(R.id.img_ellipse_text_view);
+        String string = TextUtils.ellipsize(TEST_TEXT, textView.getPaint(),
+            UIUtils.getScreenWidth() * textView.getMaxLines() - UIUtils.dpToPx(45.0f),
+            TextUtils.TruncateAt.END).toString();
+        string = string + "…全文";
+        textView.setText(string);
     }
 
     private void showSpanText() {

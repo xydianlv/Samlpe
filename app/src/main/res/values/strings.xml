@@ -129,8 +129,11 @@
     <string name="custom_list_adapter">CustomListAdapter</string>
 
     <string name="litho_text">LithoText</string>
+    <string name="local_text">LocalText</string>
+    <string name="poem_text">PoemText</string>
     <string name="litho_percent">LithoPercent</string>
     <string name="litho_multi_img">LithoMultiImg</string>
     <string name="litho_card">LithoCard</string>
+    <string name="litho_row_text">LithoRowText</string>
 
 </resources>

@@ -7,6 +7,7 @@ import com.facebook.litho.ComponentContext;
 import com.facebook.litho.ComponentLifecycle;
 import com.facebook.litho.EventHandler;
 import com.facebook.litho.LithoView;
+import com.facebook.litho.Row;
 import com.facebook.litho.StateContainer;
 
 /**
@@ -16,10 +17,13 @@ import com.facebook.litho.StateContainer;
 public abstract class AbsComponent<T> extends Component implements IComponent<T> {
 
     private ComponentCore componentCore;
+    private boolean widthParams;
+    private Object[] params;
 
     public AbsComponent(String simpleName) {
         super(simpleName);
         componentCore = new ComponentCore(simpleName);
+        widthParams = false;
     }
 
     @Override public AbsComponent makeShallowCopy() {
@@ -32,12 +36,27 @@ public abstract class AbsComponent<T> extends Component implements IComponent<T>
         return componentCore.onCreateLayout(componentContext);
     }
 
+    @Override public Component createLayout(ComponentContext context, T data) {
+        return Row.create(context).heightDip(0.0f).widthDip(0.0f).build();
+    }
+
+    @Override public Component createLayout(ComponentContext context, T data, Object... params) {
+        return Row.create(context).heightDip(0.0f).widthDip(0.0f).build();
+    }
+
     @Override public void dispatchEvent(EventHandler eventHandler) {
 
     }
 
     @Override public void setViewData(T data) {
         componentCore.setData(data);
+        widthParams = false;
+    }
+
+    @Override public void setViewData(T data, Object... params) {
+        this.componentCore.setData(data);
+        this.params = params;
+        this.widthParams = true;
     }
 
     @Override public View createView(Context context) {
@@ -56,7 +75,8 @@ public abstract class AbsComponent<T> extends Component implements IComponent<T>
         @Override protected Component onCreateLayout(ComponentContext componentContext) {
             setScopedContext(componentContext);
 
-            return createLayout(componentContext, data);
+            return widthParams ? createLayout(componentContext, data, params)
+                : createLayout(componentContext, data);
         }
 
         @Override public boolean hasState() {

@@ -14,6 +14,7 @@ import com.example.wyyu.gitsamlpe.test.litho.custom.ActivityCustom;
 import com.example.wyyu.gitsamlpe.test.litho.define.ActivityDefineList;
 import com.example.wyyu.gitsamlpe.test.litho.multi.ActivityLithoMulti;
 import com.example.wyyu.gitsamlpe.test.litho.simple.ActivitySimpleList;
+import com.example.wyyu.gitsamlpe.test.litho.text.ActivityLithoText;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
 import com.facebook.litho.LithoView;
@@ -34,7 +35,8 @@ public class ActivityLithoTest extends ToolbarActivity {
         new DecadeMain("Custom", ActivityCustom.class, Color.WHITE),
         new DecadeMain("MulyiList", ActivityLithoMulti.class, Color.WHITE),
         new DecadeMain("Define", ActivityDefineList.class, Color.WHITE),
-        new DecadeMain("Common", ActivityLithoCommon.class, Color.WHITE)
+        new DecadeMain("Common", ActivityLithoCommon.class, Color.WHITE),
+        new DecadeMain("Text", ActivityLithoText.class, Color.WHITE)
     };
 
     @BindView(R.id.litho_container) FrameLayout container;
