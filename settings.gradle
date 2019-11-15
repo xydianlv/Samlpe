@@ -1,1 +1,4 @@
 include ':app', ':location', ':matisse', ':banner', ':multi', ':debug_processor', ':debug_annotate'
+
+
+include ':click:click_processor', ':click:click_expand', ':click:click_single'

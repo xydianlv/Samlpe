@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.test.multi.custom.binder;
 import android.animation.ValueAnimator;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
@@ -10,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.test.multi.custom.click.PickClick;
 import com.example.wyyu.gitsamlpe.test.multi.custom.data.CustomDataB;
 import com.example.wyyu.gitsamlpe.util.UIUtils;
+import com.wyyu.click_single.TapClick;
 import com.wyyu.multi.binder.HolderBinder;
 
 /**
@@ -77,6 +80,17 @@ public class CustomBinderB extends HolderBinder {
             textView.setText(String.valueOf(dataB.index));
             imageView.setLayoutParams(
                 new LinearLayout.LayoutParams(UIUtils.dpToPx(48.0f), UIUtils.dpToPx(48.0f)));
+
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    onViewClick();
+                }
+            });
+        }
+
+        @PickClick(time = 800L)
+        void onViewClick(){
+            Log.e("TapClickAspectTest", "onClick");
         }
     }
 }
