@@ -11,10 +11,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.test.multi.custom.click.PickClick;
+import com.example.wyyu.gitsamlpe.framework.aop.click.SingleClick;
 import com.example.wyyu.gitsamlpe.test.multi.custom.data.CustomDataB;
 import com.example.wyyu.gitsamlpe.util.UIUtils;
-import com.wyyu.click_single.TapClick;
 import com.wyyu.multi.binder.HolderBinder;
 
 /**
@@ -82,15 +81,10 @@ public class CustomBinderB extends HolderBinder {
                 new LinearLayout.LayoutParams(UIUtils.dpToPx(48.0f), UIUtils.dpToPx(48.0f)));
 
             imageView.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
-                    onViewClick();
+                @SingleClick(time = 800L) @Override public void onClick(View v) {
+                    Log.e("SingleClickAspectTest", "onClick");
                 }
             });
-        }
-
-        @PickClick(time = 800L)
-        void onViewClick(){
-            Log.e("TapClickAspectTest", "onClick");
         }
     }
 }

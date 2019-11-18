@@ -136,9 +136,6 @@ dependencies {
 
   implementation project(':debug_annotate')
   annotationProcessor project(':debug_processor')
-
-  implementation project(':click:click_expand')
-  implementation project(':click:click_single')
 }
 
 /*Aspectj配置*/

@@ -6,11 +6,14 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 import butterknife.BindView;
+import butterknife.OnClick;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
+import com.example.wyyu.gitsamlpe.framework.aop.click.SingleClick;
 import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 import java.io.File;
 
@@ -61,5 +64,25 @@ public class ActivityShotScreen extends FullScreenActivity {
                 UToast.showShort(ActivityShotScreen.this, "图片已保存到本地相册");
             }
         });
+    }
+
+    @OnClick({
+        R.id.shot_screen_img_a, R.id.shot_screen_img_b, R.id.shot_screen_img_c,
+        R.id.shot_screen_img_d
+    }) @SingleClick public void onEvent(View view) {
+        switch (view.getId()) {
+            case R.id.shot_screen_img_a:
+                Log.e("SingleClickAspectTest", "onEvent -> a");
+                break;
+            case R.id.shot_screen_img_b:
+                Log.e("SingleClickAspectTest", "onEvent -> b");
+                break;
+            case R.id.shot_screen_img_c:
+                Log.e("SingleClickAspectTest", "onEvent -> c");
+                break;
+            case R.id.shot_screen_img_d:
+                Log.e("SingleClickAspectTest", "onEvent -> d");
+                break;
+        }
     }
 }

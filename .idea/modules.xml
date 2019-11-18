@@ -5,10 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/GitSamlpe.iml" filepath="$PROJECT_DIR$/GitSamlpe.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/click/click.iml" filepath="$PROJECT_DIR$/click/click.iml" />
-      <module fileurl="file://$PROJECT_DIR$/click/click_expand/click_expand.iml" filepath="$PROJECT_DIR$/click/click_expand/click_expand.iml" />
-      <module fileurl="file://$PROJECT_DIR$/click/click_processor/click_processor.iml" filepath="$PROJECT_DIR$/click/click_processor/click_processor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/click/click_single/click_single.iml" filepath="$PROJECT_DIR$/click/click_single/click_single.iml" />
       <module fileurl="file://$PROJECT_DIR$/debug_annotate/debug_annotate.iml" filepath="$PROJECT_DIR$/debug_annotate/debug_annotate.iml" />
       <module fileurl="file://$PROJECT_DIR$/debug_processor/debug_processor.iml" filepath="$PROJECT_DIR$/debug_processor/debug_processor.iml" />
       <module fileurl="file://$PROJECT_DIR$/location/location.iml" filepath="$PROJECT_DIR$/location/location.iml" />

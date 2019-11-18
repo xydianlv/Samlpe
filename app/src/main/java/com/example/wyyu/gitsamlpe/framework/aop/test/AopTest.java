@@ -1,4 +1,4 @@
-package com.wyyu.click_single;
+package com.example.wyyu.gitsamlpe.framework.aop.test;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,13 +6,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by wyyu on 2019-11-15.
+ * Created by wyyu on 2019-11-18.
  **/
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface TapClick {
+public @interface AopTest {
 
-    // 单击间隔时长
-    long time() default 600L;
+    int value() default 0;
 }

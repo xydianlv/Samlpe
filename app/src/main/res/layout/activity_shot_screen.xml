@@ -20,6 +20,7 @@
         >
 
       <ImageView
+          android:id="@+id/shot_screen_img_a"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@mipmap/image_test_1"
@@ -27,6 +28,7 @@
           />
 
       <ImageView
+          android:id="@+id/shot_screen_img_b"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@mipmap/image_test_2"
@@ -35,6 +37,7 @@
           />
 
       <ImageView
+          android:id="@+id/shot_screen_img_c"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@mipmap/image_test_3"
@@ -43,6 +46,7 @@
           />
 
       <ImageView
+          android:id="@+id/shot_screen_img_d"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@mipmap/image_test_4"
