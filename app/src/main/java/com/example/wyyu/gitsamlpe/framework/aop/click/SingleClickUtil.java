@@ -13,6 +13,7 @@ public class SingleClickUtil {
     private static long lastClickTime = 0;
 
     // 上一次单击屏幕的 ViewId
+    // 记录 ViewId 存在一个问题，单次点击触发多个响应事件时，这个记录的 ViewId 就会出现判断问题
     private static long lastViewId = 0;
 
     public static boolean hasClick(long viewId) {

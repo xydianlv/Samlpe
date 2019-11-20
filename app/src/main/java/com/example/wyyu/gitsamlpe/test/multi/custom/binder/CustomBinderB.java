@@ -81,7 +81,8 @@ public class CustomBinderB extends HolderBinder {
                 new LinearLayout.LayoutParams(UIUtils.dpToPx(48.0f), UIUtils.dpToPx(48.0f)));
 
             imageView.setOnClickListener(new View.OnClickListener() {
-                @SingleClick(time = 800L) @Override public void onClick(View v) {
+                @SingleClick(time = 800L)
+                @Override public void onClick(View v) {
                     Log.e("SingleClickAspectTest", "onClick");
                 }
             });
