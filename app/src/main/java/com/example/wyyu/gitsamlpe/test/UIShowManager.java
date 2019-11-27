@@ -11,6 +11,7 @@ import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
 import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
 import com.example.wyyu.gitsamlpe.test.bubbling.ActivityBubbling;
+import com.example.wyyu.gitsamlpe.test.calendar.ActivityCalendarTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
@@ -262,6 +263,10 @@ class UIShowManager {
 
     static void startLithoTest(Activity activity) {
         ActivityLithoTest.open(activity);
+    }
+
+    static void startCalendarTest(Activity activity) {
+        ActivityCalendarTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

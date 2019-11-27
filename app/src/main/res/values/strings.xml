@@ -81,6 +81,7 @@
 
     <string name="go_open">去开启</string>
     <string name="title">标题</string>
+    <string name="description">描述</string>
     <string name="check_permission">检测权限</string>
     <string name="check_toast">检测Toast</string>
     <string name="show_toast">展示Toast</string>
@@ -135,5 +136,15 @@
     <string name="litho_multi_img">LithoMultiImg</string>
     <string name="litho_card">LithoCard</string>
     <string name="litho_row_text">LithoRowText</string>
+
+    <string name="calendar_add">add</string>
+    <string name="calendar_check">check</string>
+    <string name="calendar_update">update</string>
+    <string name="calendar_delete">delete</string>
+    <string name="calendar_title">Title</string>
+    <string name="calendar_des">Description</string>
+    <string name="calendar_submit">Submit</string>
+    <string name="calendar_start_time">StartTime</string>
+    <string name="calendar_end_time">EndTime</string>
 
 </resources>

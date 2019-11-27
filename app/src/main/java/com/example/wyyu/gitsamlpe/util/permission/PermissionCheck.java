@@ -1,5 +1,6 @@
 package com.example.wyyu.gitsamlpe.util.permission;
 
+import android.content.Context;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
 import java.util.LinkedList;
 
@@ -72,6 +73,34 @@ public class PermissionCheck {
             onPermissionGranted(permissionItem);
         } else {
             ActivityCheckPermission.open(AppController.getAppContext(), permissionItem);
+        }
+    }
+
+    public void check(Context context, PermissionItem permissionItemFun) {
+        if (permissionItemFun == null) {
+            return;
+        }
+        if (!PermissionUtil.isOverMarshmallow()) {
+            onPermissionGranted(permissionItemFun);
+        } else {
+            permissionItemList.add(permissionItemFun);
+            if (permissionItem == null) {
+                permissionItem = permissionItemList.poll();
+                requestPermission(context);
+            }
+        }
+    }
+
+    private void requestPermission(Context context) {
+        if (permissionItem == null) {
+            return;
+        }
+
+        if (PermissionUtil.hasSelfPermissions(AppController.getAppContext(),
+            permissionItem.permissionArray)) {
+            onPermissionGranted(permissionItem);
+        } else {
+            ActivityCheckPermission.open(context, permissionItem);
         }
     }
 

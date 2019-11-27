@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <TextView
+      android:id="@+id/calender_add"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/calendar_add"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:padding="14.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:id="@+id/calender_check"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/calendar_check"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:padding="14.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:id="@+id/calender_update"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/calendar_update"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:padding="14.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:id="@+id/calender_delete"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/calendar_delete"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:padding="14.0dp"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+</LinearLayout>

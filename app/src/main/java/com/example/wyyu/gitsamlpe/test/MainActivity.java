@@ -318,6 +318,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("CalendarTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startCalendarTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <EditText
+      android:id="@+id/calendar_add_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/calendar_title"
+      android:textColorHint="@color/black_30"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:background="@null"
+      android:padding="14.0dp"
+      tools:ignore="Autofill,SpUsage,TextFields"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <EditText
+      android:id="@+id/calendar_add_des"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/calendar_des"
+      android:textColorHint="@color/black_30"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:background="@null"
+      android:padding="14.0dp"
+      tools:ignore="Autofill,SpUsage,TextFields"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <EditText
+      android:id="@+id/calendar_add_start"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/calendar_start_time"
+      android:textColorHint="@color/black_30"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:background="@null"
+      android:padding="14.0dp"
+      tools:ignore="Autofill,SpUsage,TextFields"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <EditText
+      android:id="@+id/calendar_add_end"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/calendar_end_time"
+      android:textColorHint="@color/black_30"
+      android:textColor="@color/color_1a1a1a"
+      android:textSize="@dimen/text_15"
+      android:background="@null"
+      android:padding="14.0dp"
+      tools:ignore="Autofill,SpUsage,TextFields"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="48.0dp"
+      />
+
+  <TextView
+      android:id="@+id/calendar_add_submit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/calendar_submit"
+      android:textColor="@color/color_white"
+      android:paddingLeft="20.0dp"
+      android:paddingRight="20.0dp"
+      android:paddingTop="6.0dp"
+      android:paddingBottom="6.0dp"
+      android:textSize="16.0dp"
+      android:background="@drawable/button_submit_red"
+      android:layout_marginLeft="14.0dp"
+      android:layout_marginStart="14.0dp"
+      tools:ignore="SpUsage"
+      />
+
+</LinearLayout>
