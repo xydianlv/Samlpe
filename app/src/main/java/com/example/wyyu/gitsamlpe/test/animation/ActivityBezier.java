@@ -1,7 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.animation;
 
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
@@ -37,11 +36,7 @@ public class ActivityBezier extends FullScreenActivity {
         startView = findViewById(R.id.bezier_start);
         endView = findViewById(R.id.bezier_end);
 
-        findViewById(R.id.bezier_click).setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                showBezierAnim();
-            }
-        });
+        findViewById(R.id.bezier_click).setOnClickListener(v -> showBezierAnim());
 
         showLocationValue();
     }
@@ -61,19 +56,17 @@ public class ActivityBezier extends FullScreenActivity {
         ObjectAnimator animator = new ObjectAnimator();
         animator.setFloatValues(0.0f, 1.0f);
         animator.setDuration(5000);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override public void onAnimationUpdate(ValueAnimator animation) {
-                float t = (float) animation.getAnimatedValue();
-                float m = 1.0f - t;
+        animator.addUpdateListener(animation -> {
+            float t = (float) animation.getAnimatedValue();
+            float m = 1.0f - t;
 
-                float x = m * m * pointS.x + 2 * t * m * pointM.x + t * t * pointE.x;
-                float y = m * m * pointS.y + 2 * t * m * pointM.y + t * t * pointE.y;
+            float x = m * m * pointS.x + 2 * t * m * pointM.x + t * t * pointE.x;
+            float y = m * m * pointS.y + 2 * t * m * pointM.y + t * t * pointE.y;
 
-                Log.e("ActivityBezier", "t : " + t + "  m : " + m + "  x : " + x + "  y : " + y);
+            Log.e("ActivityBezier", "t : " + t + "  m : " + m + "  x : " + x + "  y : " + y);
 
-                startView.setX(x);
-                startView.setY(y);
-            }
+            startView.setX(x);
+            startView.setY(y);
         });
         animator.setTarget(1.0f);
         animator.start();
@@ -83,15 +76,12 @@ public class ActivityBezier extends FullScreenActivity {
         final TextView textView = findViewById(R.id.bezier_location_value);
         final View view = findViewById(R.id.bezier_location);
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                int[] location = new int[2];
-                view.getLocationOnScreen(location);
+        view.setOnClickListener(v -> {
+            int[] location = new int[2];
+            view.getLocationOnScreen(location);
 
-                textView.setText(
-                    MessageFormat.format("LocationValue -> x : {0}  y : {1}", location[0],
-                        location[1]));
-            }
+            textView.setText(MessageFormat.format("LocationValue -> x : {0}  y : {1}", location[0],
+                location[1]));
         });
     }
 }

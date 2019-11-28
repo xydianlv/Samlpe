@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <TextView
+      android:id="@+id/bezier_list_click"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="14.0dp"
+      android:text="@string/bezier_click"
+      android:textSize="@dimen/text_15"
+      android:textColor="@color/color_1a1a1a"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+  <TextView
+      android:id="@+id/bezier_list_anim"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="14.0dp"
+      android:text="@string/bezier_wave"
+      android:textSize="@dimen/text_15"
+      android:textColor="@color/color_1a1a1a"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/my_divide_line"
+      />
+
+</LinearLayout>

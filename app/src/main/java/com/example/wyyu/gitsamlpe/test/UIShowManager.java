@@ -3,7 +3,7 @@ package com.example.wyyu.gitsamlpe.test;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import com.example.wyyu.gitsamlpe.test.animation.ActivityBezier;
+import com.example.wyyu.gitsamlpe.test.animation.ActivityBezierList;
 import com.example.wyyu.gitsamlpe.test.animation.ActivitySpringAnimation;
 import com.example.wyyu.gitsamlpe.test.annotion.ActivityAnnotionTest;
 import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
@@ -222,7 +222,7 @@ class UIShowManager {
     }
 
     static void startBezierAnimTest(Context context) {
-        ActivityBezier.open(context);
+        ActivityBezierList.open(context);
     }
 
     static void startLiveDataTest(Context context) {

@@ -13,6 +13,9 @@
     <string name="number_o">0</string>
     <string name="number_t">47</string>
     <string name="number_f">99+</string>
+    <string name="number_30">30</string>
+    <string name="number_50">50</string>
+    <string name="number_70">70</string>
 
     <string name="top_text">TopTextView</string>
     <string name="bottom_text">BottomTextView</string>
@@ -146,5 +149,8 @@
     <string name="calendar_submit">Submit</string>
     <string name="calendar_start_time">StartTime</string>
     <string name="calendar_end_time">EndTime</string>
+
+    <string name="bezier_click">BezierClick</string>
+    <string name="bezier_wave">BezierWave</string>
 
 </resources>

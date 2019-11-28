@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:gravity="center_horizontal"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.lottie.WaveView
+      android:layout_width="120.0dp"
+      android:layout_height="120.0dp"
+      />
+
+  <android.support.v7.widget.CardView
+      android:layout_width="80.0dp"
+      android:layout_height="80.0dp"
+      android:layout_marginTop="64.0dp"
+      app:cardBackgroundColor="@color/color_white"
+      app:cardCornerRadius="40.0dp"
+      >
+
+    <com.example.wyyu.gitsamlpe.test.lottie.WaveViewJust
+        android:id="@+id/wave_view_just"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+  </android.support.v7.widget.CardView>
+
+  <com.example.wyyu.gitsamlpe.test.lottie.WaveViewTest
+      android:id="@+id/wave_view_test"
+      android:layout_width="82.0dp"
+      android:layout_height="82.0dp"
+      android:layout_marginTop="64.0dp"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_horizontal"
+      android:layout_marginTop="64.0dp"
+      >
+
+    <TextView
+        android:id="@+id/wave_num_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24.0dp"
+        android:paddingRight="24.0dp"
+        android:text="@string/number_30"
+        android:paddingTop="8.0dp"
+        android:paddingBottom="8.0dp"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_15"
+        android:background="@drawable/button_submit_red"
+        tools:ignore="SpUsage"
+        />
+
+    <View
+        android:layout_width="20.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/wave_num_f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24.0dp"
+        android:paddingRight="24.0dp"
+        android:text="@string/number_50"
+        android:paddingTop="8.0dp"
+        android:paddingBottom="8.0dp"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_15"
+        android:background="@drawable/button_submit_red"
+        tools:ignore="SpUsage"
+        />
+
+    <View
+        android:layout_width="20.0dp"
+        android:layout_height="0.0dp"
+        />
+
+    <TextView
+        android:id="@+id/wave_num_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24.0dp"
+        android:paddingRight="24.0dp"
+        android:text="@string/number_70"
+        android:paddingTop="8.0dp"
+        android:paddingBottom="8.0dp"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_15"
+        android:background="@drawable/button_submit_red"
+        tools:ignore="SpUsage"
+        />
+
+  </LinearLayout>
+
+</LinearLayout>
