@@ -94,7 +94,8 @@ public class ActivityCalendarAdd extends ToolbarActivity implements IPermissionO
         }
 
         ContentValues values = new ContentValues();
-        values.put(CalendarContract.Reminders.EVENT_ID, ContentUris.parseId(uri));
+        long eventId = ContentUris.parseId(uri);
+        values.put(CalendarContract.Reminders.EVENT_ID, eventId);
         values.put(CalendarContract.Reminders.MINUTES, previousDate * 24 * 60);// 提前previousDate天有提醒
         values.put(CalendarContract.Reminders.METHOD, CalendarContract.Reminders.METHOD_ALERT);
         Uri result = getContentResolver().insert(Uri.parse(CALENDER_REMINDER_URL), values);
