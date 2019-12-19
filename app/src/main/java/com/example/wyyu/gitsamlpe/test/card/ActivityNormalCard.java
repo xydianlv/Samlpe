@@ -2,6 +2,7 @@ package com.example.wyyu.gitsamlpe.test.card;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationSet;
@@ -9,6 +10,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
+import com.example.wyyu.gitsamlpe.test.image.matisse.FrescoLoader;
+import com.facebook.drawee.drawable.ScalingUtils;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 /**
  * Created by wyyu on 2018/6/23.
@@ -52,6 +56,7 @@ public class ActivityNormalCard extends FullScreenActivity {
         vectorSelect();
         playSelect();
         playRefresh();
+        initWebpTest();
     }
 
     private void initBasicValue() {
@@ -134,5 +139,17 @@ public class ActivityNormalCard extends FullScreenActivity {
             ((AnimationDrawable) animationDrawable).setOneShot(false);
             ((AnimationDrawable) animationDrawable).start();
         }
+    }
+
+    private void initWebpTest() {
+        SimpleDraweeView view = findViewById(R.id.card_webp_test);
+
+        FrescoLoader.newFrescoLoader()
+            .imageScaleType(ScalingUtils.ScaleType.FIT_CENTER)
+            .uri(Uri.parse(
+                "android.resource://" + getPackageName() + "/" + R.mipmap.anim_feed_loading))
+            .autoPlayAnimation(true)
+            .fadeDuration(0)
+            .into(view);
     }
 }

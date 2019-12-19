@@ -1,9 +1,13 @@
 package com.example.wyyu.gitsamlpe.test.lottie;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import butterknife.BindView;
@@ -14,13 +18,15 @@ import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.image.matisse.FrescoLoader;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.controller.BaseControllerListener;
 import com.facebook.drawee.drawable.ScalingUtils;
+import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.image.ImageInfo;
 import java.io.InputStream;
 import rx.Observable;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 /**
@@ -33,6 +39,7 @@ public class ActivityLottieTest extends ToolbarActivity {
         context.startActivity(new Intent(context, ActivityLottieTest.class));
     }
 
+    @BindView(R.id.lottie_click_webp) SimpleDraweeView clickWebp;
     @BindView(R.id.lottie_test_webp) SimpleDraweeView webpTest;
     @BindView(R.id.lottie_test_a) LottieAnimationView lottieA;
     @BindView(R.id.lottie_test_b) LottieAnimationView lottieB;
@@ -41,6 +48,8 @@ public class ActivityLottieTest extends ToolbarActivity {
     private boolean lottieAEnd;
     private boolean lottieBEnd;
     private boolean lottieCEnd;
+
+    private Animatable webpAnim;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +63,7 @@ public class ActivityLottieTest extends ToolbarActivity {
 
         initAnim();
         initClick();
+        initClickWebp();
     }
 
     private void initAnim() {
@@ -67,7 +77,16 @@ public class ActivityLottieTest extends ToolbarActivity {
 
         lottieAEnd = false;
         lottieBEnd = false;
-        lottieCEnd = false;
+        lottieCEnd = true;
+
+        lottieC.addAnimatorListener(new AnimatorListenerAdapter() {
+            @Override public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (lottieC != null) {
+                    lottieC.playAnimation();
+                }
+            }
+        });
 
         FrescoLoader.newFrescoLoader()
             .uri(Uri.parse(
@@ -78,34 +97,25 @@ public class ActivityLottieTest extends ToolbarActivity {
     }
 
     private void loadLottie(final String cacheKey, final LottieAnimationView lottieAnim) {
-        Observable.unsafeCreate(new Observable.OnSubscribe<LottieComposition>() {
-            @Override public void call(Subscriber<? super LottieComposition> subscriber) {
-                try {
-                    final InputStream isDown = ActivityLottieTest.this.getAssets().open(cacheKey);
-                    subscriber.onNext(
-                        LottieCompositionFactory.fromJsonInputStreamSync(isDown, cacheKey)
-                            .getValue());
-                } catch (Exception e) {
-                    subscriber.onError(e);
-                }
-                subscriber.onCompleted();
+        Observable.unsafeCreate((Observable.OnSubscribe<LottieComposition>) subscriber -> {
+            try {
+                final InputStream isDown = ActivityLottieTest.this.getAssets().open(cacheKey);
+                subscriber.onNext(
+                    LottieCompositionFactory.fromJsonInputStreamSync(isDown, cacheKey).getValue());
+            } catch (Exception e) {
+                subscriber.onError(e);
             }
+            subscriber.onCompleted();
         })
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Action1<LottieComposition>() {
-                @Override public void call(LottieComposition composition) {
-                    if (lottieAnim != null && composition != null) {
-                        lottieAnim.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                        lottieAnim.setComposition(composition);
-                        lottieAnim.setProgress(0.0f);
-                    }
+            .subscribe(composition -> {
+                if (lottieAnim != null && composition != null) {
+                    lottieAnim.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                    lottieAnim.setComposition(composition);
+                    lottieAnim.setProgress(0.0f);
                 }
-            }, new Action1<Throwable>() {
-                @Override public void call(Throwable throwable) {
-                    ULog.show(throwable.getMessage());
-                }
-            });
+            }, throwable -> ULog.show(throwable.getMessage()));
     }
 
     private void initClick() {
@@ -136,12 +146,39 @@ public class ActivityLottieTest extends ToolbarActivity {
         lottieC.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 if (lottieCEnd) {
-                    lottieC.setProgress(0.0f);
+                    lottieC.playAnimation();
                     lottieCEnd = false;
                 } else {
-                    lottieC.playAnimation();
+                    lottieC.cancelAnimation();
                     lottieCEnd = true;
                 }
+            }
+        });
+    }
+
+    private void initClickWebp() {
+        DraweeController controller = Fresco.newDraweeControllerBuilder()
+            .setUri(Uri.parse(
+                "android.resource://" + getPackageName() + "/" + R.mipmap.anim_feed_loading))
+            .setControllerListener(new BaseControllerListener<ImageInfo>() {
+                @Override public void onFinalImageSet(String id, @Nullable ImageInfo imageInfo,
+                    @Nullable Animatable animatable) {
+                    if (animatable != null) {
+                        webpAnim = animatable;
+                    }
+                }
+            })
+            .build();
+
+        clickWebp.setController(controller);
+        clickWebp.setOnClickListener(v -> {
+            if (webpAnim == null) {
+                return;
+            }
+            if (webpAnim.isRunning()) {
+                webpAnim.stop();
+            } else {
+                webpAnim.start();
             }
         });
     }

@@ -466,7 +466,14 @@
         android:name=".test.animation.ActivityBezierList"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.animation.ActivityBezierAnim"/>
+    <activity
+        android:name=".test.animation.ActivityBezierAnim"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.svga.ActivitySvgATest"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

@@ -153,4 +153,8 @@
     <string name="bezier_click">BezierClick</string>
     <string name="bezier_wave">BezierWave</string>
 
+    <string name="svg_a_image">SVGAImage</string>
+    <string name="svg_a_surface">SVGASurface</string>
+    <string name="svg_a_file">SVGAFile</string>
+
 </resources>

@@ -114,17 +114,19 @@ dependencies {
   //noinspection GradleDependency
   annotationProcessor 'com.facebook.litho:litho-processor:0.21.0'
   // Litho 框架已扩展的自定义控件
-  //noinspection GradleDependency
+  // noinspection GradleDependency
   implementation 'com.facebook.litho:litho-sections-core:0.21.0'
-  //noinspection GradleDependency
+  // noinspection GradleDependency
   implementation 'com.facebook.litho:litho-sections-widget:0.21.0'
-  //noinspection GradleDependency
+  // noinspection GradleDependency
   implementation 'com.facebook.litho:litho-sections-annotations:0.21.0'
   // Litho 通过 Fresco 加载图片资源
-  //noinspection GradleDependency
+  // noinspection GradleDependency
   implementation 'com.facebook.litho:litho-fresco:0.21.0'
-  //aspectj库
+  // aspectj库
   implementation group: 'org.aspectj', name: 'aspectjrt', version: '1.9.4'
+  // svga动画播放框架
+  implementation 'com.github.yyued:SVGAPlayer-Android:2.5.2'
 
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -136,6 +138,7 @@ dependencies {
 
   implementation project(':debug_annotate')
   annotationProcessor project(':debug_processor')
+  implementation 'org.jetbrains:annotations:15.0'
 }
 
 /*Aspectj配置*/

@@ -31,6 +31,8 @@ public class CustomBinderB extends HolderBinder {
     @Override
     protected void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, @NonNull Object item) {
         ((CustomBinderB.HolderCustomB) holder).cacheValue((CustomDataB) item);
+
+        Log.e("CustomListTest", "index -> " + ((CustomDataB) item).index);
     }
 
     @Override

@@ -324,6 +324,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("SVGATest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startSVGATest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

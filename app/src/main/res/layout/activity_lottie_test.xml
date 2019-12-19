@@ -71,4 +71,17 @@
       android:scaleType="fitCenter"
       />
 
+  <View
+      android:layout_height="36.0dp"
+      android:layout_width="0.0dp"
+      />
+
+  <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/lottie_click_webp"
+      android:layout_width="54.0dp"
+      android:layout_height="72.0dp"
+      android:scaleType="fitCenter"
+      app:actualImageScaleType="fitCenter"
+      />
+
 </LinearLayout>
