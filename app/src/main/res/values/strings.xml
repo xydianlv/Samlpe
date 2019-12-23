@@ -156,5 +156,8 @@
     <string name="svg_a_image">SVGAImage</string>
     <string name="svg_a_surface">SVGASurface</string>
     <string name="svg_a_file">SVGAFile</string>
+    <string name="svg_a_multi">SVGAMulti</string>
+    <string name="svg_a_same_svg">SameAnimSvg</string>
+    <string name="svg_a_same_lottie">SameAnimLottie</string>
 
 </resources>

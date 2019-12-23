@@ -45,7 +45,7 @@ import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
-import com.example.wyyu.gitsamlpe.test.svga.ActivitySvgATest;
+import com.example.wyyu.gitsamlpe.test.svga.ActivitySvgAMain;
 import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangram;
 import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
@@ -271,7 +271,7 @@ class UIShowManager {
     }
 
     static void startSVGATest(Activity activity) {
-        ActivitySvgATest.open(activity);
+        ActivitySvgAMain.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

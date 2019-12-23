@@ -474,6 +474,18 @@
         android:name=".test.svga.ActivitySvgATest"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.svga.ActivitySvgAMain"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.svga.ActivitySvgAnim"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.svga.ActivitySvgLottie"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
