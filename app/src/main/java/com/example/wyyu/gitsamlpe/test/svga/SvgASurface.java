@@ -21,6 +21,8 @@ import com.opensource.svgaplayer.drawer.SVGACanvasDrawer;
 
 /**
  * Created by wyyu on 2019-12-19.
+ *
+ * 经测试，SVGA 动画用 60帧 效果最佳，帧数低会在视觉上又掉帧现象，帧数高 ValueAnimator 在绘制时会卡顿
  **/
 
 public class SvgASurface extends SurfaceView implements SurfaceHolder.Callback {
@@ -71,7 +73,7 @@ public class SvgASurface extends SurfaceView implements SurfaceHolder.Callback {
 
     private void initAnimAndPlay() {
         SVGAParser parser = new SVGAParser(getContext());
-        parser.decodeFromAssets("anim_svg_test.svga", new SVGAParser.ParseCompletion() {
+        parser.decodeFromAssets("anim_svg_test_5.svga", new SVGAParser.ParseCompletion() {
             @Override public void onComplete(@NonNull SVGAVideoEntity svgaVideoEntity) {
                 startAnimPlay(svgaVideoEntity);
             }
@@ -88,7 +90,7 @@ public class SvgASurface extends SurfaceView implements SurfaceHolder.Callback {
 
         animator = ValueAnimator.ofInt(0, svgaVideoEntity.getFrames() - 1);
         animator.setInterpolator(new LinearInterpolator());
-        animator.setDuration((svgaVideoEntity.getFrames()) * (1000 / svgaVideoEntity.getFPS()));
+        animator.setDuration(svgaVideoEntity.getFrames() / svgaVideoEntity.getFPS() * 1000);
         animator.addUpdateListener(animation -> {
             if (animator == null || getHolder() == null) {
                 return;
