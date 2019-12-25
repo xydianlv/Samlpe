@@ -1,18 +1,22 @@
 package com.example.wyyu.gitsamlpe.test.svga;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import com.example.wyyu.gitsamlpe.framework.WeakHandler;
 import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 import com.opensource.svgaplayer.SVGADrawable;
 import com.opensource.svgaplayer.SVGAParser;
@@ -54,11 +58,20 @@ public class SvgASurface extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     @Override public void surfaceCreated(SurfaceHolder holder) {
-        if (animator == null) {
-            initAnimAndPlay();
-        } else {
-            animator.start();
-        }
+
+        Log.e("SvgASurfaceTest", "surfaceCreated -> currentId : " + Thread.currentThread().getId());
+
+        SVGAParser parser = new SVGAParser(getContext());
+        parser.decodeFromAssets("anim_svg_test_5.svga", new SVGAParser.ParseCompletion() {
+            @Override public void onComplete(@NonNull SVGAVideoEntity svgaVideoEntity) {
+
+                startAnimPlay(svgaVideoEntity);
+            }
+
+            @Override public void onError() {
+                UToast.showShort(getContext(), "SVGA加载失败");
+            }
+        });
     }
 
     @Override public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
@@ -71,46 +84,45 @@ public class SvgASurface extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-    private void initAnimAndPlay() {
-        SVGAParser parser = new SVGAParser(getContext());
-        parser.decodeFromAssets("anim_svg_test_5.svga", new SVGAParser.ParseCompletion() {
-            @Override public void onComplete(@NonNull SVGAVideoEntity svgaVideoEntity) {
-                startAnimPlay(svgaVideoEntity);
-            }
-
-            @Override public void onError() {
-                UToast.showShort(getContext(), "SVGA加载失败");
-            }
-        });
-    }
-
     private void startAnimPlay(@NonNull SVGAVideoEntity svgaVideoEntity) {
-        SVGADrawable drawable = new SVGADrawable(svgaVideoEntity);
-        SVGACanvasDrawer drawer = new SVGACanvasDrawer(svgaVideoEntity, drawable.getDynamicItem());
+
+        Log.e("SvgASurfaceTest", "surfaceCreated -> currentId : " + Thread.currentThread().getId());
+
+        HandlerThread thread = new HandlerThread("HandlerThread");
+        thread.start();
+        Handler handler = new Handler(thread.getLooper()) {
+
+            SVGADrawable drawable = new SVGADrawable(svgaVideoEntity);
+            SVGACanvasDrawer drawer =
+                new SVGACanvasDrawer(svgaVideoEntity, drawable.getDynamicItem());
+
+            @Override public void handleMessage(Message msg) {
+
+                Log.e("SvgASurfaceTest",
+                    "handleMessage -> currentId : " + Thread.currentThread().getId());
+
+                canvas = getHolder() == null ? null : getHolder().lockCanvas();
+                if (canvas == null) {
+                    return;
+                }
+
+                canvas.drawColor(0, PorterDuff.Mode.CLEAR);
+                drawable.setCurrentFrame$library_release(msg.what);
+                drawer.drawFrame(canvas, drawable.getCurrentFrame(),
+                    ImageView.ScaleType.FIT_CENTER);
+
+                getHolder().unlockCanvasAndPost(canvas);
+            }
+        };
 
         animator = ValueAnimator.ofInt(0, svgaVideoEntity.getFrames() - 1);
         animator.setInterpolator(new LinearInterpolator());
         animator.setDuration(svgaVideoEntity.getFrames() / svgaVideoEntity.getFPS() * 1000);
         animator.addUpdateListener(animation -> {
-            if (animator == null || getHolder() == null) {
+            if (animation == null) {
                 return;
             }
-            canvas = getHolder().lockCanvas();
-            if (canvas == null) {
-                return;
-            }
-            canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-            drawer.drawFrame(canvas, drawable.getCurrentFrame(), ImageView.ScaleType.FIT_CENTER);
-            getHolder().unlockCanvasAndPost(canvas);
-            drawable.setCurrentFrame$library_release((int) animator.getAnimatedValue());
-        });
-        animator.addListener(new AnimatorListenerAdapter() {
-            @Override public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                if (canvas != null) {
-                    canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-                }
-            }
+            handler.sendEmptyMessage((int) animation.getAnimatedValue());
         });
 
         animator.start();

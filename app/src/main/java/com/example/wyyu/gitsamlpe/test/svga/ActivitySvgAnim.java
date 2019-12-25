@@ -3,6 +3,7 @@ package com.example.wyyu.gitsamlpe.test.svga;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.FrameLayout;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
