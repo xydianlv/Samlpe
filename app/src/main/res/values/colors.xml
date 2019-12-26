@@ -7,6 +7,17 @@
     <color name="empty">#00000000</color>
     <color name="theme_control">#BBDDDDDD</color>
 
+    <!-- color_text_1 重要文字颜色，一般为导航栏标题、Toolbar标题、帖子内容 -->
+    <color name="ct_1">#ff333333</color>
+    <!-- color_text_2 次重要文字颜色，一般为用户名、话题名 -->
+    <color name="ct_2">#ff666666</color>
+    <!-- color_text_3 辅助信息 -->
+    <color name="ct_3">#ff999999</color>
+    <!-- color_text_4 提醒信息 -->
+    <color name="ct_4">#ff427eb3</color>
+    <!-- color_text_5 深色背景上的文字颜色 -->
+    <color name="ct_5">#ffffffff</color>
+
     <!--红-->
     <color name="color_red">#ff0000</color>
     <!--黄-->

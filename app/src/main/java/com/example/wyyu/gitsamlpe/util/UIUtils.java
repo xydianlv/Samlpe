@@ -8,6 +8,8 @@ import android.os.Build;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
+import java.util.Formatter;
+import java.util.Locale;
 
 /**
  * Created by wyyu on 2018/6/25.
@@ -83,5 +85,22 @@ public class UIUtils {
         Rect rectangle = new Rect();
         context.getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
         return rectangle.top;
+    }
+
+    public static String getDurationBy(long timeMs) {
+        StringBuilder builder = new StringBuilder();
+        Formatter formatter = new Formatter(builder, Locale.getDefault());
+        long totalSeconds = timeMs / 1000;
+
+        long seconds = totalSeconds % 60;
+        long minutes = (totalSeconds / 60) % 60;
+        long hours = totalSeconds / 3600;
+
+        builder.setLength(0);
+        if (hours > 0) {
+            return formatter.format("%d:%02d:%02d", hours, minutes, seconds).toString();
+        } else {
+            return formatter.format("%02d:%02d", minutes, seconds).toString();
+        }
     }
 }

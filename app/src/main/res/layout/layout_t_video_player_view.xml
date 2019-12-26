@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.wyyu.gitsamlpe.framework.video.widget.FrameLayoutOffset
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/video_player_root"
+    >
+
+  <!-- 底层封面，包含高斯模糊背景、视频封面 -->
+  <FrameLayout
+      android:id="@+id/video_player_cover_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/video_player_cover_thumb"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/video_player_cover_image"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        />
+
+  </FrameLayout>
+
+  <!-- TextureView 父控件，用一个 FrameLayout 去持有是方便转全屏和小窗播放 -->
+  <FrameLayout
+      android:id="@+id/video_player_texture_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:visibility="gone"
+      />
+
+  <!-- 顶部渐变阴影 -->
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="120.0dp"
+      android:background="@drawable/bg_player_shadow_top"
+      />
+
+  <!-- 底部渐变阴影 -->
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="120.0dp"
+      android:layout_gravity="bottom"
+      android:background="@drawable/bg_player_shadow_bottom"
+      />
+
+  <!-- 底部信息，包含播放次数、时长 -->
+  <FrameLayout
+      android:id="@+id/video_player_info_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="@dimen/padding_14"
+      android:paddingRight="@dimen/padding_14"
+      android:paddingBottom="@dimen/padding_10"
+      android:layout_gravity="bottom"
+      >
+
+    <TextView
+        android:id="@+id/video_player_info_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number"
+        android:textSize="13.0dp"
+        android:textColor="@color/ct_5"
+        tools:ignore="SpUsage"
+        />
+
+    <TextView
+        android:id="@+id/video_player_info_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number"
+        android:textSize="13.0dp"
+        android:textColor="@color/ct_5"
+        android:layout_gravity="end"
+        tools:ignore="SpUsage"
+        />
+
+  </FrameLayout>
+
+  <!-- 触屏监听 -->
+  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+      android:id="@+id/video_player_press_listener"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+  <!-- 开始、暂停按钮 -->
+  <ImageView
+      android:id="@+id/video_player_start"
+      android:layout_width="45.0dp"
+      android:layout_height="45.0dp"
+      android:src="@drawable/selector_play_vector"
+      android:layout_gravity="center"
+      android:contentDescription="@string/image"
+      />
+
+  <!-- 加载中... -->
+  <ImageView
+      android:id="@+id/video_player_loading"
+      android:layout_width="28.0dp"
+      android:layout_height="28.0dp"
+      android:layout_gravity="center"
+      android:visibility="gone"
+      android:contentDescription="@string/image"
+      />
+
+  <!-- 底部播放控制控件，包含当前时长、进度条、总时长、全屏按钮 -->
+  <com.example.wyyu.gitsamlpe.framework.video.widget.PlayerViewProgress
+      android:id="@+id/video_player_progress"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      android:visibility="gone"
+      />
+
+  <!-- 最底部的进度条 -->
+  <ProgressBar
+      android:id="@+id/video_player_progress_bottom"
+      android:layout_width="match_parent"
+      android:layout_height="1.5dp"
+      android:max="100"
+      android:progressDrawable="@drawable/jz_bottom_progress"
+      android:layout_gravity="bottom"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:visibility="gone"
+      />
+
+  <!-- 播放结束后的分享布局 -->
+  <FrameLayout
+      android:id="@+id/video_player_share_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14.0dp"
+        android:textColor="@color/ct_5"
+        android:text="@string/svg_a_same_svg"
+        android:layout_gravity="center"
+        tools:ignore="SpUsage"
+        />
+
+  </FrameLayout>
+
+</com.example.wyyu.gitsamlpe.framework.video.widget.FrameLayoutOffset>
