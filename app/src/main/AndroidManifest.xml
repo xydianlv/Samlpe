@@ -486,6 +486,13 @@
         android:name=".test.svga.ActivitySvgLottie"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.text.ActivityTextShowTest"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.text.ActivityMultiText"/>
+    <activity android:name=".test.text.ActivityTextFont"/>
+    <activity android:name=".test.text.ActivityAnimText"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

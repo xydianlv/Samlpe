@@ -1,6 +1,7 @@
 package com.example.wyyu.gitsamlpe.test;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -58,10 +59,14 @@ public class ListViewMain extends LinearLayout {
         listAdapter.addNewListItem(itemTitle, clickListener);
     }
 
+    public ListViewMain addItem(String itemTitle, OnClickListener clickListener) {
+        addNewItem(itemTitle, clickListener);
+        return this;
+    }
+
     public void refreshList() {
         listAdapter.notifyDataSetChanged();
     }
-
 
     private static class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -78,18 +83,19 @@ public class ListViewMain extends LinearLayout {
             itemDataList.add(new ItemData(itemTitle, clickListener));
         }
 
-        @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new ListHolder(LayoutInflater.from(context).inflate(R.layout.list_view_main_item, parent, false));
+        @NonNull @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new ListHolder(
+                LayoutInflater.from(context).inflate(R.layout.list_view_main_item, parent, false));
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            ((ListHolder) holder).setData(itemDataList.get(position), position == itemDataList.size() - 1);
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+            ((ListHolder) holder).setData(itemDataList.get(position),
+                position == itemDataList.size() - 1);
         }
 
-        @Override
-        public int getItemCount() {
+        @Override public int getItemCount() {
             return itemDataList.size();
         }
 
@@ -97,12 +103,14 @@ public class ListViewMain extends LinearLayout {
 
             private TextView itemTitle;
             private View itemDivide;
+            private View divideT;
 
             ListHolder(View itemView) {
                 super(itemView);
 
                 itemDivide = itemView.findViewById(R.id.main_list_item_divide);
                 itemTitle = itemView.findViewById(R.id.main_list_item_title);
+                divideT = itemView.findViewById(R.id.main_list_item_divide_fun);
             }
 
             void setData(ItemData itemData, boolean isLast) {
@@ -111,6 +119,7 @@ public class ListViewMain extends LinearLayout {
                 itemTitle.setText(itemData.itemTitle);
 
                 itemDivide.setVisibility(isLast ? GONE : VISIBLE);
+                divideT.setVisibility(isLast ? VISIBLE : GONE);
             }
         }
 
@@ -124,5 +133,4 @@ public class ListViewMain extends LinearLayout {
             }
         }
     }
-
 }

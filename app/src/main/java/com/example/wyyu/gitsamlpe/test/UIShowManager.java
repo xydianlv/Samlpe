@@ -47,7 +47,7 @@ import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
 import com.example.wyyu.gitsamlpe.test.svga.ActivitySvgAMain;
 import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangram;
-import com.example.wyyu.gitsamlpe.test.text.ActivityAdapterText;
+import com.example.wyyu.gitsamlpe.test.text.ActivityTextShowTest;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.touch.ActivityGestureDetectorTest;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
@@ -111,7 +111,7 @@ class UIShowManager {
     }
 
     static void startAdapterTextView(Context context) {
-        startTargetActivityFromMain(context, ActivityAdapterText.class);
+        ActivityTextShowTest.open(context);
     }
 
     static void startProgressTest(Context context) {

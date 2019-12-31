@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <TextView
+      android:id="@+id/text_type_light_a"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="12.0dp"
+      android:text="@string/typeface_test"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:id="@+id/text_type_light_b"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="16.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.4"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:id="@+id/text_type_light_c"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="22.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.8"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:id="@+id/text_type_normal_a"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="12.0dp"
+      android:text="@string/typeface_test"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:id="@+id/text_type_normal_b"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="16.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.4"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:id="@+id/text_type_normal_c"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="22.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.8"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="24.0dp"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="22.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.8"
+      android:typeface="monospace"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="22.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.8"
+      android:typeface="normal"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="22.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.8"
+      android:typeface="sans"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+  <TextView
+      android:id="@+id/text_type_serif"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/color_262626"
+      android:textSize="22.0dp"
+      android:text="@string/typeface_test"
+      android:letterSpacing="0.8"
+      android:typeface="serif"
+      tools:ignore="SpUsage,UnusedAttribute"
+      />
+
+</LinearLayout>
