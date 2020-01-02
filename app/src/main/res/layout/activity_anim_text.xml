@@ -30,6 +30,29 @@
       android:layout_height="36.0dp"
       />
 
+  <com.example.wyyu.gitsamlpe.test.text.MarqueeTextView
+      android:id="@+id/marquee_text_view"
+      android:layout_height="64.0dp"
+      android:layout_width="match_parent"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="36.0dp"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.text.MarqueeListView
+      android:id="@+id/marquee_list_view"
+      android:layout_height="64.0dp"
+      android:layout_width="match_parent"
+      android:background="@color/black_40"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="36.0dp"
+      />
+
   <com.example.wyyu.gitsamlpe.test.text.AnimTextView
       android:id="@+id/anim_text_view"
       android:layout_width="match_parent"
