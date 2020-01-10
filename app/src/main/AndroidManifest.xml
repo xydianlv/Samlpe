@@ -490,9 +490,34 @@
         android:name=".test.text.ActivityTextShowTest"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.text.ActivityMultiText"/>
-    <activity android:name=".test.text.ActivityTextFont"/>
-    <activity android:name=".test.text.ActivityAnimText"/>
+    <activity
+        android:name=".test.text.ActivityMultiText"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.text.ActivityTextFont"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.text.ActivityAnimText"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.canvas.ActivityCanvasFigure"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.canvas.ActivityCanvasDrawShow"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.canvas.ActivityCanvasText"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.canvas.ActivityCanvasPath"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

@@ -112,6 +112,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("CanvasTest", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startCanvasShow(MainActivity.this);
+            }
+        });
+
         listViewMain.addNewItem("FloatTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startFloatTestActivity(MainActivity.this);

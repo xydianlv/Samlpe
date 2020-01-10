@@ -12,6 +12,8 @@ import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
 import com.example.wyyu.gitsamlpe.test.bubbling.ActivityBubbling;
 import com.example.wyyu.gitsamlpe.test.calendar.ActivityCalendarTest;
+import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasDrawShow;
+import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasFigure;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
@@ -272,6 +274,10 @@ class UIShowManager {
 
     static void startSVGATest(Activity activity) {
         ActivitySvgAMain.open(activity);
+    }
+
+    static void startCanvasShow(Activity activity) {
+        ActivityCanvasDrawShow.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {
