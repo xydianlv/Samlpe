@@ -336,6 +336,12 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("PagerTransformer", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                UIShowManager.startPagerTransformerShow(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

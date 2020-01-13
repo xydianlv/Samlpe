@@ -42,6 +42,7 @@ import com.example.wyyu.gitsamlpe.test.nine.ActivityNinePatchTest;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
+import com.example.wyyu.gitsamlpe.test.pager.anim.ActivityPagerAnim;
 import com.example.wyyu.gitsamlpe.test.percent.ActivityPercentTest;
 import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
 import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
@@ -274,6 +275,10 @@ class UIShowManager {
 
     static void startSVGATest(Activity activity) {
         ActivitySvgAMain.open(activity);
+    }
+
+    static void startPagerTransformerShow(Activity activity){
+        ActivityPagerAnim.open(activity);
     }
 
     static void startCanvasShow(Activity activity) {

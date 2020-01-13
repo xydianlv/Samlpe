@@ -518,6 +518,18 @@
         android:name=".test.canvas.ActivityCanvasPath"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.pager.anim.ActivityPagerAnim"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimCube"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimCrimp"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimWind"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimOver"/>
+    <activity android:name=".test.pager.anim.PageTransformerScaleSide"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimScaleSide"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimScaleCenter"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimDepth"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimFade"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimPreview"/>
+    <activity android:name=".test.pager.anim.ActivityPagerAnimSimple"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
