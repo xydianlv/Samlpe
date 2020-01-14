@@ -131,6 +131,7 @@
     <string name="multi_type_adapter">MultiTypeAdapter</string>
     <string name="define_list_adapter">DefineListAdapter</string>
     <string name="custom_list_adapter">CustomListAdapter</string>
+    <string name="waterfall_list">WaterfallList</string>
 
     <string name="litho_text">LithoText</string>
     <string name="local_text">LocalText</string>

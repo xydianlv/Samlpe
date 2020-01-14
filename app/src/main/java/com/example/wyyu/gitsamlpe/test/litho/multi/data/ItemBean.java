@@ -10,6 +10,7 @@ public class ItemBean {
     public String title;
     public String info;
     public String content;
+    public int index;
     public int iconId;
     public int countLike;
     public int countReview;

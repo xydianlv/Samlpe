@@ -11,6 +11,7 @@ import com.example.wyyu.gitsamlpe.test.multi.custom.ActivityCustomList;
 import com.example.wyyu.gitsamlpe.test.multi.define.ActivityDefineList;
 import com.example.wyyu.gitsamlpe.test.multi.delegate.ActivityDelegateList;
 import com.example.wyyu.gitsamlpe.test.multi.multitype.ActivityMultiTypeList;
+import com.example.wyyu.gitsamlpe.test.multi.waterfall.ActivityWaterfallList;
 
 /**
  * Created by wyyu on 2019-09-23.
@@ -31,7 +32,7 @@ public class ActivityMultiListTest extends ToolbarActivity {
 
     @OnClick({
         R.id.adapter_delegate, R.id.multi_type_adapter, R.id.define_list_adapter,
-        R.id.custom_list_adapter
+        R.id.custom_list_adapter, R.id.waterfall_list
     }) public void onEvent(View view) {
         switch (view.getId()) {
             case R.id.adapter_delegate:
@@ -45,6 +46,9 @@ public class ActivityMultiListTest extends ToolbarActivity {
                 break;
             case R.id.custom_list_adapter:
                 ActivityCustomList.open(ActivityMultiListTest.this);
+                break;
+            case R.id.waterfall_list:
+                ActivityWaterfallList.open(ActivityMultiListTest.this);
                 break;
         }
     }

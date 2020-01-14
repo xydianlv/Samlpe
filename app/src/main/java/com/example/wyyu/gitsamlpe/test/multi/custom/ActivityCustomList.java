@@ -41,6 +41,8 @@ public class ActivityCustomList extends ToolbarActivity {
     }
 
     private void initActivity() {
+        initToolbar("CustomListTest", 0xffffffff, 0xff84919b);
+
         initList();
         loadList();
     }

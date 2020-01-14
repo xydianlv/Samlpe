@@ -518,18 +518,55 @@
         android:name=".test.canvas.ActivityCanvasPath"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.pager.anim.ActivityPagerAnim"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimCube"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimCrimp"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimWind"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimOver"/>
-    <activity android:name=".test.pager.anim.PageTransformerScaleSide"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimScaleSide"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimScaleCenter"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimDepth"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimFade"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimPreview"/>
-    <activity android:name=".test.pager.anim.ActivityPagerAnimSimple"/>
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnim"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimCube"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimCrimp"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimWind"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimOver"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimScaleSide"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimScaleCenter"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimDepth"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimFade"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimPreview"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.anim.ActivityPagerAnimSimple"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.multi.waterfall.ActivityWaterfallList"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.image.preview.ActivityImagePreview"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
