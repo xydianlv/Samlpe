@@ -7,6 +7,7 @@ import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
+import com.example.wyyu.gitsamlpe.test.pager.complex.ActivityComplexPage;
 
 /**
  * Created by wyyu on 2020-01-13.
@@ -40,6 +41,7 @@ public class ActivityPagerAnim extends ToolbarActivity {
             .addItem("淡入淡出式切换动画", v -> ActivityPagerAnimFade.open(ActivityPagerAnim.this))
             .addItem("预览式切换动画", v -> ActivityPagerAnimPreview.open(ActivityPagerAnim.this))
             .addItem("简易缩放式切换动画", v -> ActivityPagerAnimSimple.open(ActivityPagerAnim.this))
+            .addItem("复合界面切换动画", v -> ActivityComplexPage.open(ActivityPagerAnim.this))
             .refreshList();
     }
 }
