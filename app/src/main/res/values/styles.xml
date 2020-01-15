@@ -129,6 +129,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- 浏览媒体文件的全屏的 activity 的 theme -->
+    <style name="MediaFullScreenApp" parent="Base">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
     <!-- 通常用来作为 item 划分的 分割线 -->
     <style name="my_divide_line">
         <item name="android:layout_width">match_parent</item>

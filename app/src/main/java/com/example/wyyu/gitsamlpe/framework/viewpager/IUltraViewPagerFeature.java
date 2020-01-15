@@ -159,8 +159,8 @@ public interface IUltraViewPagerFeature {
      *
      * @param left   the left margin in pixels
      * @param top    the top margin in pixels
-     * @param right  the right margin in pixels
-     * @param bottom the bottom margin in pixels
+     * @param right  the width margin in pixels
+     * @param bottom the height margin in pixels
      */
     void setItemMargin(int left, int top, int right, int bottom);
 
@@ -168,7 +168,7 @@ public interface IUltraViewPagerFeature {
      * Set margins for this ViewPager
      *
      * @param left  the left margin in pixels
-     * @param right the right margin in pixels
+     * @param right the width margin in pixels
      */
     void setScrollMargin(int left, int right);
 

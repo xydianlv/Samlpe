@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import com.example.wyyu.gitsamlpe.test.image.preview.ActivityImagePreview;
+import com.example.wyyu.gitsamlpe.test.litho.multi.data.ImageLocation;
 import com.example.wyyu.gitsamlpe.test.litho.multi.data.ItemBean;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +29,16 @@ public class WaterfallAdapter extends RecyclerView.Adapter {
     }
 
     @Override public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        ((WaterfallItem) viewHolder).cacheValue(itemBeanList.get(i));
+        WaterfallItem item = (WaterfallItem) viewHolder;
+        item.cacheValue(itemBeanList.get(i));
+        item.itemView.setOnClickListener(v -> {
+            ActivityImagePreview.itemBeanList = itemBeanList;
+            int[] location = item.loadImageLocation();
+            ItemBean itemBean = itemBeanList.get(i);
+            itemBean.imageLocation =
+                new ImageLocation(location[0], location[1], location[2], location[3]);
+            ActivityImagePreview.open(item.itemView.getContext(), i);
+        });
     }
 
     @Override public int getItemCount() {

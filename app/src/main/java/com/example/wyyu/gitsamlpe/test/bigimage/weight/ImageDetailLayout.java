@@ -57,8 +57,8 @@ public class ImageDetailLayout extends RelativeLayout {
 
         scaleData = 1;
 
-        //int viewHeight = locationData.bottom - locationData.top;
-        //int viewWidth = locationData.right - locationData.left;
+        //int viewHeight = locationData.height - locationData.top;
+        //int viewWidth = locationData.width - locationData.left;
         //
         //float heightDelete = winHeight / viewHeight;
         //float widthDelete = winWidth / viewWidth;

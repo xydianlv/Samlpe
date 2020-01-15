@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.test.image.matisse.AspectRatioFrameLayout;
 import com.example.wyyu.gitsamlpe.test.litho.multi.data.ItemBean;
+import com.example.wyyu.gitsamlpe.util.UIUtils;
 
 /**
  * Created by wyyu on 2020-01-13.
@@ -42,5 +43,17 @@ public class WaterfallItem extends RecyclerView.ViewHolder {
 
         itemText.setMaxLines(itemBean.index % 2 == 0 ? 2 : 4);
         itemText.setText(itemBean.content);
+    }
+
+    int[] loadImageLocation() {
+        if (itemImage == null) {
+            return null;
+        }
+        int[] location = new int[2];
+        itemImage.getLocationOnScreen(location);
+        return new int[] {
+            location[0], location[1] - UIUtils.getStatusHeightByDimen(itemView.getContext()),
+            itemImage.getWidth(), itemImage.getHeight()
+        };
     }
 }

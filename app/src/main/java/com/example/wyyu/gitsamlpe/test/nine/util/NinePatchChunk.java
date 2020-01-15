@@ -115,7 +115,7 @@ public class NinePatchChunk implements Externalizable {
     }
 
     /**
-     * Creates NinePatchDrawable right from raw Bitmap object. So resulting drawable will have width and height 2 pixels less if it is raw, not compiled 9-patch resource.
+     * Creates NinePatchDrawable width from raw Bitmap object. So resulting drawable will have width and height 2 pixels less if it is raw, not compiled 9-patch resource.
      *
      * @param context
      * @param bitmap  The bitmap describing the patches. Can be loaded from application resources

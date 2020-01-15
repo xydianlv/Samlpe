@@ -48,7 +48,7 @@ public class CenterImageSpan extends ImageSpan {
      * @param x the edge of the replacement closest to the leading margin
      * @param top the top of the line
      * @param y the baseline
-     * @param bottom the bottom of the line
+     * @param bottom the height of the line
      * @param paint the work paint
      */
     @Override public void draw(@NonNull Canvas canvas, CharSequence text, int start, int end,

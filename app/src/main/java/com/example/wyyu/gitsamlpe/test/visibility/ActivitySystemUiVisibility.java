@@ -68,11 +68,13 @@ public class ActivitySystemUiVisibility extends ToolbarActivity {
                 setAndOpen(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION, Build.VERSION_CODES.BASE);
             }
         });
-        listViewMain.addNewItem("SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                setAndOpen(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION, Build.VERSION_CODES.BASE);
-            }
-        });
+        listViewMain.addNewItem("SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION",
+            new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    setAndOpen(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION,
+                        Build.VERSION_CODES.BASE);
+                }
+            });
         listViewMain.addNewItem("SYSTEM_UI_FLAG_IMMERSIVE", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 setAndOpen(View.SYSTEM_UI_FLAG_IMMERSIVE, Build.VERSION_CODES.KITKAT);
@@ -91,6 +93,11 @@ public class ActivitySystemUiVisibility extends ToolbarActivity {
         listViewMain.addNewItem("SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 setAndOpen(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR, Build.VERSION_CODES.O);
+            }
+        });
+        listViewMain.addNewItem("RealFullScreenActivity", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                ActivityRealFullScreen.open(ActivitySystemUiVisibility.this);
             }
         });
         listViewMain.refreshList();

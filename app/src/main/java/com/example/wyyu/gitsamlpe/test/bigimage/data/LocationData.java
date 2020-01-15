@@ -22,6 +22,6 @@ public class LocationData implements Serializable {
     }
 
     @Override public String toString() {
-        return " bottom : " + bottom + " right : " + right + " left : " + left + " top : " + top;
+        return " height : " + bottom + " width : " + right + " left : " + left + " top : " + top;
     }
 }

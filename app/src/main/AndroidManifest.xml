@@ -19,8 +19,8 @@
   <!-- 悬浮窗显示权限 -->
   <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
   <!-- 日历权限 -->
-  <uses-permission android:name="android.permission.READ_CALENDAR" />
-  <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+  <uses-permission android:name="android.permission.READ_CALENDAR"/>
+  <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
 
   <application
       android:name=".framework.application.AppController"
@@ -339,6 +339,10 @@
         android:screenOrientation="portrait"
         />
     <activity
+        android:name=".test.visibility.ActivityRealFullScreen"
+        android:screenOrientation="portrait"
+        />
+    <activity
         android:name=".test.animation.ActivityBezier"
         android:screenOrientation="portrait"
         />
@@ -566,7 +570,22 @@
         android:name=".test.multi.waterfall.ActivityWaterfallList"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.image.preview.ActivityImagePreview"/>
+    <!--<activity-->
+        <!--android:name=".test.image.preview.ActivityImagePreview"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:theme="@style/ToolbarActivityTheme"-->
+        <!--/>-->
+    <activity
+        android:name=".test.image.preview.ActivityImagePreview"
+        android:configChanges="keyboardHidden|orientation|screenSize|locale"
+        android:screenOrientation="portrait"
+        android:theme="@style/MediaFullScreenApp"
+        >
+      <meta-data
+          android:name="android.notch_support"
+          android:value="true"
+          />
+    </activity>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

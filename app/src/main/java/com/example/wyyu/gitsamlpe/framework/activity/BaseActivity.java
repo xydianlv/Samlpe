@@ -11,7 +11,6 @@ import com.example.wyyu.gitsamlpe.framework.message.MsgSender;
 import com.example.wyyu.gitsamlpe.framework.message.MsgType;
 import com.example.wyyu.gitsamlpe.framework.message.MsgCallBack;
 import com.example.wyyu.gitsamlpe.framework.message.MsgReceiver;
-import com.example.wyyu.gitsamlpe.framework.volume.VolumeObservable;
 import com.example.wyyu.gitsamlpe.util.download.DownloadObservable;
 import java.util.HashMap;
 
