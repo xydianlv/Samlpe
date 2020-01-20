@@ -3,7 +3,6 @@ package com.example.wyyu.gitsamlpe.test.text;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
@@ -34,6 +33,7 @@ public class ActivityTextShowTest extends ToolbarActivity {
             .addItem("MultiTextShow", v -> ActivityMultiText.open(ActivityTextShowTest.this))
             .addItem("AnimTextShow", v -> ActivityAnimText.open(ActivityTextShowTest.this))
             .addItem("TextFontShow", v -> ActivityTextFont.open(ActivityTextShowTest.this))
+            .addItem("TextShadowShow", v -> ActivityTextShadow.open(ActivityTextShowTest.this))
             .refreshList();
     }
 }

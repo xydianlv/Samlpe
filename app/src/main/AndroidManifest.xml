@@ -590,6 +590,10 @@
         android:name=".test.pager.complex.ActivityComplexPage"
         android:screenOrientation="portrait"
         />
+    <activity
+        android:name=".test.text.ActivityTextShadow"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/ct_1"
+      android:text="@string/typeface_test"
+      android:shadowColor="@color/color_f16d7a"
+      android:shadowDy="0"
+      android:shadowDx="8"
+      android:shadowRadius="1"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/ct_1"
+      android:text="@string/typeface_test"
+      android:shadowColor="@color/color_f16d7a"
+      android:shadowDy="8"
+      android:shadowDx="0"
+      android:shadowRadius="1"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/ct_1"
+      android:text="@string/typeface_test"
+      android:shadowColor="@color/color_f16d7a"
+      android:shadowDy="8"
+      android:shadowDx="0"
+      android:shadowRadius="0.1"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/ct_1"
+      android:text="@string/typeface_test"
+      android:shadowColor="@color/color_f16d7a"
+      android:shadowDy="8"
+      android:shadowDx="0"
+      android:shadowRadius="10"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/ct_1"
+      android:text="@string/typeface_test"
+      android:shadowColor="@color/color_f16d7a"
+      android:shadowDy="0"
+      android:shadowDx="0"
+      android:shadowRadius="10"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/ct_1"
+      android:text="@string/typeface_test"
+      android:textStyle="bold"
+      android:shadowColor="@color/color_f16d7a"
+      android:shadowDy="0"
+      android:shadowDx="0"
+      android:shadowRadius="10"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/black_40"
+      android:text="@string/typeface_test"
+      android:textStyle="bold"
+      android:shadowColor="@color/color_f16d7a"
+      android:shadowDy="0"
+      android:shadowDx="0"
+      android:shadowRadius="4"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="18.0dp"
+      android:textColor="@color/color_white"
+      android:text="@string/typeface_test"
+      android:textStyle="bold"
+      android:shadowColor="@color/black_40"
+      android:shadowDy="0"
+      android:shadowDx="0"
+      android:shadowRadius="4"
+      android:padding="@dimen/padding_14"
+      tools:ignore="SpUsage"
+      />
+
+</LinearLayout>
