@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import com.example.wyyu.gitsamlpe.test.animation.ActivityBezierList;
+import com.example.wyyu.gitsamlpe.test.animation.ActivityLinearAnim;
 import com.example.wyyu.gitsamlpe.test.animation.ActivitySpringAnimation;
 import com.example.wyyu.gitsamlpe.test.annotion.ActivityAnnotionTest;
 import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
@@ -205,8 +206,8 @@ class UIShowManager {
         ActivityLiveTest.open(context);
     }
 
-    static void startSpringAnimation(Context context) {
-        ActivitySpringAnimation.open(context);
+    static void startLinearAnimation(Context context) {
+        ActivityLinearAnim.open(context);
     }
 
     static void startPercentTest(Context context) {
@@ -277,7 +278,7 @@ class UIShowManager {
         ActivitySvgAMain.open(activity);
     }
 
-    static void startPagerTransformerShow(Activity activity){
+    static void startPagerTransformerShow(Activity activity) {
         ActivityPagerAnim.open(activity);
     }
 

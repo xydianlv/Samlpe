@@ -2,6 +2,7 @@ package com.example.wyyu.gitsamlpe.test.lottie;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
@@ -9,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import butterknife.BindView;
 import com.airbnb.lottie.LottieAnimationView;
@@ -44,6 +46,7 @@ public class ActivityLottieTest extends ToolbarActivity {
     @BindView(R.id.lottie_test_a) LottieAnimationView lottieA;
     @BindView(R.id.lottie_test_b) LottieAnimationView lottieB;
     @BindView(R.id.lottie_test_c) LottieAnimationView lottieC;
+    @BindView(R.id.lottie_anim_rotation) View rotationView;
 
     private boolean lottieAEnd;
     private boolean lottieBEnd;
@@ -64,6 +67,7 @@ public class ActivityLottieTest extends ToolbarActivity {
         initAnim();
         initClick();
         initClickWebp();
+        initRotateAnim();
     }
 
     private void initAnim() {
@@ -119,39 +123,33 @@ public class ActivityLottieTest extends ToolbarActivity {
     }
 
     private void initClick() {
-        lottieA.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                if (lottieAEnd) {
-                    lottieA.setProgress(0.0f);
-                    lottieAEnd = false;
-                } else {
-                    lottieA.playAnimation();
-                    lottieAEnd = true;
-                }
+        lottieA.setOnClickListener(v -> {
+            if (lottieAEnd) {
+                lottieA.setProgress(0.0f);
+                lottieAEnd = false;
+            } else {
+                lottieA.playAnimation();
+                lottieAEnd = true;
             }
         });
-        lottieB.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                if (lottieBEnd) {
-                    lottieB.setSpeed(-1.0f);
-                    lottieB.playAnimation();
-                    lottieBEnd = false;
-                } else {
-                    lottieB.setSpeed(1.0f);
-                    lottieB.playAnimation();
-                    lottieBEnd = true;
-                }
+        lottieB.setOnClickListener(v -> {
+            if (lottieBEnd) {
+                lottieB.setSpeed(-1.0f);
+                lottieB.playAnimation();
+                lottieBEnd = false;
+            } else {
+                lottieB.setSpeed(1.0f);
+                lottieB.playAnimation();
+                lottieBEnd = true;
             }
         });
-        lottieC.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                if (lottieCEnd) {
-                    lottieC.playAnimation();
-                    lottieCEnd = false;
-                } else {
-                    lottieC.cancelAnimation();
-                    lottieCEnd = true;
-                }
+        lottieC.setOnClickListener(v -> {
+            if (lottieCEnd) {
+                lottieC.playAnimation();
+                lottieCEnd = false;
+            } else {
+                lottieC.cancelAnimation();
+                lottieCEnd = true;
             }
         });
     }
@@ -179,6 +177,27 @@ public class ActivityLottieTest extends ToolbarActivity {
                 webpAnim.stop();
             } else {
                 webpAnim.start();
+            }
+        });
+    }
+
+    private void initRotateAnim() {
+        ObjectAnimator animShow = ObjectAnimator.ofFloat(rotationView, "rotationX", 0, 180);
+        animShow.setInterpolator(new LinearInterpolator());
+        animShow.setDuration(600);
+        ObjectAnimator animHide = ObjectAnimator.ofFloat(rotationView, "rotationX", 180, 360);
+        animHide.setInterpolator(new LinearInterpolator());
+        animHide.setDuration(600);
+
+        int[] animValue = new int[] { 0 };
+
+        rotationView.setOnClickListener(v -> {
+            if (animValue[0] == 0) {
+                animValue[0] = 1;
+                animShow.start();
+            } else {
+                animValue[0] = 0;
+                animHide.start();
             }
         });
     }

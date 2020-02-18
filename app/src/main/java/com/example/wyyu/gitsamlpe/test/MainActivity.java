@@ -240,9 +240,9 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("SpringAnim", new View.OnClickListener() {
+        listViewMain.addNewItem("LinearAnim", new View.OnClickListener() {
             @Override public void onClick(View v) {
-                UIShowManager.startSpringAnimation(MainActivity.this);
+                UIShowManager.startLinearAnimation(MainActivity.this);
             }
         });
 

@@ -594,6 +594,8 @@
         android:name=".test.text.ActivityTextShadow"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.animation.ActivityLinearAnim"/>
+    <activity android:name=".test.animation.ActivityAnimWrapHeight"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

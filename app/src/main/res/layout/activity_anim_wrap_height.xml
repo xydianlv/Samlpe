@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="100.0dp"
+      />
+
+  <TextView
+      android:id="@+id/anim_wh_view"
+      android:layout_width="240.0dp"
+      android:layout_height="60.0dp"
+      android:gravity="center"
+      android:text="@string/adapter_delegate"
+      android:textSize="15.0dp"
+      android:textColor="@color/color_white"
+      android:background="@color/color_e27386"
+      tools:ignore="SpUsage"
+      />
+
+  <View
+      android:id="@+id/anim_wh_"
+      android:layout_width="0.0dp"
+      android:layout_height="100.0dp"
+      />
+
+  <TextView
+      android:id="@+id/anim_wh_btn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingLeft="18.0dp"
+      android:paddingRight="18.0dp"
+      android:paddingTop="8.0dp"
+      android:paddingBottom="8.0dp"
+      android:background="@color/color_e27386"
+      android:text="@string/start"
+      android:textColor="@color/color_white"
+      />
+
+</LinearLayout>
