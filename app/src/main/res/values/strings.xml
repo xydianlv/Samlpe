@@ -161,4 +161,6 @@
     <string name="svg_a_same_svg">SameAnimSvg</string>
     <string name="svg_a_same_lottie">SameAnimLottie</string>
 
+    <string name="waterfall_header">Header</string>
+
 </resources>

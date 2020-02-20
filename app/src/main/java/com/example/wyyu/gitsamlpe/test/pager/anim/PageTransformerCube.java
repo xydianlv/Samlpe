@@ -15,7 +15,8 @@ public class PageTransformerCube extends PageTransformerBase {
 
         page.setPivotX(position < 0.0f ? page.getWidth() : 0.0f);
         page.setPivotY(page.getHeight() * 0.5f);
-        page.setRotationY(40.0f * position);
+        // 转角的角度，值越小，角度越大
+        page.setRotationY(20.0f * position);
     }
 
     @Override public boolean isPagingEnabled() {
