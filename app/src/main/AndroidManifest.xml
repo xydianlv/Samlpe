@@ -596,6 +596,7 @@
         />
     <activity android:name=".test.animation.ActivityLinearAnim"/>
     <activity android:name=".test.animation.ActivityAnimWrapHeight"/>
+    <activity android:name=".test.animation.click.ActivityBezierDoubleClick"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

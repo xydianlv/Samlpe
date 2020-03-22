@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.test.animation.click.ActivityBezierDoubleClick;
 
 /**
  * Created by wyyu on 2019-11-27.
@@ -31,5 +32,8 @@ public class ActivityBezierList extends ToolbarActivity {
 
         findViewById(R.id.bezier_list_anim).setOnClickListener(
             v -> startActivity(new Intent(ActivityBezierList.this, ActivityBezierAnim.class)));
+
+        findViewById(R.id.bezier_list_double_click).setOnClickListener(v -> startActivity(
+            new Intent(ActivityBezierList.this, ActivityBezierDoubleClick.class)));
     }
 }
