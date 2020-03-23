@@ -20,13 +20,14 @@ class AnimValue {
     private static final int[] ARRAY_MESS = new int[] { 0, 1, 2, 3, 4, 5, 6 };
     // 动画主图标
     private static final int MAIN_IMAGE = R.mipmap.anim_click_img;
+
     // 动画时长
-    private static final long DURATION = 240;
+    static final long DURATION = 240;
 
     // 动画元素数据
     ClickValue[] valueArray;
     // 剩余时间
-    private long leftTime;
+    long leftTime;
 
     AnimValue(@NonNull Context context, float left, float top) {
         leftTime = DURATION;

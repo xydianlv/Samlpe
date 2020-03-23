@@ -111,6 +111,9 @@ public class DoubleClickView extends View {
             if (value == null || value.valueArray == null || value.valueArray.length <= 0) {
                 continue;
             }
+            if (value.leftTime == AnimValue.DURATION) {
+                continue;
+            }
             for (ClickValue clickValue : value.valueArray) {
                 if (clickValue == null) {
                     continue;
