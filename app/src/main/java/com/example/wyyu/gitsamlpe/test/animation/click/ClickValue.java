@@ -45,10 +45,10 @@ class ClickValue {
     ClickValue(@NonNull Context context, int resId, float left, float top, int index) {
         this.img = BitmapFactory.decodeResource(context.getResources(), resId);
         this.left = left - img.getWidth() * 1.0f / 2;
-        this.top = top - img.getHeight() * 1.0f / 2;
+        this.top = top - img.getHeight() * 1.0f / 2 - DIVIDE_ICON_VALUE;
 
         this.matrix = new Matrix();
-        this.paint = new Paint();
+        this.paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         this.paint.setAlpha(FULL_ALPHA);
 
         int randomInt = new Random().nextInt(3);
@@ -79,12 +79,14 @@ class ClickValue {
 
     private void initIconValue(int index) {
         int funValue = index % 2 == 0 ? 1 : -1;
-        int divideWidth = DIVIDE_ICON_VALUE * index * funValue;
-        int divideHeight = DIVIDE_ICON_VALUE * index + DIVIDE_ICON_HEIGHT;
+        int random = new Random().nextInt(DIVIDE_ICON_VALUE);
+        int divideWidth = (DIVIDE_ICON_VALUE + random) * index * funValue;
+        int divideHeight = DIVIDE_ICON_VALUE * index + DIVIDE_ICON_HEIGHT + random;
 
-        pointS = new Point((int) left, (int) top);
-        pointE = new Point(pointS.x + funValue * DIVIDE_ICON_DATA * index, pointS.y - divideHeight);
-        pointM = new Point(pointS.x + divideWidth, pointS.y - divideHeight / 2);
+        pointS = new Point((int) left + (random - DIVIDE_ICON_DATA) * funValue,
+            (int) top + UIUtils.dpToPx(12.0f));
+        pointE = new Point((int) left + funValue * DIVIDE_ICON_DATA, pointS.y - divideHeight);
+        pointM = new Point((int) left + divideWidth, pointS.y - divideHeight / 2);
     }
 
     /**
@@ -112,24 +114,28 @@ class ClickValue {
         if (matrix == null) {
             return;
         }
-        if (t <= 0.2) {
-            paint.setAlpha((int) (FULL_ALPHA * t * 4));
+        if (t <= 0.1f) {
+            int alpha = (int) (FULL_ALPHA * t * 20);
+            paint.setAlpha(alpha < FULL_ALPHA ? alpha : FULL_ALPHA);
             matrix.setTranslate(left, top);
-            matrix.preScale(1.0f + (0.2f - t) * 5, 1.0f + (0.2f - t) * 5, img.getWidth() * 1.0f / 2,
+            matrix.preScale(1.0f + (0.1f - t) * 10, 1.0f + (0.1f - t) * 10,
+                img.getWidth() * 1.0f / 2, img.getHeight() * 1.0f / 2);
+        } else if (t <= 0.2f) {
+            paint.setAlpha(FULL_ALPHA);
+            matrix.setTranslate(left, top);
+            matrix.preScale(0.5f + (t - 0.1f) * 5, 0.5f + (t - 0.1f) * 5, img.getWidth() * 1.0f / 2,
                 img.getHeight() * 1.0f / 2);
-        } else if (t >= 0.8) {
-            paint.setAlpha((int) (FULL_ALPHA * m * 2));
+        } else if (t >= 0.7) {
+            paint.setAlpha((int) (FULL_ALPHA * m * 3.34));
             matrix.setTranslate(left, top);
-            matrix.preScale(1.0f + (0.2f - m) * 8, 1.0f + (0.2f - m) * 8, img.getWidth() * 1.0f / 2,
+            matrix.preScale(1.0f + (0.3f - m) * 5, 1.0f + (0.3f - m) * 5, img.getWidth() * 1.0f / 2,
                 img.getHeight() * 1.0f / 2);
         } else {
             paint.setAlpha(FULL_ALPHA);
             matrix.setTranslate(left, top);
             matrix.preScale(1.0f, 1.0f);
         }
-        if (rotate != 0) {
-            matrix.preRotate(rotate);
-        }
+        matrix.preRotate(rotate);
     }
 
     /**
@@ -143,12 +149,16 @@ class ClickValue {
         top = m * m * pointS.y + 2 * t * m * pointM.y + t * t * pointE.y;
 
         matrix.setTranslate(left, top);
-        if (m <= 0.6) {
-            matrix.preScale(0.6f, 0.6f);
-            paint.setAlpha((int) (FULL_ALPHA * m));
-        } else {
-            matrix.preScale(m, m);
+        if (m <= 0.4) {
+            float scale = m + 0.1f < 0.4f ? 0.4f : m + 0.1f;
+            matrix.preScale(scale, scale);
+            paint.setAlpha((int) (FULL_ALPHA * m * 2.5));
+        } else if (m <= 0.9f) {
+            matrix.preScale(m + 0.1f, m + 0.1f);
             paint.setAlpha(FULL_ALPHA);
+        } else {
+            matrix.preScale(1.0f, 1.0f);
+            paint.setAlpha(0);
         }
     }
 }

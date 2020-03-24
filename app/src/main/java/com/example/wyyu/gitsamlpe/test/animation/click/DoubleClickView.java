@@ -32,6 +32,7 @@ public class DoubleClickView extends View {
         initClickView();
     }
 
+    private static final long DOUBLE_CLICK_DIVIDE_TIME = 400;
     private static final int MSG_DEFAULT = 0;
     static final int TIME_DIVIDE = 6;
 
@@ -40,6 +41,9 @@ public class DoubleClickView extends View {
     private WeakHandler handler;
 
     private GestureDetector detector;
+
+    private boolean onDoubleAnim;
+    private long lastTouchTime;
 
     private void initClickView() {
         valueList = new ArrayList<>();
@@ -70,34 +74,35 @@ public class DoubleClickView extends View {
                 valueList.removeAll(funList);
             }
             invalidate();
-            if (valueList != null && !valueList.isEmpty()) {
-                handler.sendEmptyMessageDelayed(MSG_DEFAULT, TIME_DIVIDE);
-            }
+            handler.sendEmptyMessageDelayed(MSG_DEFAULT, TIME_DIVIDE);
         });
     }
 
     private void initDetector() {
         detector = new GestureDetector(getContext(), new GestureDetector.SimpleOnGestureListener() {
-            public boolean onDown(MotionEvent e) {
+
+            @Override public boolean onDown(MotionEvent e) {
+                long timeDivide = System.currentTimeMillis() - lastTouchTime;
+                lastTouchTime = System.currentTimeMillis();
+                if (timeDivide < DOUBLE_CLICK_DIVIDE_TIME && onDoubleAnim) {
+                    if (valueList == null) {
+                        valueList = new ArrayList<>();
+                    }
+                    if (handler == null) {
+                        initHandler();
+                    }
+                    valueList.add(new AnimValue(getContext(), e.getX(), e.getY()));
+                    handler.removeMessages(MSG_DEFAULT);
+
+                    handler.sendEmptyMessage(MSG_DEFAULT);
+                    return false;
+                }
                 return true;
             }
 
-            public boolean onDoubleTap(MotionEvent e) {
-                if (valueList == null) {
-                    valueList = new ArrayList<>();
-                }
-                if (handler == null) {
-                    initHandler();
-                }
-                valueList.add(new AnimValue(getContext(), e.getX(), e.getY()));
-                handler.removeMessages(MSG_DEFAULT);
-
-                handler.sendEmptyMessage(MSG_DEFAULT);
+            @Override public boolean onDoubleTap(MotionEvent e) {
+                onDoubleAnim = true;
                 return true;
-            }
-
-            public boolean onDoubleTapEvent(MotionEvent e) {
-                return false;
             }
         });
     }
@@ -114,7 +119,8 @@ public class DoubleClickView extends View {
             if (value.leftTime == AnimValue.DURATION) {
                 continue;
             }
-            for (ClickValue clickValue : value.valueArray) {
+            for (int index = value.valueArray.length - 1; index >= 0; index--) {
+                ClickValue clickValue = value.valueArray[index];
                 if (clickValue == null) {
                     continue;
                 }

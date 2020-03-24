@@ -22,7 +22,7 @@ class AnimValue {
     private static final int MAIN_IMAGE = R.mipmap.anim_click_img;
 
     // 动画时长
-    static final long DURATION = 240;
+    static final long DURATION = 300;
 
     // 动画元素数据
     ClickValue[] valueArray;
