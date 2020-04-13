@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import com.example.wyyu.gitsamlpe.test.animation.ActivityBezierList;
 import com.example.wyyu.gitsamlpe.test.animation.ActivityLinearAnim;
-import com.example.wyyu.gitsamlpe.test.animation.ActivitySpringAnimation;
 import com.example.wyyu.gitsamlpe.test.annotion.ActivityAnnotionTest;
 import com.example.wyyu.gitsamlpe.test.audio.player.ActivityAudioList;
 import com.example.wyyu.gitsamlpe.test.audio.recorder.ActivityAudioRecorder;
@@ -14,11 +13,10 @@ import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
 import com.example.wyyu.gitsamlpe.test.bubbling.ActivityBubbling;
 import com.example.wyyu.gitsamlpe.test.calendar.ActivityCalendarTest;
 import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasDrawShow;
-import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasFigure;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCard;
 import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
-import com.example.wyyu.gitsamlpe.test.dialog.ActivityFullDialog;
+import com.example.wyyu.gitsamlpe.test.dialog.ActivityDialogShowTest;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.download.ActivityDownloadTest;
 import com.example.wyyu.gitsamlpe.test.dynamic.ActivityDynamicSize;
@@ -195,7 +193,7 @@ class UIShowManager {
     }
 
     static void dialogShowTest(Context context) {
-        ActivityFullDialog.open(context);
+        ActivityDialogShowTest.open(context);
     }
 
     static void frescoShowTest(Context context) {

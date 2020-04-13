@@ -1,8 +1,8 @@
 package com.example.wyyu.gitsamlpe.framework.dialog;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -10,34 +10,34 @@ import android.view.WindowManager;
 import com.example.wyyu.gitsamlpe.R;
 
 /**
- * Created by wyyu on 2018/8/25.
+ * Created by wyyu on 2020-04-13.
  **/
 
-public class FullScreenDialogTest {
+public class FullSoftDialog {
 
-    private AlertDialog funScreenDialog;
+    private Dialog dialog;
 
-    private FullScreenDialogTest(Context context) {
-        funScreenDialog = new AlertDialog.Builder(context, R.style.SupportSoftDialog).create();
+    private FullSoftDialog(Context context) {
+        dialog = new Dialog(context, R.style.SupportSoftDialog);
 
-        Window window = funScreenDialog.getWindow();
+        Window window = dialog.getWindow();
         assert window != null;
         window.setBackgroundDrawable(new ColorDrawable(0));
     }
 
     private void show(View contentView) {
-        if (funScreenDialog.isShowing()) {
-            funScreenDialog.dismiss();
+        if (dialog.isShowing()) {
+            dialog.dismiss();
         }
         if (contentView == null || contentView.getContext() == null) {
             return;
         }
 
-        funScreenDialog.show();
+        dialog.show();
 
-        funScreenDialog.setContentView(contentView);
+        dialog.setContentView(contentView);
 
-        Window window = funScreenDialog.getWindow();
+        Window window = dialog.getWindow();
         assert window != null;
 
         WindowManager.LayoutParams layoutParams = window.getAttributes();
@@ -49,23 +49,23 @@ public class FullScreenDialogTest {
     }
 
     private void dismiss() {
-        funScreenDialog.dismiss();
+        dialog.dismiss();
     }
 
     public static class Builder {
 
-        private FullScreenDialogTest funScreenDialog;
+        private FullSoftDialog dialog;
 
         public Builder(Context context) {
-            funScreenDialog = new FullScreenDialogTest(context);
+            dialog = new FullSoftDialog(context);
         }
 
         public void show(View contentView) {
-            funScreenDialog.show(contentView);
+            dialog.show(contentView);
         }
 
         public void hide() {
-            funScreenDialog.dismiss();
+            dialog.dismiss();
         }
     }
 }

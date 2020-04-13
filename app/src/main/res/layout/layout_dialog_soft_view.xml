@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+  <View
+      android:id="@+id/dialog_soft_fun"
+      android:layout_width="match_parent"
+      android:layout_height="0.0dp"
+      android:layout_weight="1"
+      />
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/test"
+      android:textSize="@dimen/text_15"
+      android:textColor="@color/ct_1"
+      android:paddingLeft="14.0dp"
+      android:paddingRight="14.0dp"
+      android:paddingTop="12.0dp"
+      android:paddingBottom="12.0dp"
+      android:background="@color/color_white"
+      tools:ignore="SpUsage"
+      />
+
+  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+      android:id="@+id/dialog_soft_edit_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingLeft="@dimen/padding_14"
+      android:paddingRight="@dimen/padding_14"
+      android:paddingTop="@dimen/padding_12"
+      android:paddingBottom="@dimen/padding_12"
+      android:background="@color/color_white"
+      >
+
+    <EditText
+        android:id="@+id/dialog_soft_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_15"
+        android:textColor="@color/ct_1"
+        android:hint="@string/test"
+        android:textColorHint="@color/ct_3"
+        android:background="@color/empty"
+        tools:ignore="Autofill,SpUsage,TextFields"
+        />
+
+  </com.example.wyyu.gitsamlpe.framework.window.PressListenerView>
+
+</LinearLayout>

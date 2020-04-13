@@ -253,4 +253,14 @@
         <item name="android:layout_marginTop">48.0dp</item>
     </style>
 
+    <style name="SupportSoftDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@android:color/transparent</item><!-- 边框 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item><!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 自己想要的背景 -->
+        <item name="android:backgroundDimEnabled">true</item><!-- 模糊 -->
+        <item name="android:windowSoftInputMode">stateAlwaysVisible</item><!--显示软件盘-->
+    </style>
+
 </resources>

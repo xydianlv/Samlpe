@@ -276,7 +276,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.dialog.ActivityFullDialog"
+        android:name=".test.dialog.ActivityDialogShowTest"
         android:screenOrientation="portrait"
         />
     <activity
