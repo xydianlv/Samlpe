@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:background="@color/color_white"
+    >
+
+  <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/anim_webp_auto"
+      android:layout_width="54.0dp"
+      android:layout_height="72.0dp"
+      android:scaleType="fitCenter"
+      android:layout_marginTop="80.0dp"
+      />
+
+  <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/anim_webp_click"
+      android:layout_width="108.0dp"
+      android:layout_height="144.0dp"
+      android:scaleType="fitCenter"
+      android:layout_marginTop="60.0dp"
+      app:actualImageScaleType="fitCenter"
+      />
+
+</LinearLayout>

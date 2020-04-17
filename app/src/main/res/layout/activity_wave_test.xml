@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_white"
+    >
+
+  <View
+      android:layout_width="0.0dp"
+      android:layout_height="100.0dp"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.anim.wave.RecordAnimView
+      android:id="@+id/wave_test_anim"
+      android:layout_marginTop="100.0dp"
+      android:layout_width="match_parent"
+      android:layout_height="80.0dp"
+      />
+
+  <Button
+      android:id="@+id/wave_test_start"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/start_t"
+      android:layout_marginTop="20.0dp"
+      />
+
+  <Button
+      android:id="@+id/wave_test_stop"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/end_t"
+      android:layout_marginTop="20.0dp"
+      />
+
+</LinearLayout>

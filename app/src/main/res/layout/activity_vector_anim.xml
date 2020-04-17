@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_white"
+    >
+
+  <FrameLayout
+      android:id="@+id/vector_anim_click"
+      android:layout_width="100.0dp"
+      android:layout_height="100.0dp"
+      android:layout_marginTop="60.0dp"
+      >
+
+    <View
+        android:id="@+id/vector_anim_test_bottom"
+        android:layout_width="64.0dp"
+        android:layout_height="64.0dp"
+        android:layout_gravity="center"
+        android:background="@color/color_999ead"
+        />
+
+    <View
+        android:id="@+id/vector_anim_test_top"
+        android:layout_width="64.0dp"
+        android:layout_height="64.0dp"
+        android:layout_gravity="center"
+        android:background="@color/color_ffcdd2"
+        />
+
+  </FrameLayout>
+
+  <View
+      android:id="@+id/vector_anim_select_test"
+      android:layout_width="64.0dp"
+      android:layout_height="64.0dp"
+      android:layout_marginTop="40.0dp"
+      android:background="@drawable/selector_click_view"
+      />
+
+  <ImageView
+      android:id="@+id/vector_anim_select_img"
+      android:layout_width="64.0dp"
+      android:layout_height="64.0dp"
+      android:layout_marginTop="40.0dp"
+      android:contentDescription="@string/image"
+      android:background="@drawable/selector_click_img"
+      />
+
+  <View
+      android:id="@+id/vector_anim_select_vector"
+      android:layout_width="64.0dp"
+      android:layout_height="64.0dp"
+      android:layout_marginTop="40.0dp"
+      android:contentDescription="@string/image"
+      android:background="@drawable/selector_click_test"
+      />
+
+  <View
+      android:id="@+id/vector_anim_select_play"
+      android:layout_width="64.0dp"
+      android:layout_height="64.0dp"
+      android:layout_marginTop="40.0dp"
+      android:contentDescription="@string/image"
+      android:background="@drawable/selector_play_vector"
+      />
+
+</LinearLayout>

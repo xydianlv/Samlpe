@@ -15,7 +15,7 @@ import android.text.TextUtils;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.application.AppInstances;
-import com.example.wyyu.gitsamlpe.test.image.shot.BitmapUtil;
+import com.example.wyyu.gitsamlpe.test.function.shot.BitmapUtil;
 import com.example.wyyu.gitsamlpe.util.UIUtils;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 

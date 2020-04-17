@@ -45,11 +45,11 @@
     </activity>
 
     <activity
-        android:name=".test.lock.gesture.ActivityGestureLockTest"
+        android:name=".test.function.gesture.ActivityGestureLockTest"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.lock.finger.ActivityFingerLockTest"
+        android:name=".test.function.finger.ActivityFingerLockTest"
         android:screenOrientation="portrait"
         />
     <activity
@@ -58,7 +58,7 @@
         android:windowSoftInputMode="stateVisible|adjustNothing"
         />
     <activity
-        android:name=".test.location.ActivityLocation"
+        android:name=".test.function.location.ActivityLocation"
         android:screenOrientation="portrait"
         />
     <activity
@@ -215,7 +215,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.image.shot.ActivityShotScreen"
+        android:name=".test.function.shot.ActivityShotScreen"
         android:screenOrientation="portrait"
         />
     <activity
@@ -256,11 +256,11 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.list.ActivityExpandableListView"
+        android:name=".test.function.expandable.ActivityExpandableListView"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.dynamic.ActivityDynamicSize"
+        android:name=".test.function.dynamic.ActivityDynamicSize"
         android:screenOrientation="portrait"
         />
     <activity
@@ -315,11 +315,11 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.percent.ActivityPercentTest"
+        android:name=".test.function.percent.ActivityPercentTest"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.touch.ActivityGestureDetectorTest"
+        android:name=".test.function.detector.ActivityGestureDetector"
         android:screenOrientation="portrait"
         />
     <activity
@@ -367,7 +367,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.nine.ActivityNinePatchTest"
+        android:name=".test.function.nine.ActivityNinePatchTest"
         android:screenOrientation="portrait"
         />
     <activity
@@ -387,11 +387,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.lottie.ActivityLottieTest"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.download.ActivityDownloadTest"
+        android:name=".test.function.download.ActivityDownloadTest"
         android:screenOrientation="portrait"
         />
     <activity
@@ -594,9 +590,34 @@
         android:name=".test.text.ActivityTextShadow"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.animation.ActivityLinearAnim"/>
-    <activity android:name=".test.animation.ActivityAnimWrapHeight"/>
-    <activity android:name=".test.animation.click.ActivityBezierDoubleClick"/>
+    <activity
+        android:name=".test.animation.ActivityLinearAnim"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.animation.ActivityAnimWrapHeight"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.animation.click.ActivityBezierDoubleClick"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.function.ActivityFunctionList"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.audio.ActivityAudioTest"/>
+    <activity android:name=".test.card.ActivityCardTest"/>
+    <activity android:name=".test.card.custom.ActivityCardCustom"/>
+    <activity android:name=".test.card.system.ActivityCardSystem"/>
+    <activity android:name=".test.anim.ActivityAnimTest"/>
+    <activity android:name=".test.anim.wave.ActivityAnimWave"/>
+    <activity android:name=".test.anim.vector.ActivityAnimVector"/>
+    <activity android:name=".test.anim.Frame.ActivityAnimFrame"/>
+    <activity android:name=".test.anim.lottie.ActivityAnimLottie"/>
+    <activity android:name=".test.anim.webp.ActivityAnimWebp"/>
+    <activity android:name=".test.anim.multi.ActivityAnimMulti"/>
+    <activity android:name=".test.anim.solid.ActivityAnimSolid"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

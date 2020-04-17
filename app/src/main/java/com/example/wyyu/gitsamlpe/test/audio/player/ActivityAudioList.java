@@ -1,6 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.audio.player;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +16,10 @@ import java.util.List;
  **/
 
 public class ActivityAudioList extends ToolbarActivity {
+
+    public static void open(Context context) {
+        context.startActivity(new Intent(context, ActivityAudioList.class));
+    }
 
     @BindView(R.id.audio_list) RecyclerView recyclerView;
 

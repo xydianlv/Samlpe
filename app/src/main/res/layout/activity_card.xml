@@ -36,27 +36,6 @@
 
   </com.example.wyyu.gitsamlpe.test.card.CardView>
 
-  <com.example.wyyu.gitsamlpe.test.card.RecordAnimView
-      android:id="@+id/animation_view"
-      android:layout_marginTop="100.0dp"
-      android:layout_width="match_parent"
-      android:layout_height="80.0dp"
-      />
-
-  <Button
-      android:id="@+id/bt_start"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/start_t"
-      />
-
-  <Button
-      android:id="@+id/bt_stop"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/end_t"
-      />
-
   <Button
       android:id="@+id/bt_request"
       android:layout_width="wrap_content"

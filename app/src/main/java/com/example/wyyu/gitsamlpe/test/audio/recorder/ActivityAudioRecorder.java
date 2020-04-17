@@ -1,6 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.audio.recorder;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +25,10 @@ import rx.schedulers.Schedulers;
  **/
 
 public class ActivityAudioRecorder extends AppCompatActivity {
+
+    public static void open(Context context) {
+        context.startActivity(new Intent(context, ActivityAudioRecorder.class));
+    }
 
     private static final int LIMITATION_SECONDS = 30;
     private AudioRecorder audioRecorder;

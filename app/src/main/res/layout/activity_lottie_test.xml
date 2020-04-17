@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -10,101 +9,5 @@
     android:fitsSystemWindows="true"
     >
 
-  <include
-      layout="@layout/common_toolbar"
-      />
-
-  <View
-      android:layout_height="12.0dp"
-      android:layout_width="0.0dp"
-      />
-
-  <com.airbnb.lottie.LottieAnimationView
-      android:id="@+id/lottie_test_a"
-      android:layout_width="54.0dp"
-      android:layout_height="72.0dp"
-      android:scaleType="fitCenter"
-      app:lottie_loop="false"
-      app:lottie_autoPlay="false"
-      app:lottie_enableMergePathsForKitKatAndAbove="true"
-      />
-
-  <View
-      android:layout_height="24.0dp"
-      android:layout_width="0.0dp"
-      />
-
-  <com.airbnb.lottie.LottieAnimationView
-      android:id="@+id/lottie_test_b"
-      android:layout_width="54.0dp"
-      android:layout_height="72.0dp"
-      android:scaleType="fitCenter"
-      app:lottie_loop="false"
-      app:lottie_autoPlay="false"
-      app:lottie_enableMergePathsForKitKatAndAbove="true"
-      />
-
-  <View
-      android:layout_height="24.0dp"
-      android:layout_width="0.0dp"
-      />
-
-  <com.airbnb.lottie.LottieAnimationView
-      android:id="@+id/lottie_test_c"
-      android:layout_width="54.0dp"
-      android:layout_height="72.0dp"
-      android:scaleType="fitCenter"
-      app:lottie_loop="false"
-      app:lottie_autoPlay="false"
-      app:lottie_enableMergePathsForKitKatAndAbove="true"
-      />
-
-  <View
-      android:layout_height="24.0dp"
-      android:layout_width="0.0dp"
-      />
-
-  <com.facebook.drawee.view.SimpleDraweeView
-      android:id="@+id/lottie_test_webp"
-      android:layout_width="54.0dp"
-      android:layout_height="72.0dp"
-      android:scaleType="fitCenter"
-      />
-
-  <View
-      android:layout_height="24.0dp"
-      android:layout_width="0.0dp"
-      />
-
-  <com.facebook.drawee.view.SimpleDraweeView
-      android:id="@+id/lottie_click_webp"
-      android:layout_width="54.0dp"
-      android:layout_height="72.0dp"
-      android:scaleType="fitCenter"
-      app:actualImageScaleType="fitCenter"
-      />
-
-  <View
-      android:layout_height="24.0dp"
-      android:layout_width="0.0dp"
-      />
-
-  <com.example.wyyu.gitsamlpe.test.lottie.TestAvatarView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      />
-
-  <View
-      android:layout_height="24.0dp"
-      android:layout_width="0.0dp"
-      />
-
-  <ImageView
-      android:id="@+id/lottie_anim_rotation"
-      android:layout_width="48.0dp"
-      android:layout_height="48.0dp"
-      android:src="@mipmap/icon_test"
-      android:contentDescription="@string/image"
-      />
 
 </LinearLayout>

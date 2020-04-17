@@ -25,20 +25,6 @@ public class ActivityCard extends FullScreenActivity {
 
     private void initView() {
 
-        final RecordAnimView animationView = findViewById(R.id.animation_view);
-
-        findViewById(R.id.bt_start).setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                animationView.startMove();
-            }
-        });
-
-        findViewById(R.id.bt_stop).setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                animationView.stopMove();
-            }
-        });
-
         findViewById(R.id.bt_request).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 loadData();

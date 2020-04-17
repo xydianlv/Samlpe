@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    >
+
+  <FrameLayout
+      android:layout_width="120.0dp"
+      android:layout_height="80.0dp"
+      android:layout_marginTop="40.0dp"
+      android:layout_gravity="center"
+      android:background="@color/black_60"
+      >
+
+    <ImageView
+        android:id="@+id/anim_frame_refresh"
+        android:layout_width="28.0dp"
+        android:layout_height="28.0dp"
+        android:contentDescription="@string/image"
+        android:layout_gravity="center"
+        />
+
+  </FrameLayout>
+
+</FrameLayout>

@@ -18,40 +18,28 @@ import com.example.wyyu.gitsamlpe.test.card.ActivityNormalCard;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityDialogShowTest;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
-import com.example.wyyu.gitsamlpe.test.download.ActivityDownloadTest;
-import com.example.wyyu.gitsamlpe.test.dynamic.ActivityDynamicSize;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
 import com.example.wyyu.gitsamlpe.test.fragment.ActivitySlideTest;
 import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.local.ActivityLocalImageList;
-import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
-import com.example.wyyu.gitsamlpe.test.list.ActivityExpandableListView;
 import com.example.wyyu.gitsamlpe.test.list.ActivityMultiHolder;
 import com.example.wyyu.gitsamlpe.test.litho.main.ActivityLithoTest;
 import com.example.wyyu.gitsamlpe.test.live.ActivityLiveTest;
 import com.example.wyyu.gitsamlpe.test.livedata.ActivityLiveDataTest;
-import com.example.wyyu.gitsamlpe.test.location.ActivityLocation;
-import com.example.wyyu.gitsamlpe.test.lock.finger.ActivityFingerLockTest;
-import com.example.wyyu.gitsamlpe.test.lock.gesture.ActivityGestureLockTest;
-import com.example.wyyu.gitsamlpe.test.lottie.ActivityLottieTest;
 import com.example.wyyu.gitsamlpe.test.multi.ActivityMultiListTest;
-import com.example.wyyu.gitsamlpe.test.nine.ActivityNinePatchTest;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.pager.anim.ActivityPagerAnim;
-import com.example.wyyu.gitsamlpe.test.percent.ActivityPercentTest;
 import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
-import com.example.wyyu.gitsamlpe.test.recyclerview.ActivityFastScrollTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
 import com.example.wyyu.gitsamlpe.test.svga.ActivitySvgAMain;
 import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangram;
 import com.example.wyyu.gitsamlpe.test.text.ActivityTextShowTest;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
-import com.example.wyyu.gitsamlpe.test.touch.ActivityGestureDetectorTest;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
 import com.example.wyyu.gitsamlpe.test.video.local.ActivityLocalVideoList;
 import com.example.wyyu.gitsamlpe.test.visibility.ActivitySystemUiVisibility;
@@ -64,21 +52,6 @@ import com.example.wyyu.gitsamlpe.test.weibo.ui.MainBlogActivity;
 
 class UIShowManager {
 
-    static void startGestureLockActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityGestureLockTest.class);
-    }
-
-    static void startFingerLockActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityFingerLockTest.class);
-    }
-
-    static void startFastRecyclerActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityFastScrollTest.class);
-    }
-
-    static void startLocationActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityLocation.class);
-    }
 
     static void startSlideActivity(Context context) {
         startTargetActivityFromMain(context, ActivitySlideT.class);
@@ -156,9 +129,6 @@ class UIShowManager {
         startTargetActivityFromMain(context, ActivityEditImage.class);
     }
 
-    static void startShotScreenTestActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityShotScreen.class);
-    }
 
     static void startSoftKeyboardActivity(Context context) {
         startTargetActivityFromMain(context, ActivitySoftKeyboard.class);
@@ -174,14 +144,6 @@ class UIShowManager {
 
     static void startAudioPlayTest(Context context) {
         startTargetActivityFromMain(context, ActivityAudioList.class);
-    }
-
-    static void startExpandListView(Context context) {
-        ActivityExpandableListView.open(context);
-    }
-
-    static void startDynamicSizeTest(Context context) {
-        ActivityDynamicSize.open(context);
     }
 
     static void startBroadcastTest(Context context) {
@@ -208,14 +170,6 @@ class UIShowManager {
         ActivityLinearAnim.open(context);
     }
 
-    static void startPercentTest(Context context) {
-        ActivityPercentTest.open(context);
-    }
-
-    static void startDetectorTest(Context context) {
-        ActivityGestureDetectorTest.open(context);
-    }
-
     static void startMultiHolderTest(Context context) {
         ActivityMultiHolder.open(context);
     }
@@ -240,20 +194,8 @@ class UIShowManager {
         ActivityBubbling.open(activity);
     }
 
-    static void startNinePatchTest(Activity activity) {
-        ActivityNinePatchTest.open(activity);
-    }
-
-    static void startLottieTest(Activity activity) {
-        ActivityLottieTest.open(activity);
-    }
-
     static void startTangramTest(Activity activity) {
         ActivityTangram.open(activity);
-    }
-
-    static void startDownloadTest(Activity activity) {
-        ActivityDownloadTest.open(activity);
     }
 
     static void startMultiListTest(Activity activity) {

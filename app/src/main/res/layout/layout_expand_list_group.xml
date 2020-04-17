@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:background="@color/color_84919b"
+    android:background="@color/color_c6c6c6"
     >
 
   <TextView

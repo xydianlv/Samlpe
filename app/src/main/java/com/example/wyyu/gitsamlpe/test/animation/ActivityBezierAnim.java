@@ -6,8 +6,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
-import com.example.wyyu.gitsamlpe.test.lottie.WaveViewJust;
-import com.example.wyyu.gitsamlpe.test.lottie.WaveViewTest;
 
 /**
  * Created by wyyu on 2019-11-27.

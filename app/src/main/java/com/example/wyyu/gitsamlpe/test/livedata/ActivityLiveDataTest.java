@@ -14,7 +14,7 @@ import android.widget.EditText;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
-import com.example.wyyu.gitsamlpe.test.image.shot.ActivityShotScreen;
+import com.example.wyyu.gitsamlpe.test.function.shot.ActivityShotScreen;
 
 /**
  * Created by wyyu on 2019/3/20.

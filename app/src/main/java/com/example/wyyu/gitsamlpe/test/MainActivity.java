@@ -5,6 +5,10 @@ import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.test.anim.ActivityAnimTest;
+import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioTest;
+import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
+import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
 public class MainActivity extends ToolbarActivity {
@@ -40,15 +44,27 @@ public class MainActivity extends ToolbarActivity {
 
     private void refreshListView() {
 
-        listViewMain.addNewItem("GestureLockViewTest", new View.OnClickListener() {
+        listViewMain.addNewItem("Function", new View.OnClickListener() {
             @Override public void onClick(View v) {
-                UIShowManager.startGestureLockActivity(MainActivity.this);
+                ActivityFunctionList.open(MainActivity.this);
             }
         });
 
-        listViewMain.addNewItem("FingerLockTest", new View.OnClickListener() {
+        listViewMain.addNewItem("Audio", new View.OnClickListener() {
             @Override public void onClick(View v) {
-                UIShowManager.startFingerLockActivity(MainActivity.this);
+                ActivityAudioTest.open(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("Card", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                ActivityCardTest.open(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("Anim", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                ActivityAnimTest.open(MainActivity.this);
             }
         });
 
@@ -60,19 +76,7 @@ public class MainActivity extends ToolbarActivity {
 
         listViewMain.addNewItem("FastRecyclerViewTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
-                UIShowManager.startFastRecyclerActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("LocationTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startLocationActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("AudioRecorder", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startAudioRecordActivity(MainActivity.this);
+                //UIShowManager.startFastRecyclerActivity(MainActivity.this);
             }
         });
 
@@ -162,12 +166,6 @@ public class MainActivity extends ToolbarActivity {
         //    }
         //});
 
-        listViewMain.addNewItem("ShotScreenTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startShotScreenTestActivity(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("SoftKeyboard", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startSoftKeyboardActivity(MainActivity.this);
@@ -183,24 +181,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("DialogFragment", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startDialogFragmentTestActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("AudioPlayTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startAudioPlayTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("ExpandListView", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startExpandListView(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("DynamicSizeTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startDynamicSizeTest(MainActivity.this);
             }
         });
 
@@ -246,18 +226,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("PercentTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startPercentTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("DetectorTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startDetectorTest(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("MultiHolderTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startMultiHolderTest(MainActivity.this);
@@ -288,27 +256,9 @@ public class MainActivity extends ToolbarActivity {
         //    }
         //});
 
-        listViewMain.addNewItem("NinePatchTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startNinePatchTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("LottieTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startLottieTest(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("TangramTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startTangramTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("DownloadTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startDownloadTest(MainActivity.this);
             }
         });
 

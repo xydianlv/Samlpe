@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     >
 
-  <com.example.wyyu.gitsamlpe.test.touch.DetectorTestView
+  <com.example.wyyu.gitsamlpe.test.function.detector.DetectorTestView
       android:id="@+id/detector_test"
       android:layout_width="120.0dp"
       android:layout_height="120.0dp"

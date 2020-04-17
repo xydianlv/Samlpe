@@ -13,95 +13,95 @@
       android:padding="24.0dp"
       >
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:id="@+id/dynamic_test_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:id="@+id/dynamic_test_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:id="@+id/dynamic_test_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:id="@+id/dynamic_test_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:id="@+id/dynamic_test_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:layout_width="36.0dp"
         android:layout_height="36.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.DynamicSizeView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.DynamicSizeView
         android:layout_width="84.0dp"
         android:layout_height="84.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.AvatarView
         android:layout_width="28.0dp"
         android:layout_height="28.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.AvatarView
         android:layout_width="48.0dp"
         android:layout_height="48.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.AvatarView
         android:layout_width="64.0dp"
         android:layout_height="64.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarView
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.AvatarView
         android:layout_width="100.0dp"
         android:layout_height="100.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarLayout
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.AvatarLayout
         android:layout_width="32.0dp"
         android:layout_height="32.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarLayout
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.AvatarLayout
         android:layout_width="48.0dp"
         android:layout_height="48.0dp"
         android:layout_marginTop="24.0dp"
         />
 
-    <com.example.wyyu.gitsamlpe.test.dynamic.AvatarLayout
+    <com.example.wyyu.gitsamlpe.test.function.dynamic.AvatarLayout
         android:layout_width="72.0dp"
         android:layout_height="72.0dp"
         android:layout_marginTop="24.0dp"

@@ -11,7 +11,7 @@
       android:layout_height="12.0dp"
       />
 
-  <com.example.wyyu.gitsamlpe.test.percent.PercentCore
+  <com.example.wyyu.gitsamlpe.test.function.percent.PercentCore
       android:id="@+id/percent_1"
       android:layout_width="match_parent"
       android:layout_height="32.0dp"
@@ -23,7 +23,7 @@
       android:layout_height="12.0dp"
       />
 
-  <com.example.wyyu.gitsamlpe.test.percent.PercentBack
+  <com.example.wyyu.gitsamlpe.test.function.percent.PercentBack
       android:id="@+id/percent_2"
       android:layout_width="match_parent"
       android:layout_height="32.0dp"
