@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.BaseActivity;
+import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 
 /**
  * Created by wyyu on 2019/2/26.
  **/
 
-public class ActivityGestureDetector extends BaseActivity {
+public class ActivityGestureDetector extends FullScreenActivity {
 
     public static void open(Context context) {
         context.startActivity(new Intent(context, ActivityGestureDetector.class));

@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.activity.BaseActivity;
+import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 
 /**
  * Created by wyyu on 2018/10/12.
  **/
 
-public class ActivityDynamicSize extends BaseActivity {
+public class ActivityDynamicSize extends FullScreenActivity {
 
     public static void open(Context context) {
         context.startActivity(new Intent(context, ActivityDynamicSize.class));

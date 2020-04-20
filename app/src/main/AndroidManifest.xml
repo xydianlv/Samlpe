@@ -71,10 +71,6 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.card.ActivityCard"
-        android:screenOrientation="portrait"
-        />
-    <activity
         android:name=".test.file.ActivityFileListTest"
         android:screenOrientation="portrait"
         />
@@ -172,10 +168,6 @@
         />
     <activity
         android:name=".test.slide.ActivitySlideT"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.card.ActivityNormalCard"
         android:screenOrientation="portrait"
         />
     <activity
@@ -311,7 +303,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.animation.ActivitySpringAnimation"
+        android:name=".test.anim.spring.ActivityAnimSpring"
         android:screenOrientation="portrait"
         />
     <activity
@@ -340,10 +332,6 @@
         />
     <activity
         android:name=".test.visibility.ActivityRealFullScreen"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.animation.ActivityBezier"
         android:screenOrientation="portrait"
         />
     <activity
@@ -463,30 +451,6 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.animation.ActivityBezierList"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.animation.ActivityBezierAnim"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.svga.ActivitySvgATest"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.svga.ActivitySvgAMain"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.svga.ActivitySvgAnim"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.svga.ActivitySvgLottie"
-        android:screenOrientation="portrait"
-        />
-    <activity
         android:name=".test.text.ActivityTextShowTest"
         android:screenOrientation="portrait"
         />
@@ -567,10 +531,10 @@
         android:screenOrientation="portrait"
         />
     <!--<activity-->
-        <!--android:name=".test.image.preview.ActivityImagePreview"-->
-        <!--android:screenOrientation="portrait"-->
-        <!--android:theme="@style/ToolbarActivityTheme"-->
-        <!--/>-->
+    <!--android:name=".test.image.preview.ActivityImagePreview"-->
+    <!--android:screenOrientation="portrait"-->
+    <!--android:theme="@style/ToolbarActivityTheme"-->
+    <!--/>-->
     <activity
         android:name=".test.image.preview.ActivityImagePreview"
         android:configChanges="keyboardHidden|orientation|screenSize|locale"
@@ -591,33 +555,85 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.animation.ActivityLinearAnim"
+        android:name=".test.anim.wrap.ActivityAnimWrap"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.animation.ActivityAnimWrapHeight"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.animation.click.ActivityBezierDoubleClick"
+        android:name=".test.bezier.click.ActivityBezierDoubleClick"
         android:screenOrientation="portrait"
         />
     <activity
         android:name=".test.function.ActivityFunctionList"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.audio.ActivityAudioTest"/>
-    <activity android:name=".test.card.ActivityCardTest"/>
-    <activity android:name=".test.card.custom.ActivityCardCustom"/>
-    <activity android:name=".test.card.system.ActivityCardSystem"/>
-    <activity android:name=".test.anim.ActivityAnimTest"/>
-    <activity android:name=".test.anim.wave.ActivityAnimWave"/>
-    <activity android:name=".test.anim.vector.ActivityAnimVector"/>
-    <activity android:name=".test.anim.Frame.ActivityAnimFrame"/>
-    <activity android:name=".test.anim.lottie.ActivityAnimLottie"/>
-    <activity android:name=".test.anim.webp.ActivityAnimWebp"/>
-    <activity android:name=".test.anim.multi.ActivityAnimMulti"/>
-    <activity android:name=".test.anim.solid.ActivityAnimSolid"/>
+    <activity
+        android:name=".test.audio.ActivityAudioTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.card.ActivityCardTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.card.custom.ActivityCardCustom"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.card.system.ActivityCardSystem"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.ActivityAnimTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.wave.ActivityAnimWave"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.vector.ActivityAnimVector"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.frame.ActivityAnimFrame"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.lottie.ActivityAnimLottie"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.webp.ActivityAnimWebp"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.multi.ActivityAnimMulti"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.solid.ActivityAnimSolid"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.svga.ActivityAnimSvgA"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.network.ActivityNetworkTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.network.custom.ActivityNetworkCustom"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.network.retrofit.ActivityNetworkRetrofit"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.bezier.ActivityBezierTest"/>
+    <activity android:name=".test.bezier.anim.ActivityBezierAnim"/>
+    <activity android:name=".test.bezier.wave.ActivityBezierWave"/>
+    <activity android:name=".test.bezier.click.ActivityBezierClick"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

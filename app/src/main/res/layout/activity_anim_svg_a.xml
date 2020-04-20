@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_white"
+    >
+
+  <com.opensource.svgaplayer.SVGAImageView
+      android:id="@+id/anim_svg_a"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone"
+      />
+
+  <FrameLayout
+      android:id="@+id/anim_svg_surface"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone"
+      />
+
+  <FrameLayout
+      android:id="@+id/anim_svg_file"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone"
+      />
+
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/anim_svg_lottie"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      >
+
+    <TextView
+        android:id="@+id/anim_svg_click_a"
+        android:layout_height="wrap_content"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/ct_3"
+        android:paddingTop="@dimen/padding_14"
+        android:paddingBottom="@dimen/padding_14"
+        android:text="@string/anim_svg_image"
+        android:background="@drawable/bg_round_grey_green_10"
+        />
+
+    <TextView
+        android:id="@+id/anim_svg_click_surface"
+        android:layout_height="wrap_content"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/ct_3"
+        android:paddingTop="@dimen/padding_14"
+        android:paddingBottom="@dimen/padding_14"
+        android:text="@string/anim_svg_surface"
+        android:background="@drawable/bg_round_grey_green_10"
+        />
+
+    <TextView
+        android:id="@+id/anim_svg_click_file"
+        android:layout_height="wrap_content"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/ct_3"
+        android:paddingTop="@dimen/padding_14"
+        android:paddingBottom="@dimen/padding_14"
+        android:text="@string/anim_svg_file"
+        android:background="@drawable/bg_round_grey_green_10"
+        />
+
+    <TextView
+        android:id="@+id/anim_svg_click_lottie"
+        android:layout_height="wrap_content"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/ct_3"
+        android:paddingTop="@dimen/padding_14"
+        android:paddingBottom="@dimen/padding_14"
+        android:text="@string/anim_svg_Lottie"
+        android:background="@drawable/bg_round_grey_green_10"
+        />
+
+  </LinearLayout>
+
+</FrameLayout>

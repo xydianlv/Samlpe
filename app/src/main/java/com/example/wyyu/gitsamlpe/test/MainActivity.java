@@ -7,8 +7,10 @@ import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.anim.ActivityAnimTest;
 import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioTest;
+import com.example.wyyu.gitsamlpe.test.bezier.ActivityBezierTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
 import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
+import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
 public class MainActivity extends ToolbarActivity {
@@ -44,29 +46,12 @@ public class MainActivity extends ToolbarActivity {
 
     private void refreshListView() {
 
-        listViewMain.addNewItem("Function", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                ActivityFunctionList.open(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("Audio", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                ActivityAudioTest.open(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("Card", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                ActivityCardTest.open(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("Anim", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                ActivityAnimTest.open(MainActivity.this);
-            }
-        });
+        listViewMain.addItem("Function", v -> ActivityFunctionList.open(MainActivity.this))
+            .addItem("Audio", v -> ActivityAudioTest.open(MainActivity.this))
+            .addItem("Card", v -> ActivityCardTest.open(MainActivity.this))
+            .addItem("Anim", v -> ActivityAnimTest.open(MainActivity.this))
+            .addItem("Bezier", v -> ActivityBezierTest.open(MainActivity.this))
+            .addItem("Net", v -> ActivityNetworkTest.open(MainActivity.this));
 
         listViewMain.addNewItem("FileListTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
@@ -77,12 +62,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("FastRecyclerViewTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 //UIShowManager.startFastRecyclerActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("CardView", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startCardActivity(MainActivity.this);
             }
         });
 
@@ -107,12 +86,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("SlideTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startSlideActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("CardTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startNormalCardActivity(MainActivity.this);
             }
         });
 
@@ -220,12 +193,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("LinearAnim", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startLinearAnimation(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("MultiHolderTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startMultiHolderTest(MainActivity.this);
@@ -235,12 +202,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("UiVisibilityTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startUiVisibilityTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("BezierAnimTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startBezierAnimTest(MainActivity.this);
             }
         });
 
@@ -277,12 +238,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("CalendarTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startCalendarTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("SVGATest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startSVGATest(MainActivity.this);
             }
         });
 

@@ -14,7 +14,7 @@
       style="@style/my_divide_view"
       />
 
-  <com.example.wyyu.gitsamlpe.test.card.CardView
+  <com.example.wyyu.gitsamlpe.test.card.custom.CardView
       android:layout_width="200.0dp"
       android:layout_height="160.0dp"
       android:orientation="vertical"
@@ -35,13 +35,13 @@
         android:layout_height="40.0dp"
         />
 
-  </com.example.wyyu.gitsamlpe.test.card.CardView>
+  </com.example.wyyu.gitsamlpe.test.card.custom.CardView>
 
   <View
       style="@style/my_divide_view"
       />
 
-  <com.example.wyyu.gitsamlpe.test.card.CardView
+  <com.example.wyyu.gitsamlpe.test.card.custom.CardView
       android:layout_width="200.0dp"
       android:layout_height="160.0dp"
       android:orientation="vertical"

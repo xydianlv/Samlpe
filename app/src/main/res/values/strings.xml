@@ -164,4 +164,13 @@
 
     <string name="waterfall_header">Header</string>
 
+    <string name="anim_svg_image">AImage</string>
+    <string name="anim_svg_surface">Surface</string>
+    <string name="anim_svg_file">File</string>
+    <string name="anim_svg_Lottie">Lottie</string>
+    <string name="anim_spring_translation">Translation</string>
+    <string name="anim_spring_scale">Scale</string>
+
+    <string name="network_request">Request</string>
+
 </resources>

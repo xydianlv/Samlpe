@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
+import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.image.matisse.FrescoLoader;
 import com.facebook.drawee.drawable.ScalingUtils;
@@ -29,7 +30,7 @@ import java.util.Map;
  * Created by wyyu on 2019-09-06.
  **/
 
-public class ActivityDownloadTest extends ToolbarActivity {
+public class ActivityDownloadTest extends FullScreenActivity {
 
     public static void open(Context context) {
         context.startActivity(new Intent(context, ActivityDownloadTest.class));

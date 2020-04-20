@@ -9,13 +9,9 @@
     android:fitsSystemWindows="true"
     >
 
-  <include
-      layout="@layout/common_toolbar"
-      />
-
   <View
       android:layout_width="0.0dp"
-      android:layout_height="100.0dp"
+      android:layout_height="160.0dp"
       />
 
   <TextView
