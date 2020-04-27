@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.canvas;
+package com.example.wyyu.gitsamlpe.test.canvas.path;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -135,7 +135,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.text.ActivityAdapterText"
+        android:name=".test.text.adapter.ActivityTextAdapter"
         android:screenOrientation="portrait"
         />
     <activity
@@ -451,35 +451,35 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.text.ActivityTextShowTest"
+        android:name=".test.text.ActivityTextTest"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.text.ActivityMultiText"
+        android:name=".test.text.multi.ActivityTextMulti"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.text.ActivityTextFont"
+        android:name=".test.text.font.ActivityTextFont"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.text.ActivityAnimText"
+        android:name=".test.text.anim.ActivityTextAnim"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.canvas.ActivityCanvasFigure"
+        android:name=".test.canvas.figure.ActivityCanvasFigure"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.canvas.ActivityCanvasDrawShow"
+        android:name=".test.canvas.ActivityCanvasTest"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.canvas.ActivityCanvasText"
+        android:name=".test.canvas.text.ActivityCanvasText"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.canvas.ActivityCanvasPath"
+        android:name=".test.canvas.path.ActivityCanvasPath"
         android:screenOrientation="portrait"
         />
     <activity
@@ -551,7 +551,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.text.ActivityTextShadow"
+        android:name=".test.text.shadow.ActivityTextShadow"
         android:screenOrientation="portrait"
         />
     <activity
@@ -634,6 +634,7 @@
     <activity android:name=".test.bezier.anim.ActivityBezierAnim"/>
     <activity android:name=".test.bezier.wave.ActivityBezierWave"/>
     <activity android:name=".test.bezier.click.ActivityBezierClick"/>
+    <activity android:name=".test.canvas.image.ActivityCanvasImage"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

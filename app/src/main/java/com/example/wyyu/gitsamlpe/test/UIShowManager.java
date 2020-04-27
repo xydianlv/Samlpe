@@ -10,7 +10,7 @@ import com.example.wyyu.gitsamlpe.test.bigimage.ActivityMultiImage;
 import com.example.wyyu.gitsamlpe.test.broadcast.ActivityBroadcastTest;
 import com.example.wyyu.gitsamlpe.test.bubbling.ActivityBubbling;
 import com.example.wyyu.gitsamlpe.test.calendar.ActivityCalendarTest;
-import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasDrawShow;
+import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasTest;
 import com.example.wyyu.gitsamlpe.test.database.ActivityDataBase;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityDialogShowTest;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
@@ -33,7 +33,7 @@ import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
 import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
 import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangram;
-import com.example.wyyu.gitsamlpe.test.text.ActivityTextShowTest;
+import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
 import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
 import com.example.wyyu.gitsamlpe.test.video.local.ActivityLocalVideoList;
@@ -77,7 +77,7 @@ class UIShowManager {
     }
 
     static void startAdapterTextView(Context context) {
-        ActivityTextShowTest.open(context);
+        ActivityTextTest.open(context);
     }
 
     static void startProgressTest(Context context) {
@@ -198,7 +198,7 @@ class UIShowManager {
     }
 
     static void startCanvasShow(Activity activity) {
-        ActivityCanvasDrawShow.open(activity);
+        ActivityCanvasTest.open(activity);
     }
 
     private static void startTargetActivityFromMain(Context context, Class targetActivity) {

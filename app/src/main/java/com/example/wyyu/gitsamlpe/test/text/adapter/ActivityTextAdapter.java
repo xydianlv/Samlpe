@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.text;
+package com.example.wyyu.gitsamlpe.test.text.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,10 @@ import com.example.wyyu.gitsamlpe.util.UIUtils;
  * Created by wyyu on 2018/5/4.
  **/
 
-public class ActivityAdapterText extends ToolbarActivity {
+public class ActivityTextAdapter extends ToolbarActivity {
 
     public static void open(Context context) {
-        context.startActivity(new Intent(context, ActivityAdapterText.class));
+        context.startActivity(new Intent(context, ActivityTextAdapter.class));
     }
 
     private static final String TEST_TEXT =
@@ -24,7 +24,7 @@ public class ActivityAdapterText extends ToolbarActivity {
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adapter_text);
+        setContentView(R.layout.activity_text_adapter);
 
         initActivity();
     }

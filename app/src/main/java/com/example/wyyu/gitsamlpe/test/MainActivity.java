@@ -8,9 +8,11 @@ import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.anim.ActivityAnimTest;
 import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioTest;
 import com.example.wyyu.gitsamlpe.test.bezier.ActivityBezierTest;
+import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
 import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
 import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
+import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
 public class MainActivity extends ToolbarActivity {
@@ -51,6 +53,8 @@ public class MainActivity extends ToolbarActivity {
             .addItem("Card", v -> ActivityCardTest.open(MainActivity.this))
             .addItem("Anim", v -> ActivityAnimTest.open(MainActivity.this))
             .addItem("Bezier", v -> ActivityBezierTest.open(MainActivity.this))
+            .addItem("Text", v -> ActivityTextTest.open(MainActivity.this))
+            .addItem("Canvas", v -> ActivityCanvasTest.open(MainActivity.this))
             .addItem("Net", v -> ActivityNetworkTest.open(MainActivity.this));
 
         listViewMain.addNewItem("FileListTest", new View.OnClickListener() {
@@ -86,12 +90,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("SlideTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startSlideActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("CanvasTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startCanvasShow(MainActivity.this);
             }
         });
 

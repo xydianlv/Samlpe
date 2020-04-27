@@ -1,16 +1,16 @@
-package com.example.wyyu.gitsamlpe.test.canvas;
+package com.example.wyyu.gitsamlpe.test.canvas.text;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.framework.activity.FullScreenActivity;
 
 /**
  * Created by wyyu on 2020-01-09.
  **/
 
-public class ActivityCanvasText extends ToolbarActivity {
+public class ActivityCanvasText extends FullScreenActivity {
 
     public static void open(Context context) {
         context.startActivity(new Intent(context, ActivityCanvasText.class));
@@ -19,7 +19,5 @@ public class ActivityCanvasText extends ToolbarActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas_text);
-
-        initToolbar("CanvasText", 0xffffffff, 0xff84919b);
     }
 }

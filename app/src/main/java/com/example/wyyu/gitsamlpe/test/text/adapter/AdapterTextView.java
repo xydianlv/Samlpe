@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.text;
+package com.example.wyyu.gitsamlpe.test.text.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

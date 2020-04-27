@@ -12,7 +12,7 @@
       layout="@layout/common_toolbar"
       />
 
-  <com.example.wyyu.gitsamlpe.test.text.ScrollableTextView
+  <com.example.wyyu.gitsamlpe.test.text.anim.ScrollableTextView
       android:id="@+id/scroll_text_view"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
       android:layout_height="36.0dp"
       />
 
-  <com.example.wyyu.gitsamlpe.test.text.MarqueeTextView
+  <com.example.wyyu.gitsamlpe.test.text.anim.MarqueeTextView
       android:id="@+id/marquee_text_view"
       android:layout_height="64.0dp"
       android:layout_width="match_parent"
@@ -41,7 +41,7 @@
       android:layout_height="36.0dp"
       />
 
-  <com.example.wyyu.gitsamlpe.test.text.MarqueeListView
+  <com.example.wyyu.gitsamlpe.test.text.anim.MarqueeListView
       android:id="@+id/marquee_list_view"
       android:layout_height="64.0dp"
       android:layout_width="match_parent"
@@ -53,7 +53,7 @@
       android:layout_height="36.0dp"
       />
 
-  <com.example.wyyu.gitsamlpe.test.text.MarqueeSurfaceView
+  <com.example.wyyu.gitsamlpe.test.text.anim.MarqueeSurfaceView
       android:layout_width="match_parent"
       android:layout_height="64.0dp"
       />
@@ -63,7 +63,7 @@
       android:layout_height="36.0dp"
       />
 
-  <com.example.wyyu.gitsamlpe.test.text.AnimTextView
+  <com.example.wyyu.gitsamlpe.test.text.anim.AnimTextView
       android:id="@+id/anim_text_view"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

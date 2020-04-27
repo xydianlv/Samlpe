@@ -6,13 +6,10 @@
     android:orientation="vertical"
     android:background="@color/color_white"
     android:fitsSystemWindows="true"
+    android:paddingTop="64.0dp"
     >
 
-  <include
-      layout="@layout/common_toolbar"
-      />
-
-  <com.example.wyyu.gitsamlpe.test.canvas.CanvasPathView
+  <com.example.wyyu.gitsamlpe.test.canvas.path.CanvasPathView
       android:layout_width="match_parent"
       android:layout_height="600.0dp"
       />

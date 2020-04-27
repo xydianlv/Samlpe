@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.text;
+package com.example.wyyu.gitsamlpe.test.text.multi;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,15 +22,15 @@ import com.example.wyyu.gitsamlpe.framework.toast.UToast;
  * Created by wyyu on 2019-12-31.
  **/
 
-public class ActivityMultiText extends ToolbarActivity {
+public class ActivityTextMulti extends ToolbarActivity {
 
     public static void open(Context context) {
-        context.startActivity(new Intent(context, ActivityMultiText.class));
+        context.startActivity(new Intent(context, ActivityTextMulti.class));
     }
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multi_text);
+        setContentView(R.layout.activity_text_multi);
 
         initActivity();
     }

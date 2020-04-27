@@ -23,7 +23,7 @@
         android:orientation="vertical"
         >
 
-      <com.example.wyyu.gitsamlpe.test.text.AdapterTextView
+      <com.example.wyyu.gitsamlpe.test.text.adapter.AdapterTextView
           android:id="@+id/adapter_text_view"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
           android:layout_height="36.0dp"
           />
 
-      <com.example.wyyu.gitsamlpe.test.text.ExpandTextView
+      <com.example.wyyu.gitsamlpe.test.text.adapter.ExpandTextView
           android:id="@+id/expand_text_view"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"

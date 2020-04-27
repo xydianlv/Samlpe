@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.text;
+package com.example.wyyu.gitsamlpe.test.text.anim;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +11,10 @@ import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
  * Created by wyyu on 2019-12-31.
  **/
 
-public class ActivityAnimText extends ToolbarActivity {
+public class ActivityTextAnim extends ToolbarActivity {
 
     public static void open(Context context) {
-        context.startActivity(new Intent(context, ActivityAnimText.class));
+        context.startActivity(new Intent(context, ActivityTextAnim.class));
     }
 
     private static final String TEST_TEXT_L = "枯藤老树昏鸦，小桥流水人家，古道西风瘦马，夕阳西下，断肠人在天涯。";
@@ -25,7 +25,7 @@ public class ActivityAnimText extends ToolbarActivity {
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anim_text);
+        setContentView(R.layout.activity_text_anim);
 
         initActivity();
     }

@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.text;
+package com.example.wyyu.gitsamlpe.test.text.anim;
 
 import android.content.Context;
 import android.util.AttributeSet;
