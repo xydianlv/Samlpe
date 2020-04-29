@@ -17,6 +17,7 @@ import com.example.wyyu.gitsamlpe.test.function.gesture.ActivityGestureLockTest;
 import com.example.wyyu.gitsamlpe.test.function.nine.ActivityNinePatchTest;
 import com.example.wyyu.gitsamlpe.test.function.percent.ActivityPercentTest;
 import com.example.wyyu.gitsamlpe.test.function.detector.ActivityGestureDetector;
+import com.example.wyyu.gitsamlpe.test.function.wallpaper.ActivityWallpaperTest;
 
 /**
  * Created by wyyu on 2020-04-16.
@@ -51,6 +52,7 @@ public class ActivityFunctionList extends ToolbarActivity {
             .addItem("DetectorTest", v -> ActivityGestureDetector.open(ActivityFunctionList.this))
             .addItem("NinePatch", v -> ActivityNinePatchTest.open(ActivityFunctionList.this))
             .addItem("DownloadTest", v -> ActivityDownloadTest.open(ActivityFunctionList.this))
+            .addItem("WallpaperTest", v -> ActivityWallpaperTest.open(ActivityFunctionList.this))
             .refreshList();
     }
 }

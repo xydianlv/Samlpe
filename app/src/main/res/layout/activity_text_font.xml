@@ -18,8 +18,9 @@
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
       android:textSize="12.0dp"
-      android:text="@string/typeface_test"
-      tools:ignore="SpUsage"
+      android:letterSpacing="0.6"
+      android:text="@string/typeface_test_multi"
+      tools:ignore="SpUsage,UnusedAttribute"
       />
 
   <View
@@ -32,7 +33,7 @@
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
       android:textSize="16.0dp"
-      android:text="@string/typeface_test"
+      android:text="@string/typeface_test_multi"
       android:letterSpacing="0.4"
       tools:ignore="SpUsage,UnusedAttribute"
       />
@@ -47,8 +48,8 @@
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
       android:textSize="22.0dp"
-      android:text="@string/typeface_test"
-      android:letterSpacing="0.8"
+      android:text="@string/typeface_test_multi"
+      android:letterSpacing="0.2"
       tools:ignore="SpUsage,UnusedAttribute"
       />
 
@@ -62,7 +63,8 @@
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
       android:textSize="12.0dp"
-      android:text="@string/typeface_test"
+      android:letterSpacing="0.6"
+      android:text="@string/typeface_test_multi"
       tools:ignore="SpUsage,UnusedAttribute"
       />
 
@@ -76,7 +78,7 @@
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
       android:textSize="16.0dp"
-      android:text="@string/typeface_test"
+      android:text="@string/typeface_test_multi"
       android:letterSpacing="0.4"
       tools:ignore="SpUsage,UnusedAttribute"
       />
@@ -91,8 +93,8 @@
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
       android:textSize="22.0dp"
-      android:text="@string/typeface_test"
-      android:letterSpacing="0.8"
+      android:text="@string/typeface_test_multi"
+      android:letterSpacing="0.2"
       tools:ignore="SpUsage,UnusedAttribute"
       />
 
@@ -106,13 +108,15 @@
       />
 
   <TextView
+      android:id="@+id/text_typeface_monospace"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
-      android:textSize="22.0dp"
-      android:text="@string/typeface_test"
-      android:letterSpacing="0.8"
+      android:textSize="18.0dp"
+      android:text="@string/typeface_test_multi"
       android:typeface="monospace"
+      android:paddingTop="12.0dp"
+      android:paddingBottom="12.0dp"
       tools:ignore="SpUsage,UnusedAttribute"
       />
 
@@ -121,13 +125,15 @@
       />
 
   <TextView
+      android:id="@+id/text_typeface_normal"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
-      android:textSize="22.0dp"
-      android:text="@string/typeface_test"
-      android:letterSpacing="0.8"
+      android:textSize="18.0dp"
+      android:text="@string/typeface_test_multi"
       android:typeface="normal"
+      android:paddingTop="12.0dp"
+      android:paddingBottom="12.0dp"
       tools:ignore="SpUsage,UnusedAttribute"
       />
 
@@ -136,13 +142,15 @@
       />
 
   <TextView
+      android:id="@+id/text_typeface_sans"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
-      android:textSize="22.0dp"
-      android:text="@string/typeface_test"
-      android:letterSpacing="0.8"
+      android:textSize="18.0dp"
+      android:text="@string/typeface_test_multi"
       android:typeface="sans"
+      android:paddingTop="12.0dp"
+      android:paddingBottom="12.0dp"
       tools:ignore="SpUsage,UnusedAttribute"
       />
 
@@ -151,14 +159,15 @@
       />
 
   <TextView
-      android:id="@+id/text_type_serif"
+      android:id="@+id/text_typeface_serif"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textColor="@color/color_262626"
-      android:textSize="22.0dp"
-      android:text="@string/typeface_test"
-      android:letterSpacing="0.8"
+      android:textSize="18.0dp"
+      android:text="@string/typeface_test_multi"
       android:typeface="serif"
+      android:paddingTop="12.0dp"
+      android:paddingBottom="12.0dp"
       tools:ignore="SpUsage,UnusedAttribute"
       />
 

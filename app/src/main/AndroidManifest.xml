@@ -21,6 +21,8 @@
   <!-- 日历权限 -->
   <uses-permission android:name="android.permission.READ_CALENDAR"/>
   <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+  <!-- 壁纸权限 -->
+  <uses-permission android:name="android.permission.SET_WALLPAPER"/>
 
   <application
       android:name=".framework.application.AppController"
@@ -635,6 +637,7 @@
     <activity android:name=".test.bezier.wave.ActivityBezierWave"/>
     <activity android:name=".test.bezier.click.ActivityBezierClick"/>
     <activity android:name=".test.canvas.image.ActivityCanvasImage"/>
+    <activity android:name=".test.function.wallpaper.ActivityWallpaperTest"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

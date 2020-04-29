@@ -62,6 +62,7 @@
     <string name="download">下载</string>
 
     <string name="typeface_test">一段简单的测试文字</string>
+    <string name="typeface_test_multi">测试文字ABC-abc-01234</string>
     <string name="long_text_test">少时不识愁滋味，爱上层楼。爱上层楼。为赋新词强说愁。而今识尽愁滋味，欲说还休。欲说还休。却道天凉好个秋。</string>
 
     <string name="add">+</string>
@@ -172,5 +173,8 @@
     <string name="anim_spring_scale">Scale</string>
 
     <string name="network_request">Request</string>
+
+    <string name="wall_paper_lock">设置锁屏</string>
+    <string name="wall_paper_home">设置壁纸</string>
 
 </resources>
