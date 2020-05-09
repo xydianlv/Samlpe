@@ -74,6 +74,20 @@
           tools:ignore="SpUsage"
           />
 
+      <View
+          android:layout_width="0.0dp"
+          android:layout_height="36.0dp"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.text.adapter.AdjustTextView
+          android:id="@+id/adjust_text_test"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15.0dp"
+          android:textColor="@color/color_262626"
+          tools:ignore="SpUsage"
+          />
+
     </LinearLayout>
 
   </ScrollView>
