@@ -2,7 +2,9 @@ package com.example.wyyu.gitsamlpe.test.canvas.text;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.util.UIUtils;
@@ -36,9 +38,14 @@ public class CanvasTextView extends View {
     private static final float SIZE_TEXT = UIUtils.dpToPx(22.0f);
     private static final int COLOR_TEXT = 0xffffa500;
 
+    private LinearGradient gradientRepeat;
+    private LinearGradient gradientMirror;
+    private LinearGradient gradientClamp;
+
     private Paint paintStroke;
     private Paint paintFill;
     private Paint paintAll;
+    private Paint paintColor;
 
     private void initValue() {
 
@@ -61,6 +68,26 @@ public class CanvasTextView extends View {
         paintAll.setTextAlign(Paint.Align.LEFT);
         paintAll.setTextSize(SIZE_TEXT);
         paintAll.setColor(COLOR_TEXT);
+
+        paintColor = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paintColor.setStyle(Paint.Style.FILL);
+        paintColor.setTextAlign(Paint.Align.LEFT);
+        paintColor.setTextSize(SIZE_TEXT);
+
+        gradientClamp =
+            new LinearGradient(SIZE_LINE_LEFT, SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 7, SIZE_LINE_LEFT,
+                SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 7 + SIZE_TEXT, 0xffff0000, 0x00ff0000,
+                Shader.TileMode.CLAMP);
+
+        gradientRepeat =
+            new LinearGradient(SIZE_LINE_LEFT, SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 8, SIZE_LINE_LEFT,
+                SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 8 + SIZE_TEXT, 0xffff0000, 0x00ff0000,
+                Shader.TileMode.REPEAT);
+
+        gradientMirror =
+            new LinearGradient(SIZE_LINE_LEFT, SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 9, SIZE_LINE_LEFT,
+                SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 8 + SIZE_TEXT, 0xffff0000, 0x00ff0000,
+                Shader.TileMode.MIRROR);
     }
 
     @Override protected void onDraw(Canvas canvas) {
@@ -97,5 +124,20 @@ public class CanvasTextView extends View {
         paintFill.setStrikeThruText(true);
         canvas.drawText("PaintFillWidthDeleteLine", SIZE_LINE_LEFT,
             SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 6, paintFill);
+
+        // 画一个彩虹文字
+        paintColor.setShader(gradientClamp);
+        canvas.drawText("PaintColorGradientClamp", SIZE_LINE_LEFT,
+            SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 7, paintColor);
+
+        // 画一个彩虹文字
+        paintColor.setShader(gradientRepeat);
+        canvas.drawText("PaintColorGradientRepeat", SIZE_LINE_LEFT,
+            SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 8, paintColor);
+
+        // 画一个彩虹文字
+        paintColor.setShader(gradientMirror);
+        canvas.drawText("PaintColorGradientMirror", SIZE_LINE_LEFT,
+            SIZE_LINE_TOP + SIZE_LINE_HEIGHT * 9, paintColor);
     }
 }

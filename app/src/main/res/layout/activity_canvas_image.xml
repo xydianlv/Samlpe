@@ -1,10 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/color_white"
     >
 
-</FrameLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_normal"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="240.0dp"
+        app:drawType="0"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_matrix_scale"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="120.0dp"
+        app:drawType="1"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_matrix_translate"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="240.0dp"
+        app:drawType="2"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_matrix_rotate"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="240.0dp"
+        app:drawType="3"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_matrix_skew"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="240.0dp"
+        app:drawType="4"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_blur"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="240.0dp"
+        app:drawType="5"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_blur_alpha"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="240.0dp"
+        app:drawType="6"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_img_blur_alpha_linear"
+        android:textColor="@color/ct_1"
+        android:textSize="15.0dp"
+        android:padding="12.0dp"
+        tools:ignore="SpUsage"
+        />
+
+    <com.example.wyyu.gitsamlpe.test.canvas.image.CanvasImageView
+        android:layout_width="match_parent"
+        android:layout_height="240.0dp"
+        app:drawType="7"
+        />
+
+  </LinearLayout>
+
+</ScrollView>

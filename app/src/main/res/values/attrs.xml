@@ -23,6 +23,18 @@
     <attr name="ringWidth" format="dimension" />
   </declare-styleable>
 
+  <declare-styleable name="CanvasImageView">
+    <attr name="drawType" format="integer" />
+  </declare-styleable>
+
+  <declare-styleable name="GradientCoverView">
+    <attr name="resId" format="reference" />
+    <attr name="resize" format="integer" />
+    <attr name="imgRadius" format="float" />
+    <attr name="topShadowY" format="dimension" />
+    <attr name="bottomShadowY" format="dimension" />
+  </declare-styleable>
+
   <declare-styleable name="UltraViewPager">
     <attr name="upv_autoscroll" format="integer" />
     <attr name="upv_infiniteloop" format="boolean" />

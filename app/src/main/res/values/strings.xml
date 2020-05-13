@@ -177,4 +177,13 @@
     <string name="wall_paper_lock">设置锁屏</string>
     <string name="wall_paper_home">设置壁纸</string>
 
+    <string name="draw_img_normal">Normal</string>
+    <string name="draw_img_matrix_scale">MatrixScale</string>
+    <string name="draw_img_matrix_translate">MatrixTranslate</string>
+    <string name="draw_img_matrix_rotate">MatrixRotate</string>
+    <string name="draw_img_matrix_skew">MatrixSkew</string>
+    <string name="draw_img_blur">BlurBitmap</string>
+    <string name="draw_img_blur_alpha">BlurAlphaBitmap</string>
+    <string name="draw_img_blur_alpha_linear">BlurAlphaLinearBitmap</string>
+
 </resources>

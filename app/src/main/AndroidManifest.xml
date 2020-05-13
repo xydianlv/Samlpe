@@ -561,10 +561,6 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.bezier.click.ActivityBezierDoubleClick"
-        android:screenOrientation="portrait"
-        />
-    <activity
         android:name=".test.function.ActivityFunctionList"
         android:screenOrientation="portrait"
         />
@@ -632,12 +628,34 @@
         android:name=".test.network.retrofit.ActivityNetworkRetrofit"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.bezier.ActivityBezierTest"/>
-    <activity android:name=".test.bezier.anim.ActivityBezierAnim"/>
-    <activity android:name=".test.bezier.wave.ActivityBezierWave"/>
-    <activity android:name=".test.bezier.click.ActivityBezierClick"/>
-    <activity android:name=".test.canvas.image.ActivityCanvasImage"/>
-    <activity android:name=".test.function.wallpaper.ActivityWallpaperTest"/>
+    <activity
+        android:name=".test.bezier.ActivityBezierTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bezier.anim.ActivityBezierAnim"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bezier.wave.ActivityBezierWave"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.bezier.click.ActivityBezierClick"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.canvas.image.ActivityCanvasImage"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.function.wallpaper.ActivityWallpaperTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.text.gradient.ActivityTextGradient"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

@@ -9,6 +9,7 @@ import com.example.wyyu.gitsamlpe.test.ListViewMain;
 import com.example.wyyu.gitsamlpe.test.text.adapter.ActivityTextAdapter;
 import com.example.wyyu.gitsamlpe.test.text.anim.ActivityTextAnim;
 import com.example.wyyu.gitsamlpe.test.text.font.ActivityTextFont;
+import com.example.wyyu.gitsamlpe.test.text.gradient.ActivityTextGradient;
 import com.example.wyyu.gitsamlpe.test.text.multi.ActivityTextMulti;
 import com.example.wyyu.gitsamlpe.test.text.shadow.ActivityTextShadow;
 
@@ -39,6 +40,7 @@ public class ActivityTextTest extends ToolbarActivity {
             .addItem("Anim", v -> ActivityTextAnim.open(ActivityTextTest.this))
             .addItem("Font", v -> ActivityTextFont.open(ActivityTextTest.this))
             .addItem("Shadow", v -> ActivityTextShadow.open(ActivityTextTest.this))
+            .addItem("Gradient", v -> ActivityTextGradient.open(ActivityTextTest.this))
             .refreshList();
     }
 }
