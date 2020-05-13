@@ -184,6 +184,7 @@
     <string name="draw_img_matrix_skew">MatrixSkew</string>
     <string name="draw_img_blur">BlurBitmap</string>
     <string name="draw_img_blur_alpha">BlurAlphaBitmap</string>
+    <string name="draw_img_blur_cover_color">BlurCoverColorBitmap</string>
     <string name="draw_img_blur_alpha_linear">BlurAlphaLinearBitmap</string>
 
 </resources>

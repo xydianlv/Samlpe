@@ -138,6 +138,12 @@ public class CanvasImageView extends View {
             rectS.right = bitmap.getWidth();
             canvas.drawBitmap(bitmap, rectF, rectS, paint);
         }
+
+        if (type == 8) {
+            blurBitmap();
+            colorBitmap();
+            canvas.drawBitmap(bitmap, 0, 0, null);
+        }
     }
 
     private void blurBitmap() {
@@ -163,5 +169,29 @@ public class CanvasImageView extends View {
         }
 
         bitmap = outputBitmap;
+    }
+
+    private void colorBitmap() {
+
+        int height = bitmap.getHeight();
+        int width = bitmap.getWidth();
+
+        Bitmap newBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(newBitmap);
+
+        canvas.drawBitmap(bitmap, 0, 0, null);
+
+        Paint paint = new Paint();
+        paint.setColor(0xffff0000);
+
+        for (int index = 0; index < height; index++) {
+            paint.setAlpha((int) ((index * 1.0f / height) * 255));
+            canvas.drawRect(0, index, width, index + 1, paint);
+        }
+
+        canvas.save();
+        canvas.restore();
+
+        bitmap = newBitmap;
     }
 }
