@@ -12,6 +12,7 @@ import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
 import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
 import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
+import com.example.wyyu.gitsamlpe.test.pager.snap.ActivitySnapPagerTest;
 import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
@@ -242,6 +243,12 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("PagerTransformer", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startPagerTransformerShow(MainActivity.this);
+            }
+        });
+
+        listViewMain.addNewItem("SnapPager", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                ActivitySnapPagerTest.open(MainActivity.this);
             }
         });
 

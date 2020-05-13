@@ -656,6 +656,7 @@
         android:name=".test.text.gradient.ActivityTextGradient"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.pager.snap.ActivitySnapPagerTest"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
