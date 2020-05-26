@@ -7,6 +7,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.AttributeSet;
 import android.view.View;
@@ -69,6 +70,7 @@ public class AdjustTextView extends AppCompatTextView {
         };
         spanString.setSpan(clickableSpan, spanString.length() - 3, spanString.length(),
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        setMovementMethod(LinkMovementMethod.getInstance());
 
         setText(spanString);
     }

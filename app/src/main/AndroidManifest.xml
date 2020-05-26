@@ -657,6 +657,7 @@
         android:screenOrientation="portrait"
         />
     <activity android:name=".test.pager.snap.ActivitySnapPagerTest"/>
+    <activity android:name=".test.text.line.ActivityTextLineDivide"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

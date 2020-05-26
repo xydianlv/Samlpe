@@ -10,6 +10,7 @@ import com.example.wyyu.gitsamlpe.test.text.adapter.ActivityTextAdapter;
 import com.example.wyyu.gitsamlpe.test.text.anim.ActivityTextAnim;
 import com.example.wyyu.gitsamlpe.test.text.font.ActivityTextFont;
 import com.example.wyyu.gitsamlpe.test.text.gradient.ActivityTextGradient;
+import com.example.wyyu.gitsamlpe.test.text.line.ActivityTextLineDivide;
 import com.example.wyyu.gitsamlpe.test.text.multi.ActivityTextMulti;
 import com.example.wyyu.gitsamlpe.test.text.shadow.ActivityTextShadow;
 
@@ -41,6 +42,7 @@ public class ActivityTextTest extends ToolbarActivity {
             .addItem("Font", v -> ActivityTextFont.open(ActivityTextTest.this))
             .addItem("Shadow", v -> ActivityTextShadow.open(ActivityTextTest.this))
             .addItem("Gradient", v -> ActivityTextGradient.open(ActivityTextTest.this))
+            .addItem("LineDivide", v -> ActivityTextLineDivide.open(ActivityTextTest.this))
             .refreshList();
     }
 }
