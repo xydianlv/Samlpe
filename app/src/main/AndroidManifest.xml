@@ -658,6 +658,7 @@
         />
     <activity android:name=".test.pager.snap.ActivitySnapPagerTest"/>
     <activity android:name=".test.text.line.ActivityTextLineDivide"/>
+    <activity android:name=".test.function.grid.ActivityGridTest"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

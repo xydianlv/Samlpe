@@ -9,6 +9,7 @@ import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
 import com.example.wyyu.gitsamlpe.test.function.download.ActivityDownloadTest;
 import com.example.wyyu.gitsamlpe.test.function.dynamic.ActivityDynamicSize;
+import com.example.wyyu.gitsamlpe.test.function.grid.ActivityGridTest;
 import com.example.wyyu.gitsamlpe.test.function.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.function.expandable.ActivityExpandableListView;
 import com.example.wyyu.gitsamlpe.test.function.location.ActivityLocation;
@@ -53,6 +54,7 @@ public class ActivityFunctionList extends ToolbarActivity {
             .addItem("NinePatch", v -> ActivityNinePatchTest.open(ActivityFunctionList.this))
             .addItem("DownloadTest", v -> ActivityDownloadTest.open(ActivityFunctionList.this))
             .addItem("WallpaperTest", v -> ActivityWallpaperTest.open(ActivityFunctionList.this))
+            .addItem("GridTest", v -> ActivityGridTest.open(ActivityFunctionList.this))
             .refreshList();
     }
 }

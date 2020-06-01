@@ -187,4 +187,7 @@
     <string name="draw_img_blur_cover_color">BlurCoverColorBitmap</string>
     <string name="draw_img_blur_alpha_linear">BlurAlphaLinearBitmap</string>
 
+    <string name="grid_test_add">Add</string>
+    <string name="grid_test_delete">Delete</string>
+
 </resources>
