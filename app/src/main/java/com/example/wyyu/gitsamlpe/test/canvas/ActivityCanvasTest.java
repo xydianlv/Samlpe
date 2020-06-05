@@ -10,6 +10,7 @@ import com.example.wyyu.gitsamlpe.test.canvas.figure.ActivityCanvasFigure;
 import com.example.wyyu.gitsamlpe.test.canvas.image.ActivityCanvasImage;
 import com.example.wyyu.gitsamlpe.test.canvas.path.ActivityCanvasPath;
 import com.example.wyyu.gitsamlpe.test.canvas.text.ActivityCanvasText;
+import com.example.wyyu.gitsamlpe.test.canvas.xfermode.ActivityXFerModeTest;
 
 /**
  * Created by wyyu on 2020-01-09.
@@ -37,6 +38,7 @@ public class ActivityCanvasTest extends ToolbarActivity {
             .addItem("Text", v -> ActivityCanvasText.open(ActivityCanvasTest.this))
             .addItem("Path", v -> ActivityCanvasPath.open(ActivityCanvasTest.this))
             .addItem("Image", v -> ActivityCanvasImage.open(ActivityCanvasTest.this))
+            .addItem("XFerMode", v -> ActivityXFerModeTest.open(ActivityCanvasTest.this))
             .refreshList();
     }
 }

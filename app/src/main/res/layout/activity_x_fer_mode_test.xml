@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_white"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:overScrollMode="never"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_normal"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="-1"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_clear"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="0"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_add"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="1"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_darken"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="2"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_lighten"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="3"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_multiply"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="4"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_overlay"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="5"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_screen"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="6"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_xor"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="7"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_src"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="8"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_src_over"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="9"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_src_in"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="10"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_src_a_top"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="11"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_src_out"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="12"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_dst"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="13"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_dst_in"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="14"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_dst_out"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="15"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_dst_over"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="16"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/x_fer_mode_dst_a_top"
+          android:textColor="@color/ct_1"
+          android:textSize="15.0dp"
+          android:padding="12.0dp"
+          tools:ignore="SpUsage"
+          />
+
+      <com.example.wyyu.gitsamlpe.test.canvas.xfermode.CanvasXFerModeView
+          android:layout_width="match_parent"
+          android:layout_height="190.0dp"
+          app:modeType="17"
+          />
+
+    </LinearLayout>
+
+  </ScrollView>
+
+</LinearLayout>

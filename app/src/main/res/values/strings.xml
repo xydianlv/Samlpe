@@ -190,4 +190,24 @@
     <string name="grid_test_add">Add</string>
     <string name="grid_test_delete">Delete</string>
 
+    <string name="x_fer_mode_normal">Normal</string>
+    <string name="x_fer_mode_clear">Clear</string>
+    <string name="x_fer_mode_add">Add</string>
+    <string name="x_fer_mode_darken">Darken</string>
+    <string name="x_fer_mode_lighten">Lighten</string>
+    <string name="x_fer_mode_multiply">Multiply</string>
+    <string name="x_fer_mode_overlay">Overlay</string>
+    <string name="x_fer_mode_screen">Screen</string>
+    <string name="x_fer_mode_xor">Xor</string>
+    <string name="x_fer_mode_src">Src</string>
+    <string name="x_fer_mode_src_over">SrcOver</string>
+    <string name="x_fer_mode_src_in">SrcIn</string>
+    <string name="x_fer_mode_src_a_top">SrcATop</string>
+    <string name="x_fer_mode_src_out">SrcOut</string>
+    <string name="x_fer_mode_dst">Dst</string>
+    <string name="x_fer_mode_dst_in">DstIn</string>
+    <string name="x_fer_mode_dst_out">DstOut</string>
+    <string name="x_fer_mode_dst_over">DstOver</string>
+    <string name="x_fer_mode_dst_a_top">DstATop</string>
+
 </resources>

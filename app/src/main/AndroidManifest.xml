@@ -656,9 +656,22 @@
         android:name=".test.text.gradient.ActivityTextGradient"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.pager.snap.ActivitySnapPagerTest"/>
-    <activity android:name=".test.text.line.ActivityTextLineDivide"/>
-    <activity android:name=".test.function.grid.ActivityGridTest"/>
+    <activity
+        android:name=".test.pager.snap.ActivitySnapPagerTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.text.line.ActivityTextLineDivide"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.function.grid.ActivityGridTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.canvas.xfermode.ActivityXFerModeTest"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
