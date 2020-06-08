@@ -13,6 +13,7 @@ import com.example.wyyu.gitsamlpe.test.text.gradient.ActivityTextGradient;
 import com.example.wyyu.gitsamlpe.test.text.line.ActivityTextLineDivide;
 import com.example.wyyu.gitsamlpe.test.text.multi.ActivityTextMulti;
 import com.example.wyyu.gitsamlpe.test.text.shadow.ActivityTextShadow;
+import com.example.wyyu.gitsamlpe.test.text.xfermode.ActivityTextXFerMode;
 
 /**
  * Created by wyyu on 2019-12-31.
@@ -43,6 +44,7 @@ public class ActivityTextTest extends ToolbarActivity {
             .addItem("Shadow", v -> ActivityTextShadow.open(ActivityTextTest.this))
             .addItem("Gradient", v -> ActivityTextGradient.open(ActivityTextTest.this))
             .addItem("LineDivide", v -> ActivityTextLineDivide.open(ActivityTextTest.this))
+            .addItem("XFerMode", v -> ActivityTextXFerMode.open(ActivityTextTest.this))
             .refreshList();
     }
 }

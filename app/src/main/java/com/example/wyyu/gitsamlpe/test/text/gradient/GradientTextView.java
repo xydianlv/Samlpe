@@ -49,12 +49,15 @@ public class GradientTextView extends AppCompatTextView {
     @Override protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        int layerId = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
+
         paint.setXfermode(xfermode);
         paint.setShader(gradient);
 
         canvas.drawRect(0, 0, UIUtils.getScreenWidth(), UIUtils.dpToPx(48.0f), paint);
 
-        //paint.setXfermode(null);
-        //canvas.restore();
+        paint.setXfermode(null);
+
+        canvas.restoreToCount(layerId);
     }
 }

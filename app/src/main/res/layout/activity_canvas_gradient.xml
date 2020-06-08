@@ -66,7 +66,7 @@
         android:layout_height="match_parent"
         />
 
-    <ScrollView
+    <com.example.wyyu.gitsamlpe.test.text.gradient.GradientScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
@@ -87,7 +87,7 @@
           tools:ignore="SpUsage"
           />
 
-    </ScrollView>
+    </com.example.wyyu.gitsamlpe.test.text.gradient.GradientScrollView>
 
   </FrameLayout>
 

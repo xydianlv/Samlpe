@@ -64,6 +64,7 @@
     <string name="typeface_test">一段简单的测试文字</string>
     <string name="typeface_test_multi">测试文字ABC-abc-01234</string>
     <string name="long_text_test">少时不识愁滋味，爱上层楼。爱上层楼。为赋新词强说愁。而今识尽愁滋味，欲说还休。欲说还休。却道天凉好个秋。</string>
+    <string name="long_long_text_test">多年以后，奥雷连诺上校站在行刑队面前，准会想起父亲带他去参观冰块的那个遥远的下午。当时，马孔多是个二十户人家的村庄，一座座土房都盖在河岸上，河水清澈，沿着遍布石头的河床流去，河里的石头光滑、洁白，活象史前的巨蛋。这块天地还是新开辟的，许多东西都叫不出名字，不得不用手指指点点。每年三月，衣衫褴楼的吉卜赛人都要在村边搭起帐篷，在笛鼓的喧嚣声中，向马孔多的居 民介绍科学家的最新发明。他们首先带来的是磁铁。</string>
 
     <string name="add">+</string>
     <string name="subject">-</string>
@@ -209,5 +210,6 @@
     <string name="x_fer_mode_dst_out">DstOut</string>
     <string name="x_fer_mode_dst_over">DstOver</string>
     <string name="x_fer_mode_dst_a_top">DstATop</string>
+    <string name="x_fer_mode_shadow">Shadow</string>
 
 </resources>
