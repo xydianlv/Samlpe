@@ -43,7 +43,7 @@ public class LithoDefineModel extends ViewModel {
     void loadList(@NonNull LoadListCallback callback) {
         Observable.unsafeCreate((Observable.OnSubscribe<List<DefineData>>) subscriber -> {
             List<DefineData> dataList = new ArrayList<>();
-            for (int index = 0; index < 32; index++) {
+            for (int index = 0; index < 12; index++) {
                 DefineData defineData = new DefineData();
                 defineData.content = CONTENT_ARRAY[index % CONTENT_ARRAY.length];
                 defineData.title = TITLE_ARRAY[index % TITLE_ARRAY.length];
