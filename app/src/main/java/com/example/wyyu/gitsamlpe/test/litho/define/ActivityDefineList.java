@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.TextView;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
@@ -23,8 +24,13 @@ public class ActivityDefineList extends ToolbarActivity {
     @BindView(R.id.litho_define_parent_height) TextView parentHeight;
     @BindView(R.id.litho_define_start_top) TextView startTop;
     @BindView(R.id.litho_define_end_bottom) TextView endBottom;
+    @BindView(R.id.litho_define_first_height) TextView firstHeight;
     @BindView(R.id.litho_define_first_top) TextView firstTop;
+    @BindView(R.id.litho_define_first_bottom) TextView firstBottom;
+    @BindView(R.id.litho_define_last_height) TextView lastHeight;
+    @BindView(R.id.litho_define_last_top) TextView lastTop;
     @BindView(R.id.litho_define_last_bottom) TextView lastBottom;
+    @BindView(R.id.litho_define_list_height) TextView listHeight;
     @BindView(R.id.litho_define_scroll_y) TextView scrollY;
 
     private LinearLayoutManager layoutManager;
@@ -63,6 +69,10 @@ public class ActivityDefineList extends ToolbarActivity {
                     refreshInfoShow();
                 }
             }
+
+            @Override public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                Log.e("DefineListOnScrolled", "dy : " + dy);
+            }
         });
     }
 
@@ -96,14 +106,24 @@ public class ActivityDefineList extends ToolbarActivity {
 
         RecyclerView.ViewHolder viewHolderFirst = recyclerView.findViewHolderForAdapterPosition(
             layoutManager.findFirstVisibleItemPosition());
+        firstHeight.setText(String.format("FirstHeight : %s", viewHolderFirst == null ? "-100"
+            : String.valueOf(viewHolderFirst.itemView.getHeight())));
+        firstBottom.setText(String.format("FirstBottom : %s", viewHolderFirst == null ? "-101"
+            : String.valueOf(viewHolderFirst.itemView.getBottom())));
         firstTop.setText(String.format("FirstTop : %s",
-            viewHolderFirst == null ? "-100" : String.valueOf(viewHolderFirst.itemView.getTop())));
+            viewHolderFirst == null ? "-102" : String.valueOf(viewHolderFirst.itemView.getTop())));
 
         RecyclerView.ViewHolder viewHolderLast = recyclerView.findViewHolderForAdapterPosition(
             layoutManager.findLastVisibleItemPosition());
+        lastHeight.setText(String.format("LastHeight : %s",
+            viewHolderLast == null ? "-200" : String.valueOf(viewHolderLast.itemView.getHeight())));
         lastBottom.setText(String.format("LastBottom : %s",
-            viewHolderLast == null ? "-101" : String.valueOf(viewHolderLast.itemView.getTop())));
+            viewHolderLast == null ? "-201" : String.valueOf(viewHolderLast.itemView.getBottom())));
+        lastTop.setText(String.format("LastTop : %s",
+            viewHolderLast == null ? "-202" : String.valueOf(viewHolderLast.itemView.getTop())));
 
+        listHeight.setText(
+            String.format("ListHeight : %s", String.valueOf(recyclerView.getHeight())));
         scrollY.setText(String.format("ScrollY : %s", String.valueOf(recyclerView.getScrollY())));
     }
 }

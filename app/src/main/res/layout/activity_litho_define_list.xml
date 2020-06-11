@@ -66,6 +66,17 @@
           />
 
       <TextView
+          android:id="@+id/litho_define_first_height"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color_white"
+          android:textSize="@dimen/text_15"
+          android:text="@string/number"
+          tools:ignore="SpUsage"
+          android:layout_marginTop="6.0dp"
+          />
+
+      <TextView
           android:id="@+id/litho_define_first_top"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -77,7 +88,51 @@
           />
 
       <TextView
+          android:id="@+id/litho_define_first_bottom"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color_white"
+          android:textSize="@dimen/text_15"
+          android:text="@string/number"
+          tools:ignore="SpUsage"
+          android:layout_marginTop="6.0dp"
+          />
+
+      <TextView
+          android:id="@+id/litho_define_last_height"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color_white"
+          android:textSize="@dimen/text_15"
+          android:text="@string/number"
+          tools:ignore="SpUsage"
+          android:layout_marginTop="6.0dp"
+          />
+
+      <TextView
+          android:id="@+id/litho_define_last_top"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color_white"
+          android:textSize="@dimen/text_15"
+          android:text="@string/number"
+          tools:ignore="SpUsage"
+          android:layout_marginTop="6.0dp"
+          />
+
+      <TextView
           android:id="@+id/litho_define_last_bottom"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/color_white"
+          android:textSize="@dimen/text_15"
+          android:text="@string/number"
+          tools:ignore="SpUsage"
+          android:layout_marginTop="6.0dp"
+          />
+
+      <TextView
+          android:id="@+id/litho_define_list_height"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:textColor="@color/color_white"
