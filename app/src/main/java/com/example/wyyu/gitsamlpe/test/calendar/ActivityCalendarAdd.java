@@ -63,8 +63,8 @@ public class ActivityCalendarAdd extends ToolbarActivity implements IPermissionO
     }
 
     private void requestPermission() {
-        PermissionCheck.getInstance()
-            .check(this, new PermissionItem(PermissionItemKey.日历, Manifest.permission.READ_CALENDAR,
+        new PermissionCheck().check(this,
+            new PermissionItem(PermissionItemKey.日历, Manifest.permission.READ_CALENDAR,
                 Manifest.permission.WRITE_CALENDAR).rationalText("开启存储权限才能选图和视频")
                 .confirmText("确认")
                 .denyText("取消")

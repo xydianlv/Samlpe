@@ -10,37 +10,29 @@ import java.util.LinkedList;
 
 public class PermissionCheck {
 
-    private static class CheckHolder {
-        private static PermissionCheck permissionCheck = new PermissionCheck();
-    }
-
-    public static PermissionCheck getInstance() {
-        return CheckHolder.permissionCheck;
-    }
-
     // 一组需要判断的权限集合，一般按照产品功能模块儿组合出一组权限添加进来
     private LinkedList<PermissionItem> permissionItemList;
     private PermissionRequestListener requestListener;
 
     private PermissionItem permissionItem;
+    private Context context;
 
-    private PermissionCheck() {
-        requestListener = new PermissionRequestListener() {
-            @Override public boolean onRequestFinished(String[] permissionArray) {
-                permissionItem = permissionItemList.poll();
-                if (permissionItem != null) {
-                    requestPermission();
-                }
-                return permissionItem != null;
+    public PermissionCheck() {
+        requestListener = permissionArray -> {
+            permissionItem = permissionItemList.poll();
+            if (permissionItem != null) {
+                requestPermission();
             }
+            return permissionItem != null;
         };
         permissionItemList = new LinkedList<>();
     }
 
-    public void check(PermissionItem permissionItemFun) {
+    public void check(Context context, PermissionItem permissionItemFun) {
         if (permissionItemFun == null) {
             return;
         }
+        this.context = context;
         if (!PermissionUtil.isOverMarshmallow()) {
             onPermissionGranted(permissionItemFun);
         } else {
@@ -64,34 +56,6 @@ public class PermissionCheck {
     }
 
     private void requestPermission() {
-        if (permissionItem == null) {
-            return;
-        }
-
-        if (PermissionUtil.hasSelfPermissions(AppController.getAppContext(),
-            permissionItem.permissionArray)) {
-            onPermissionGranted(permissionItem);
-        } else {
-            ActivityCheckPermission.open(AppController.getAppContext(), permissionItem);
-        }
-    }
-
-    public void check(Context context, PermissionItem permissionItemFun) {
-        if (permissionItemFun == null) {
-            return;
-        }
-        if (!PermissionUtil.isOverMarshmallow()) {
-            onPermissionGranted(permissionItemFun);
-        } else {
-            permissionItemList.add(permissionItemFun);
-            if (permissionItem == null) {
-                permissionItem = permissionItemList.poll();
-                requestPermission(context);
-            }
-        }
-    }
-
-    private void requestPermission(Context context) {
         if (permissionItem == null) {
             return;
         }

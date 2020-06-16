@@ -56,7 +56,8 @@ public class ActivityPermissionTest extends ToolbarActivity implements IPermissi
     }
 
     private void checkPermission() {
-        PermissionCheck.getInstance().check(PermissionItemCreator.createStoragePermission());
+        new PermissionCheck().check(ActivityPermissionTest.this,
+            PermissionItemCreator.createStoragePermission());
     }
 
     @SuppressLint("SwitchIntDef") @Override public void permissionGranted(int itemKey) {

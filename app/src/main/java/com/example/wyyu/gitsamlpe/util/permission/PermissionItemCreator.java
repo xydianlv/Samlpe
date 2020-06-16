@@ -16,4 +16,12 @@ public class PermissionItemCreator {
             .denyText("取消")
             .goSetting(true);
     }
+
+    public static PermissionItem createExtraPermission() {
+        return new PermissionItem(PermissionItemKey.存储卡, Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE).rationalText("开启磁盘读取权限")
+            .confirmText("确认")
+            .denyText("取消")
+            .goSetting(true);
+    }
 }
