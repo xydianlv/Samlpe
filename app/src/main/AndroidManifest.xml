@@ -672,7 +672,14 @@
         android:name=".test.canvas.xfermode.ActivityXFerModeTest"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.text.xfermode.ActivityTextXFerMode"/>
+    <activity
+        android:name=".test.text.xfermode.ActivityTextXFerMode"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.click.ActivityLongClickTest"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

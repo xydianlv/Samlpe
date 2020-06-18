@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+      android:id="@+id/long_click_anim_a"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="64.0dp"
+      android:layout_marginStart="64.0dp"
+      android:layout_gravity="center_vertical"
+      >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_test"
+        android:contentDescription="@string/image"
+        />
+
+  </com.example.wyyu.gitsamlpe.framework.window.PressListenerView>
+
+  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+      android:id="@+id/long_click_anim_b"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="64.0dp"
+      android:layout_marginEnd="64.0dp"
+      android:layout_gravity="center_vertical|end"
+      >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_test"
+        android:contentDescription="@string/image"
+        />
+
+  </com.example.wyyu.gitsamlpe.framework.window.PressListenerView>
+
+  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+      android:id="@+id/long_click_anim_c"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="64.0dp"
+      android:layout_gravity="center_horizontal|bottom"
+      >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_test"
+        android:contentDescription="@string/image"
+        />
+
+  </com.example.wyyu.gitsamlpe.framework.window.PressListenerView>
+
+  <com.example.wyyu.gitsamlpe.test.anim.click.LongClickView
+      android:id="@+id/long_click_anim"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+</FrameLayout>

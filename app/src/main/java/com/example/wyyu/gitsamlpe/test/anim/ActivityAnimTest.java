@@ -7,6 +7,7 @@ import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
+import com.example.wyyu.gitsamlpe.test.anim.click.ActivityLongClickTest;
 import com.example.wyyu.gitsamlpe.test.anim.frame.ActivityAnimFrame;
 import com.example.wyyu.gitsamlpe.test.anim.lottie.ActivityAnimLottie;
 import com.example.wyyu.gitsamlpe.test.anim.multi.ActivityAnimMulti;
@@ -50,6 +51,7 @@ public class ActivityAnimTest extends ToolbarActivity {
             .addItem("Wrap", v -> ActivityAnimWrap.open(ActivityAnimTest.this))
             .addItem("SvgA", v -> ActivityAnimSvgA.open(ActivityAnimTest.this))
             .addItem("Spring", v -> ActivityAnimSpring.open(ActivityAnimTest.this))
+            .addItem("LongClick", v -> ActivityLongClickTest.open(ActivityAnimTest.this))
             .refreshList();
     }
 }

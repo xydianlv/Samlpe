@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+  <com.example.wyyu.gitsamlpe.test.anim.click.AnimView
+      android:id="@+id/long_click_anim_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+  <LinearLayout
+      android:id="@+id/long_click_container"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      />
+
+  <ImageView
+      android:id="@+id/long_click_image"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/icon_test"
+      android:contentDescription="@string/image"
+      />
+
+</FrameLayout>
