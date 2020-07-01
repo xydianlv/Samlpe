@@ -3,41 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:background="@color/color_white"
+    android:orientation="vertical"
     >
 
   <include
       layout="@layout/common_toolbar"
       />
 
-  <FrameLayout
+  <com.example.wyyu.gitsamlpe.test.ListViewMain
+      android:id="@+id/pager_test_list"
       android:layout_width="match_parent"
-      android:layout_height="240.0dp"
-      android:layout_marginTop="@dimen/toolbar_height"
-      >
-
-    <com.example.wyyu.gitsamlpe.framework.viewpager.UltraViewPager
-        android:id="@+id/ultra_view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
-    <com.example.wyyu.gitsamlpe.framework.viewpager.indicator.IndicatorView
-        android:id="@+id/ultra_view_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center"
-        />
-
-  </FrameLayout>
-
-  <com.example.banner.ConvenientBanner
-      android:id="@+id/convenient_banner"
-      android:layout_width="match_parent"
-      android:layout_height="240.0dp"
-      android:layout_marginTop="@dimen/toolbar_height"
+      android:layout_height="wrap_content"
       />
 
 </LinearLayout>

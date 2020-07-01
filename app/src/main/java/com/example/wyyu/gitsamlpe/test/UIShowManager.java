@@ -16,7 +16,6 @@ import com.example.wyyu.gitsamlpe.test.dialog.ActivityDialogShowTest;
 import com.example.wyyu.gitsamlpe.test.dialog.ActivityProgressTest;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
-import com.example.wyyu.gitsamlpe.test.fragment.ActivitySlideTest;
 import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.local.ActivityLocalImageList;
@@ -28,9 +27,9 @@ import com.example.wyyu.gitsamlpe.test.multi.ActivityMultiListTest;
 import com.example.wyyu.gitsamlpe.test.notify.ActivityNotifyTest;
 import com.example.wyyu.gitsamlpe.test.number.ActivityNumber;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
-import com.example.wyyu.gitsamlpe.test.pager.anim.ActivityPagerAnim;
+import com.example.wyyu.gitsamlpe.test.pager.slide.ActivitySlideTest;
+import com.example.wyyu.gitsamlpe.test.pager.transform.ActivityPagerTransformTest;
 import com.example.wyyu.gitsamlpe.test.permission.ActivityPermissionTest;
-import com.example.wyyu.gitsamlpe.test.slide.ActivitySlideT;
 import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
 import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangram;
 import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
@@ -39,7 +38,7 @@ import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
 import com.example.wyyu.gitsamlpe.test.video.local.ActivityLocalVideoList;
 import com.example.wyyu.gitsamlpe.test.visibility.ActivitySystemUiVisibility;
 import com.example.wyyu.gitsamlpe.test.volume.ActivityVolume;
-import com.example.wyyu.gitsamlpe.test.weibo.ui.MainBlogActivity;
+import com.example.wyyu.gitsamlpe.test.pager.blog.ActivityBlogTest;
 
 /**
  * Created by wyyu on 2017/12/28.
@@ -49,7 +48,7 @@ class UIShowManager {
 
 
     static void startSlideActivity(Context context) {
-        startTargetActivityFromMain(context, ActivitySlideT.class);
+        startTargetActivityFromMain(context, ActivitySlideTest.class);
     }
 
     static void startAudioRecordActivity(Context context) {
@@ -85,7 +84,7 @@ class UIShowManager {
     }
 
     static void startBlogMainActivity(Context context) {
-        startTargetActivityFromMain(context, MainBlogActivity.class);
+        startTargetActivityFromMain(context, ActivityBlogTest.class);
     }
 
     static void startFloatTestActivity(Context context) {
@@ -126,7 +125,7 @@ class UIShowManager {
     }
 
     static void startDialogFragmentTestActivity(Context context) {
-        startTargetActivityFromMain(context, ActivitySlideTest.class);
+        startTargetActivityFromMain(context, com.example.wyyu.gitsamlpe.test.fragment.ActivitySlideTest.class);
     }
 
     static void startAudioPlayTest(Context context) {
@@ -194,7 +193,7 @@ class UIShowManager {
     }
 
     static void startPagerTransformerShow(Activity activity) {
-        ActivityPagerAnim.open(activity);
+        ActivityPagerTransformTest.open(activity);
     }
 
     static void startCanvasShow(Activity activity) {

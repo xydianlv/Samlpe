@@ -11,7 +11,7 @@
       android:orientation="vertical"
       >
 
-    <com.example.wyyu.gitsamlpe.test.weibo.weight.MyTabHeader
+    <com.example.wyyu.gitsamlpe.test.pager.blog.weight.MyTabHeader
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -38,7 +38,7 @@
           android:paddingBottom="12.0dp"
           >
 
-        <com.example.wyyu.gitsamlpe.test.weibo.weight.MyTabData
+        <com.example.wyyu.gitsamlpe.test.pager.blog.weight.MyTabData
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />

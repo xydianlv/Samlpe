@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
     >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
 
   <android.support.v7.widget.RecyclerView
       android:id="@+id/snap_pager_list"
@@ -11,4 +18,4 @@
       android:layout_height="match_parent"
       />
 
-</FrameLayout>
+</LinearLayout>

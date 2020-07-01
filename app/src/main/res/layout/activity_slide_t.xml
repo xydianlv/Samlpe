@@ -3,15 +3,25 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
     >
 
-  <com.example.wyyu.gitsamlpe.test.slide.indicator.MagicIndicator
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.pager.slide.indicator.MagicIndicator
       android:id="@+id/slide_indicator"
       android:layout_width="140.0dp"
-      android:layout_height="34.0dp"
+      android:layout_height="48.0dp"
       android:paddingLeft="14.0dp"
       android:paddingRight="14.0dp"
       android:orientation="horizontal"
+      />
+
+  <View
+      style="@style/my_divide_line"
       />
 
   <android.support.v4.view.ViewPager

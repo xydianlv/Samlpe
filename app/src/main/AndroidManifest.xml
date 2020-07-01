@@ -64,11 +64,6 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.slide.ActivitySlide"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustNothing"
-        />
-    <activity
         android:name=".test.audio.recorder.ActivityAudioRecorder"
         android:screenOrientation="portrait"
         />
@@ -133,7 +128,7 @@
 
     <!-- 仿微博客户端模块 -->
     <activity
-        android:name=".test.weibo.ui.MainBlogActivity"
+        android:name=".test.pager.blog.ActivityBlogTest"
         android:screenOrientation="portrait"
         />
     <activity
@@ -165,11 +160,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.slide.ActivityScroll"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.slide.ActivitySlideT"
+        android:name=".test.pager.slide.ActivitySlideTest"
         android:screenOrientation="portrait"
         />
     <activity
@@ -485,47 +476,47 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnim"
+        android:name=".test.pager.transform.ActivityPagerTransformTest"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimCube"
+        android:name=".test.pager.transform.ActivityPagerAnimCube"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimCrimp"
+        android:name=".test.pager.transform.ActivityPagerAnimCrimp"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimWind"
+        android:name=".test.pager.transform.ActivityPagerAnimWind"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimOver"
+        android:name=".test.pager.transform.ActivityPagerAnimOver"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimScaleSide"
+        android:name=".test.pager.transform.ActivityPagerAnimScaleSide"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimScaleCenter"
+        android:name=".test.pager.transform.ActivityPagerAnimScaleCenter"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimDepth"
+        android:name=".test.pager.transform.ActivityPagerAnimDepth"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimFade"
+        android:name=".test.pager.transform.ActivityPagerAnimFade"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimPreview"
+        android:name=".test.pager.transform.ActivityPagerAnimPreview"
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.anim.ActivityPagerAnimSimple"
+        android:name=".test.pager.transform.ActivityPagerAnimSimple"
         android:screenOrientation="portrait"
         />
     <activity
@@ -549,7 +540,7 @@
           />
     </activity>
     <activity
-        android:name=".test.pager.complex.ActivityComplexPage"
+        android:name=".test.pager.complex.ActivityPagerComplexTest"
         android:screenOrientation="portrait"
         />
     <activity
@@ -657,7 +648,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.pager.snap.ActivitySnapPagerTest"
+        android:name=".test.pager.snap.ActivityPagerSnapTest"
         android:screenOrientation="portrait"
         />
     <activity
@@ -680,6 +671,8 @@
         android:name=".test.anim.click.ActivityLongClickTest"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.pager.ultra.ActivityUltraTest"/>
+    <activity android:name=".test.pager.banner.ActivityBannerTest"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

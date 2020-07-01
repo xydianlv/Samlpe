@@ -12,7 +12,7 @@ import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
 import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
 import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
-import com.example.wyyu.gitsamlpe.test.pager.snap.ActivitySnapPagerTest;
+import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
@@ -56,7 +56,8 @@ public class MainActivity extends ToolbarActivity {
             .addItem("Bezier", v -> ActivityBezierTest.open(MainActivity.this))
             .addItem("Text", v -> ActivityTextTest.open(MainActivity.this))
             .addItem("Canvas", v -> ActivityCanvasTest.open(MainActivity.this))
-            .addItem("Net", v -> ActivityNetworkTest.open(MainActivity.this));
+            .addItem("Net", v -> ActivityNetworkTest.open(MainActivity.this))
+            .addItem("Pager", v -> ActivityPagerTest.open(MainActivity.this));
 
         listViewMain.addNewItem("FileListTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
@@ -97,18 +98,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("FloatTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startFloatTestActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("BannerTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startPagerTestActivity(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("TextTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startAdapterTextView(MainActivity.this);
             }
         });
 
@@ -180,12 +169,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("BlogTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startBlogMainActivity(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("LiveTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startLiveTest(MainActivity.this);
@@ -237,18 +220,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("CalendarTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
                 UIShowManager.startCalendarTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("PagerTransformer", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startPagerTransformerShow(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("SnapPager", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                ActivitySnapPagerTest.open(MainActivity.this);
             }
         });
 

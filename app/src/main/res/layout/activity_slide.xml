@@ -7,13 +7,13 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <com.example.wyyu.gitsamlpe.test.slide.weight.SlideViewPager
+    <com.example.wyyu.gitsamlpe.test.pager.slide.weight.SlideViewPager
         android:id="@+id/slide_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0.0dp"
         android:layout_weight="1" />
 
-    <com.example.wyyu.gitsamlpe.test.slide.weight.LayoutReview
+    <com.example.wyyu.gitsamlpe.test.pager.slide.weight.LayoutReview
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

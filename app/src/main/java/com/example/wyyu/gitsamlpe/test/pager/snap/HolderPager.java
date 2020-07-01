@@ -15,7 +15,7 @@ public class HolderPager extends RecyclerView.ViewHolder {
     public static final int LAYOUT = R.layout.layout_holder_pager;
 
     private static final int[] RES_ARRAY = new int[] {
-        0xff84919b, 0xffa39480, 0xffc86f67, 0xffb7d28d
+        0xff9fbfbf, 0xffa39480, 0xffc86f67, 0xffb7d28d
     };
 
     private TextView pagerIndex;

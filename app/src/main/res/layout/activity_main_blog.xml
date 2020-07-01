@@ -12,7 +12,7 @@
       android:layout_marginBottom="@dimen/bottom_bar_height"
       />
 
-  <com.example.wyyu.gitsamlpe.test.weibo.weight.BottomSwitchTab
+  <com.example.wyyu.gitsamlpe.test.pager.blog.weight.BottomSwitchTab
       android:id="@+id/blog_switch_tab"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

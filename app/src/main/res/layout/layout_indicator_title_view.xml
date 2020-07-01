@@ -12,6 +12,7 @@
       android:id="@+id/title"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:textSize="@dimen/text_15"
       tools:text="最右"
       android:layout_gravity="center"
       android:maxLines="1"
