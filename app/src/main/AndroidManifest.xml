@@ -673,6 +673,7 @@
         />
     <activity android:name=".test.pager.ultra.ActivityUltraTest"/>
     <activity android:name=".test.pager.banner.ActivityBannerTest"/>
+    <activity android:name=".test.anim.interpolator.ActivityInterpolatorTest"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

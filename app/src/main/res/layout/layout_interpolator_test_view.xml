@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:id="@+id/interpolator_test_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="@color/ct_1"
+      android:textSize="15.0dp"
+      android:paddingBottom="10.0dp"
+      android:paddingTop="10.0dp"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      tools:ignore="SpUsage"
+      />
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="64.0dp"
+      android:paddingLeft="@dimen/padding_12"
+      android:paddingRight="@dimen/padding_12"
+      >
+
+    <View
+        android:id="@+id/interpolator_test_anim"
+        android:layout_width="32.0dp"
+        android:layout_height="32.0dp"
+        android:background="@drawable/bg_round_white_black_30"
+        android:layout_gravity="center_vertical"
+        />
+
+  </FrameLayout>
+
+</LinearLayout>

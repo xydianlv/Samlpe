@@ -18,7 +18,7 @@ class Group {
         R.mipmap.long_anim_element_g,
     };
     // 乱序数组
-    private static final int[] ARRAY_MESS = new int[] { 0, 1, 2, 3, 4, 5, 6 };
+    private static final int[] ARRAY_MESS = new int[] { 0, 1, 2, 3, 4, 5, 6, 0, 3, 6 };
 
     // 动画元素数据
     Element[] valueArray;
@@ -29,8 +29,8 @@ class Group {
         leftTime = AnimView.DURATION_ANIM;
 
         Random random = new Random();
-        // 五个或七个小图标
-        int numIcon = random.nextInt(2) + 5;
+        // 八个或十个小图标
+        int numIcon = random.nextInt(2) + 8;
 
         for (int index = ARRAY_MESS.length - 1; index > 0; index--) {
             int position = random.nextInt(index);
