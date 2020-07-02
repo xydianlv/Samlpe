@@ -40,6 +40,7 @@ class Element {
     private float scaleY;
 
     private static final int SCREEN_WIDTH = UIUtils.getScreenWidth();
+    private static final int SCREEN_DIVIDE = SCREEN_WIDTH / 6;
     private static final int SIZE_IMAGE = UIUtils.dpToPx(32.0f);
 
     private static final int FULL_ALPHA = 255;
@@ -67,19 +68,25 @@ class Element {
         } else {
             initMid(index);
         }
+
+        pointM = new Point((pointS.x - pointE.x) / 3 + pointE.x,
+            Math.min(pointS.y, pointE.y) - SCREEN_WIDTH / 3);
     }
 
     private void initRight(int index) {
         pointS = new Point((int) left + SIZE_IMAGE, (int) top + SIZE_IMAGE);
-        int data = new Random().nextInt(SCREEN_WIDTH);
-        int side = index % 5 == 1 ? -1 : 1;
+        int data = SCREEN_DIVIDE * (index % 6 - 1) + new Random().nextInt(SCREEN_DIVIDE);
+        int side = index % 4 == 1 ? -1 : 1;
 
-        int x = pointS.x - data + (SIZE_IMAGE * 4 * side);
-        int y = pointS.y - (int) Math.sqrt(SCREEN_WIDTH * SCREEN_WIDTH - data * data) * side;
+        // X轴的随机间距
+        int x = pointS.x - data + (SIZE_IMAGE * 2 * side);
+        // 动画的随机半径大小
+        int r = SCREEN_WIDTH * 3 / 4 + new Random().nextInt(SCREEN_WIDTH / 4);
+        // y轴的随机间距
+        int y = pointS.y - (int) Math.sqrt(r * r - data * data) * side + (side < 0 ? 0
+            : (SCREEN_DIVIDE * 2 - data / 2));
 
         pointE = new Point(x, y - (side < 0 ? SCREEN_WIDTH / 2 : 0));
-
-        pointM = null;
     }
 
     private void initLeft(int index) {
@@ -88,8 +95,6 @@ class Element {
         int data = new Random().nextInt(SCREEN_WIDTH);
         pointE = new Point(pointS.x + data - SIZE_IMAGE * 2,
             pointS.y - (SCREEN_WIDTH - data) * (index % 4 == 1 ? -1 : 1));
-
-        pointM = null;
     }
 
     private void initMid(int index) {
@@ -99,9 +104,6 @@ class Element {
         int data = new Random().nextInt(SCREEN_WIDTH);
         pointE = new Point(pointS.x + (data * (index % 2 == 0 ? 1 : -1)),
             pointS.y - (SCREEN_WIDTH - data));
-
-        pointM = new Point((pointS.x - pointE.x) / 3 + pointE.x,
-            Math.min(pointS.y, pointE.y) - SCREEN_WIDTH / 5);
     }
 
     /**
@@ -122,15 +124,18 @@ class Element {
 
         matrix.setTranslate(left, top);
 
-        if (m <= 0.2) {
-            matrix.preScale(1.4f * scaleX, 1.4f * scaleY);
-            paint.setAlpha((int) (FULL_ALPHA * m * 5.0f));
+        if (m < 0.5) {
+            matrix.preScale((0.6f + 0.8f * m) * scaleX, (0.6f + 0.8f * m) * scaleY);
+        } else {
+            matrix.preScale(1.0f * scaleX, 1.0f * scaleY);
+        }
+
+        if (m <= 0.25) {
+            paint.setAlpha((int) (FULL_ALPHA * m * 4.0f));
         } else if (m <= 0.9f) {
-            matrix.preScale((0.9f - m + 0.7f) * scaleX, (0.9f - m + 0.7f) * scaleY);
             paint.setAlpha(FULL_ALPHA);
         } else {
-            matrix.preScale(0.7f * scaleX, 0.7f * scaleY);
-            paint.setAlpha(0);
+            paint.setAlpha((int) (FULL_ALPHA * t * 10.0f));
         }
     }
 }

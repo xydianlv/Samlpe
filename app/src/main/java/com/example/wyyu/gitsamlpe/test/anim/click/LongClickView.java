@@ -2,15 +2,16 @@ package com.example.wyyu.gitsamlpe.test.anim.click;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -60,16 +61,11 @@ public class LongClickView extends FrameLayout {
     private View imageView;
 
     // 主图标缩放动画
-    private AnimatorSet animSet;
-    // 终止动画
-    private boolean onAnim;
-
+    private ObjectAnimator animator;
     // 时长自增的个数
     private int count;
     // 锚点X
     private int x;
-    // 锚点Y
-    private int y;
 
     // 当前锚点ID
     private long currentId;
@@ -83,41 +79,16 @@ public class LongClickView extends FrameLayout {
     }
 
     private void initValue() {
-        onAnim = false;
         count = 0;
         x = 0;
-        y = 0;
     }
 
     private void initView() {
         container = findViewById(R.id.long_click_container);
         imageView = findViewById(R.id.long_click_image);
         animView = findViewById(R.id.long_click_anim_view);
-    }
 
-    private void initAnim() {
-        ObjectAnimator animatorSX = ObjectAnimator.ofFloat(imageView, "scaleX", 1.0f, 1.4f, 1.0f);
-        ObjectAnimator animatorSY = ObjectAnimator.ofFloat(imageView, "scaleY", 1.0f, 1.4f, 1.0f);
-
-        animSet = new AnimatorSet();
-        animSet.playTogether(animatorSX, animatorSY);
-        animSet.setInterpolator(new LinearInterpolator());
-        animSet.setDuration(AnimView.DURATION_ANIM);
-
-        animSet.addListener(new AnimatorListenerAdapter() {
-            @Override public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                if (onAnim && animSet != null) {
-                    animSet.start();
-                }
-            }
-
-            @Override public void onAnimationStart(Animator animation) {
-                super.onAnimationStart(animation);
-                refreshCount();
-                refreshAnim();
-            }
-        });
+        animView.setRateListener(this::refreshCount);
     }
 
     private void refreshCount() {
@@ -153,10 +124,52 @@ public class LongClickView extends FrameLayout {
         container.addView(imageView);
     }
 
-    private void refreshAnim() {
-        if (animView != null) {
-            animView.showAnim(x, y);
-        }
+    private void initAnim() {
+        PropertyValuesHolder animSX = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.4f, 1.0f);
+        PropertyValuesHolder animSY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.4f, 1.0f);
+
+        animator = ObjectAnimator.ofPropertyValuesHolder(imageView, animSX, animSY);
+        animator.setInterpolator(new LinearOutSlowInInterpolator());
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        animator.setDuration(AnimView.DURATION_ANIM);
+
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if (container != null) {
+                    container.setVisibility(INVISIBLE);
+                }
+                if (imageView != null) {
+                    imageView.setVisibility(INVISIBLE);
+                }
+                if (animView != null) {
+                    animView.endAnim();
+                }
+            }
+
+            @Override public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                if (container != null) {
+                    container.setVisibility(VISIBLE);
+                }
+                if (imageView != null) {
+                    imageView.setVisibility(VISIBLE);
+                }
+            }
+
+            @Override public void onAnimationCancel(Animator animation) {
+                super.onAnimationCancel(animation);
+                if (container != null) {
+                    container.setVisibility(INVISIBLE);
+                }
+                if (imageView != null) {
+                    imageView.setVisibility(INVISIBLE);
+                }
+                if (animView != null) {
+                    animView.endAnim();
+                }
+            }
+        });
     }
 
     @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -184,37 +197,34 @@ public class LongClickView extends FrameLayout {
         int[] location = new int[2];
         anchorView.getLocationInWindow(location);
 
-        x = location[0];
-        y = location[1];
-
+        this.x = location[0];
         if (anchorView.getId() != currentId) {
             count = 0;
             currentId = anchorView.getId();
         }
-
         if (imageView != null) {
             imageView.setX(location[0]);
             imageView.setY(location[1]);
         }
-
         if (container != null) {
             container.setY(location[1] - anchorView.getHeight() - UIUtils.dpToPx(24.0f));
             container.setX(location[0]);
         }
-
-        if (animSet == null) {
+        if (animView != null) {
+            animView.showAnim(location[0], location[1]);
+        }
+        if (animator == null) {
             initAnim();
         }
-        onAnim = true;
-        animSet.start();
+        animator.start();
     }
 
     /**
      * 结束动画
      */
     public void endAnim() {
-        if (animSet != null && animSet.isStarted()) {
-            onAnim = false;
+        if (animator != null && animator.isStarted()) {
+            animator.cancel();
         }
     }
 }

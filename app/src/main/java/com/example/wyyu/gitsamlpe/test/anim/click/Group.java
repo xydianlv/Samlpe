@@ -29,8 +29,8 @@ class Group {
         leftTime = AnimView.DURATION_ANIM;
 
         Random random = new Random();
-        // 八个或十个小图标
-        int numIcon = random.nextInt(2) + 8;
+        // 六个到十个小图标
+        int numIcon = random.nextInt(4) + 6;
 
         for (int index = ARRAY_MESS.length - 1; index > 0; index--) {
             int position = random.nextInt(index);
@@ -52,7 +52,7 @@ class Group {
         if (valueArray == null || valueArray.length <= 0) {
             return true;
         }
-        leftTime = leftTime - LongClickAnimView.DIVIDE_ANIM;
+        leftTime = leftTime - AnimView.DIVIDE_ANIM;
         if (leftTime <= 0) {
             valueArray = null;
             return true;

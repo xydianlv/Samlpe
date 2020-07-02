@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.framework.WeakHandler;
+import com.example.wyyu.gitsamlpe.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,51 +31,87 @@ public class AnimView extends View {
         initView();
     }
 
-    private static final int DIVIDE_ANIM = 6;
-    private static final int MSG_ANIM = 1;
+    public interface OnRateListener {
 
-    static final int DURATION_ANIM = 160;
+        void onRate();
+    }
+
+    private static final int MSG_ANIM = 1;
+    private static final int MSG_RATE = 2;
+
+    static final int DURATION_ANIM = 250;
+    static final int DIVIDE_RATE = 100;
+    static final int DIVIDE_ANIM = 6;
 
     private List<Group> groupList;
     private List<Group> funList;
 
+    private OnRateListener rateListener;
     private WeakHandler handler;
+
+    private int x;
+    private int y;
 
     private void initView() {
         groupList = new ArrayList<>();
         funList = new ArrayList<>();
+        x = 0;
+        y = 0;
 
         initHandler();
     }
 
     private void initHandler() {
         handler = new WeakHandler(msg -> {
-            if (msg == null || msg.what != MSG_ANIM) {
+            if (msg == null) {
                 return;
             }
-            if (groupList == null || groupList.isEmpty()) {
-                clearValue();
-                return;
+            if (msg.what == MSG_ANIM) {
+                dispatchInvalidate();
             }
-            if (funList == null) {
-                funList = new ArrayList<>();
-            }
-            funList.clear();
-            for (Group group : groupList) {
-                if (group.refreshProgress()) {
-                    funList.add(group);
-                }
-            }
-            if (funList != null && !funList.isEmpty()) {
-                groupList.removeAll(funList);
-            }
-            invalidate();
-
-            if (handler != null) {
-                handler.removeMessages(MSG_ANIM);
-                handler.sendEmptyMessageDelayed(MSG_ANIM, DIVIDE_ANIM);
+            if (msg.what == MSG_RATE) {
+                dispatchRate();
             }
         });
+    }
+
+    private void dispatchInvalidate() {
+        if (groupList == null || groupList.isEmpty()) {
+            clearValue();
+            return;
+        }
+        if (funList == null) {
+            funList = new ArrayList<>();
+        }
+        funList.clear();
+        for (Group group : groupList) {
+            if (group.refreshProgress()) {
+                funList.add(group);
+            }
+        }
+        if (funList != null && !funList.isEmpty()) {
+            groupList.removeAll(funList);
+        }
+        invalidate();
+
+        if (handler != null) {
+            handler.removeMessages(MSG_ANIM);
+            handler.sendEmptyMessageDelayed(MSG_ANIM, DIVIDE_ANIM);
+        }
+    }
+
+    private void dispatchRate() {
+        if (rateListener != null) {
+            rateListener.onRate();
+        }
+        if (groupList == null) {
+            groupList = new ArrayList<>();
+        }
+        groupList.add(new Group(getContext(), x, y));
+        if (handler != null) {
+            handler.removeMessages(MSG_RATE);
+            handler.sendEmptyMessageDelayed(MSG_RATE, DIVIDE_RATE);
+        }
     }
 
     private void clearValue() {
@@ -115,20 +152,40 @@ public class AnimView extends View {
     }
 
     /**
+     * 设置元素动画频率监听
+     *
+     * @param rateListener 频率监听回调
+     */
+    void setRateListener(OnRateListener rateListener) {
+        this.rateListener = rateListener;
+    }
+
+    /**
      * 添加一组新动画
      *
      * @param x 坐标X
      * @param y 坐标Y
      */
     void showAnim(int x, int y) {
-        if (groupList == null) {
-            groupList = new ArrayList<>();
-        }
-        groupList.add(new Group(getContext(), x, y));
+        this.x = x - UIUtils.dpToPx(32.0f);
+        this.y = y - UIUtils.dpToPx(32.0f);
+
         if (handler == null) {
             initHandler();
         }
+        handler.removeMessages(MSG_RATE);
+        handler.sendEmptyMessage(MSG_RATE);
+
         handler.removeMessages(MSG_ANIM);
         handler.sendEmptyMessage(MSG_ANIM);
+    }
+
+    /**
+     * 停止动画
+     */
+    void endAnim() {
+        if (handler != null) {
+            handler.removeMessages(MSG_RATE);
+        }
     }
 }
