@@ -167,8 +167,8 @@ public class AnimView extends View {
      * @param y 坐标Y
      */
     void showAnim(int x, int y) {
-        this.x = x - UIUtils.dpToPx(32.0f);
-        this.y = y - UIUtils.dpToPx(32.0f);
+        this.x = x;
+        this.y = y;
 
         if (handler == null) {
             initHandler();

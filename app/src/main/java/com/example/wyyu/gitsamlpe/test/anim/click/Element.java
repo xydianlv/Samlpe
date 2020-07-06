@@ -74,7 +74,7 @@ class Element {
     }
 
     private void initRight(int index) {
-        pointS = new Point((int) left + SIZE_IMAGE, (int) top + SIZE_IMAGE);
+        pointS = new Point((int) left, (int) top);
         int data = SCREEN_DIVIDE * (index % 6 - 1) + new Random().nextInt(SCREEN_DIVIDE);
         int side = index % 4 == 1 ? -1 : 1;
 
@@ -90,16 +90,33 @@ class Element {
     }
 
     private void initLeft(int index) {
-        pointS = new Point((int) left, (int) top + SIZE_IMAGE);
+        pointS = new Point((int) left, (int) top);
 
-        int data = new Random().nextInt(SCREEN_WIDTH);
-        pointE = new Point(pointS.x + data - SIZE_IMAGE * 2,
-            pointS.y - (SCREEN_WIDTH - data) * (index % 4 == 1 ? -1 : 1));
+        int data = SCREEN_DIVIDE * (index % 6 - 1) + new Random().nextInt(SCREEN_DIVIDE);
+        int side = index % 4 == 1 ? -1 : 1;
+
+        // X轴的随机间距
+        int x = pointS.x + data - (SIZE_IMAGE * 2 * side);
+        // 动画的随机半径大小
+        int r = SCREEN_WIDTH * 3 / 4 + new Random().nextInt(SCREEN_WIDTH / 4);
+        // y轴的随机间距
+        int y = pointS.y - (int) Math.sqrt(r * r - data * data) * side + (side < 0 ? 0
+            : (SCREEN_DIVIDE * 2 - data / 2));
+
+        pointE = new Point(x, y - (side < 0 ? SCREEN_WIDTH / 2 : 0));
     }
 
     private void initMid(int index) {
+        pointS = new Point((int) left + SIZE_IMAGE / 2, (int) top);
 
-        pointS = new Point((int) left + SIZE_IMAGE / 2, (int) top + SIZE_IMAGE);
+        //int data = SCREEN_DIVIDE * (index % 6 - 1) + new Random().nextInt(SCREEN_DIVIDE);
+        //
+        //// 动画的随机半径大小
+        //int r = SCREEN_WIDTH * 3 / 4 + new Random().nextInt(SCREEN_WIDTH / 4);
+        //// y轴的随机间距
+        //int y = pointS.y - (int) Math.sqrt(r * r - (pointS.x - data) * (pointS.x - data));
+        //
+        //pointE = new Point(data, y);
 
         int data = new Random().nextInt(SCREEN_WIDTH);
         pointE = new Point(pointS.x + (data * (index % 2 == 0 ? 1 : -1)),
