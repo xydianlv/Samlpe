@@ -1,6 +1,6 @@
 package com.wyyu.multi.adapter;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.wyyu.multi.binder.HolderBinder;
 import java.util.List;
 

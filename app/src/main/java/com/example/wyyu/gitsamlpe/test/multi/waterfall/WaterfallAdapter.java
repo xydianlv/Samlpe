@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.multi.waterfall;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import com.example.wyyu.gitsamlpe.test.image.preview.ActivityImagePreview;

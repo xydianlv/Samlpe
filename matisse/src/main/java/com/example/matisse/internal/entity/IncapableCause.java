@@ -1,7 +1,7 @@
 package com.example.matisse.internal.entity;
 
 import android.content.Context;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.widget.Toast;
 import java.lang.annotation.Retention;
 

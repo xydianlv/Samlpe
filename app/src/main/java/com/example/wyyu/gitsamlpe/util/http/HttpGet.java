@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.util.http;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.wyyu.gitsamlpe.framework.ULog;
 

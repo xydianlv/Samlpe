@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.multi.delegate.base;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import java.util.List;
 
 /**

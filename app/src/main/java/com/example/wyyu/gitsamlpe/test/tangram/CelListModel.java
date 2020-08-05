@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.tangram;
 
-import android.arch.lifecycle.ViewModel;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.CellDefine;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.DefineBean;

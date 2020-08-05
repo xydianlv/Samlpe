@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.util.download;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by wyyu on 2018/6/28.

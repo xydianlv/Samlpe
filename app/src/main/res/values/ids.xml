@@ -3,4 +3,6 @@
 
   <item name="video_player_id_fullscreen" type="id" />
 
+  <item name="cm_player_id_fullscreen" type="id" />
+
 </resources>

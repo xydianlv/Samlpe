@@ -12,7 +12,7 @@
       layout="@layout/common_toolbar"
       />
 
-  <android.support.v4.view.ViewPager
+  <androidx.viewpager.widget.ViewPager
       android:id="@+id/pager_simple_view"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

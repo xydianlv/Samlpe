@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.litho.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;

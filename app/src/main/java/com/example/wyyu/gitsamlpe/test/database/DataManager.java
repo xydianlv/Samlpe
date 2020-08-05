@@ -1,8 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.database;
 
-import android.arch.persistence.db.SupportSQLiteQueryBuilder;
+import androidx.sqlite.db.SupportSQLiteQueryBuilder;
 import android.content.ContentValues;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.alibaba.fastjson.JSONObject;
 import com.tencent.wcdb.Cursor;
 import com.tencent.wcdb.database.SQLiteDatabase;

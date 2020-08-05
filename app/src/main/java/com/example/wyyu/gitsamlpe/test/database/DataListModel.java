@@ -1,8 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.database;
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel;
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.message.Message;
 import com.example.wyyu.gitsamlpe.framework.message.MsgSender;

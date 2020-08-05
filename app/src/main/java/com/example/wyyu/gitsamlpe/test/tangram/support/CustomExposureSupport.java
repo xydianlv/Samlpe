@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.tangram.support;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.tmall.wireless.tangram.dataparser.concrete.Card;

@@ -72,14 +72,6 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.video.ActivityPlayVideo"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.video.ActivityCameraTest"
-        android:screenOrientation="portrait"
-        />
-    <activity
         android:name=".test.bigimage.ActivityImageList"
         android:screenOrientation="portrait"
         />
@@ -169,10 +161,6 @@
         />
     <activity
         android:name=".test.pager.ActivityPagerTest"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.video.ActivityVideoList"
         android:screenOrientation="portrait"
         />
     <activity
@@ -329,10 +317,6 @@
         />
     <activity
         android:name=".test.livedata.ActivityLiveDataTest"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".test.video.local.ActivityLocalVideoList"
         android:screenOrientation="portrait"
         />
     <activity
@@ -671,9 +655,24 @@
         android:name=".test.anim.click.ActivityLongClickTest"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.pager.ultra.ActivityUltraTest"/>
-    <activity android:name=".test.pager.banner.ActivityBannerTest"/>
-    <activity android:name=".test.anim.interpolator.ActivityInterpolatorTest"/>
+    <activity
+        android:name=".test.pager.ultra.ActivityUltraTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.banner.ActivityBannerTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.anim.interpolator.ActivityInterpolatorTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.video.ActivityVideoTest"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.video.list.ActivityVideoList"/>
+    <activity android:name=".test.video.waterfall.ActivityVideoWaterfall"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

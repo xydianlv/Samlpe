@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.multi.multitype.base;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 

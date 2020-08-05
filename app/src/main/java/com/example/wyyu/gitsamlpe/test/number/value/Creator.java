@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.number.value;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import com.example.wyyu.gitsamlpe.test.number.OperateUtil;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

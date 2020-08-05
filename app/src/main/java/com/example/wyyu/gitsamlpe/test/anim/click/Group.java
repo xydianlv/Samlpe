@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.anim.click;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.R;
 import java.util.Random;
 

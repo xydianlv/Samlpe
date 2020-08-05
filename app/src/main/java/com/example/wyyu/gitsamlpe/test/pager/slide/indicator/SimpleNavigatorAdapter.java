@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.pager.slide.indicator;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import com.example.wyyu.gitsamlpe.R;
 
 /**

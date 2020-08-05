@@ -1,13 +1,12 @@
 package com.example.wyyu.gitsamlpe.test.litho.multi;
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.litho.Datum;
-import com.example.wyyu.gitsamlpe.test.litho.multi.spec.MultiList;
 import com.facebook.litho.ComponentContext;
 import com.facebook.litho.LithoView;
 import java.util.List;
@@ -50,8 +49,6 @@ public class ActivityLithoMulti extends ToolbarActivity {
     private void loadList() {
         multiModel.loadList(new LithoMultiModel.LoadCallback() {
             @Override public void onSuccess(List<Datum> datumList) {
-                container.addView(LithoView.create(componentContext,
-                    MultiList.create(componentContext).dataModels(datumList).build()));
             }
 
             @Override public void onFailure() {

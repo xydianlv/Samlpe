@@ -1,6 +1,6 @@
 package com.example.banner.listener;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by wyyu on 2019-07-01.

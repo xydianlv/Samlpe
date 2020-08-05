@@ -7,7 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 import android.text.TextUtils;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
 

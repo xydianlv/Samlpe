@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.audio.player;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by wyyu on 2018/9/20.

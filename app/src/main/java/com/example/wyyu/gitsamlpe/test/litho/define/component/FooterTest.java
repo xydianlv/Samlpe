@@ -80,14 +80,7 @@ public class FooterTest extends Component {
 
         ComponentContext context = getScopedContext();
         if (context != null) {
-            context.updateStateAsync(new FooterUpdate(), "SimpleInfo.refreshInfo");
-        }
-    }
-
-    private static final class FooterUpdate implements ComponentLifecycle.StateUpdate {
-
-        @Override public void updateState(StateContainer stateContainer) {
-
+            context.updateStateAsync(new StateContainer.StateUpdate(0), "SimpleInfo.refreshInfo");
         }
     }
 }

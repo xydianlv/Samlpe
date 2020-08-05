@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.livedata;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 /**
  * Created by wyyu on 2019/3/20.

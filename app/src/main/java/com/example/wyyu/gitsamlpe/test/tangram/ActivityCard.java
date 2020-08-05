@@ -1,13 +1,13 @@
 package com.example.wyyu.gitsamlpe.test.tangram;
 
-import android.arch.lifecycle.Observer;
+import androidx.lifecycle.Observer;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import android.widget.ImageView;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;

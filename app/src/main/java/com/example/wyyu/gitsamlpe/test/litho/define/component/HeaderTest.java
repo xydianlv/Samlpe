@@ -6,7 +6,6 @@ import com.example.wyyu.gitsamlpe.test.litho.define.data.DefineData;
 import com.facebook.litho.Column;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
-import com.facebook.litho.ComponentLifecycle;
 import com.facebook.litho.Row;
 import com.facebook.litho.StateContainer;
 import com.facebook.litho.widget.Image;
@@ -99,14 +98,7 @@ public class HeaderTest extends Component {
 
         ComponentContext treeContext = getScopedContext();
         if (treeContext != null) {
-            treeContext.updateStateSync(new HeaderStateUpdate(), "");
-        }
-    }
-
-    private static final class HeaderStateUpdate implements ComponentLifecycle.StateUpdate {
-
-        @Override public void updateState(StateContainer stateContainer) {
-
+            treeContext.updateStateSync(new StateContainer.StateUpdate(0), "");
         }
     }
 }

@@ -1,14 +1,14 @@
 package com.example.wyyu.gitsamlpe.test.bigimage.weight;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 
 /**
  * Created by wyyu on 2018/4/12.
  **/
 
-public class MyImageView extends android.support.v7.widget.AppCompatImageView {
+public class MyImageView extends androidx.appcompat.widget.AppCompatImageView {
 
     public MyImageView(Context context) {
         super(context);

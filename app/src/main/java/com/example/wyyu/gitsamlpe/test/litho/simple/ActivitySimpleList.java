@@ -4,7 +4,6 @@ import android.os.Bundle;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.litho.Datum;
 import com.example.wyyu.gitsamlpe.test.litho.simple.data.DecadeSimple;
-import com.example.wyyu.gitsamlpe.test.litho.simple.spec.SimpleList;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
 import com.facebook.litho.LithoView;
@@ -22,9 +21,9 @@ public class ActivitySimpleList extends ToolbarActivity {
 
         ComponentContext componentContext = new ComponentContext(this);
 
-        Component component = SimpleList.create(componentContext).dataModels(loadList()).build();
+        //Component component = SimpleList.create(componentContext).dataModels(loadList()).build();
 
-        setContentView(LithoView.create(componentContext, component));
+        //setContentView(LithoView.create(componentContext, component));
     }
 
     private List<Datum> loadList() {

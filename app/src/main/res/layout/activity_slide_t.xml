@@ -24,7 +24,7 @@
       style="@style/my_divide_line"
       />
 
-  <android.support.v4.view.ViewPager
+  <androidx.viewpager.widget.ViewPager
       android:id="@+id/slide_view_pager_t"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

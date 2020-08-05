@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.multi.custom.base.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import com.example.wyyu.gitsamlpe.test.multi.custom.base.holder.HolderBinder;
 import java.util.List;
 

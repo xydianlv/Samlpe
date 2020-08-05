@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="38.0dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    >
+
+  <View
+      android:layout_width="@dimen/padding_14"
+      android:layout_height="0.0dp"
+      />
+
+  <TextView
+      android:id="@+id/cm_bottom_progress_current"
+      android:layout_width="45.0dp"
+      android:layout_height="30.0dp"
+      android:textSize="12.0dp"
+      android:typeface="sans"
+      android:textStyle="bold"
+      android:gravity="center"
+      android:ellipsize="end"
+      android:maxLines="1"
+      android:textColor="@color/ct_5"
+      tools:ignore="SpUsage"
+      />
+
+  <SeekBar
+      android:id="@+id/cm_bottom_progress_seek"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1.0"
+      android:background="@null"
+      android:max="100"
+      android:maxHeight="2dp"
+      android:minHeight="2dp"
+      android:paddingLeft="12dp"
+      android:paddingRight="12dp"
+      android:paddingBottom="8.0dp"
+      android:paddingTop="8.0dp"
+      android:progressDrawable="@drawable/jz_bottom_seek_progress"
+      android:thumb="@drawable/cm_bottom_seek_thumb"
+      />
+
+  <TextView
+      android:id="@+id/cm_bottom_progress_duration"
+      android:layout_width="45.0dp"
+      android:layout_height="30.0dp"
+      android:textSize="12.0dp"
+      android:typeface="sans"
+      android:textStyle="bold"
+      android:gravity="center"
+      android:ellipsize="end"
+      android:maxLines="1"
+      android:textColor="@color/ct_5"
+      tools:ignore="SpUsage"
+      />
+
+  <ImageView
+      android:id="@+id/cm_bottom_progress_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:paddingLeft="14dp"
+      android:paddingRight="14dp"
+      android:scaleType="centerInside"
+      android:src="@mipmap/icon_cm_full_screen"
+      android:contentDescription="@string/image"
+      />
+
+</LinearLayout>

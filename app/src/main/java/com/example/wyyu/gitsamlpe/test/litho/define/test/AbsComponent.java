@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
-import com.facebook.litho.ComponentLifecycle;
 import com.facebook.litho.EventHandler;
 import com.facebook.litho.LithoView;
 import com.facebook.litho.Row;
@@ -94,15 +93,9 @@ public abstract class AbsComponent<T> extends Component implements IComponent<T>
 
             ComponentContext context = getScopedContext();
             if (context != null) {
-                context.updateStateAsync(new CoreUpdate(), getSimpleName() + " -> updateData");
+                context.updateStateAsync(new StateContainer.StateUpdate(0),
+                    getSimpleName() + " -> updateData");
             }
-        }
-    }
-
-    private static final class CoreUpdate implements ComponentLifecycle.StateUpdate {
-
-        @Override public void updateState(StateContainer stateContainer) {
-
         }
     }
 }

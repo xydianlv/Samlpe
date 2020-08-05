@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.livedata;
 
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.util.Log;
 
 /**

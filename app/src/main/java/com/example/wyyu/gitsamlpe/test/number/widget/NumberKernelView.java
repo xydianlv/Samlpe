@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.number.widget;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;

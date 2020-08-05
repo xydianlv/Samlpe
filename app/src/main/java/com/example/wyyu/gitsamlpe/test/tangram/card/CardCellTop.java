@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.tangram.card;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.CardTopBean;
 import com.example.wyyu.gitsamlpe.test.tangram.layout.CardCellTopLayout;
 import com.tmall.wireless.tangram.MVHelper;

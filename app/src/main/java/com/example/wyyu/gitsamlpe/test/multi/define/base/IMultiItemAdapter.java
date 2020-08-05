@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.multi.define.base;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 /**

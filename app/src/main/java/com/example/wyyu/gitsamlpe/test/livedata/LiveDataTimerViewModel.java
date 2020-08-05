@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.livedata;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
 import android.os.SystemClock;
 import java.util.Timer;
 import java.util.TimerTask;

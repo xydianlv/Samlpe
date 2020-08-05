@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.image.matisse;
 
 import android.database.Cursor;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by wyyu on 2018/12/8.

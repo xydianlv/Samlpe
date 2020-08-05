@@ -19,7 +19,7 @@ import com.example.wyyu.gitsamlpe.R;
  * Created by wyyu on 2018/5/4.
  **/
 
-public class AdapterTextView extends android.support.v7.widget.AppCompatTextView {
+public class AdapterTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     /** 收起状态下的最大行数 */
     private int maxLine = 2;

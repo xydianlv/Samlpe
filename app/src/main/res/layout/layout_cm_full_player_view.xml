@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/color_black"
+    >
+
+  <FrameLayout
+      android:id="@+id/cm_full_player_texture_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+      android:id="@+id/cm_full_player_press_listener"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+  <ImageView
+      android:id="@+id/cm_full_player_start"
+      android:layout_width="62.0dp"
+      android:layout_height="62.0dp"
+      android:src="@drawable/selector_play_vector"
+      android:layout_gravity="center"
+      android:contentDescription="@string/image"
+      />
+
+  <ImageView
+      android:id="@+id/cm_full_player_loading"
+      android:layout_width="28.0dp"
+      android:layout_height="28.0dp"
+      android:layout_gravity="center"
+      android:visibility="gone"
+      android:contentDescription="@string/image"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.video.widget.CMBottomProgress
+      android:id="@+id/cm_full_player_progress"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      android:layout_marginBottom="24.0dp"
+      android:visibility="gone"
+      />
+
+  <ProgressBar
+      android:id="@+id/cm_full_player_progress_bottom"
+      android:layout_width="match_parent"
+      android:layout_height="1.5dp"
+      android:max="100"
+      android:progressDrawable="@drawable/jz_bottom_progress"
+      android:layout_gravity="bottom"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:visibility="gone"
+      />
+
+  <ImageView
+      android:id="@+id/cm_full_player_back"
+      android:layout_width="wrap_content"
+      android:layout_height="60.0dp"
+      android:paddingLeft="14.0dp"
+      android:paddingRight="14.0dp"
+      android:scaleType="centerInside"
+      android:contentDescription="@string/image"
+      android:src="@mipmap/icon_back_white"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.video.widget.CMFullPlayerDialog
+      android:id="@+id/cm_full_player_dialog"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:visibility="gone"
+      />
+
+</FrameLayout>

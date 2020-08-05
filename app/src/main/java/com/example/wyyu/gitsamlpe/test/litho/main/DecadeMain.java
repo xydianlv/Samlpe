@@ -23,11 +23,11 @@ public class DecadeMain implements Datum {
 
     @Override public RenderInfo createComponent(ComponentContext componentContext) {
         return ComponentRenderInfo.create()
-            .component(MainItem.create(componentContext)
-                .title(title)
-                .bgColor(bgColor)
-                .classActivity(classActivity)
-                .build())
+            //.component(MainItem.create(componentContext)
+            //    .title(title)
+            //    .bgColor(bgColor)
+            //    .classActivity(classActivity)
+            //    .build())
             .isSticky(true)
             .build();
     }

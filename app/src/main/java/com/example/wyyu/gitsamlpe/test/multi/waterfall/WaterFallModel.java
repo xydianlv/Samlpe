@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.multi.waterfall;
 
-import android.arch.lifecycle.ViewModel;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.test.litho.multi.data.ImageBean;
 import com.example.wyyu.gitsamlpe.test.litho.multi.data.ItemBean;

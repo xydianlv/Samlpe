@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.util.download;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.framework.contact.GlobalFloatView;
 import com.example.wyyu.gitsamlpe.framework.contact.IGlobalFloatView;
 import java.util.HashMap;

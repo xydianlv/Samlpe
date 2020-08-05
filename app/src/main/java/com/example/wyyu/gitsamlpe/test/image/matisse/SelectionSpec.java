@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.image.matisse;
 
 import android.content.pm.ActivityInfo;
-import android.support.annotation.StyleRes;
+import androidx.annotation.StyleRes;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.ImageEngine;
 import com.zhihu.matisse.filter.Filter;

@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.framework.video.player;
 
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
 import android.view.TextureView;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

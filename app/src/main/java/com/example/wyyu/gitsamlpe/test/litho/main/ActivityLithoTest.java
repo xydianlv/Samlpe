@@ -47,9 +47,9 @@ public class ActivityLithoTest extends ToolbarActivity {
 
         initToolbar("LithoTest", 0xffffffff, 0xff84919b);
 
-        ComponentContext componentContext = new ComponentContext(this);
-        Component component =
-            MainList.create(componentContext).dataModels(Arrays.asList(DATUM_ARRAY)).build();
-        container.addView(LithoView.create(componentContext, component));
+        //ComponentContext componentContext = new ComponentContext(this);
+        //Component component =
+        //    MainList.create(componentContext).dataModels(Arrays.asList(DATUM_ARRAY)).build();
+        //container.addView(LithoView.create(componentContext, component));
     }
 }

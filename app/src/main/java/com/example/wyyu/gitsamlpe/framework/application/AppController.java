@@ -3,7 +3,7 @@ package com.example.wyyu.gitsamlpe.framework.application;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 import com.example.wyyu.gitsamlpe.test.database.TDataBase;
 import com.example.wyyu.gitsamlpe.test.live.KeepLiveManager;
 import com.example.wyyu.gitsamlpe.util.UIUtils;

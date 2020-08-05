@@ -1,17 +1,16 @@
 package com.example.wyyu.gitsamlpe.framework.pagedialog;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import com.example.wyyu.gitsamlpe.R;
-import com.example.wyyu.gitsamlpe.framework.dialog.FullScreenDialog;
 import com.example.wyyu.gitsamlpe.framework.dialog.FullScreenDialogTest;
 import java.util.ArrayList;
 import java.util.List;

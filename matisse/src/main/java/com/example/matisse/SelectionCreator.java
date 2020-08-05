@@ -1,13 +1,11 @@
 package com.example.matisse;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.annotation.StyleRes;
-import android.support.v4.app.Fragment;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.annotation.StyleRes;
 import com.example.matisse.filter.Filter;
 import com.example.matisse.internal.entity.SelectionSpec;
 import java.lang.annotation.Retention;

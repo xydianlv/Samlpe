@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.softkeyboard;
 
 import android.os.Bundle;
-import android.support.design.widget.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import butterknife.BindView;

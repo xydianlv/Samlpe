@@ -1,8 +1,8 @@
 package com.example.wyyu.gitsamlpe.framework.activity;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.LayoutRes;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.KeyEvent;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

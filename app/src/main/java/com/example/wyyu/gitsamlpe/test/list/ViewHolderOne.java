@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.list;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 /**

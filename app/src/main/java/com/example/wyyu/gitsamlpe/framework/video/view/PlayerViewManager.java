@@ -1,8 +1,8 @@
 package com.example.wyyu.gitsamlpe.framework.video.view;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.ContextThemeWrapper;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
 import java.lang.ref.WeakReference;
 
 /**

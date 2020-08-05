@@ -1,11 +1,11 @@
 package com.example.wyyu.gitsamlpe.test.audio.player;
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel;
 import android.database.Cursor;
 import android.media.MediaScannerConnection;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
 import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 import java.io.File;

@@ -1,8 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.litho.text;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -19,7 +19,7 @@ import java.util.List;
  * Created by wyyu on 2019-11-01.
  **/
 
-public class MarkTextView extends android.support.v7.widget.AppCompatTextView {
+public class MarkTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public MarkTextView(Context context) {
         super(context);

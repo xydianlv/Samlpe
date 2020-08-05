@@ -3,7 +3,7 @@ package com.example.wyyu.gitsamlpe.test.image.preview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;

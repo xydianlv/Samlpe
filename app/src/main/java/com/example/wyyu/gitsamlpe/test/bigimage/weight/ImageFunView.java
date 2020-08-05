@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.bigimage.weight;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.example.wyyu.gitsamlpe.test.bigimage.data.LocationData;

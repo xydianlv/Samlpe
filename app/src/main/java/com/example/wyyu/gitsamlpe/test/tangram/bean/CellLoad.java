@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.tangram.bean;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 import com.example.wyyu.gitsamlpe.test.tangram.layout.CellLoadLayout;
 import com.example.wyyu.gitsamlpe.test.tangram.support.EventLoadMore;

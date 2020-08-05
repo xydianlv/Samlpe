@@ -1,8 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.litho.define.holder;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.test.litho.custom.widget.LithoContainer;

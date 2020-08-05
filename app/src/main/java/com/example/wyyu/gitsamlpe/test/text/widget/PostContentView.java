@@ -2,7 +2,7 @@ package com.example.wyyu.gitsamlpe.test.text.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -21,7 +21,7 @@ import com.example.wyyu.gitsamlpe.framework.ULog;
  * 具有 行数限制、插入高亮字段、尾部续接更多 功能的 TextView
  **/
 
-public class PostContentView extends android.support.v7.widget.AppCompatTextView {
+public class PostContentView extends androidx.appcompat.widget.AppCompatTextView {
 
     public PostContentView(Context context) {
         super(context);

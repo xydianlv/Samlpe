@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.wyyu.gitsamlpe.framework.video.widget.LinearLayoutOffset
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/padding_10"
+    >
+
+  <TextView
+      android:id="@+id/video_list_item_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="@dimen/text_15"
+      android:textColor="@color/ct_1"
+      android:paddingLeft="@dimen/padding_14"
+      android:paddingRight="@dimen/padding_14"
+      android:maxLines="1"
+      tools:ignore="SpUsage"
+      />
+
+  <TextView
+      android:id="@+id/video_list_item_info"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="@dimen/text_12"
+      android:textColor="@color/ct_2"
+      android:layout_marginTop="4.0dp"
+      android:paddingLeft="@dimen/padding_14"
+      android:paddingRight="@dimen/padding_14"
+      android:maxLines="1"
+      tools:ignore="SpUsage"
+      />
+
+  <com.example.wyyu.gitsamlpe.test.video.widget.CMVideoPlayerView
+      android:id="@+id/video_list_item_player"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/padding_10"
+      />
+
+  <View
+      style="@style/DivideLine"
+      />
+
+</com.example.wyyu.gitsamlpe.framework.video.widget.LinearLayoutOffset>

@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.text.widget;
 
 import android.graphics.drawable.Drawable;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.view.View;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -7,7 +7,7 @@ import android.util.AttributeSet;
  * Created by wyyu on 2019-12-31.
  **/
 
-public class ScrollableTextView extends android.support.v7.widget.AppCompatTextView {
+public class ScrollableTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public ScrollableTextView(Context context) {
         super(context);

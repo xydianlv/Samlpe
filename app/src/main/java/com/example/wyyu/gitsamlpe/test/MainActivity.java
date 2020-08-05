@@ -14,6 +14,7 @@ import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
 import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
+import com.example.wyyu.gitsamlpe.test.video.ActivityVideoTest;
 import com.example.wyyu.gitsamlpe.util.file.FileManager;
 
 public class MainActivity extends ToolbarActivity {
@@ -57,6 +58,7 @@ public class MainActivity extends ToolbarActivity {
             .addItem("Text", v -> ActivityTextTest.open(MainActivity.this))
             .addItem("Canvas", v -> ActivityCanvasTest.open(MainActivity.this))
             .addItem("Net", v -> ActivityNetworkTest.open(MainActivity.this))
+            .addItem("Video", v -> ActivityVideoTest.open(MainActivity.this))
             .addItem("Pager", v -> ActivityPagerTest.open(MainActivity.this));
 
         listViewMain.addNewItem("FileListTest", new View.OnClickListener() {
@@ -187,12 +189,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("LocalVideoList", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startLocalVideoList(MainActivity.this);
-            }
-        });
-
         //listViewMain.addNewItem("BubblingTest", new View.OnClickListener() {
         //    @Override public void onClick(View v) {
         //        UIShowManager.startBubblingTest(MainActivity.this);
@@ -211,11 +207,11 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("LithoTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startLithoTest(MainActivity.this);
-            }
-        });
+        //listViewMain.addNewItem("LithoTest", new View.OnClickListener() {
+        //    @Override public void onClick(View v) {
+        //        UIShowManager.startLithoTest(MainActivity.this);
+        //    }
+        //});
 
         listViewMain.addNewItem("CalendarTest", new View.OnClickListener() {
             @Override public void onClick(View v) {

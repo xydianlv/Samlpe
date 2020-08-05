@@ -17,17 +17,17 @@
         android:layout_height="0.0dp"
         android:layout_weight="1">
 
-        <android.support.v4.widget.SwipeRefreshLayout
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fast_scroll_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <com.example.wyyu.gitsamlpe.test.recyclerview.weight.FastScrollBar
             android:id="@+id/fast_scroll_bar"

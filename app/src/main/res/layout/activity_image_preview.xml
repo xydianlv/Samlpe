@@ -7,7 +7,7 @@
     android:background="@color/empty"
     >
 
-  <android.support.v4.view.ViewPager
+  <androidx.viewpager.widget.ViewPager
       android:id="@+id/pager_image_preview"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

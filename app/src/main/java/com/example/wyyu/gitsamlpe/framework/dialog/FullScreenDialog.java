@@ -2,7 +2,7 @@ package com.example.wyyu.gitsamlpe.framework.dialog;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.view.Gravity;
 import android.view.WindowManager;
 import com.example.wyyu.gitsamlpe.R;

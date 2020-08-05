@@ -36,9 +36,9 @@ public final class ComponentFoot extends Component {
     }
 
     @Override public boolean isEquivalentTo(Component other) {
-        if (ComponentsConfiguration.useNewIsEquivalentToInLayoutSpec) {
-            return super.isEquivalentTo(other);
-        }
+        //if (ComponentsConfiguration.useNewIsEquivalentToInLayoutSpec) {
+        //    return super.isEquivalentTo(other);
+        //}
         if (this == other) {
             return true;
         }
@@ -106,17 +106,17 @@ public final class ComponentFoot extends Component {
     }
 
     public void setFootValue(int likeCount) {
-        RefreshLikeStateUpdate stateUpdate = new RefreshLikeStateUpdate();
-        stateUpdate.likeCount = String.valueOf(likeCount);
+        //RefreshLikeStateUpdate stateUpdate = new RefreshLikeStateUpdate();
+        //stateUpdate.likeCount = String.valueOf(likeCount);
+        //
+        //ComponentContext treeContext = footCopy != null ? footCopy.getScopedContext() : null;
 
-        ComponentContext treeContext = footCopy != null ? footCopy.getScopedContext() : null;
-
-        if (treeContext != null) {
-            treeContext.updateStateSync(stateUpdate, "");
-        }
+        //if (treeContext != null) {
+        //    treeContext.updateStateSync(stateUpdate, "");
+        //}
     }
 
-    private static class LikeCountStateContainer implements StateContainer {
+    private static class LikeCountStateContainer extends StateContainer {
         @State String likeCount;
 
         @Override public boolean equals(Object o) {
@@ -129,23 +129,27 @@ public final class ComponentFoot extends Component {
             }
             return !TextUtils.isEmpty(likeCount) && likeCount.equals(stateContainer.likeCount);
         }
-    }
 
-    private static class RefreshLikeStateUpdate implements ComponentLifecycle.StateUpdate {
-
-        private String likeCount;
-
-        RefreshLikeStateUpdate() {
+        @Override public void applyStateUpdate(StateUpdate stateUpdate) {
 
         }
-
-        @Override public void updateState(StateContainer _stateContainer) {
-            LikeCountStateContainer stateContainer = (LikeCountStateContainer) _stateContainer;
-            StateValue<String> info = new StateValue<>();
-            info.set(likeCount);
-            stateContainer.likeCount = info.get();
-        }
     }
+
+    //private static class RefreshLikeStateUpdate implements ComponentLifecycle.StateUpdate {
+    //
+    //    private String likeCount;
+    //
+    //    RefreshLikeStateUpdate() {
+    //
+    //    }
+    //
+    //    @Override public void updateState(StateContainer _stateContainer) {
+    //        LikeCountStateContainer stateContainer = (LikeCountStateContainer) _stateContainer;
+    //        StateValue<String> info = new StateValue<>();
+    //        info.set(likeCount);
+    //        stateContainer.likeCount = info.get();
+    //    }
+    //}
 
     public static class Builder extends Component.Builder<Builder> {
 
@@ -164,16 +168,16 @@ public final class ComponentFoot extends Component {
 
         @Override public ComponentFoot build() {
             ComponentFoot foot = componentFoot;
-            release();
+            //release();
             return foot;
         }
 
-        @Override protected void release() {
-            super.release();
-
-            componentContext = null;
-            componentFoot = null;
-        }
+        //@Override protected void release() {
+        //    super.release();
+        //
+        //    componentContext = null;
+        //    componentFoot = null;
+        //}
     }
 
     public static Builder create(ComponentContext context) {

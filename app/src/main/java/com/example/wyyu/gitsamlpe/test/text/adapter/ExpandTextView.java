@@ -12,7 +12,7 @@ import java.util.List;
  * Created by wyyu on 2018/8/3.
  **/
 
-public class ExpandTextView extends android.support.v7.widget.AppCompatTextView {
+public class ExpandTextView extends androidx.appcompat.widget.AppCompatTextView {
     private static final String ELLIPSIS = "...";
 
     public interface EllipsizeListener {

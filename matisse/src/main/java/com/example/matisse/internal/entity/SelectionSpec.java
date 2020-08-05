@@ -3,7 +3,7 @@ package com.example.matisse.internal.entity;
 import android.content.pm.ActivityInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.StyleRes;
+import androidx.annotation.StyleRes;
 import com.example.matisse.MimeType;
 import com.example.matisse.R;
 import com.example.matisse.ResultItem;

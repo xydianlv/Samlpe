@@ -1,13 +1,13 @@
 package com.example.wyyu.gitsamlpe.test.floatview;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.Observer;
+import androidx.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.dialog.SDAlertDialog;

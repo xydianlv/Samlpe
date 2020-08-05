@@ -2,8 +2,8 @@ package com.example.matisse;
 
 import android.content.ContentResolver;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v4.util.ArraySet;
+import androidx.annotation.NonNull;
+import androidx.collection.ArraySet;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 import com.example.matisse.internal.utils.PhotoMetadataUtils;

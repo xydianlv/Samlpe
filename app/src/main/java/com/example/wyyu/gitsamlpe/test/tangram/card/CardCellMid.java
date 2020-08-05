@@ -1,10 +1,8 @@
 package com.example.wyyu.gitsamlpe.test.tangram.card;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.test.tangram.bean.CardMidBean;
 import com.example.wyyu.gitsamlpe.test.tangram.layout.CardCellMidLayout;
-import com.example.wyyu.gitsamlpe.test.tangram.support.EventLoadMore;
-import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.tmall.wireless.tangram.MVHelper;
 import com.tmall.wireless.tangram.structure.BaseCell;
 import org.json.JSONException;

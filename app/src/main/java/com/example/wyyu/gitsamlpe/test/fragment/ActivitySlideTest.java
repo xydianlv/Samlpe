@@ -1,7 +1,7 @@
 package com.example.wyyu.gitsamlpe.test.fragment;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.KeyEvent;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;

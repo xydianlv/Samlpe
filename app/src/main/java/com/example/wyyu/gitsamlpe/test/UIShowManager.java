@@ -34,8 +34,6 @@ import com.example.wyyu.gitsamlpe.test.softkeyboard.ActivitySoftKeyboard;
 import com.example.wyyu.gitsamlpe.test.tangram.ActivityTangram;
 import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
 import com.example.wyyu.gitsamlpe.test.theme.ActivityThemeList;
-import com.example.wyyu.gitsamlpe.test.video.ActivityVideoList;
-import com.example.wyyu.gitsamlpe.test.video.local.ActivityLocalVideoList;
 import com.example.wyyu.gitsamlpe.test.visibility.ActivitySystemUiVisibility;
 import com.example.wyyu.gitsamlpe.test.volume.ActivityVolume;
 import com.example.wyyu.gitsamlpe.test.pager.blog.ActivityBlogTest;
@@ -57,14 +55,6 @@ class UIShowManager {
 
     static void startFileListActivity(Context context) {
         startTargetActivityFromMain(context, ActivityFileListTest.class);
-    }
-
-    //static void startVideoPlayActivity(Context context) {
-    //    startTargetActivityFromMain(context, ActivityPlayVideo.class);
-    //}
-
-    static void startVideoPlayActivity(Context context) {
-        startTargetActivityFromMain(context, ActivityVideoList.class);
     }
 
     static void startImageListActivity(Context context) {
@@ -162,10 +152,6 @@ class UIShowManager {
 
     static void startLiveDataTest(Context context) {
         ActivityLiveDataTest.open(context);
-    }
-
-    static void startLocalVideoList(Activity activity) {
-        ActivityLocalVideoList.open(activity);
     }
 
     static void startBubblingTest(Activity activity) {

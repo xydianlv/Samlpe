@@ -1,7 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.litho.multi.data;
 
 import com.example.wyyu.gitsamlpe.test.litho.Datum;
-import com.example.wyyu.gitsamlpe.test.litho.multi.spec.MultiItem;
 import com.facebook.litho.Column;
 import com.facebook.litho.Component;
 import com.facebook.litho.ComponentContext;
@@ -24,7 +23,6 @@ public class MultiData implements Datum {
 
     @Override public RenderInfo createComponent(ComponentContext componentContext) {
         Component component = Column.create(componentContext)
-            .child(MultiItem.create(componentContext).itemBean(itemBean).build())
             .child(Row.create(componentContext)
                 .heightDip(6)
                 .backgroundColor(0xffededf2)
