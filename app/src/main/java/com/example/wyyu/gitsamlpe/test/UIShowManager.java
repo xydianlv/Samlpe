@@ -44,11 +44,6 @@ import com.example.wyyu.gitsamlpe.test.pager.blog.ActivityBlogTest;
 
 class UIShowManager {
 
-
-    static void startSlideActivity(Context context) {
-        startTargetActivityFromMain(context, ActivitySlideTest.class);
-    }
-
     static void startAudioRecordActivity(Context context) {
         startTargetActivityFromMain(context, ActivityAudioRecorder.class);
     }

@@ -93,12 +93,6 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
-        listViewMain.addNewItem("SlideTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.startSlideActivity(MainActivity.this);
-            }
-        });
-
         listViewMain.addNewItem("FloatTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.startFloatTestActivity(MainActivity.this);
