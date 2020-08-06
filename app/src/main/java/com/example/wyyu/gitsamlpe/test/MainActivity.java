@@ -52,6 +52,7 @@ public class MainActivity extends ToolbarActivity {
     private void refreshListView() {
 
         listViewMain.addItem("Function", v -> ActivityFunctionList.open(MainActivity.this))
+            .addItem("Algorithm", v -> ActivityFunctionList.open(MainActivity.this))
             .addItem("Audio", v -> ActivityAudioTest.open(MainActivity.this))
             .addItem("Card", v -> ActivityCardTest.open(MainActivity.this))
             .addItem("Anim", v -> ActivityAnimTest.open(MainActivity.this))

@@ -689,6 +689,9 @@
         android:name=".test.fresco.cache.ActivityFrescoCache"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.algorithm.ActivityAlgorithmTest"/>
+    <activity android:name=".test.algorithm.sort.ActivityAlgorithmSort"/>
+    <activity android:name=".test.algorithm.tree.ActivityAlgorithmTree"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
