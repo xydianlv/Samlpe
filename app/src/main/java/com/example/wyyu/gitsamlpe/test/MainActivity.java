@@ -10,6 +10,7 @@ import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioTest;
 import com.example.wyyu.gitsamlpe.test.bezier.ActivityBezierTest;
 import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
+import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
 import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
@@ -59,7 +60,8 @@ public class MainActivity extends ToolbarActivity {
             .addItem("Canvas", v -> ActivityCanvasTest.open(MainActivity.this))
             .addItem("Net", v -> ActivityNetworkTest.open(MainActivity.this))
             .addItem("Video", v -> ActivityVideoTest.open(MainActivity.this))
-            .addItem("Pager", v -> ActivityPagerTest.open(MainActivity.this));
+            .addItem("Pager", v -> ActivityPagerTest.open(MainActivity.this))
+            .addItem("Fresco", v -> ActivityFrescoTest.open(MainActivity.this));
 
         listViewMain.addNewItem("FileListTest", new View.OnClickListener() {
             @Override public void onClick(View v) {
@@ -162,12 +164,6 @@ public class MainActivity extends ToolbarActivity {
         listViewMain.addNewItem("DialogShowTest", new View.OnClickListener() {
             @Override public void onClick(View view) {
                 UIShowManager.dialogShowTest(MainActivity.this);
-            }
-        });
-
-        listViewMain.addNewItem("FrescoShowTest", new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                UIShowManager.frescoShowTest(MainActivity.this);
             }
         });
 

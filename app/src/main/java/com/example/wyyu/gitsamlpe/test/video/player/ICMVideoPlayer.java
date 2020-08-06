@@ -92,6 +92,13 @@ public interface ICMVideoPlayer {
      */
     void setMute(boolean setMute);
 
+    /**
+     * 设置播放器播放速度
+     *
+     * @param speed 速度
+     */
+    void setSpeed(float speed);
+
     //</editor-fold>
 
     //<editor-fold desc="注册状态监听回调">

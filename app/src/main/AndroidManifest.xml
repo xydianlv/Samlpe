@@ -671,8 +671,24 @@
         android:name=".test.video.ActivityVideoTest"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.video.list.ActivityVideoList"/>
-    <activity android:name=".test.video.waterfall.ActivityVideoWaterfall"/>
+    <activity
+        android:name=".test.video.list.ActivityVideoList"
+        android:screenOrientation="portrait"
+        android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+        />
+    <activity
+        android:name=".test.video.waterfall.ActivityVideoWaterfall"
+        android:screenOrientation="portrait"
+        android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+        />
+    <activity
+        android:name=".test.fresco.blr.ActivityFrescoBlr"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.fresco.cache.ActivityFrescoCache"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

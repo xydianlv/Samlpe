@@ -229,4 +229,8 @@
     <string name="anim_interpolator_overshoot">OvershootInterpolator</string>
     <string name="anim_interpolator_path">PathInterpolator</string>
 
+    <string name="fresco_res">FrescoRes</string>
+    <string name="fresco_net">FrescoNet</string>
+    <string name="fresco_local">FrescoLocal</string>
+
 </resources>

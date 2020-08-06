@@ -136,15 +136,24 @@
       />
 
   <!-- 播放结束后的分享布局 -->
-  <ImageView
-      android:id="@+id/cm_player_replay"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:src="@mipmap/icon_cm_replay"
-      android:contentDescription="@string/image"
+  <FrameLayout
+      android:id="@+id/cm_player_replay_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black_40"
       android:visibility="gone"
-      />
+      >
+
+    <ImageView
+        android:id="@+id/cm_player_replay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/icon_cm_replay"
+        android:contentDescription="@string/image"
+        />
+
+  </FrameLayout>
 
 
 </com.example.wyyu.gitsamlpe.framework.video.widget.FrameLayoutOffset>

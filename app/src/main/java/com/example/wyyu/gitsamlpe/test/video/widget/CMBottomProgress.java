@@ -119,7 +119,7 @@ public class CMBottomProgress extends LinearLayout {
      */
     public void setProgressValue(int videoDuration, int iconType) {
         if (textDuration != null) {
-            textDuration.setText(CMUtils.stringForTime(videoDuration * 1000));
+            textDuration.setText(CMUtils.stringForTime(videoDuration));
         }
         if (clickIcon != null) {
             clickIcon.setImageResource(

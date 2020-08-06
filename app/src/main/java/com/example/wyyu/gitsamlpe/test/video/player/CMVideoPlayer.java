@@ -12,6 +12,7 @@ import com.example.wyyu.gitsamlpe.test.audio.player.PlayerEventListener;
 import com.example.wyyu.gitsamlpe.test.video.data.SourceType;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
 import com.google.android.exoplayer2.ExoPlaybackException;
+import com.google.android.exoplayer2.PlaybackParameters;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.database.DatabaseProvider;
@@ -307,6 +308,12 @@ public class CMVideoPlayer implements ICMVideoPlayer {
             return;
         }
         exoPlayer.setVolume(setMute ? 0.0f : volume);
+    }
+
+    @Override public void setSpeed(float speed) {
+        if (exoPlayer != null) {
+            exoPlayer.setPlaybackParameters(new PlaybackParameters(speed));
+        }
     }
 
     @Override

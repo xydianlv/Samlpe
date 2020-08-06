@@ -1,6 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.video.list;
 
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import com.example.wyyu.gitsamlpe.test.list.CustomLoadingView;
 import com.example.wyyu.gitsamlpe.test.video.data.VideoItem;
 import com.example.wyyu.gitsamlpe.test.video.model.VideoResultModel;
 import com.example.wyyu.gitsamlpe.test.video.player.CMVideoPlayer;
+import com.example.wyyu.gitsamlpe.test.video.widget.CMPlayerViewManager;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import java.util.List;
 
@@ -47,6 +48,13 @@ public class ActivityVideoList extends ToolbarActivity {
         CMVideoPlayer.getPlayer().release();
     }
 
+    @Override public void onBackPressed() {
+        if (CMPlayerViewManager.onPressBack()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+
     private void initActivity() {
         initToolbar("VideoList");
 
@@ -57,7 +65,7 @@ public class ActivityVideoList extends ToolbarActivity {
     }
 
     private void initModel() {
-        model = ViewModelProviders.of(this).get(VideoResultModel.class);
+        model = new ViewModelProvider(this).get(VideoResultModel.class);
     }
 
     private void initView() {

@@ -40,6 +40,7 @@ import com.facebook.imagepipeline.common.ResizeOptions;
 import com.facebook.imagepipeline.postprocessors.IterativeBoxBlurPostProcessor;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
+import java.io.File;
 
 /**
  * Created by wyyu on 2020-07-27.
@@ -102,12 +103,12 @@ public class CMVideoPlayerView extends FrameLayoutOffset
     private CMBottomProgress videoProgress;
     // 最底部进度条
     private ProgressBar bottomProgress;
-    // 视频播放结束重播按钮
-    private ImageView buttonReplay;
     // 开始按钮
     private ImageView buttonStart;
     // 视频加载图片
     private ImageView viewLoading;
+    // 重播Layout
+    private View replayLayout;
 
     // 封面高斯模糊
     private SimpleDraweeView coverThumb;
@@ -173,7 +174,7 @@ public class CMVideoPlayerView extends FrameLayoutOffset
         textureContainer = findViewById(R.id.cm_player_texture_container);
         infoContainer = findViewById(R.id.cm_player_info_container);
         bottomProgress = findViewById(R.id.cm_player_progress_bottom);
-        buttonReplay = findViewById(R.id.cm_player_replay);
+        replayLayout = findViewById(R.id.cm_player_replay_layout);
 
         coverThumb = findViewById(R.id.cm_player_cover_thumb);
         coverImage = findViewById(R.id.cm_player_cover_image);
@@ -202,7 +203,7 @@ public class CMVideoPlayerView extends FrameLayoutOffset
             }
         });
 
-        buttonReplay = findViewById(R.id.cm_player_replay);
+        View buttonReplay = findViewById(R.id.cm_player_replay);
         buttonReplay.setOnClickListener(v -> CMVideoPlayer.getPlayer().reStart());
 
         buttonStart = findViewById(R.id.cm_player_start);
@@ -319,7 +320,7 @@ public class CMVideoPlayerView extends FrameLayoutOffset
 
         textureContainer.setVisibility(showTexture ? VISIBLE : GONE);
         infoContainer.setVisibility(showInfo ? VISIBLE : GONE);
-        buttonReplay.setVisibility(playerStatus == CMPlayerStatus.COMPLETE ? VISIBLE : GONE);
+        replayLayout.setVisibility(playerStatus == CMPlayerStatus.COMPLETE ? VISIBLE : GONE);
         videoProgress.setVisibility(showSeek ? VISIBLE : GONE);
         bottomProgress.setVisibility(showProgress ? VISIBLE : GONE);
         buttonStart.setVisibility(showStart ? VISIBLE : GONE);
@@ -489,10 +490,10 @@ public class CMVideoPlayerView extends FrameLayoutOffset
 
     private void loadCoverShow(VideoItem videoItem, int[] sizeArray) {
 
-        Uri uri = videoItem.uri();
+        Uri uri = Uri.fromFile(new File(videoItem.cover));
 
         ImageRequest imageRequest = ImageRequestBuilder.newBuilderWithSource(uri)
-            .setResizeOptions(new ResizeOptions(30, 30))
+            .setResizeOptions(new ResizeOptions(120, 120))
             .setPostprocessor(new IterativeBoxBlurPostProcessor(1, 30))
             .build();
         GenericDraweeHierarchy hierarchy = coverThumb.getHierarchy();
@@ -500,7 +501,6 @@ public class CMVideoPlayerView extends FrameLayoutOffset
             hierarchy.setPlaceholderImage(CMUtils.getImageHolderDrawable());
         }
 
-        //FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) coverImage.getLayoutParams();
         switch (sizeArray[0]) {
             case CMPlayerType.HEIGHT_THAN_WIDTH:
                 coverThumb.setVisibility(VISIBLE);
@@ -526,7 +526,7 @@ public class CMVideoPlayerView extends FrameLayoutOffset
             return;
         }
         if (duration != null) {
-            duration.setText(CMUtils.getVideoFormatDurationBy(videoItem.duration * 1000));
+            duration.setText(CMUtils.getVideoFormatDurationBy(videoItem.duration));
         }
         if (playCount != null) {
             playCount.setText(String.format("%s 次播放", CMUtils.getNumStyle(videoItem.playCount)));

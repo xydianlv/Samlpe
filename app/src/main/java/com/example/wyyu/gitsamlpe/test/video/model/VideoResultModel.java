@@ -1,13 +1,18 @@
 package com.example.wyyu.gitsamlpe.test.video.model;
 
+import android.graphics.Bitmap;
+import android.media.MediaMetadataRetriever;
 import androidx.lifecycle.ViewModel;
 import android.database.Cursor;
 import android.provider.MediaStore;
 import androidx.annotation.NonNull;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
+import com.example.wyyu.gitsamlpe.test.function.shot.BitmapUtil;
 import com.example.wyyu.gitsamlpe.test.video.data.SourceType;
 import com.example.wyyu.gitsamlpe.test.video.data.VideoItem;
+import com.example.wyyu.gitsamlpe.util.file.FileManager;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import rx.Observable;
@@ -28,6 +33,8 @@ public class VideoResultModel extends ViewModel {
 
         void onFailure();
     }
+
+    private static final String CACHE_PATH = FileManager.getFileManager().getBitmapCache();
 
     private static final int COUNT_PAGE = 12;
 
@@ -56,6 +63,7 @@ public class VideoResultModel extends ViewModel {
                 subscriber.onCompleted();
                 return;
             }
+
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
                     VideoItem videoItem = new VideoItem();
@@ -76,8 +84,27 @@ public class VideoResultModel extends ViewModel {
                         cursor.getColumnIndexOrThrow(MediaStore.Video.Thumbnails.WIDTH));
                     videoItem.height = cursor.getInt(
                         cursor.getColumnIndexOrThrow(MediaStore.Video.Thumbnails.HEIGHT));
-                    videoItem.cover = cursor.getString(
-                        cursor.getColumnIndexOrThrow(MediaStore.Video.Thumbnails.DATA));
+
+                    MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+                    try {
+                        // MediaMetadataRetriever 获取第一帧，每个文件大概需要 100-200 毫秒
+                        // 但是这个是必须的，因为 MediaStore 中的 width 和 height 一般不准，导致显示出现问题
+                        retriever.setDataSource(videoItem.sourceValue);
+                        Bitmap bitmap = retriever.getFrameAtTime(0);
+                        videoItem.width = bitmap.getWidth();
+                        videoItem.height = bitmap.getHeight();
+
+                        String coverPath = CACHE_PATH + "/" + videoItem.title;
+                        File coverFile = new File(coverPath);
+                        if (!coverFile.exists()) {
+                            BitmapUtil.saveToFile(bitmap, coverPath);
+                        }
+                        videoItem.cover = coverPath;
+                    } catch (Exception e) {
+                        ULog.show(e.getMessage());
+                    } finally {
+                        retriever.release();
+                    }
 
                     videoItem.sourceType = SourceType.PATH;
                     videoItem.playCount = 0;
@@ -88,8 +115,9 @@ public class VideoResultModel extends ViewModel {
             }
 
             index = Math.min(videoItemList.size(), COUNT_PAGE);
-            subscriber.onNext(videoItemList.subList(0, index));
             cursor.close();
+
+            subscriber.onNext(videoItemList.subList(0, index));
             subscriber.onCompleted();
         })
             .subscribeOn(Schedulers.io())
