@@ -8,6 +8,7 @@ import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
 import com.example.wyyu.gitsamlpe.test.pager.blog.ActivityBlogTest;
 import com.example.wyyu.gitsamlpe.test.pager.complex.ActivityPagerComplexTest;
+import com.example.wyyu.gitsamlpe.test.pager.life.ActivityPagerLifeTest;
 import com.example.wyyu.gitsamlpe.test.pager.slide.ActivitySlideTest;
 import com.example.wyyu.gitsamlpe.test.pager.snap.ActivityPagerSnapTest;
 import com.example.wyyu.gitsamlpe.test.pager.transform.ActivityPagerTransformTest;
@@ -43,6 +44,7 @@ public class ActivityPagerTest extends ToolbarActivity {
             .addItem("Complex", v -> ActivityPagerComplexTest.open(ActivityPagerTest.this))
             .addItem("Slide", v -> ActivitySlideTest.open(ActivityPagerTest.this))
             .addItem("Blog", v -> ActivityBlogTest.open(ActivityPagerTest.this))
+            .addItem("Life", v -> ActivityPagerLifeTest.open(ActivityPagerTest.this))
             .refreshList();
     }
 }

@@ -692,6 +692,7 @@
     <activity android:name=".test.algorithm.ActivityAlgorithmTest"/>
     <activity android:name=".test.algorithm.sort.ActivityAlgorithmSort"/>
     <activity android:name=".test.algorithm.tree.ActivityAlgorithmTree"/>
+    <activity android:name=".test.pager.life.ActivityPagerLifeTest"/>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

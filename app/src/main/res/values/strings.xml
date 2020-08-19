@@ -98,6 +98,7 @@
 
     <string name="test_input">文字数据…</string>
     <string name="test_bt">添加到数据库</string>
+    <string name="alert_can_scroll">可滑动区域</string>
 
     <string name="dialog_normal">NormalDialog</string>
     <string name="dialog_full">FullDialog</string>
@@ -232,5 +233,13 @@
     <string name="fresco_res">FrescoRes</string>
     <string name="fresco_net">FrescoNet</string>
     <string name="fresco_local">FrescoLocal</string>
+
+    <string name="sort_data">Data</string>
+    <string name="sort_insert">Insert</string>
+    <string name="sort_select">Select</string>
+    <string name="sort_pop">Pop</string>
+    <string name="sort_merge">Merge</string>
+    <string name="sort_quick">Quick</string>
+    <string name="sort_heap">Heap</string>
 
 </resources>

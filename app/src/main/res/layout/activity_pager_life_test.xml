@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120.0dp"
+        android:text="@string/alert_can_scroll"
+        android:gravity="center"
+        android:textColor="@color/ct_1"
+        android:textSize="@dimen/text_15"
+        android:background="@color/color_eceff1"
+        android:layout_gravity="bottom"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager_life_test_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="120.0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        >
+
+      <TextView
+          android:id="@+id/pager_life_test_log"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textColor="@color/black_40"
+          android:textSize="@dimen/text_15"
+          android:lineSpacingMultiplier="1.2"
+          tools:ignore="SpUsage"
+          />
+
+    </ScrollView>
+
+  </FrameLayout>
+
+</LinearLayout>

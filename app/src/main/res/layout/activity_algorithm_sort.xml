@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    >
+
+  <include
+      layout="@layout/common_toolbar"
+      />
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scrollbars="none"
+      android:overScrollMode="never"
+      >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/sort_data"
+          android:padding="@dimen/padding_14"
+          android:textColor="@color/ct_1"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="@dimen/padding_14"
+          android:textColor="@color/ct_1"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/sort_insert"
+          android:padding="@dimen/padding_14"
+          android:textColor="@color/ct_1"
+          />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="@dimen/padding_14"
+          android:textColor="@color/ct_1"
+          />
+
+    </LinearLayout>
+
+  </ScrollView>
 
 </LinearLayout>
