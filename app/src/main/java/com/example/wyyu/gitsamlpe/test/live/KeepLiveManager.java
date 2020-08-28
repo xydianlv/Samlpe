@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
 
@@ -59,14 +60,11 @@ public class KeepLiveManager implements IKeepLiveManager {
 
     }
 
-    @Override public void showFloatView() {
-        Context context = AppController.getAppContext();
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            context.startForegroundService(new Intent(context, KeepLiveOnlyFloat.class));
-        } else {
-            context.startService(new Intent(context, KeepLiveOnlyFloat.class));
+    @Override public void showFloatView(Context context) {
+        if (!FloatPermissionManager.getInstance().applyFloatWindow(context)) {
+            return;
         }
+        ContextCompat.startForegroundService(context, new Intent(context, KeepLiveOnlyFloat.class));
     }
 
     @Override public void hideFloatView() {

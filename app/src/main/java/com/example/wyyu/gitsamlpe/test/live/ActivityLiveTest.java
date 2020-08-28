@@ -95,7 +95,7 @@ public class ActivityLiveTest extends ToolbarActivity {
         showFloat = !showFloat;
 
         if (showFloat) {
-            KeepLiveManager.getManager().showFloatView();
+            KeepLiveManager.getManager().showFloatView(ActivityLiveTest.this);
             floatCheck.setBackground(checked);
         } else {
             KeepLiveManager.getManager().hideFloatView();

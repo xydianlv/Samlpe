@@ -3,6 +3,8 @@ package com.example.wyyu.gitsamlpe.test.multi.custom;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
@@ -54,10 +56,24 @@ public class ActivityCustomList extends ToolbarActivity {
         multiAdapter.register(CustomDataB.class, new CustomBinderB());
         multiAdapter.register(CustomDataC.class, new CustomBinderC());
 
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(multiAdapter);
         recyclerView.setItemAnimator(null);
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                Log.e("onScrollStateChangedLog", "newState : " + newState);
+            }
+
+            @Override public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                Log.e("onScrollStateChangedLog", "dx : " + dx + "  dy : " + dy);
+            }
+        });
     }
 
     private void loadList() {
