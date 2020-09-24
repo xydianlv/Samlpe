@@ -43,4 +43,15 @@
       app:lottie_enableMergePathsForKitKatAndAbove="true"
       />
 
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/anim_lottie_switch"
+      android:layout_width="54.0dp"
+      android:layout_height="72.0dp"
+      android:scaleType="fitCenter"
+      android:layout_marginTop="60.0dp"
+      app:lottie_loop="false"
+      app:lottie_autoPlay="false"
+      app:lottie_enableMergePathsForKitKatAndAbove="true"
+      />
+
 </LinearLayout>

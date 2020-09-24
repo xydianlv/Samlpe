@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GitSamlpe.iml" filepath="$PROJECT_DIR$/GitSamlpe.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/debug_annotate/debug_annotate.iml" filepath="$PROJECT_DIR$/debug_annotate/debug_annotate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/debug_processor/debug_processor.iml" filepath="$PROJECT_DIR$/debug_processor/debug_processor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/location/location.iml" filepath="$PROJECT_DIR$/location/location.iml" />
-      <module fileurl="file://$PROJECT_DIR$/matisse/matisse.iml" filepath="$PROJECT_DIR$/matisse/matisse.iml" />
-      <module fileurl="file://$PROJECT_DIR$/multi/multi.iml" filepath="$PROJECT_DIR$/multi/multi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GitSamlpe.iml" filepath="$PROJECT_DIR$/GitSamlpe.iml" group="GitSamlpe" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="GitSamlpe/app" />
+      <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" group="GitSamlpe/banner" />
+      <module fileurl="file://$PROJECT_DIR$/debug_annotate/debug_annotate.iml" filepath="$PROJECT_DIR$/debug_annotate/debug_annotate.iml" group="GitSamlpe/debug_annotate" />
+      <module fileurl="file://$PROJECT_DIR$/debug_processor/debug_processor.iml" filepath="$PROJECT_DIR$/debug_processor/debug_processor.iml" group="GitSamlpe/debug_processor" />
+      <module fileurl="file://$PROJECT_DIR$/location/location.iml" filepath="$PROJECT_DIR$/location/location.iml" group="GitSamlpe/location" />
+      <module fileurl="file://$PROJECT_DIR$/matisse/matisse.iml" filepath="$PROJECT_DIR$/matisse/matisse.iml" group="GitSamlpe/matisse" />
+      <module fileurl="file://$PROJECT_DIR$/multi/multi.iml" filepath="$PROJECT_DIR$/multi/multi.iml" group="GitSamlpe/multi" />
     </modules>
   </component>
 </project>

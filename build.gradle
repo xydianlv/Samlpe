@@ -14,6 +14,10 @@ buildscript {
         classpath group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.4'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        // 引入 Booster 兜底系统崩溃
+        classpath "com.didiglobal.booster:booster-transform-activity-thread:2.3.1"
+
     }
 }
 

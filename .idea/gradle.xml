@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -13,8 +12,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/banner" />
+            <option value="$PROJECT_DIR$/debug_annotate" />
+            <option value="$PROJECT_DIR$/debug_processor" />
             <option value="$PROJECT_DIR$/location" />
             <option value="$PROJECT_DIR$/matisse" />
+            <option value="$PROJECT_DIR$/multi" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

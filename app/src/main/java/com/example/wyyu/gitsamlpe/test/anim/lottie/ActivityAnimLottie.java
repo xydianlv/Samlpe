@@ -31,10 +31,12 @@ public class ActivityAnimLottie extends FullScreenActivity {
     @BindView(R.id.anim_lottie_up) LottieAnimationView lottieUp;
     @BindView(R.id.anim_lottie_down) LottieAnimationView lottieDown;
     @BindView(R.id.anim_lottie_click) LottieAnimationView lottieClick;
+    @BindView(R.id.anim_lottie_switch) LottieAnimationView lottieSwitch;
 
     private boolean lottieAEnd;
     private boolean lottieBEnd;
     private boolean lottieCEnd;
+    private boolean lottieDEnd;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,10 +54,12 @@ public class ActivityAnimLottie extends FullScreenActivity {
         loadLottie("anim_on_up.json", lottieUp);
         loadLottie("anim_on_down.json", lottieDown);
         loadLottie("anim_up_guide.json", lottieClick);
+        loadLottie("anim_on_up.json", lottieSwitch);
 
         lottieAEnd = false;
         lottieBEnd = false;
         lottieCEnd = true;
+        lottieDEnd = false;
 
         lottieClick.addAnimatorListener(new AnimatorListenerAdapter() {
             @Override public void onAnimationEnd(Animator animation) {
@@ -118,6 +122,15 @@ public class ActivityAnimLottie extends FullScreenActivity {
                 lottieClick.cancelAnimation();
                 lottieCEnd = true;
             }
+        });
+        lottieSwitch.setOnClickListener(v -> {
+            if (lottieDEnd) {
+                loadLottie("anim_on_up.json", lottieSwitch);
+            } else {
+                loadLottie("anim_on_down.json", lottieSwitch);
+            }
+            lottieDEnd = !lottieDEnd;
+            lottieSwitch.playAnimation();
         });
     }
 }
