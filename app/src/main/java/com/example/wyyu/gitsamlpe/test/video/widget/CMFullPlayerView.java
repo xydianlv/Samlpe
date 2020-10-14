@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.WeakHandler;
-import com.example.wyyu.gitsamlpe.framework.window.PressListenerView;
+import com.example.wyyu.gitsamlpe.framework.window.LongPressListenerView;
 import com.example.wyyu.gitsamlpe.test.video.data.VideoItem;
 import com.example.wyyu.gitsamlpe.test.video.player.CMVideoPlayer;
 import com.example.wyyu.gitsamlpe.test.video.player.ICMVideoPlayer;
@@ -179,8 +179,18 @@ public class CMFullPlayerView extends FrameLayout implements ICMVideoPlayer.Medi
             loadingDrawable.setOneShot(false);
         }
 
-        PressListenerView listenerView = findViewById(R.id.cm_full_player_press_listener);
-        listenerView.setOnPressListener(new PressListenerView.OnPressListener() {
+        LongPressListenerView listenerView = findViewById(R.id.cm_full_player_press_listener);
+        listenerView.setOnPressListener(new LongPressListenerView.OnPressListener() {
+            @Override public boolean onLongPressUp() {
+                CMVideoPlayer.getPlayer().defaultSpeed();
+                return true;
+            }
+
+            @Override public boolean onLongPress() {
+                CMVideoPlayer.getPlayer().setSpeed(2.0f);
+                return true;
+            }
+
             @Override public boolean onPressDown() {
                 return true;
             }

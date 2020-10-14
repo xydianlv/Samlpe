@@ -99,6 +99,11 @@ public interface ICMVideoPlayer {
      */
     void setSpeed(float speed);
 
+    /**
+     * 重制播放器播放速度为默认的 1.0f
+     */
+    void defaultSpeed();
+
     //</editor-fold>
 
     //<editor-fold desc="注册状态监听回调">

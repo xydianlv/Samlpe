@@ -27,7 +27,7 @@ import android.widget.TextView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.WeakHandler;
 import com.example.wyyu.gitsamlpe.framework.video.widget.FrameLayoutOffset;
-import com.example.wyyu.gitsamlpe.framework.window.PressListenerView;
+import com.example.wyyu.gitsamlpe.framework.window.LongPressListenerView;
 import com.example.wyyu.gitsamlpe.test.image.matisse.FrescoLoader;
 import com.example.wyyu.gitsamlpe.test.video.data.VideoItem;
 import com.example.wyyu.gitsamlpe.test.video.player.CMVideoPlayer;
@@ -227,8 +227,18 @@ public class CMVideoPlayerView extends FrameLayoutOffset
             loadingDrawable.setOneShot(false);
         }
 
-        PressListenerView listenerView = findViewById(R.id.cm_player_press_listener);
-        listenerView.setOnPressListener(new PressListenerView.OnPressListener() {
+        LongPressListenerView listenerView = findViewById(R.id.cm_player_press_listener);
+        listenerView.setOnPressListener(new LongPressListenerView.OnPressListener() {
+            @Override public boolean onLongPressUp() {
+                CMVideoPlayer.getPlayer().defaultSpeed();
+                return true;
+            }
+
+            @Override public boolean onLongPress() {
+                CMVideoPlayer.getPlayer().setSpeed(2.0f);
+                return true;
+            }
+
             @Override public boolean onPressDown() {
                 // 这里返回 false 的话，onPressUp 无法接收回调
                 return true;

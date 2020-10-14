@@ -88,7 +88,7 @@
   </FrameLayout>
 
   <!-- 触屏监听 -->
-  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+  <com.example.wyyu.gitsamlpe.framework.window.LongPressListenerView
       android:id="@+id/cm_player_press_listener"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

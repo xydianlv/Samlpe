@@ -12,7 +12,7 @@
       android:layout_height="match_parent"
       />
 
-  <com.example.wyyu.gitsamlpe.framework.window.PressListenerView
+  <com.example.wyyu.gitsamlpe.framework.window.LongPressListenerView
       android:id="@+id/cm_full_player_press_listener"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

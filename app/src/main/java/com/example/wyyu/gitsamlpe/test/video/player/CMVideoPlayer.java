@@ -187,6 +187,7 @@ public class CMVideoPlayer implements ICMVideoPlayer {
                         break;
                     case Player.STATE_ENDED:
                         mediaStatus = MediaStatus.COMPLETE;
+                        defaultSpeed();
                         if (seekCache != null) {
                             seekCache.cacheSeek(sourceId, 0);
                         }
@@ -314,6 +315,10 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         if (exoPlayer != null) {
             exoPlayer.setPlaybackParameters(new PlaybackParameters(speed));
         }
+    }
+
+    @Override public void defaultSpeed() {
+        setSpeed(1.0f);
     }
 
     @Override

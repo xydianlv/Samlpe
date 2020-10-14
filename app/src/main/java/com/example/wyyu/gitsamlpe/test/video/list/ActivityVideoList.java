@@ -1,5 +1,6 @@
 package com.example.wyyu.gitsamlpe.test.video.list;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.view.View;
 import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.framework.window.LongPressListenerView;
 import com.example.wyyu.gitsamlpe.test.list.CustomLoadingView;
 import com.example.wyyu.gitsamlpe.test.video.data.VideoItem;
 import com.example.wyyu.gitsamlpe.test.video.model.VideoResultModel;
@@ -83,6 +85,21 @@ public class ActivityVideoList extends ToolbarActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(null);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    LongPressListenerView.onScroll = false;
+                }
+            }
+
+            @Override public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                LongPressListenerView.onScroll = true;
+            }
+        });
     }
 
     private void loadList() {
