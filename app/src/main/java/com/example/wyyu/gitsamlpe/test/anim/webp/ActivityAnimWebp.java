@@ -46,6 +46,8 @@ public class ActivityAnimWebp extends FullScreenActivity {
     private void initActivity() {
         initAutoPlay();
         initAnimClick();
+        initAnimLaugh();
+        initAnimThrow();
     }
 
     private void initAutoPlay() {
@@ -88,5 +90,27 @@ public class ActivityAnimWebp extends FullScreenActivity {
                 webpAnim.start();
             }
         });
+    }
+
+    private void initAnimLaugh() {
+        SimpleDraweeView webpAuto = findViewById(R.id.anim_webp_laugh);
+
+        FrescoLoader.newFrescoLoader()
+            .uri(Uri.parse(
+                "android.resource://" + getPackageName() + "/" + R.mipmap.anim_webp_laugh))
+            .imageScaleType(ScalingUtils.ScaleType.FIT_CENTER)
+            .autoPlayAnimation(true)
+            .into(webpAuto);
+    }
+
+    private void initAnimThrow() {
+        SimpleDraweeView webpAuto = findViewById(R.id.anim_webp_throw);
+
+        FrescoLoader.newFrescoLoader()
+            .uri(Uri.parse(
+                "android.resource://" + getPackageName() + "/" + R.mipmap.anim_webp_throw))
+            .imageScaleType(ScalingUtils.ScaleType.FIT_CENTER)
+            .autoPlayAnimation(true)
+            .into(webpAuto);
     }
 }

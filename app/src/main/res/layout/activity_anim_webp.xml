@@ -27,4 +27,22 @@
       app:actualImageScaleType="fitCenter"
       />
 
+  <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/anim_webp_laugh"
+      android:layout_width="72.0dp"
+      android:layout_height="72.0dp"
+      android:scaleType="fitCenter"
+      android:layout_marginTop="60.0dp"
+      app:actualImageScaleType="fitCenter"
+      />
+
+  <com.facebook.drawee.view.SimpleDraweeView
+      android:id="@+id/anim_webp_throw"
+      android:layout_width="72.0dp"
+      android:layout_height="72.0dp"
+      android:scaleType="fitCenter"
+      android:layout_marginTop="60.0dp"
+      app:actualImageScaleType="fitCenter"
+      />
+
 </LinearLayout>

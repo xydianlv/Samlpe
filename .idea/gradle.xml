@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/location" />
             <option value="$PROJECT_DIR$/matisse" />
             <option value="$PROJECT_DIR$/multi" />
+            <option value="$PROJECT_DIR$/push" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

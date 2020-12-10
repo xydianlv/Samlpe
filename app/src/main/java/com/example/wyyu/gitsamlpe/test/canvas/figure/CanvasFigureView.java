@@ -2,8 +2,10 @@ package com.example.wyyu.gitsamlpe.test.canvas.figure;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -36,6 +38,7 @@ public class CanvasFigureView extends View {
     private static final float SIZE_DIVIDE = UIUtils.dpToPx(10.0f);
     private static final float SIZE_VIEW = UIUtils.dpToPx(100.0f);
 
+    private LinearGradient gradient;
     private Paint paint;
 
     private RectF rectFA;
@@ -43,10 +46,14 @@ public class CanvasFigureView extends View {
     private RectF rectFC;
     private RectF rectFD;
     private RectF rectFE;
+    private RectF rectFF;
 
     private void initValue() {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(0xfff44336);
+
+        gradient = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, 0x55ff0000,
+            0x5500ff00, Shader.TileMode.CLAMP);
 
         rectFA = new RectF(SIZE_DIVIDE, SIZE_DIVIDE + SIZE_VIEW, SIZE_VIEW - SIZE_DIVIDE,
             SIZE_VIEW * 2 - SIZE_DIVIDE);
@@ -62,6 +69,9 @@ public class CanvasFigureView extends View {
 
         rectFE = new RectF(SIZE_DIVIDE, SIZE_DIVIDE + SIZE_VIEW * 4, SIZE_VIEW * 2 - SIZE_DIVIDE,
             SIZE_VIEW * 5 - SIZE_DIVIDE);
+
+        rectFF = new RectF(SIZE_DIVIDE, SIZE_DIVIDE + SIZE_VIEW * 5, SIZE_VIEW * 2 - SIZE_DIVIDE,
+            SIZE_VIEW * 6 - SIZE_DIVIDE);
     }
 
     @Override protected void onDraw(Canvas canvas) {
@@ -84,5 +94,9 @@ public class CanvasFigureView extends View {
 
         // 画一个圆角矩形
         canvas.drawRoundRect(rectFE, 30, 30, paint);
+
+        // 画一个正方形
+        paint.setShader(gradient);
+        canvas.drawRect(rectFF, paint);
     }
 }

@@ -1,1 +1,2 @@
+include ':push'
 include ':app', ':location', ':matisse', ':banner', ':multi', ':debug_processor', ':debug_annotate'

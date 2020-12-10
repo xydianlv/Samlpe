@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/location/location.iml" filepath="$PROJECT_DIR$/location/location.iml" group="GitSamlpe/location" />
       <module fileurl="file://$PROJECT_DIR$/matisse/matisse.iml" filepath="$PROJECT_DIR$/matisse/matisse.iml" group="GitSamlpe/matisse" />
       <module fileurl="file://$PROJECT_DIR$/multi/multi.iml" filepath="$PROJECT_DIR$/multi/multi.iml" group="GitSamlpe/multi" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/push/push.iml" filepath="$PROJECT_DIR$/.idea/modules/push/push.iml" group="GitSamlpe/push" />
     </modules>
   </component>
 </project>
