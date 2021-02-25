@@ -102,7 +102,7 @@
 
   </com.example.wyyu.gitsamlpe.framework.touch.TouchListenerLayout>
 
-  <com.example.wyyu.gitsamlpe.test.softkeyboard.BottomPublishView
+  <com.example.wyyu.gitsamlpe.test.keyboard.BottomPublishView
       android:id="@+id/soft_test_publish_view"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

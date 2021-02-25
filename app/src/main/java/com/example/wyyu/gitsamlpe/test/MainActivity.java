@@ -10,8 +10,10 @@ import com.example.wyyu.gitsamlpe.test.audio.ActivityAudioTest;
 import com.example.wyyu.gitsamlpe.test.bezier.ActivityBezierTest;
 import com.example.wyyu.gitsamlpe.test.canvas.ActivityCanvasTest;
 import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
+import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
+import com.example.wyyu.gitsamlpe.test.keyboard.ActivitySoftKeyboardTest;
 import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
 import com.example.wyyu.gitsamlpe.test.text.ActivityTextTest;
@@ -62,13 +64,9 @@ public class MainActivity extends ToolbarActivity {
             .addItem("Net", v -> ActivityNetworkTest.open(MainActivity.this))
             .addItem("Video", v -> ActivityVideoTest.open(MainActivity.this))
             .addItem("Pager", v -> ActivityPagerTest.open(MainActivity.this))
-            .addItem("Fresco", v -> ActivityFrescoTest.open(MainActivity.this));
-
-        listViewMain.addNewItem("FileListTest", new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                UIShowManager.startFileListActivity(MainActivity.this);
-            }
-        });
+            .addItem("Fresco", v -> ActivityFrescoTest.open(MainActivity.this))
+            .addItem("Keyboard", v -> ActivitySoftKeyboardTest.open(MainActivity.this))
+            .addItem("FileList", v -> ActivityFileListTest.open(MainActivity.this));
 
         listViewMain.addNewItem("FastRecyclerViewTest", new View.OnClickListener() {
             @Override public void onClick(View v) {

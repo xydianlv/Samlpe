@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.softkeyboard;
+package com.example.wyyu.gitsamlpe.test.keyboard;
 
 import android.os.Bundle;
 import com.google.android.material.bottomsheet.BottomSheetDialog;

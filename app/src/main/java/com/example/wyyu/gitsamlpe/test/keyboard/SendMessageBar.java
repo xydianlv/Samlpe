@@ -1,4 +1,4 @@
-package com.example.wyyu.gitsamlpe.test.softkeyboard;
+package com.example.wyyu.gitsamlpe.test.keyboard;
 
 import android.content.Context;
 import androidx.annotation.Nullable;

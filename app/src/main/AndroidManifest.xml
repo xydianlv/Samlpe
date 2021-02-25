@@ -5,26 +5,26 @@
     >
 
   <!-- 位置权限 -->
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <!-- 网络权限 -->
-  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.INTERNET" />
   <!-- 麦克风权限 -->
-  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <!-- 硬盘文件读写权限 -->
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/><!-- 读写权限 -->
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/><!-- 只读权限 -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!-- 读写权限 -->
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><!-- 只读权限 -->
   <!-- 摄像头权限 -->
-  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.CAMERA" />
   <!-- 悬浮窗显示权限 -->
-  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
   <!-- 日历权限 -->
-  <uses-permission android:name="android.permission.READ_CALENDAR"/>
-  <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+  <uses-permission android:name="android.permission.READ_CALENDAR" />
+  <uses-permission android:name="android.permission.WRITE_CALENDAR" />
   <!-- 壁纸权限 -->
-  <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+  <uses-permission android:name="android.permission.SET_WALLPAPER" />
   <!-- 前台服务权限 -->
-  <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
   <application
       android:name=".framework.application.AppController"
@@ -39,12 +39,12 @@
 
     <activity
         android:name=".test.MainActivity"
-        android:theme="@style/FullScreenTheme"
         android:screenOrientation="portrait"
+        android:theme="@style/FullScreenTheme"
         >
       <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
 
@@ -111,8 +111,8 @@
         />
     <activity
         android:name=".test.theme.ActivityFromBottom"
-        android:theme="@style/BaseTheme"
         android:screenOrientation="portrait"
+        android:theme="@style/BaseTheme"
         />
     <activity
         android:name=".test.theme.ActivityTransparentStatus"
@@ -193,20 +193,41 @@
         android:name=".test.function.shot.ActivityShotScreen"
         android:screenOrientation="portrait"
         />
+
     <activity
-        android:name=".test.softkeyboard.ActivitySoftKeyboard"
+        android:name=".test.keyboard.ActivitySoftKeyboardTest"
         android:screenOrientation="portrait"
-        android:windowSoftInputMode="stateHidden|adjustResize"
-        android:configChanges="orientation|screenSize|keyboardHidden"
         />
     <activity
-        android:name=".test.softkeyboard.ActivityShowKeyboard"
+        android:name=".test.keyboard.show.ActivityAdjustPan"
         android:screenOrientation="portrait"
-        android:configChanges="orientation|screenSize|keyboardHidden"
+        android:windowSoftInputMode="stateHidden|adjustPan"
+        />
+    <activity
+        android:name=".test.keyboard.show.ActivityAdjustResize"
+        android:screenOrientation="portrait"
         android:windowSoftInputMode="stateHidden|adjustResize"
         />
     <activity
-        android:name=".test.softkeyboard.ActivitySwitchPanelTest"
+        android:name=".test.keyboard.show.ActivityAdjustUnspecified"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|adjustUnspecified"
+        />
+
+    <activity
+        android:name=".test.keyboard.ActivitySoftKeyboard"
+        android:configChanges="orientation|screenSize|keyboardHidden"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        />
+    <activity
+        android:name=".test.keyboard.ActivityShowKeyboard"
+        android:configChanges="orientation|screenSize|keyboardHidden"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|adjustResize"
+        />
+    <activity
+        android:name=".test.keyboard.ActivitySwitchPanelTest"
         android:screenOrientation="portrait"
         android:windowSoftInputMode="stateHidden|adjustResize"
         />
@@ -243,7 +264,7 @@
         android:screenOrientation="portrait"
         />
     <activity
-        android:name=".test.softkeyboard.ActivityCustomSwitchPanel"
+        android:name=".test.keyboard.ActivityCustomSwitchPanel"
         android:screenOrientation="portrait"
         />
     <activity
@@ -268,9 +289,7 @@
         android:process=":process"
         android:theme="@style/LiveActivity"
         />
-    <activity
-        android:name=".test.live.ActivityLiveTest"
-        />
+    <activity android:name=".test.live.ActivityLiveTest" />
     <activity
         android:name=".test.live.KeepLiveActivity"
         android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
@@ -675,13 +694,13 @@
         />
     <activity
         android:name=".test.video.list.ActivityVideoList"
-        android:screenOrientation="portrait"
         android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+        android:screenOrientation="portrait"
         />
     <activity
         android:name=".test.video.waterfall.ActivityVideoWaterfall"
-        android:screenOrientation="portrait"
         android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+        android:screenOrientation="portrait"
         />
     <activity
         android:name=".test.fresco.blr.ActivityFrescoBlr"
@@ -691,10 +710,22 @@
         android:name=".test.fresco.cache.ActivityFrescoCache"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.algorithm.ActivityAlgorithmTest"/>
-    <activity android:name=".test.algorithm.sort.ActivityAlgorithmSort"/>
-    <activity android:name=".test.algorithm.tree.ActivityAlgorithmTree"/>
-    <activity android:name=".test.pager.life.ActivityPagerLifeTest"/>
+    <activity
+        android:name=".test.algorithm.ActivityAlgorithmTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.algorithm.sort.ActivityAlgorithmSort"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.algorithm.tree.ActivityAlgorithmTree"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.pager.life.ActivityPagerLifeTest"
+        android:screenOrientation="portrait"
+        />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
@@ -702,27 +733,13 @@
     <!--android:value="8fe6dd7309f606df0b0edee404251bbc" />-->
     <!--<service android:name="com.amap.api.location.APSService" />-->
 
-    <service
-        android:name=".framework.service.TestService"
-        />
-    <service
-        android:name=".test.floatview.FloatingService"
-        />
-    <service
-        android:name=".test.floatview.InnerService"
-        />
-    <service
-        android:name=".test.floatview.KeepLiveService"
-        />
-    <service
-        android:name=".test.live.KeepLiveService"
-        />
-    <service
-        android:name=".test.live.KeepLiveOnlyService"
-        />
-    <service
-        android:name=".test.live.KeepLiveOnlyFloat"
-        />
+    <service android:name=".framework.service.TestService" />
+    <service android:name=".test.floatview.FloatingService" />
+    <service android:name=".test.floatview.InnerService" />
+    <service android:name=".test.floatview.KeepLiveService" />
+    <service android:name=".test.live.KeepLiveService" />
+    <service android:name=".test.live.KeepLiveOnlyService" />
+    <service android:name=".test.live.KeepLiveOnlyFloat" />
 
   </application>
 

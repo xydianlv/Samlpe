@@ -83,7 +83,7 @@
 
   </ScrollView>
 
-  <com.example.wyyu.gitsamlpe.test.softkeyboard.CustomPublishView
+  <com.example.wyyu.gitsamlpe.test.keyboard.CustomPublishView
       android:id="@+id/switch_panel_publish"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

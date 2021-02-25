@@ -3,7 +3,9 @@ package com.example.wyyu.gitsamlpe.test.file;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +33,10 @@ import java.util.List;
 
 public class ActivityFileListTest extends FullScreenActivity
     implements PresenterGetFile.ILocalFileListView {
+
+    public static void open(Context context) {
+        context.startActivity(new Intent(context, ActivityFileListTest.class));
+    }
 
     private static final String TITLE = "吾即大灾变！！！";
 
@@ -193,7 +199,7 @@ public class ActivityFileListTest extends FullScreenActivity
             keyCode, event);
     }
 
-    private static class FileViewAdapter extends RecyclerView.Adapter {
+    private static class FileViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private PresenterGetFile presenterGetFile;
 
@@ -213,13 +219,14 @@ public class ActivityFileListTest extends FullScreenActivity
             this.presenterGetFile = presenterGetFile;
         }
 
-        @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        @NonNull @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new FileViewHolder(LayoutInflater.from(context)
                 .inflate(R.layout.layout_file_list_item, parent, false));
         }
 
-        @Override public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
             ((FileViewHolder) holder).setItemData(localFileBeanList.get(position));
         }
 
@@ -265,10 +272,8 @@ public class ActivityFileListTest extends FullScreenActivity
                 fileImage.setImageResource(R.mipmap.folder);
                 fileInfo.setText(fileCount + "项，" + fileChangeDate);
 
-                itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override public void onClick(View v) {
-                        if (presenterGetFile != null) presenterGetFile.visitLocalFolder(fileBean);
-                    }
+                itemView.setOnClickListener(v -> {
+                    if (presenterGetFile != null) presenterGetFile.visitLocalFolder(fileBean);
                 });
             }
 
@@ -285,10 +290,10 @@ public class ActivityFileListTest extends FullScreenActivity
             }
 
             private String getFileHeader(File file) {
-                byte[] fileHeader=new byte[16];
+                byte[] fileHeader = new byte[16];
                 try {
                     FileInputStream inputStream = new FileInputStream(file);
-                    inputStream.read(fileHeader,0,16);
+                    inputStream.read(fileHeader, 0, 16);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
