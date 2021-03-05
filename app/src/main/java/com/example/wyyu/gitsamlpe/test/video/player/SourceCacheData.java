@@ -16,7 +16,9 @@ import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvicto
 import com.google.android.exoplayer2.upstream.cache.SimpleCache;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import okhttp3.OkHttpClient;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;

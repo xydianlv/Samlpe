@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
   compileSdkVersion 28
   defaultConfig {
-    applicationId "com.example.wyyu.gitsamlpe"
+    applicationId "$APPLICATION_ID"
     minSdkVersion 16
     targetSdkVersion 28
     multiDexEnabled true
@@ -18,8 +18,35 @@ android {
   }
   buildTypes {
     release {
-      minifyEnabled false
+      buildConfigField "boolean", "LOG_DEBUG", "false"
+      buildConfigField "boolean", "PREVIEW", "false"
+      resValue "string", "app_name", "GitSample"
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      minifyEnabled true
+      zipAlignEnabled true
+      shrinkResources false
+    }
+    debug {
+      buildConfigField "boolean", "LOG_DEBUG", "true"
+      buildConfigField "boolean", "PREVIEW", "false"
+      resValue "string", "app_name", "GitSample-Debug"
+      minifyEnabled false
+      zipAlignEnabled false
+      shrinkResources false
+    }
+    preview {
+      initWith release
+      buildConfigField "boolean", "PREVIEW", "true"
+      matchingFallbacks = ['release']
+      aaptOptions {
+        cruncherEnabled false
+      }
+    }
+    majia {
+      initWith release
+      matchingFallbacks = ['release']
+      resValue "string", "app_name", "GitSmaple-Test"
+      applicationIdSuffix ".test"
     }
   }
   externalNativeBuild {

@@ -129,6 +129,7 @@ public class LongClickView extends FrameLayout {
         PropertyValuesHolder animSY = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.4f, 1.0f);
 
         animator = ObjectAnimator.ofPropertyValuesHolder(imageView, animSX, animSY);
+        ObjectAnimator.ofFloat(imageView,"alpha",0.0f,1.0f);
         animator.setInterpolator(new LinearOutSlowInInterpolator());
         animator.setRepeatCount(ValueAnimator.INFINITE);
         animator.setDuration(AnimView.DURATION_ANIM);

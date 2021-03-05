@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">GitSample</string>
-
     <string name="image">图片</string>
     <string name="forget_pass">忘记密码？</string>
     <string name="ellipsis">。。。</string>
