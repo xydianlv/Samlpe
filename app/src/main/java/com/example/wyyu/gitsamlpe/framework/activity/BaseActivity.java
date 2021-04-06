@@ -38,12 +38,6 @@ public class BaseActivity extends AppCompatActivity implements MsgReceiver {
         MsgSender.getMsgSender().attach(this);
         DownloadObservable.getObservable().attachActivity(this);
         //VolumeObservable.getObservable().attachActivity(this);
-
-        registerToLiveBus();
-    }
-
-    protected void registerToLiveBus() {
-
     }
 
     @Override protected void onResume() {

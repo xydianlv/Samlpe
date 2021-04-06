@@ -8,6 +8,7 @@ import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
 import com.example.wyyu.gitsamlpe.test.function.download.ActivityDownloadTest;
+import com.example.wyyu.gitsamlpe.test.function.drag.ActivityFloatDragTest;
 import com.example.wyyu.gitsamlpe.test.function.dynamic.ActivityDynamicSize;
 import com.example.wyyu.gitsamlpe.test.function.grid.ActivityGridTest;
 import com.example.wyyu.gitsamlpe.test.function.shot.ActivityShotScreen;
@@ -55,6 +56,7 @@ public class ActivityFunctionList extends ToolbarActivity {
             .addItem("DownloadTest", v -> ActivityDownloadTest.open(ActivityFunctionList.this))
             .addItem("WallpaperTest", v -> ActivityWallpaperTest.open(ActivityFunctionList.this))
             .addItem("GridTest", v -> ActivityGridTest.open(ActivityFunctionList.this))
+            .addItem("FloatDragTest", v -> ActivityFloatDragTest.open(ActivityFunctionList.this))
             .refreshList();
     }
 }

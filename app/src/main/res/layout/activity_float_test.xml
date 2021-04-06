@@ -37,16 +37,4 @@
       style="@style/ClickableText"
       />
 
-  <TextView
-      android:id="@+id/bus_test"
-      android:text="@string/bus_test"
-      style="@style/ClickableText"
-      />
-
-  <TextView
-      android:id="@+id/bus_check"
-      android:text="@string/bus_check"
-      style="@style/ClickableText"
-      />
-
 </LinearLayout>
