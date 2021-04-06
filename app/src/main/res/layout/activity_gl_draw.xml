@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+  <include layout="@layout/common_toolbar" />
+
+  <FrameLayout
+      android:id="@+id/gl_draw_container"
+      android:layout_width="match_parent"
+      android:layout_height="120.0dp"
+      />
+
+  <FrameLayout
+      android:id="@+id/gl_draw_container_all"
+      android:layout_width="match_parent"
+      android:layout_height="320.0dp"
+      />
+
+</LinearLayout>

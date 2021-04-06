@@ -14,6 +14,7 @@ import com.example.wyyu.gitsamlpe.test.pager.snap.ActivityPagerSnapTest;
 import com.example.wyyu.gitsamlpe.test.pager.transform.ActivityPagerTransformTest;
 import com.example.wyyu.gitsamlpe.test.pager.banner.ActivityBannerTest;
 import com.example.wyyu.gitsamlpe.test.pager.ultra.ActivityUltraTest;
+import com.example.wyyu.gitsamlpe.test.pager.vertical.ActivityPagerVerticalTest;
 
 /**
  * Created by wyyu on 2018/6/29.
@@ -45,6 +46,7 @@ public class ActivityPagerTest extends ToolbarActivity {
             .addItem("Slide", v -> ActivitySlideTest.open(ActivityPagerTest.this))
             .addItem("Blog", v -> ActivityBlogTest.open(ActivityPagerTest.this))
             .addItem("Life", v -> ActivityPagerLifeTest.open(ActivityPagerTest.this))
+            .addItem("Vertical", v -> ActivityPagerVerticalTest.open(ActivityPagerTest.this))
             .refreshList();
     }
 }

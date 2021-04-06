@@ -25,6 +25,8 @@
   <uses-permission android:name="android.permission.SET_WALLPAPER" />
   <!-- 前台服务权限 -->
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <!-- OpenGL 使用声明 -->
+  <uses-feature android:glEsVersion="0x00030000" android:required="true" />
 
   <application
       android:name=".framework.application.AppController"
@@ -724,6 +726,25 @@
         />
     <activity
         android:name=".test.pager.life.ActivityPagerLifeTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.gl.ActivityGlTest"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.gl.draw.ActivityGLDraw"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.gl.image.ActivityGLImage"
+        android:screenOrientation="portrait"
+        />
+    <activity
+        android:name=".test.gl.video.ActivityGLVideo"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.pager.vertical.ActivityPagerVerticalTest"
         android:screenOrientation="portrait"
         />
 

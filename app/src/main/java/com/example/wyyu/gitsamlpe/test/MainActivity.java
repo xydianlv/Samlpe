@@ -13,6 +13,7 @@ import com.example.wyyu.gitsamlpe.test.card.ActivityCardTest;
 import com.example.wyyu.gitsamlpe.test.file.ActivityFileListTest;
 import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.function.ActivityFunctionList;
+import com.example.wyyu.gitsamlpe.test.gl.ActivityGlTest;
 import com.example.wyyu.gitsamlpe.test.keyboard.ActivitySoftKeyboardTest;
 import com.example.wyyu.gitsamlpe.test.network.ActivityNetworkTest;
 import com.example.wyyu.gitsamlpe.test.pager.ActivityPagerTest;
@@ -54,6 +55,7 @@ public class MainActivity extends ToolbarActivity {
     private void refreshListView() {
 
         listViewMain.addItem("Function", v -> ActivityFunctionList.open(MainActivity.this))
+            .addItem("OpenGL", v -> ActivityGlTest.open(MainActivity.this))
             .addItem("Algorithm", v -> ActivityFunctionList.open(MainActivity.this))
             .addItem("Audio", v -> ActivityAudioTest.open(MainActivity.this))
             .addItem("Card", v -> ActivityCardTest.open(MainActivity.this))

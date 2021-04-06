@@ -9,16 +9,27 @@ import android.view.ViewGroup;
  * Created by wyyu on 2020-05-13.
  **/
 
-public class PagerListAdapter extends RecyclerView.Adapter {
+public class PagerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @NonNull @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new HolderPager(LayoutInflater.from(viewGroup.getContext())
-            .inflate(HolderPager.LAYOUT, viewGroup, false));
+        if (i == HolderRecycler.LAYOUT) {
+            return new HolderRecycler(LayoutInflater.from(viewGroup.getContext())
+                .inflate(HolderRecycler.LAYOUT, viewGroup, false));
+        } else {
+            return new HolderPager(LayoutInflater.from(viewGroup.getContext())
+                .inflate(HolderPager.LAYOUT, viewGroup, false));
+        }
     }
 
     @Override public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        ((HolderPager) viewHolder).cacheData(i);
+        if (getItemViewType(i) == HolderPager.LAYOUT) {
+            ((HolderPager) viewHolder).cacheData(i);
+        }
+    }
+
+    @Override public int getItemViewType(int position) {
+        return position == 0 ? HolderRecycler.LAYOUT : HolderPager.LAYOUT;
     }
 
     @Override public int getItemCount() {
