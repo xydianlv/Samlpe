@@ -7,6 +7,7 @@ import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
 import com.example.wyyu.gitsamlpe.test.canvas.figure.ActivityCanvasFigure;
+import com.example.wyyu.gitsamlpe.test.canvas.game.ActivityCanvasGame;
 import com.example.wyyu.gitsamlpe.test.canvas.image.ActivityCanvasImage;
 import com.example.wyyu.gitsamlpe.test.canvas.path.ActivityCanvasPath;
 import com.example.wyyu.gitsamlpe.test.canvas.text.ActivityCanvasText;
@@ -39,6 +40,7 @@ public class ActivityCanvasTest extends ToolbarActivity {
             .addItem("Path", v -> ActivityCanvasPath.open(ActivityCanvasTest.this))
             .addItem("Image", v -> ActivityCanvasImage.open(ActivityCanvasTest.this))
             .addItem("XFerMode", v -> ActivityXFerModeTest.open(ActivityCanvasTest.this))
+            .addItem("CanvasGame",v-> ActivityCanvasGame.open(ActivityCanvasTest.this))
             .refreshList();
     }
 }
