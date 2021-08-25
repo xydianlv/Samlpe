@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "/Users/nanmeng/Project/Android/GitSample/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/nanmeng/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/nanmeng/Project/Android/GitSample/app/.cxx/cmake/debug/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/nanmeng/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/nanmeng/Project/Android/GitSample/app/.cxx/cmake/debug/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib-Debug-armeabi-v7a": {
+      "artifactName": "native-lib",
+      "buildCommandComponents": [
+        "/Users/nanmeng/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/nanmeng/Project/Android/GitSample/app/.cxx/cmake/debug/armeabi-v7a",
+        "native-lib"
+      ],
+      "abi": "armeabi-v7a",
+      "output": "/Users/nanmeng/Project/Android/GitSample/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}

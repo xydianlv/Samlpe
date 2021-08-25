@@ -8,7 +8,7 @@ buildscript {
         maven { url "https://developer.huawei.com/repo/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'com.android.tools.build:gradle:4.2.2'
 
         classpath group: 'org.aspectj', name: 'aspectjtools', version: '1.9.4'
         // https://www.eclipse.org/aspectj/

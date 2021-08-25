@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "/Users/nanmeng/Project/Android/GitSample/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/nanmeng/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/nanmeng/Project/Android/GitSample/app/.cxx/cmake/debug/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/nanmeng/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/nanmeng/Project/Android/GitSample/app/.cxx/cmake/debug/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib-Debug-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommandComponents": [
+        "/Users/nanmeng/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/nanmeng/Project/Android/GitSample/app/.cxx/cmake/debug/arm64-v8a",
+        "native-lib"
+      ],
+      "abi": "arm64-v8a",
+      "output": "/Users/nanmeng/Project/Android/GitSample/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}

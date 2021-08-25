@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel target="1.7">
       <module name="debug_annotate" target="1.7" />
       <module name="debug_processor" target="1.7" />
+      <module name="GitSample.app" target="1.8" />
+      <module name="GitSample.banner" target="1.8" />
+      <module name="GitSample.location" target="1.8" />
+      <module name="GitSample.matisse" target="1.8" />
+      <module name="GitSample.multi" target="1.8" />
+      <module name="GitSample.push" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

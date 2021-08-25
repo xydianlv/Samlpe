@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GitSamlpe.iml" filepath="$PROJECT_DIR$/GitSamlpe.iml" group="GitSamlpe" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="GitSamlpe/app" />
-      <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" group="GitSamlpe/banner" />
-      <module fileurl="file://$PROJECT_DIR$/debug_annotate/debug_annotate.iml" filepath="$PROJECT_DIR$/debug_annotate/debug_annotate.iml" group="GitSamlpe/debug_annotate" />
-      <module fileurl="file://$PROJECT_DIR$/debug_processor/debug_processor.iml" filepath="$PROJECT_DIR$/debug_processor/debug_processor.iml" group="GitSamlpe/debug_processor" />
-      <module fileurl="file://$PROJECT_DIR$/location/location.iml" filepath="$PROJECT_DIR$/location/location.iml" group="GitSamlpe/location" />
-      <module fileurl="file://$PROJECT_DIR$/matisse/matisse.iml" filepath="$PROJECT_DIR$/matisse/matisse.iml" group="GitSamlpe/matisse" />
-      <module fileurl="file://$PROJECT_DIR$/multi/multi.iml" filepath="$PROJECT_DIR$/multi/multi.iml" group="GitSamlpe/multi" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/push/push.iml" filepath="$PROJECT_DIR$/.idea/modules/push/push.iml" group="GitSamlpe/push" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GitSample.iml" filepath="$PROJECT_DIR$/.idea/GitSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitSample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitSample.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.iml" filepath="$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/location/GitSample.location.iml" filepath="$PROJECT_DIR$/.idea/modules/location/GitSample.location.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.iml" filepath="$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.iml" filepath="$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/push/GitSample.push.iml" filepath="$PROJECT_DIR$/.idea/modules/push/GitSample.push.iml" />
     </modules>
   </component>
 </project>

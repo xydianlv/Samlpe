@@ -1,0 +1,1 @@
+/Users/nanmeng/Project/Android/GitSample/app/CMakeLists.txt

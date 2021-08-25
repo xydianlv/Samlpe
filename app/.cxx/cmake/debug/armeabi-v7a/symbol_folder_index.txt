@@ -1,0 +1,1 @@
+/Users/nanmeng/Project/Android/GitSample/app/build/intermediates/cmake/debug/obj/armeabi-v7a
