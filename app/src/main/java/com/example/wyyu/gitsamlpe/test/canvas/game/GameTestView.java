@@ -9,11 +9,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.SparseArray;
+import android.view.MotionEvent;
 import android.view.View;
-
 import androidx.annotation.Nullable;
-
 import com.example.wyyu.gitsamlpe.R;
+import java.util.Random;
 
 public class GameTestView extends View {
 
@@ -33,35 +33,50 @@ public class GameTestView extends View {
     }
 
     private static final int RES_ID = R.mipmap.image_test_1;
-    private static final int WIDTH_DIVIDE = 12;
+    private static final int DIVIDE = 12;
     private static final int LIST = 4;
     private static final int ROW = 4;
+    private static final int COUNT = LIST * ROW;
 
     private Bitmap bitmap;
     private Paint paint;
 
-    private RectF rectImage;
-    private Rect rectBitmap;
-
-    private int bitmapSize;
-    private int imageSize;
-
     private SparseArray<RectF> viewArray;
     private SparseArray<Rect> imageArray;
-
     private int[] indexArray;
 
     private void initView() {
+        initObject();
+        initData();
+    }
+
+    private void initObject() {
         bitmap = BitmapFactory.decodeResource(getResources(), RES_ID);
-        bitmapSize = bitmap.getWidth() / LIST;
-
-        rectImage = new RectF();
-        rectBitmap = new Rect();
         paint = new Paint();
+    }
 
-        indexArray = new int[ROW * LIST];
+    private void initData() {
         imageArray = new SparseArray<>();
         viewArray = new SparseArray<>();
+        indexArray = new int[COUNT];
+
+        for (int index = 0; index < COUNT; index++) {
+            viewArray.put(index, new RectF());
+            imageArray.put(index, new Rect());
+            indexArray[index] = index;
+        }
+
+        Random random = new Random(47);
+        int index = COUNT - 2;
+
+        while (index > 0) {
+            int data = random.nextInt(index);
+
+            int value = indexArray[data];
+            indexArray[data] = indexArray[index + 1];
+            indexArray[index + 1] = value;
+            index--;
+        }
     }
 
     @Override
@@ -69,17 +84,39 @@ public class GameTestView extends View {
         super.onMeasure(valueMeasureSpec, valueMeasureSpec);
 
         int viewWidth = getMeasuredWidth();
+        int viewHeight = getMeasuredHeight();
 
-        imageArray.clear();
-        viewArray.clear();
+        int imgHeight = bitmap.getHeight();
+        int imgWidth = bitmap.getWidth();
 
-        for (int index = 0; index < indexArray.length; index++) {
-            indexArray[index] = index;
+        float aspectView = viewWidth * 1.0f / viewHeight;
+        float aspectImg = imgWidth * 1.0f / imgHeight;
 
+        viewWidth = (viewWidth - DIVIDE * (LIST - 1)) / LIST;
+        viewHeight = (viewHeight - DIVIDE * (ROW - 1)) / ROW;
 
-
+        if (aspectView > aspectImg) {
+            imgHeight = ((int) (imgWidth * aspectView) - (DIVIDE * (ROW - 1))) / ROW;
+            imgWidth = (imgWidth - (DIVIDE * (LIST - 1))) / LIST;
+        } else {
+            imgWidth = ((int) (imgHeight * aspectView) - (DIVIDE * (LIST - 1))) / LIST;
+            imgHeight = (imgHeight - (DIVIDE * (ROW - 1))) / ROW;
         }
-        imageSize = (viewWidth - WIDTH_DIVIDE * (LIST - 1)) / LIST;
+
+        for (int index = 0; index < COUNT; index++) {
+
+            RectF rectF = viewArray.get(index);
+            rectF.left = (viewWidth + DIVIDE) * (index % LIST);
+            rectF.right = rectF.left + viewWidth;
+            rectF.top = (viewHeight + DIVIDE) * ((int) (index / LIST));
+            rectF.bottom = rectF.top + viewHeight;
+
+            Rect rect = imageArray.get(index);
+            rect.left = imgWidth * (index % LIST);
+            rect.right = rect.left + imgWidth;
+            rect.top = imgHeight * ((int) (index / LIST));
+            rect.bottom = rect.top + imgHeight;
+        }
     }
 
     @Override
@@ -89,24 +126,73 @@ public class GameTestView extends View {
         if (bitmap == null) {
             return;
         }
-        for (int index = 0; index < ROW; index++) {
-            for (int position = 0; position < LIST; position++) {
-                rectBitmap.left = bitmapSize * position;
-                rectBitmap.top = bitmapSize * index;
-                rectBitmap.right = rectBitmap.left + bitmapSize;
-                rectBitmap.bottom = rectBitmap.top + bitmapSize;
 
-                rectImage.left = (imageSize + WIDTH_DIVIDE) * position;
-                rectImage.top = (imageSize + WIDTH_DIVIDE) * index;
-                rectImage.right = rectImage.left + imageSize;
-                rectImage.bottom = rectImage.top + imageSize;
+        for (int index = 0; index < COUNT; index++) {
+            int drawIndex = indexArray[index];
+            if (drawIndex == 0) {
+                continue;
+            }
+            canvas.drawBitmap(bitmap, imageArray.get(drawIndex), viewArray.get(index), paint);
+        }
+    }
 
-                canvas.drawBitmap(bitmap, rectBitmap, rectImage, paint);
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        super.onTouchEvent(event);
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+            performClick();
+        }
+        judgeClickCard(event);
+        return true;
+    }
+
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
+    private void judgeClickCard(MotionEvent event) {
+        float x = event.getX();
+        float y = event.getY();
+
+        for (int index = 0; index < COUNT; index++) {
+            RectF rectF = viewArray.get(index);
+            if (rectF.left < x && rectF.right > x && rectF.top < y && rectF.bottom > y) {
+                if (indexArray[index] == 0) {
+                    return;
+                }
+                judgeAndSwitch(index);
+                break;
             }
         }
+    }
 
-        for (int index = 0; index < indexArray.length; index++) {
-            canvas.drawBitmap(bitmap, imageArray.get(index), viewArray.get(index), paint);
+    private void judgeAndSwitch(int clickIndex) {
+        int preIndex = clickIndex % LIST == 0 ? -1 : clickIndex - 1;
+        if (preIndex != -1 && indexArray[preIndex] == 0) {
+            switchIndex(clickIndex, preIndex);
+            return;
         }
+        int nextIndex = clickIndex % LIST == 3 ? -1 : clickIndex + 1;
+        if (nextIndex != -1 && indexArray[nextIndex] == 0) {
+            switchIndex(clickIndex, nextIndex);
+            return;
+        }
+        int upIndex = clickIndex < LIST ? -1 : clickIndex - LIST;
+        if (upIndex != -1 && indexArray[upIndex] == 0) {
+            switchIndex(clickIndex, upIndex);
+            return;
+        }
+        int downIndex = clickIndex >= LIST * (ROW - 1) ? -1 : clickIndex + LIST;
+        if (downIndex != -1 && indexArray[downIndex] == 0) {
+            switchIndex(clickIndex, downIndex);
+        }
+    }
+
+    private void switchIndex(int indexA, int indexB) {
+        int value = indexArray[indexA];
+        indexArray[indexA] = indexArray[indexB];
+        indexArray[indexB] = value;
+        invalidate();
     }
 }
