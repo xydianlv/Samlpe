@@ -88,6 +88,8 @@ dependencies {
   // Retrofit + OKHttp，网络请求框架
   implementation 'com.squareup.retrofit2:retrofit:2.7.1'
   implementation 'com.squareup.okhttp3:okhttp:4.3.0'
+  // Cronet 网络请求框架
+  implementation "com.google.android.gms:play-services-cronet:17.0.1"
   // FastJson，非常快的 Json 解析框架
   implementation 'com.alibaba:fastjson:1.2.62'
   // 自动缩放 TextView

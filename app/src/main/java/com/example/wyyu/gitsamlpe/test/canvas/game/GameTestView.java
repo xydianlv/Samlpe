@@ -11,8 +11,11 @@ import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
+
 import androidx.annotation.Nullable;
+
 import com.example.wyyu.gitsamlpe.R;
+
 import java.util.Random;
 
 public class GameTestView extends View {
@@ -34,8 +37,8 @@ public class GameTestView extends View {
 
     private static final int RES_ID = R.mipmap.image_test_1;
     private static final int DIVIDE = 12;
-    private static final int LIST = 4;
-    private static final int ROW = 4;
+    private static final int LIST = 3;
+    private static final int ROW = 3;
     private static final int COUNT = LIST * ROW;
 
     private Bitmap bitmap;
@@ -44,6 +47,7 @@ public class GameTestView extends View {
     private SparseArray<RectF> viewArray;
     private SparseArray<Rect> imageArray;
     private int[] indexArray;
+    private boolean hasSort;
 
     private void initView() {
         initObject();
@@ -66,7 +70,7 @@ public class GameTestView extends View {
             indexArray[index] = index;
         }
 
-        Random random = new Random(47);
+        Random random = new Random();
         int index = COUNT - 2;
 
         while (index > 0) {
@@ -77,6 +81,38 @@ public class GameTestView extends View {
             indexArray[index + 1] = value;
             index--;
         }
+        sumNumber();
+        hasSort = false;
+    }
+
+    private void sumNumber() {
+        int inNum = 0;
+        int zeroPosition = 0;
+        for (int index = 0; index < COUNT; index++) {
+            for (int i = index + 1; i < COUNT; i++) {
+                if (indexArray[index] == 0) {
+                    zeroPosition = index;
+                }
+                if (indexArray[index] < indexArray[i]) {
+                    inNum++;
+                }
+            }
+        }
+        if (inNum % 2 != 0) {
+            if (zeroPosition == 0) {
+                switchPosition(zeroPosition, zeroPosition + 1);
+            } else if (zeroPosition == COUNT - 1) {
+                switchPosition(zeroPosition, zeroPosition - 1);
+            } else {
+                switchPosition(zeroPosition, zeroPosition + 1);
+            }
+        }
+    }
+
+    private void switchPosition(int indexA, int indexB) {
+        int value = indexArray[indexA];
+        indexArray[indexA] = indexArray[indexB];
+        indexArray[indexB] = value;
     }
 
     @Override
@@ -129,7 +165,7 @@ public class GameTestView extends View {
 
         for (int index = 0; index < COUNT; index++) {
             int drawIndex = indexArray[index];
-            if (drawIndex == 0) {
+            if (drawIndex == 0 && !hasSort) {
                 continue;
             }
             canvas.drawBitmap(bitmap, imageArray.get(drawIndex), viewArray.get(index), paint);
@@ -138,6 +174,9 @@ public class GameTestView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (hasSort) {
+            return super.onTouchEvent(event);
+        }
         super.onTouchEvent(event);
         if (event.getAction() == MotionEvent.ACTION_UP) {
             performClick();
@@ -173,7 +212,7 @@ public class GameTestView extends View {
             switchIndex(clickIndex, preIndex);
             return;
         }
-        int nextIndex = clickIndex % LIST == 3 ? -1 : clickIndex + 1;
+        int nextIndex = clickIndex % LIST == (LIST - 1) ? -1 : clickIndex + 1;
         if (nextIndex != -1 && indexArray[nextIndex] == 0) {
             switchIndex(clickIndex, nextIndex);
             return;
@@ -193,6 +232,17 @@ public class GameTestView extends View {
         int value = indexArray[indexA];
         indexArray[indexA] = indexArray[indexB];
         indexArray[indexB] = value;
+        judgeHasSort();
         invalidate();
+    }
+
+    private void judgeHasSort() {
+        hasSort = true;
+        for (int index = 1; index < COUNT; index++) {
+            if (indexArray[index] < indexArray[index - 1]) {
+                hasSort = false;
+                break;
+            }
+        }
     }
 }

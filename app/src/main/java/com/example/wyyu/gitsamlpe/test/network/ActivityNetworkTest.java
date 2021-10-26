@@ -8,6 +8,7 @@ import butterknife.BindView;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
+import com.example.wyyu.gitsamlpe.test.network.cronet.ActivityNetworkCronet;
 import com.example.wyyu.gitsamlpe.test.network.custom.ActivityNetworkCustom;
 import com.example.wyyu.gitsamlpe.test.network.retrofit.ActivityNetworkRetrofit;
 
@@ -35,6 +36,7 @@ public class ActivityNetworkTest extends ToolbarActivity {
 
         listView.addItem("Custom", v -> ActivityNetworkCustom.open(ActivityNetworkTest.this))
             .addItem("Retrofit", v -> ActivityNetworkRetrofit.open(ActivityNetworkTest.this))
+                .addItem("CroNet", v -> ActivityNetworkCronet.open(ActivityNetworkTest.this))
             .refreshList();
     }
 }

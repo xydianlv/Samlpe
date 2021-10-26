@@ -626,6 +626,9 @@
         android:name=".test.network.retrofit.ActivityNetworkRetrofit"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.network.cronet.ActivityNetworkCronet"
+        android:screenOrientation="portrait"
+      />
     <activity
         android:name=".test.bezier.ActivityBezierTest"
         android:screenOrientation="portrait"
