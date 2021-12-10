@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_canvas_game.xml" value="0.20018115942028986" />
+        <entry key="app/src/main/res/layout/activity_keyboard_mode.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/activity_mac_address_test.xml" value="0.22509057971014493" />
         <entry key="app/src/main/res/layout/activity_net_work_cro_net.xml" value="0.19701086956521738" />
         <entry key="app/src/main/res/layout/activity_network_custom.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/activity_network_retrofit.xml" value="0.19701086956521738" />

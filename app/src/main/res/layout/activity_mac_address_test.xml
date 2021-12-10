@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/address_up_7_ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:paddingVertical="@dimen/padding_10"
+        android:textColor="@color/ct_1"
+        android:textSize="@dimen/text_15"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/address_up_7_machine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:paddingVertical="@dimen/padding_10"
+        android:textColor="@color/ct_1"
+        android:textSize="@dimen/text_15"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/address_up_7_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:paddingVertical="@dimen/padding_10"
+        android:textColor="@color/ct_1"
+        android:textSize="@dimen/text_15"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/address_between_ss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:paddingVertical="@dimen/padding_10"
+        android:textColor="@color/ct_1"
+        android:textSize="@dimen/text_15"
+        tools:ignore="SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/address_under_six"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_14"
+        android:paddingVertical="@dimen/padding_10"
+        android:textColor="@color/ct_1"
+        android:textSize="@dimen/text_15"
+        tools:ignore="SpUsage" />
+
+
+</LinearLayout>

@@ -756,6 +756,9 @@
     <activity android:name=".test.canvas.game.ActivityCanvasGame"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.function.macaddress.ActivityMacAddressTest"
+        android:screenOrientation="portrait"
+      />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

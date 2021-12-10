@@ -10,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/location/GitSample.location.iml" filepath="$PROJECT_DIR$/.idea/modules/location/GitSample.location.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.iml" filepath="$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.iml" filepath="$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/push/GitSample.push.iml" filepath="$PROJECT_DIR$/.idea/modules/push/GitSample.push.iml" />
     </modules>
   </component>
 </project>
