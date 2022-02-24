@@ -240,4 +240,7 @@
     <string name="sort_quick">Quick</string>
     <string name="sort_heap">Heap</string>
 
+    <string name="full_screen_light">Light</string>
+    <string name="full_screen_night">Night</string>
+
 </resources>

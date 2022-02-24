@@ -3,13 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_anim_svg_a.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/activity_canvas_game.xml" value="0.20018115942028986" />
         <entry key="app/src/main/res/layout/activity_keyboard_mode.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/activity_mac_address_test.xml" value="0.22509057971014493" />
         <entry key="app/src/main/res/layout/activity_net_work_cro_net.xml" value="0.19701086956521738" />
         <entry key="app/src/main/res/layout/activity_network_custom.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/activity_network_retrofit.xml" value="0.19701086956521738" />
+        <entry key="app/src/main/res/layout/activity_real_full_screen.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/activity_shot_screen.xml" value="0.23641304347826086" />
+        <entry key="app/src/main/res/layout/activity_transparent_status.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/layout_cm_bottom_progress.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/layout_cm_full_player_dialog.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/layout_cm_full_player_view.xml" value="0.23641304347826086" />
