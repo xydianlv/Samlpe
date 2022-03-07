@@ -5,6 +5,10 @@
       <map>
         <entry key="app/src/main/res/layout/activity_anim_svg_a.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/activity_canvas_game.xml" value="0.20018115942028986" />
+        <entry key="app/src/main/res/layout/activity_canvas_game_line.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/activity_canvas_game_more.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/activity_canvas_path.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/activity_canvas_text.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/activity_keyboard_mode.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/activity_mac_address_test.xml" value="0.22509057971014493" />
         <entry key="app/src/main/res/layout/activity_net_work_cro_net.xml" value="0.19701086956521738" />

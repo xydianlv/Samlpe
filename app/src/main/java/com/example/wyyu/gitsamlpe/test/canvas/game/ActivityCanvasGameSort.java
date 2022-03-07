@@ -7,10 +7,10 @@ import android.os.Bundle;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 
-public class ActivityCanvasGame extends ToolbarActivity {
+public class ActivityCanvasGameSort extends ToolbarActivity {
 
     public static void open(Context context) {
-        context.startActivity(new Intent(context, ActivityCanvasGame.class));
+        context.startActivity(new Intent(context, ActivityCanvasGameSort.class));
     }
 
     @Override
@@ -22,6 +22,6 @@ public class ActivityCanvasGame extends ToolbarActivity {
     }
 
     private void initActivity() {
-        initToolbar("CanvasGame", 0xffffffff, 0xff84919b);
+        initToolbar("CanvasGameSort", 0xffffffff, 0xff84919b);
     }
 }

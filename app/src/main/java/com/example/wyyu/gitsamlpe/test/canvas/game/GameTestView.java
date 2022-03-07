@@ -25,12 +25,12 @@ public class GameTestView extends View {
         initView();
     }
 
-    public GameTestView(Context context, @Nullable @org.jetbrains.annotations.Nullable AttributeSet attrs) {
+    public GameTestView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initView();
     }
 
-    public GameTestView(Context context, @Nullable @org.jetbrains.annotations.Nullable AttributeSet attrs, int defStyleAttr) {
+    public GameTestView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView();
     }

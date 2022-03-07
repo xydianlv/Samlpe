@@ -753,7 +753,13 @@
     <activity android:name=".test.function.drag.ActivityFloatDragTest"
         android:screenOrientation="portrait"
         />
-    <activity android:name=".test.canvas.game.ActivityCanvasGame"
+    <activity android:name=".test.canvas.game.ActivityCanvasGameSort"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.canvas.game.ActivityCanvasGameLine"
+        android:screenOrientation="portrait"
+        />
+    <activity android:name=".test.canvas.game.ActivityCanvasGameMove"
         android:screenOrientation="portrait"
         />
     <activity android:name=".test.function.macaddress.ActivityMacAddressTest"
