@@ -72,6 +72,8 @@ public class GameTestViewMoveA extends View {
     private float scrollAll;
     // 滑动的方向，0-未滑动，1-横向，-1-竖向
     private int onScroll;
+    // 最后一次滑动的方向
+    private float lastDistance;
 
     // 单个 Item 展示宽度
     private int viewWidth;
@@ -234,6 +236,7 @@ public class GameTestViewMoveA extends View {
             viewFunNext[index].right = viewFunNext[index].right - distanceX;
         }
         scrollAll = scrollAll + distanceX;
+        lastDistance = distanceX;
     }
 
     private void onScrollY(float distanceY) {
@@ -252,17 +255,71 @@ public class GameTestViewMoveA extends View {
             viewFunNext[index].bottom = viewFunNext[index].bottom - distanceY;
         }
         scrollAll = scrollAll + distanceY;
+        lastDistance = distanceY;
     }
 
     private void onScrollEndX() {
-        if (scrollAll > 0) {
-
+        if (lastDistance >= 0) {
+            int lastIndex = checkNextItemIndex();
+            int indexPre = (scrollIndex / ROW) * ROW;
+            int indexNext = indexPre + 2;
         } else {
-
+            int firstIndex = checkPreItemIndex();
         }
     }
 
     private void onScrollEndY() {
+
+    }
+
+    private int checkNextItemIndex() {
+        if (onScroll == 1) {
+            int indexPre = (scrollIndex / ROW) * ROW;
+            int indexNext = indexPre + 2;
+            int maxWidth = viewWidth * COUNT_FUN + DIVIDE * 2;
+            while (indexNext >= indexPre) {
+                if (viewArray[indexNext].left < maxWidth && viewArray[indexNext].right > maxWidth) {
+                    return indexNext;
+                }
+                indexNext = indexNext - 1;
+            }
+        }
+        if (onScroll == -1) {
+            int indexPre = scrollIndex % LIST;
+            int indexNext = indexPre + 2 * ROW;
+            int maxHeight = viewHeight * COUNT_FUN + DIVIDE * 2;
+            while (indexNext >= indexPre) {
+                if (viewArray[indexNext].top < maxHeight && viewArray[indexNext].bottom > maxHeight) {
+                    return indexNext;
+                }
+                indexNext = indexNext - 1;
+            }
+        }
+        return 0;
+    }
+
+    private int checkPreItemIndex() {
+        if (onScroll == 1) {
+            int indexPre = (scrollIndex / ROW) * ROW;
+            int indexNext = indexPre + 2;
+            while (indexPre <= indexNext) {
+                if (viewArray[indexPre].left < 0 && viewArray[indexPre].right > 0) {
+                    return indexNext;
+                }
+                indexPre = indexPre + 1;
+            }
+        }
+        if (onScroll == -1) {
+            int indexPre = scrollIndex % LIST;
+            int indexNext = indexPre + 2 * ROW;
+            while (indexPre <= indexNext) {
+                if (viewArray[indexPre].top < 0 && viewArray[indexPre].bottom > 0) {
+                    return indexNext;
+                }
+                indexPre = indexPre + 1;
+            }
+        }
+        return 0;
     }
 
     @Override
