@@ -8,14 +8,12 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.SparseArray;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.airbnb.lottie.L;
 import com.example.wyyu.gitsamlpe.R;
 
 public class GameTestViewMoveA extends View {
@@ -46,15 +44,20 @@ public class GameTestViewMoveA extends View {
     private static final int ROW = 3;
     // 总数
     private static final int COUNT = LIST * ROW;
+    // 辅助展示的 item 个数
+    private static final int COUNT_FUN = 3;
 
     // Item 在控件中的位置数组
-    private SparseArray<RectF> viewArray;
+    private RectF[] viewArray;
     // Item 所展示的图片位置
-    private SparseArray<Rect> imageArray;
+    private Rect[] imageArray;
+
     // 辅助展示在外侧的位置数组
-    private SparseArray<RectF> viewFun;
+    private RectF[] viewFunNext;
+    private RectF[] viewFunPre;
     // 辅助展示在外侧的图片数组
-    private SparseArray<Rect> imageFun;
+    private Rect[] imageFunNext;
+    private Rect[] imageFunPre;
 
     // 滑动监听
     private GestureDetector gesture;
@@ -74,10 +77,6 @@ public class GameTestViewMoveA extends View {
     private int viewWidth;
     // 单个 Item 展示高度
     private int viewHeight;
-    // 单个 Item 展示的图片宽度
-    private int imgWidth;
-    // 单个 Item 展示的图片高度
-    private int imgHeight;
 
     private void initView() {
         initObject();
@@ -90,55 +89,46 @@ public class GameTestViewMoveA extends View {
         paint = new Paint();
     }
 
+    private void initData() {
+        imageArray = new Rect[COUNT];
+        viewArray = new RectF[COUNT];
+
+        imageFunNext = new Rect[COUNT_FUN];
+        imageFunPre = new Rect[COUNT_FUN];
+        viewFunNext = new RectF[COUNT_FUN];
+        viewFunPre = new RectF[COUNT_FUN];
+
+        for (int index = 0; index < COUNT; index++) {
+            viewArray[index] = new RectF();
+            imageArray[index] = new Rect();
+        }
+        for (int index = 0; index < COUNT_FUN; index++) {
+            viewFunPre[index] = new RectF();
+            viewFunNext[index] = new RectF();
+            imageFunPre[index] = new Rect();
+            imageFunNext[index] = new Rect();
+        }
+    }
+
     private void initGesture() {
         gesture = new GestureDetector(getContext(), new GestureDetector.SimpleOnGestureListener() {
 
             @Override
             public boolean onDown(MotionEvent e) {
-                float touchX = e.getX();
-                float touchY = e.getY();
-
-                int indexX = (int) (touchX / viewWidth);
-                int indexY = (int) (touchY / viewHeight);
-
-                scrollIndex = indexY * ROW + indexX;
-                scrollAll = 0.0f;
-                onScroll = 0;
+                initTouch(e);
                 return true;
             }
 
             @Override
             public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
                 if (onScroll == 0) {
-                    if (Math.abs(distanceX) > Math.abs(distanceY)) {
-                        onScroll = 1;
-                    } else {
-                        onScroll = -1;
-                    }
+                    startScroll(distanceX, distanceY);
                 }
                 if (onScroll == 1) {
-                    int data = scrollIndex / LIST;
-                    for (int index = 0; index < COUNT; index++) {
-                        if (index / LIST != data) {
-                            continue;
-                        }
-                        RectF rectF = viewArray.get(index);
-                        rectF.left = rectF.left - distanceX;
-                        rectF.right = rectF.right - distanceX;
-                    }
-                    scrollAll = scrollAll + distanceX;
+                    onScrollX(distanceX);
                 }
                 if (onScroll == -1) {
-                    int data = scrollIndex % ROW;
-                    for (int index = 0; index < COUNT; index++) {
-                        if (index % ROW != data) {
-                            continue;
-                        }
-                        RectF rectF = viewArray.get(index);
-                        rectF.top = rectF.top - distanceY;
-                        rectF.bottom = rectF.bottom - distanceY;
-                    }
-                    scrollAll = scrollAll + distanceY;
+                    onScrollY(distanceY);
                 }
                 invalidate();
                 return true;
@@ -146,17 +136,11 @@ public class GameTestViewMoveA extends View {
 
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-                for (int index = 0; index < 2; index++) {
-                    RectF rectFPre = viewFun.get(0);
-                    rectFPre.left = 0;
-                    rectFPre.right = 0;
-                    rectFPre.top = 0;
-                    rectFPre.bottom = 0;
-                    RectF rectFNext = viewFun.get(1);
-                    rectFNext.left = 0;
-                    rectFNext.right = 0;
-                    rectFNext.top = 0;
-                    rectFNext.bottom = 0;
+                if (onScroll == 1) {
+                    onScrollEndX();
+                }
+                if (onScroll == -1) {
+                    onScrollEndY();
                 }
                 onScroll = 0;
                 return true;
@@ -164,20 +148,121 @@ public class GameTestViewMoveA extends View {
         });
     }
 
-    private void initData() {
-        imageArray = new SparseArray<>();
-        viewArray = new SparseArray<>();
-        imageFun = new SparseArray<>();
-        viewFun = new SparseArray<>();
+    private void initTouch(MotionEvent e) {
+        float touchX = e.getX();
+        float touchY = e.getY();
 
+        int indexX = (int) (touchX / viewWidth);
+        int indexY = (int) (touchY / viewHeight);
+
+        scrollIndex = indexY * ROW + indexX;
+        scrollAll = 0.0f;
+        onScroll = 0;
+    }
+
+    private void startScroll(float distanceX, float distanceY) {
+        if (Math.abs(distanceX) > Math.abs(distanceY)) {
+            onScroll = 1;
+        } else {
+            onScroll = -1;
+        }
+        if (onScroll == 1) {
+            int indexPre = (scrollIndex / ROW) * ROW;
+            int indexNext = indexPre + 2;
+            for (int index = 0; index < COUNT_FUN; index++) {
+                viewFunNext[index].left = viewArray[indexNext].right + DIVIDE * (index + 1) + viewWidth * index;
+                viewFunNext[index].right = viewFunNext[index].left + viewWidth;
+                viewFunNext[index].top = viewArray[indexPre].top;
+                viewFunNext[index].bottom = viewArray[indexPre].bottom;
+
+                imageFunNext[index].left = imageArray[indexPre + index].left;
+                imageFunNext[index].right = imageArray[indexPre + index].right;
+                imageFunNext[index].top = imageArray[indexPre + index].top;
+                imageFunNext[index].bottom = imageArray[indexPre + index].bottom;
+
+                viewFunPre[index].left = (DIVIDE + viewWidth) * (COUNT_FUN - index) * (-1);
+                viewFunPre[index].right = viewFunPre[index].left + viewWidth;
+                viewFunPre[index].top = viewArray[indexPre].top;
+                viewFunPre[index].bottom = viewArray[indexPre].bottom;
+
+                imageFunPre[index].left = imageArray[indexPre + index].left;
+                imageFunPre[index].right = imageArray[indexPre + index].right;
+                imageFunPre[index].top = imageArray[indexPre + index].top;
+                imageFunPre[index].bottom = imageArray[indexPre + index].bottom;
+            }
+        }
+        if (onScroll == -1) {
+            int indexPre = scrollIndex % LIST;
+            int indexNext = indexPre + 2 * ROW;
+            for (int index = 0; index < COUNT_FUN; index++) {
+                viewFunNext[index].left = viewArray[indexNext].left;
+                viewFunNext[index].right = viewArray[indexNext].right;
+                viewFunNext[index].top = viewArray[indexNext].bottom + DIVIDE * (index + 1) + viewHeight * index;
+                viewFunNext[index].bottom = viewFunNext[index].top + viewHeight;
+
+                imageFunNext[index].left = imageArray[indexPre + index * ROW].left;
+                imageFunNext[index].right = imageArray[indexPre + index * ROW].right;
+                imageFunNext[index].top = imageArray[indexPre + index * ROW].top;
+                imageFunNext[index].bottom = imageArray[indexPre + index * ROW].bottom;
+
+                viewFunPre[index].left = viewArray[indexPre].left;
+                viewFunPre[index].right = viewArray[indexPre].right;
+                viewFunPre[index].top = (DIVIDE + viewHeight) * (COUNT_FUN - index) * (-1);
+                viewFunPre[index].bottom = viewFunPre[index].top + viewHeight;
+
+                imageFunPre[index].left = imageArray[indexPre + index * ROW].left;
+                imageFunPre[index].right = imageArray[indexPre + index * ROW].right;
+                imageFunPre[index].top = imageArray[indexPre + index * ROW].top;
+                imageFunPre[index].bottom = imageArray[indexPre + index * ROW].bottom;
+            }
+        }
+    }
+
+    private void onScrollX(float distanceX) {
+        int data = scrollIndex / LIST;
         for (int index = 0; index < COUNT; index++) {
-            viewArray.put(index, new RectF());
-            imageArray.put(index, new Rect());
+            if (index / LIST != data) {
+                continue;
+            }
+            viewArray[index].left = viewArray[index].left - distanceX;
+            viewArray[index].right = viewArray[index].right - distanceX;
         }
-        for (int index = 0; index < 2; index++) {
-            viewFun.put(index, new RectF());
-            imageFun.put(index, new Rect());
+        for (int index = 0; index < COUNT_FUN; index++) {
+            viewFunPre[index].left = viewFunPre[index].left - distanceX;
+            viewFunPre[index].right = viewFunPre[index].right - distanceX;
+            viewFunNext[index].left = viewFunNext[index].left - distanceX;
+            viewFunNext[index].right = viewFunNext[index].right - distanceX;
         }
+        scrollAll = scrollAll + distanceX;
+    }
+
+    private void onScrollY(float distanceY) {
+        int data = scrollIndex % ROW;
+        for (int index = 0; index < COUNT; index++) {
+            if (index % ROW != data) {
+                continue;
+            }
+            viewArray[index].top = viewArray[index].top - distanceY;
+            viewArray[index].bottom = viewArray[index].bottom - distanceY;
+        }
+        for (int index = 0; index < COUNT_FUN; index++) {
+            viewFunPre[index].top = viewFunPre[index].top - distanceY;
+            viewFunPre[index].bottom = viewFunPre[index].bottom - distanceY;
+            viewFunNext[index].top = viewFunNext[index].top - distanceY;
+            viewFunNext[index].bottom = viewFunNext[index].bottom - distanceY;
+        }
+        scrollAll = scrollAll + distanceY;
+    }
+
+    private void onScrollEndX() {
+        if (scrollAll > 0) {
+
+        } else {
+
+        }
+    }
+
+    private void onScrollEndY() {
     }
 
     @Override
@@ -187,8 +272,8 @@ public class GameTestViewMoveA extends View {
         viewWidth = getMeasuredWidth();
         viewHeight = getMeasuredHeight();
 
-        imgHeight = bitmap.getHeight();
-        imgWidth = bitmap.getWidth();
+        int imgHeight = bitmap.getHeight();
+        int imgWidth = bitmap.getWidth();
 
         float aspectView = viewWidth * 1.0f / viewHeight;
         float aspectImg = imgWidth * 1.0f / imgHeight;
@@ -208,17 +293,15 @@ public class GameTestViewMoveA extends View {
 
             int data = index / LIST;
 
-            RectF rectF = viewArray.get(index);
-            rectF.left = (viewWidth + DIVIDE) * (index % LIST);
-            rectF.right = rectF.left + viewWidth;
-            rectF.top = (viewHeight + DIVIDE) * data;
-            rectF.bottom = rectF.top + viewHeight;
+            viewArray[index].left = (viewWidth + DIVIDE) * (index % LIST);
+            viewArray[index].right = viewArray[index].left + viewWidth;
+            viewArray[index].top = (viewHeight + DIVIDE) * data;
+            viewArray[index].bottom = viewArray[index].top + viewHeight;
 
-            Rect rect = imageArray.get(index);
-            rect.left = imgWidth * (index % LIST);
-            rect.right = rect.left + imgWidth;
-            rect.top = imgHeight * data;
-            rect.bottom = rect.top + imgHeight;
+            imageArray[index].left = imgWidth * (index % LIST);
+            imageArray[index].right = imageArray[index].left + imgWidth;
+            imageArray[index].top = imgHeight * data;
+            imageArray[index].bottom = imageArray[index].top + imgHeight;
         }
     }
 
@@ -229,10 +312,11 @@ public class GameTestViewMoveA extends View {
             return;
         }
         for (int index = 0; index < COUNT; index++) {
-            canvas.drawBitmap(bitmap, imageArray.get(index), viewArray.get(index), paint);
+            canvas.drawBitmap(bitmap, imageArray[index], viewArray[index], paint);
         }
-        for (int index = 0; index < 2; index++) {
-            canvas.drawBitmap(bitmap, imageFun.get(index), viewFun.get(index), paint);
+        for (int index = 0; index < COUNT_FUN; index++) {
+            canvas.drawBitmap(bitmap, imageFunPre[index], viewFunPre[index], paint);
+            canvas.drawBitmap(bitmap, imageFunNext[index], viewFunNext[index], paint);
         }
     }
 
