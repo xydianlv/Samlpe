@@ -7,10 +7,10 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <com.example.wyyu.gitsamlpe.test.canvas.game.GameTestViewMoveA
+    <com.example.wyyu.gitsamlpe.test.canvas.game.GameTestViewMove
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginHorizontal="40.0dp" />
+        android:layout_marginHorizontal="60.0dp" />
 
 </FrameLayout>

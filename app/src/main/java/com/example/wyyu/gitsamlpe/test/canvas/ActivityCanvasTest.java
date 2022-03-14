@@ -9,6 +9,7 @@ import com.example.wyyu.gitsamlpe.test.ListViewMain;
 import com.example.wyyu.gitsamlpe.test.canvas.figure.ActivityCanvasFigure;
 import com.example.wyyu.gitsamlpe.test.canvas.game.ActivityCanvasGameLine;
 import com.example.wyyu.gitsamlpe.test.canvas.game.ActivityCanvasGameMove;
+import com.example.wyyu.gitsamlpe.test.canvas.game.ActivityCanvasGameSelect;
 import com.example.wyyu.gitsamlpe.test.canvas.game.ActivityCanvasGameSort;
 import com.example.wyyu.gitsamlpe.test.canvas.image.ActivityCanvasImage;
 import com.example.wyyu.gitsamlpe.test.canvas.path.ActivityCanvasPath;
@@ -45,6 +46,7 @@ public class ActivityCanvasTest extends ToolbarActivity {
             .addItem("CanvasGameSort",v-> ActivityCanvasGameSort.open(ActivityCanvasTest.this))
             .addItem("CanvasGameLine",v-> ActivityCanvasGameLine.open(ActivityCanvasTest.this))
             .addItem("CanvasGameMove",v-> ActivityCanvasGameMove.open(ActivityCanvasTest.this))
+            .addItem("CanvasGameSelect",v-> ActivityCanvasGameSelect.open(ActivityCanvasTest.this))
             .refreshList();
     }
 }

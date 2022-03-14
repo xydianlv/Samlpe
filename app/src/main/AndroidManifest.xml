@@ -762,6 +762,9 @@
     <activity android:name=".test.canvas.game.ActivityCanvasGameMove"
         android:screenOrientation="portrait"
         />
+    <activity android:name=".test.canvas.game.ActivityCanvasGameSelect"
+        android:screenOrientation="portrait"
+        />
     <activity android:name=".test.function.macaddress.ActivityMacAddressTest"
         android:screenOrientation="portrait"
       />
