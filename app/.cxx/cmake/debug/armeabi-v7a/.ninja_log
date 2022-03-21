@@ -23,3 +23,9 @@
 1	491	1637207202	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	2fdab8a4f7490257
 491	574	1637207202	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	cec2dda97b2b127e
 0	20	0	clean	9b27596f6394360
+1	19	0	clean	9b27596f6394360
+2	538	1647834786	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	2fdab8a4f7490257
+538	628	1647834786	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	cec2dda97b2b127e
+0	24	0	clean	9b27596f6394360
+1	572	1647835142	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	2fdab8a4f7490257
+572	657	1647835142	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	cec2dda97b2b127e

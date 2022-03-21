@@ -3,9 +3,12 @@ package com.example.wyyu.gitsamlpe.test.video.player;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
+
 import androidx.annotation.NonNull;
+
 import android.text.TextUtils;
 import android.view.TextureView;
+
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
 import com.example.wyyu.gitsamlpe.test.audio.player.PlayerEventListener;
@@ -21,7 +24,7 @@ import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
-import com.google.android.exoplayer2.trackselection.TrackSelection;
+import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
@@ -31,19 +34,20 @@ import com.google.android.exoplayer2.upstream.cache.CacheDataSource;
 import com.google.android.exoplayer2.upstream.cache.CacheDataSourceFactory;
 import com.google.android.exoplayer2.upstream.cache.NoOpCacheEvictor;
 import com.google.android.exoplayer2.upstream.cache.SimpleCache;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by wyyu on 2020-07-27.
- *
+ * <p>
  * 支持 缓存 等功能
- *
+ * <p>
  * 缓存 ：已实现
- *
+ * <p>
  * ExoPlayer 播放流程
- *
+ * <p>
  * * 传入数据时，首先执行 exoPlayer.prepare(mediaSource, true, true) 方法
  * * 在 Player.EventListener 中最先回调 Player.STATE_BUFFERING 状态
  * * 若数据源不可用，在 Player.EventListener 中回调 Player.STATE_IDLE 状态，在这里执行换源逻辑
@@ -73,14 +77,16 @@ public class CMVideoPlayer implements ICMVideoPlayer {
     // 当前的视频源
     private String currentSource;
     // 视频源类型，默认为服务器URL
-    private @SourceType int sourceType;
+    private @SourceType
+    int sourceType;
 
     // 视频播放监听
     private List<MediaPlayListener> playListenerList;
     // 当前播放视频的唯一标识
     private long sourceId;
     // 播放器当前状态
-    private @MediaStatus int mediaStatus;
+    private @MediaStatus
+    int mediaStatus;
     // 新的播放视频
     private boolean newPlay;
 
@@ -115,20 +121,20 @@ public class CMVideoPlayer implements ICMVideoPlayer {
 
     private void initSourceFactory() {
         DefaultHttpDataSourceFactory httpDataSourceFactory =
-            new DefaultHttpDataSourceFactory("cm-player");
+                new DefaultHttpDataSourceFactory("cm-player");
 
         DefaultDataSourceFactory sourceFactory =
-            new DefaultDataSourceFactory(AppController.getAppContext(), httpDataSourceFactory);
+                new DefaultDataSourceFactory(AppController.getAppContext(), httpDataSourceFactory);
 
         DatabaseProvider databaseProvider = new ExoDatabaseProvider(AppController.getAppContext());
         File downloadDirectory =
-            new File(AppController.getAppContext().getExternalCacheDir(), "cm-video");
+                new File(AppController.getAppContext().getExternalCacheDir(), "cm-video");
 
         Cache cache = new SimpleCache(downloadDirectory, new NoOpCacheEvictor(), databaseProvider);
 
         dataSourceFactory =
-            new CacheDataSourceFactory(cache, sourceFactory, new FileDataSource.Factory(), null,
-                CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR, null);
+                new CacheDataSourceFactory(cache, sourceFactory, new FileDataSource.Factory(), null,
+                        CacheDataSource.FLAG_IGNORE_CACHE_ON_ERROR, null);
     }
 
     private void initHandler() {
@@ -148,21 +154,21 @@ public class CMVideoPlayer implements ICMVideoPlayer {
     }
 
     private void initPlayer() {
-
-        TrackSelection.Factory trackSelectionFactory = new AdaptiveTrackSelection.Factory();
+        ExoTrackSelection.Factory trackSelectionFactory = new AdaptiveTrackSelection.Factory();
         DefaultTrackSelector trackSelector =
-            new DefaultTrackSelector(AppController.getAppContext(), trackSelectionFactory);
+                new DefaultTrackSelector(AppController.getAppContext(), trackSelectionFactory);
 
         DefaultRenderersFactory renderersFactory =
-            new DefaultRenderersFactory(AppController.getAppContext()).setExtensionRendererMode(
-                DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER);
+                new DefaultRenderersFactory(AppController.getAppContext()).setExtensionRendererMode(
+                        DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER);
 
         exoPlayer = new SimpleExoPlayer.Builder(AppController.getAppContext(),
-            renderersFactory).setTrackSelector(trackSelector).build();
+                renderersFactory).setTrackSelector(trackSelector).build();
 
         exoPlayer.addListener(new PlayerEventListener() {
 
-            @Override public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
+            @Override
+            public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
                 switch (playbackState) {
                     case Player.STATE_IDLE:
                         mediaStatus = MediaStatus.ERROR;
@@ -194,14 +200,9 @@ public class CMVideoPlayer implements ICMVideoPlayer {
                         break;
                 }
                 if (!(playbackState == Player.STATE_READY && playWhenReady)
-                    && mainHandler != null) {
+                        && mainHandler != null) {
                     mainHandler.removeCallbacks(timeRunable);
                 }
-                notifyMediaStatus();
-            }
-
-            @Override public void onPlayerError(ExoPlaybackException error) {
-                mediaStatus = MediaStatus.ERROR;
                 notifyMediaStatus();
             }
         });
@@ -218,18 +219,14 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         }
         try {
             if (sourceType == SourceType.URL) {
-                MediaSource mediaSource = SourceCacheData.getInstance()
-                    .createMediaSource(currentSource, String.valueOf(sourceId));
-                if (mediaSource == null) {
-                    mediaSource =
+                MediaSource mediaSource =
                         new ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(
-                            Uri.parse(currentSource));
-                }
+                                Uri.parse(currentSource));
                 exoPlayer.prepare(mediaSource, true, true);
             } else {
                 MediaSource mediaSource =
-                    new ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(
-                        Uri.fromFile(new File(currentSource)));
+                        new ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(
+                                Uri.fromFile(new File(currentSource)));
                 exoPlayer.prepare(mediaSource, true, true);
             }
         } catch (Exception e) {
@@ -270,8 +267,9 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         sourceId = 0;
     }
 
-    @Override public void setDataAndPlay(int sourceType, String sourceValue, long sourceId,
-        @NonNull TextureView textureView, @NonNull MediaPlayListener playListener) {
+    @Override
+    public void setDataAndPlay(int sourceType, String sourceValue, long sourceId,
+                               @NonNull TextureView textureView, @NonNull MediaPlayListener playListener) {
 
         // 更新播放器监听对象
         attachPlayListener(sourceId, playListener);
@@ -298,26 +296,30 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         SourceCacheData.getInstance().preload(sourceValue, String.valueOf(sourceId));
     }
 
-    @Override public void setRepeat(boolean repeat) {
+    @Override
+    public void setRepeat(boolean repeat) {
         if (exoPlayer != null) {
             exoPlayer.setRepeatMode(repeat ? Player.REPEAT_MODE_ONE : Player.REPEAT_MODE_OFF);
         }
     }
 
-    @Override public void setMute(boolean setMute) {
+    @Override
+    public void setMute(boolean setMute) {
         if (exoPlayer == null) {
             return;
         }
         exoPlayer.setVolume(setMute ? 0.0f : volume);
     }
 
-    @Override public void setSpeed(float speed) {
+    @Override
+    public void setSpeed(float speed) {
         if (exoPlayer != null) {
             exoPlayer.setPlaybackParameters(new PlaybackParameters(speed));
         }
     }
 
-    @Override public void defaultSpeed() {
+    @Override
+    public void defaultSpeed() {
         setSpeed(1.0f);
     }
 
@@ -341,14 +343,16 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         }
     }
 
-    @Override public void detachPlayListener(@NonNull MediaPlayListener playListener) {
+    @Override
+    public void detachPlayListener(@NonNull MediaPlayListener playListener) {
         if (this.playListenerList == null || this.playListenerList.isEmpty()) {
             return;
         }
         this.playListenerList.remove(playListener);
     }
 
-    @Override public void start() {
+    @Override
+    public void start() {
         if (exoPlayer == null) {
             initPlayer();
         }
@@ -363,7 +367,8 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         }
     }
 
-    @Override public void pause() {
+    @Override
+    public void pause() {
         if (exoPlayer == null) {
             return;
         }
@@ -375,7 +380,8 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         }
     }
 
-    @Override public void seekTo(int progress) {
+    @Override
+    public void seekTo(int progress) {
         if (mediaStatus != MediaStatus.PLAYING && mediaStatus != MediaStatus.PAUSE) {
             return;
         }
@@ -384,7 +390,8 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         }
     }
 
-    @Override public void reStart() {
+    @Override
+    public void reStart() {
         if (exoPlayer == null) {
             initPlayer();
         }
@@ -394,7 +401,8 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         }
     }
 
-    @Override public void complete() {
+    @Override
+    public void complete() {
         if (!canComplete) {
             return;
         }
@@ -406,7 +414,8 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         clearValue();
     }
 
-    @Override public void release() {
+    @Override
+    public void release() {
         complete();
 
         if (exoPlayer != null) {
@@ -415,21 +424,24 @@ public class CMVideoPlayer implements ICMVideoPlayer {
         }
     }
 
-    @Override public long getSourceId() {
+    @Override
+    public long getSourceId() {
         if (mediaStatus == MediaStatus.PREPARE) {
             return 0;
         }
         return sourceId;
     }
 
-    @Override public long getPosition() {
+    @Override
+    public long getPosition() {
         if (exoPlayer == null) {
             return 0;
         }
         return exoPlayer.getCurrentPosition();
     }
 
-    @Override public long getDuration() {
+    @Override
+    public long getDuration() {
         if (exoPlayer == null) {
             return 0;
         }

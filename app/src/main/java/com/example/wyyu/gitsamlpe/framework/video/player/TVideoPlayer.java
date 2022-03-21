@@ -4,20 +4,19 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.TextureView;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
-import com.google.android.exoplayer2.ExoPlaybackException;
-import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.PlaybackParameters;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.Timeline;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.source.TrackGroupArray;
+import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.trackselection.ExoTrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
@@ -129,14 +128,13 @@ public class TVideoPlayer implements ITVideoPlayer {
     }
 
     private void initPlayer() {
-        exoPlayer = ExoPlayerFactory.newSimpleInstance(AppController.getAppContext(),
-            new DefaultTrackSelector());
+        ExoTrackSelection.Factory trackSelectionFactory = new AdaptiveTrackSelection.Factory();
+        DefaultTrackSelector trackSelector =
+                new DefaultTrackSelector(AppController.getAppContext(), trackSelectionFactory);
+
+        exoPlayer = new SimpleExoPlayer.Builder(AppController.getAppContext()).setTrackSelector(trackSelector).build();
 
         exoPlayer.addListener(new Player.EventListener() {
-            @Override public void onTimelineChanged(Timeline timeline, @Nullable Object manifest,
-                int reason) {
-
-            }
 
             @Override public void onTracksChanged(TrackGroupArray trackGroups,
                 TrackSelectionArray trackSelections) {
@@ -198,11 +196,6 @@ public class TVideoPlayer implements ITVideoPlayer {
 
             @Override public void onShuffleModeEnabledChanged(boolean shuffleModeEnabled) {
 
-            }
-
-            @Override public void onPlayerError(ExoPlaybackException error) {
-                mediaStatus = MediaStatus.ERROR;
-                notifyMediaStatus();
             }
 
             @Override public void onPositionDiscontinuity(int reason) {
@@ -418,9 +411,8 @@ public class TVideoPlayer implements ITVideoPlayer {
         }
         try {
             initCacheSourceFactory();
-            MediaSource mediaSource =
-                new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(
-                    Uri.parse(currentSource));
+            MediaSource mediaSource = new ProgressiveMediaSource.Factory(dataSourceFactory)
+                    .createMediaSource(MediaItem.fromUri(Uri.parse(currentSource)));
             exoPlayer.prepare(mediaSource, true, true);
         } catch (Exception e) {
             ULog.show(e.getMessage());

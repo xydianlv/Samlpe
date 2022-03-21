@@ -101,9 +101,9 @@ dependencies {
   // JZ 视频播放器
   implementation 'cn.jzvd:jiaozivideoplayer:7.1.0'
   // EXO 视频播放器
-  implementation 'com.google.android.exoplayer:exoplayer:2.11.1'
-  implementation 'com.google.android.exoplayer:extension-okhttp:2.10.8'
-  implementation 'com.android.installreferrer:installreferrer:2.1'
+  implementation 'com.google.android.exoplayer:exoplayer-core:2.15.0'
+  implementation 'com.google.android.exoplayer:exoplayer-dash:2.15.0'
+  implementation 'com.google.android.exoplayer:exoplayer-ui:2.15.0'
   // 本地图片选择框架
   implementation 'com.zhihu.android:matisse:0.4.3'
   // 图片编辑框架

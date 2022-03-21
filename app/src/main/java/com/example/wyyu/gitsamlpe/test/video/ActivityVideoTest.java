@@ -8,6 +8,7 @@ import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
 import com.example.wyyu.gitsamlpe.test.ListViewMain;
 import com.example.wyyu.gitsamlpe.test.video.list.ActivityVideoList;
+import com.example.wyyu.gitsamlpe.test.video.simple.ActivitySimplePlayer;
 import com.example.wyyu.gitsamlpe.test.video.waterfall.ActivityVideoWaterfall;
 
 /**
@@ -34,6 +35,7 @@ public class ActivityVideoTest extends ToolbarActivity {
 
         list.addItem("List", v -> ActivityVideoList.open(ActivityVideoTest.this))
             .addItem("WaterFall", v -> ActivityVideoWaterfall.open(ActivityVideoTest.this))
+            .addItem("SimplePlayer", v -> ActivitySimplePlayer.open(ActivityVideoTest.this))
             .refreshList();
     }
 }

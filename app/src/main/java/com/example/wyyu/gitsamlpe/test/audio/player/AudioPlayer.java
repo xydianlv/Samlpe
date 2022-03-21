@@ -8,9 +8,11 @@ import com.example.wyyu.gitsamlpe.framework.application.AppController;
 import com.example.wyyu.gitsamlpe.framework.toast.UToast;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
@@ -40,8 +42,8 @@ public class AudioPlayer implements IAudioPlayer {
     }
 
     private void initPlayer() {
-        player = ExoPlayerFactory.newSimpleInstance(AppController.getAppContext(),
-            new DefaultTrackSelector());
+        player = new SimpleExoPlayer.Builder(AppController.getAppContext())
+                .build();
         player.setRepeatMode(Player.REPEAT_MODE_OFF);
         player.setPlayWhenReady(true);
         dataSourceFactory = new DefaultDataSourceFactory(AppController.getAppContext(),
@@ -54,11 +56,6 @@ public class AudioPlayer implements IAudioPlayer {
             @Override public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
                 super.onPlayerStateChanged(playWhenReady, playbackState);
                 isPlaying = playbackState == 3;
-            }
-
-            // 播放器出错信息
-            @Override public void onPlayerError(ExoPlaybackException error) {
-                ULog.show(error.getMessage());
             }
         });
 
@@ -87,7 +84,11 @@ public class AudioPlayer implements IAudioPlayer {
     private void prepareAndPlay(AudioPlayInfo playInfo) {
         Uri uri = Uri.parse(playInfo.path);
         presentId = playInfo.audioId;
-        player.prepare(new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(uri));
+        MediaSource mediaSource= new ProgressiveMediaSource.Factory(dataSourceFactory)
+                .createMediaSource(MediaItem.fromUri(uri));
+        player.setMediaSource(mediaSource);
+        player.prepare();
+        player.setPlayWhenReady(true);
     }
 
     @Override public void release() {

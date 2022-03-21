@@ -4,22 +4,12 @@ import android.net.Uri;
 import android.text.TextUtils;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.application.AppController;
-import com.example.wyyu.gitsamlpe.test.network.retrofit.HttpProvider;
-import com.google.android.exoplayer2.ext.okhttp.OkHttpDataSourceFactory;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
-import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DataSpec;
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
-import com.google.android.exoplayer2.upstream.cache.CacheDataSourceFactory;
-import com.google.android.exoplayer2.upstream.cache.CacheUtil;
 import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor;
 import com.google.android.exoplayer2.upstream.cache.SimpleCache;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import okhttp3.OkHttpClient;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -90,27 +80,6 @@ public class SourceCacheData {
         simpleCache = new SimpleCache(cachePath, new LeastRecentlyUsedCacheEvictor(maxBytes));
     }
 
-    private DataSource.Factory createSourceFactory() {
-        OkHttpDataSourceFactory httpSourceFactory =
-            new OkHttpDataSourceFactory(new OkHttpClient.Builder().build(),
-                HttpProvider.getProvider().getUserAgent());
-        CacheDataSourceFactory cacheSourceFactory =
-            new CacheDataSourceFactory(simpleCache, httpSourceFactory);
-        return new DefaultDataSourceFactory(AppController.getAppContext(), null,
-            cacheSourceFactory);
-    }
-
-    ExtractorMediaSource createMediaSource(String url, String uniqueKey) {
-        ExtractorMediaSource.Factory factory =
-            new ExtractorMediaSource.Factory(createSourceFactory());
-
-        factory.setLoadErrorHandlingPolicy(new SourceChangeLoadErrorPolicy());
-        if (!TextUtils.isEmpty(uniqueKey)) {
-            factory.setCustomCacheKey(uniqueKey);
-        }
-        return factory.createMediaSource(Uri.parse(url));
-    }
-
     void preload(String url, String uniqueKey) {
         onPre = true;
         if (funList == null) {
@@ -156,7 +125,7 @@ public class SourceCacheData {
                 new DataSpec(Uri.parse(cacheData.url), 0, PRELOAD_CACHE_SIZE, cacheData.key);
 
             try {
-                CacheUtil.cache(dataSpec, simpleCache, null, null, null, null);
+//                CacheUtil.cache(dataSpec, simpleCache, null, null, null, null);
                 subscriber.onNext(true);
             } catch (Exception e) {
                 e.printStackTrace();

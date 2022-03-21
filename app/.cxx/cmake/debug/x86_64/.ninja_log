@@ -23,3 +23,9 @@
 1	248	1637207203	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	366a5148e8ca505a
 248	322	1637207203	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	c899342a5fc86bf3
 0	11	0	clean	9b27596f6394360
+0	11	0	clean	9b27596f6394360
+2	276	1647834787	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	366a5148e8ca505a
+276	359	1647834787	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	c899342a5fc86bf3
+0	13	0	clean	9b27596f6394360
+0	288	1647835143	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	366a5148e8ca505a
+288	369	1647835143	../../../../build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	c899342a5fc86bf3

@@ -14,10 +14,6 @@ import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
  **/
 
 public abstract class PlayerEventListener implements Player.EventListener {
-    @Override
-    public void onTimelineChanged(Timeline timeline, @Nullable Object manifest, int reason) {
-        Log.e("PlayerEventListenerT","onTimelineChanged");
-    }
 
     @Override
     public void onTracksChanged(TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {
@@ -38,10 +34,6 @@ public abstract class PlayerEventListener implements Player.EventListener {
 
     @Override public void onShuffleModeEnabledChanged(boolean shuffleModeEnabled) {
         Log.e("PlayerEventListenerT","onShuffleModeEnabledChanged");
-    }
-
-    @Override public void onPlayerError(ExoPlaybackException error) {
-        Log.e("PlayerEventListenerT","onPlayerError");
     }
 
     @Override public void onPositionDiscontinuity(int reason) {
