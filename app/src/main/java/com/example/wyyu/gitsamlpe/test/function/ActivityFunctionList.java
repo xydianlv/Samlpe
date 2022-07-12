@@ -12,6 +12,7 @@ import com.example.wyyu.gitsamlpe.test.function.drag.ActivityFloatDragTest;
 import com.example.wyyu.gitsamlpe.test.function.dynamic.ActivityDynamicSize;
 import com.example.wyyu.gitsamlpe.test.function.grid.ActivityGridTest;
 import com.example.wyyu.gitsamlpe.test.function.macaddress.ActivityMacAddressTest;
+import com.example.wyyu.gitsamlpe.test.function.shortcut.ActivityShotCut;
 import com.example.wyyu.gitsamlpe.test.function.shot.ActivityShotScreen;
 import com.example.wyyu.gitsamlpe.test.function.expandable.ActivityExpandableListView;
 import com.example.wyyu.gitsamlpe.test.function.location.ActivityLocation;
@@ -59,6 +60,7 @@ public class ActivityFunctionList extends ToolbarActivity {
             .addItem("GridTest", v -> ActivityGridTest.open(ActivityFunctionList.this))
             .addItem("FloatDragTest", v -> ActivityFloatDragTest.open(ActivityFunctionList.this))
             .addItem("MacAddressTest", v -> ActivityMacAddressTest.open(ActivityFunctionList.this))
+            .addItem("ShotCut", v -> ActivityShotCut.open(ActivityFunctionList.this))
             .refreshList();
     }
 }

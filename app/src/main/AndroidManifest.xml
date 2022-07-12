@@ -771,6 +771,11 @@
     <activity android:name=".test.video.simple.ActivitySimplePlayer"
         android:screenOrientation="portrait"
       />
+    <activity android:name=".test.function.shortcut.ActivityShotCut"
+        android:screenOrientation="portrait"
+      />
+    <activity android:name=".test.function.shortcut.ActivityShotCutPreview"
+      />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
