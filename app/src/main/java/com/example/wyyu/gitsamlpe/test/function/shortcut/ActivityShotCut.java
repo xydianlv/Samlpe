@@ -17,6 +17,8 @@ import androidx.core.graphics.drawable.IconCompat;
 import com.example.wyyu.gitsamlpe.R;
 import com.example.wyyu.gitsamlpe.framework.ULog;
 import com.example.wyyu.gitsamlpe.framework.activity.ToolbarActivity;
+import com.example.wyyu.gitsamlpe.framework.toast.UToast;
+import com.example.wyyu.gitsamlpe.test.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,10 +46,11 @@ public class ActivityShotCut extends ToolbarActivity {
     }
 
     private void createShotCut() {
-        Intent intent = new Intent(this, ActivityShotCutPreview.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(Constants.SHOT_CUT_NAME_KEY, Constants.SHOT_CUT_NAME);
         intent.putExtra(Constants.SHOT_CUT_ID_KEY, Constants.SHOT_CUT_ID);
-        intent.putExtra("isShortcut", true);
+        intent.putExtra(Constants.SHOT_CUT_BOOLEAN, true);
+        intent.putExtra(Constants.KEY_FROM_STRING, Constants.KEY_FROM_SHOT_CUT);
         intent.setAction(Intent.ACTION_VIEW);
         ShortcutInfoCompat shortcutInfoCompat = new ShortcutInfoCompat.Builder(this, Constants.SHOT_CUT_ID)
                 .setShortLabel(Constants.SHOT_CUT_NAME)
@@ -96,6 +99,9 @@ public class ActivityShotCut extends ToolbarActivity {
 
         boolean result = manager.updateShortcuts(infoList);
         ULog.show("updatePinShortcut result : " + result);
+        if (result) {
+            UToast.showShort(this, "更新完成");
+        }
     }
 
     private void createShortcut(ShortcutInfoCompat shortcutInfoCompat) {

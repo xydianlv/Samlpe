@@ -775,7 +775,14 @@
         android:screenOrientation="portrait"
       />
     <activity android:name=".test.function.shortcut.ActivityShotCutPreview"
-      />
+        android:launchMode="singleInstance"
+        android:exported="true"
+        android:excludeFromRecents="true"
+        >
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+      </intent-filter>
+    </activity>
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->
@@ -790,6 +797,15 @@
     <service android:name=".test.live.KeepLiveService" />
     <service android:name=".test.live.KeepLiveOnlyService" />
     <service android:name=".test.live.KeepLiveOnlyFloat" />
+
+    <receiver
+        android:name="com.example.wyyu.gitsamlpe.test.function.shortcut.ShotCutReceiver"
+        android:enabled="true"
+        android:exported="false">
+      <intent-filter>
+        <action android:name="com.shortcut.core.test_create" />
+      </intent-filter>
+    </receiver>
 
   </application>
 
