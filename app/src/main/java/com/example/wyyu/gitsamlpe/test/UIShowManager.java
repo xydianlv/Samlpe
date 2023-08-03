@@ -19,6 +19,7 @@ import com.example.wyyu.gitsamlpe.test.floatview.ActivityFloatTest;
 import com.example.wyyu.gitsamlpe.test.fresco.ActivityFrescoTest;
 import com.example.wyyu.gitsamlpe.test.image.edit.ActivityEditImage;
 import com.example.wyyu.gitsamlpe.test.image.local.ActivityLocalImageList;
+import com.example.wyyu.gitsamlpe.test.image.svga.ActivitySvgImgTest;
 import com.example.wyyu.gitsamlpe.test.list.ActivityMultiHolder;
 import com.example.wyyu.gitsamlpe.test.litho.main.ActivityLithoTest;
 import com.example.wyyu.gitsamlpe.test.live.ActivityLiveTest;
@@ -170,6 +171,10 @@ class UIShowManager {
 
     static void startCalendarTest(Activity activity) {
         ActivityCalendarTest.open(activity);
+    }
+
+    static void startSvgImageTest(Activity activity) {
+        ActivitySvgImgTest.open(activity);
     }
 
     static void startPagerTransformerShow(Activity activity) {

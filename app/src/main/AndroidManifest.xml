@@ -783,6 +783,9 @@
         <action android:name="android.intent.action.VIEW" />
       </intent-filter>
     </activity>
+    <activity android:name=".test.image.svga.ActivitySvgImgTest"
+        android:screenOrientation="portrait"
+      />
 
     <!--&lt;!&ndash; 高德地图定位服务 &ndash;&gt;-->
     <!--<meta-data-->

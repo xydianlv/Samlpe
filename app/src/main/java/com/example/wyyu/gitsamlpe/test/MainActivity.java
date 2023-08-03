@@ -244,6 +244,13 @@ public class MainActivity extends ToolbarActivity {
             }
         });
 
+        listViewMain.addNewItem("SvgImageTest", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIShowManager.startSvgImageTest(MainActivity.this);
+            }
+        });
+
         listViewMain.refreshList();
     }
 }

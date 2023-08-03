@@ -4,12 +4,31 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GitSample.iml" filepath="$PROJECT_DIR$/.idea/GitSample.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitSample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitSample.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitSample.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitSample.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitSample.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitSample.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitSample.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitSample.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.iml" filepath="$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.main.iml" filepath="$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/banner/GitSample.banner.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.main.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.test.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_annotate/GitSample.debug_annotate.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.main.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.test.iml" filepath="$PROJECT_DIR$/.idea/modules/debug_processor/GitSample.debug_processor.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/location/GitSample.location.iml" filepath="$PROJECT_DIR$/.idea/modules/location/GitSample.location.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/location/GitSample.location.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/location/GitSample.location.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/location/GitSample.location.main.iml" filepath="$PROJECT_DIR$/.idea/modules/location/GitSample.location.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/location/GitSample.location.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/location/GitSample.location.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.iml" filepath="$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.main.iml" filepath="$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/matisse/GitSample.matisse.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.iml" filepath="$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.main.iml" filepath="$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/multi/GitSample.multi.unitTest.iml" />
     </modules>
   </component>
 </project>
