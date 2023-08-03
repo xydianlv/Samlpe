@@ -22,6 +22,13 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 	public ListAdapter() {
 		svgList.add(SvgType.SMALL_CLOSE);
+		svgList.add(SvgType.MID_CLOSE);
+		svgList.add(SvgType.SMALL_S_CLOSE);
+		svgList.add(SvgType.MID_S_CLOSE);
+		svgList.add(SvgType.BIG_S_CLOSE);
+		svgList.add(SvgType.SMALL_SKIP);
+		svgList.add(SvgType.MID_SKIP);
+		svgList.add(SvgType.BIG_SKIP);
 	}
 
 	@NonNull
